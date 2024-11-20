@@ -1,0 +1,101 @@
+@use "./base/fonts";
+@use "./base/colors";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	@apply p-0 m-0;
+	font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
+		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	font-family: fonts.$body; // Use interpolation for SCSS variable
+	background: colors.$pureBlack;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+	width: 0.65rem;
+	height: 0.65rem;
+}
+
+body::-webkit-scrollbar-track {
+	background: colors.$pureBlack;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: colors.$primary-default;
+	border-radius: 100px;
+
+	&:hover {
+		transition: all 0.5s;
+		background-color: colors.$primary-light;
+	}
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+p {
+	@apply py-2;
+}
+
+h1,
+h2 {
+	font-family: fonts.$main;
+}
+
+/* Testimonials Swiper.js Slider */
+.swiper {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+
+	/* Center slide text vertically */
+	display: flex;
+	margin: auto 0;
+	justify-content: center;
+	align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	@apply mt-64 lg:mt-0 w-16 h-16 p-8 border-2 border-primary-darker hover:border-primary-darker text-primary-darker hover:text-primary-darker;
+
+	top: 85% !important;
+
+	@media screen and (min-width: 1024px) {
+		top: 50% !important;
+	}
+}
+
+.swiper-button-prev::after {
+	content: "prev"; // Fixed typo: Changed "next" to "prev"
+	width: 15px !important;
+	height: 15px !important;
+	font-size: 15px !important;
+	font-weight: 900 !important;
+	color: colors.$primary-dark !important;
+}
+
+.swiper-button-next::after {
+	content: "next";
+	width: 15px !important;
+	height: 15px !important;
+	font-size: 15px !important;
+	font-weight: 900 !important;
+	color: colors.$primary-dark !important;
+}

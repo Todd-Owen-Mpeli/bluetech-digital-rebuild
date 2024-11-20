@@ -1,0 +1,15 @@
+// Imports
+@use "../base/fonts";
+@use "../base/colors";
+
+.hero {
+	@apply relative;
+
+	.container {
+		@apply lg:max-w-[1700px] mx-auto px-4 gap-8;
+
+		.content {
+			@apply flex flex-wrap -mx-4 mb-16;
+		}
+	}
+}
