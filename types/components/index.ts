@@ -1,23 +1,21 @@
 // Imports
+import {MotionValue} from "framer-motion";
 import {Dispatch, SetStateAction} from "react";
 
 // Components
 export namespace IHero {
 	export type IProps = {
-		video: string;
-		titleEnd: string;
-		paragraph: string;
-		titleStart: string;
-		titleMiddle: string;
-		displayVideo: boolean;
-		videoBackgroundImage: {
-			altText: string;
-			sourceUrl: string;
+		video: {
+			link: string;
+			title: string;
 			mediaDetails: {
 				width: number;
 				height: number;
 			};
 		};
+		title: string;
+		paragraph: string;
+		displayVideo: boolean;
 		buttonLink: {
 			url: string;
 			title: string;
@@ -28,23 +26,7 @@ export namespace IHero {
 			title: string;
 			target: string;
 		};
-		rightsideImage: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				height: number;
-				width: number;
-			};
-		};
-		smallImageOne: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				height: number;
-				width: number;
-			};
-		};
-		smallImageTwo: {
+		videoBackgroundImage: {
 			altText: string;
 			sourceUrl: string;
 			mediaDetails: {
@@ -53,7 +35,26 @@ export namespace IHero {
 			};
 		};
 	};
+	export type IVideoCard = {
+		video: IProps[`video`];
+		buttonLink: IProps[`buttonLink`];
+		displayVideo: IProps[`displayVideo`];
+		buttonLinkTwo: IProps[`buttonLinkTwo`];
+		videoBackgroundImage: IProps[`videoBackgroundImage`];
+	};
 }
+export namespace INavbar {
+	export type IProps = {};
+	export type INavbarMenuLinks = {
+		item: any;
+		index: number;
+	};
+}
+export type ITitleParagraph = {
+	title: string;
+	paragraph: string;
+	displayParagraph: boolean;
+};
 
 // Global
 export namespace IPagination {
@@ -89,8 +90,12 @@ export namespace IElements {
 		className: string;
 	};
 	export type IParagraph = {
+		fadeIn?: boolean;
 		content: string;
 		className: string;
+		offsetStart?: number;
+		offsetFinish?: number;
+		styleTextColor?: MotionValue<string> | string;
 	};
 	export type IBackHoverButton = {
 		link: string;

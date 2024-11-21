@@ -1,6 +1,6 @@
 export type ISeo = {
 	canonical: string;
-	cornerstone: Boolean;
+	cornerstone: boolean;
 	focuskw: string;
 	fullHead: string;
 	metaDesc: string;

@@ -23,13 +23,17 @@ export const getAllFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_Hero {
 												fieldGroupName
 												displaySection
-												displaySection
-												video
-												titleEnd
+												title
 												paragraph
-												titleStart
-												titleMiddle
 												displayVideo
+												video {
+              										link
+              										title
+              										mediaDetails {
+              											height
+              											width
+              										}
+              									}
 												buttonLink {
 													url
 													title
@@ -48,30 +52,13 @@ export const getAllFlexibleContentComponents = async (
 														width
 													}
 												}
-												smallImageOne {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
-												smallImageTwo {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
-												rightsideImage {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
+											}
+											... on ${postTypeFlexibleContent}_TitleParagraph {
+												fieldGroupName
+												displaySection
+												title
+												paragraph
+												displayParagraph
 											}
 										}
 									}

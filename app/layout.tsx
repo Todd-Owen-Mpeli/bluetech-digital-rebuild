@@ -21,12 +21,10 @@ import {getThemesOptionsContent} from "@/graphql/GetAllThemesOptions";
 import {getAllCaseStudiesContent} from "@/graphql/GetAllCaseStudies";
 import {getAllTestimonialsContent} from "@/graphql/GetAllTestimonials";
 
-// Hooks
-
 // Components
 import Head from "@/app/head";
-// import Navbar from "@/components/Global/Navbar";
 // import Footer from "@/components/Global/Footer";
+import Navbar from "@/components/Global/Navbar/Index";
 import SmoothScrolling from "@/components/Global/SmoothScrolling";
 import BlurryCursorMouse from "@/components/Global/BlurryCursorMouse";
 import GlobalContextProvider from "@/context/providers/GlobalContextProvider";
@@ -88,7 +86,7 @@ const App = async ({children}: AppProps | any) => {
 				<ApolloContextProvider>
 					<GlobalContextProvider globalProps={globalProps}>
 						<SmoothScrolling>
-							{/* <Navbar /> */}
+							<Navbar />
 							{children}
 							{/* <Footer /> */}
 							<BlurryCursorMouse />

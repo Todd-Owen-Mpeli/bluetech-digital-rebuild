@@ -12,7 +12,7 @@ body {
 		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
 		sans-serif;
 	font-family: fonts.$body; // Use interpolation for SCSS variable
-	background: colors.$pureBlack;
+	background: colors.$white;
 }
 
 body::-webkit-scrollbar {

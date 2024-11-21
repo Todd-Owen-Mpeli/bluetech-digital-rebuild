@@ -1,0 +1,35 @@
+.navbar {
+	@apply z-[998] px-5 lg:px-0 py-5 w-full fixed bg-none transition-all ease-in-out duration-500;
+
+	.container {
+		@apply lg:max-w-[1800px] mx-auto w-full grid grid-cols-2 lg:grid-cols-3;
+
+		.links {
+			@apply hidden lg:flex items-center justify-start gap-6;
+
+			.ul {
+				@apply flex items-center gap-x-6;
+
+				.link {
+					@apply font-GanhTypeRegular text-pureBlack text-center text-tiny leading-tight tracking-[0.05rem];
+				}
+			}
+		}
+
+		.logo {
+			@apply flex flex-col items-baseline lg:items-center justify-center;
+
+			.title {
+				@apply font-GanhTypeRegular text-pureBlack  text-center text-lg leading-tight tracking-[0.05rem];
+			}
+		}
+
+		.other {
+			@apply hidden sm:flex items-center justify-end gap-6;
+
+			.localeTime {
+				@apply font-GanhTypeRegular text-pureBlack uppercase text-center text-tiny leading-tight tracking-[0.05rem];
+			}
+		}
+	}
+}

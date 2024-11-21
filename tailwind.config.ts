@@ -73,19 +73,35 @@ const config: Config = {
 				},
 			},
 			fontFamily: {
-				TelkaRegular: ["TelkaRegular", "PlusJakartaSans"],
-				PlusJakartaSans: ["PlusJakartaSans", "Inter"],
+				GanhTypeThin: ["GanhTypeThin"],
+				GanhTypeRegular: ["GanhTypeRegular"],
+				MADESoulmaze: ["MADESoulmaze"],
+				MADESoulmazeItalic: ["MADESoulmazeItalic"],
+				MADESoulmazeOutline: ["MADESoulmazeOutline"],
+				MADESoulmazeOutlineItalic: ["MADESoulmazeOutlineItalic"],
 			},
 		},
 	},
 	plugins: [
 		function ({addUtilities}: PluginAPI) {
 			addUtilities({
-				".font-TelkaRegular": {
-					fontFamily: '"TelkaRegular", "PlusJakartaSans"',
+				".font-GanhTypeThin": {
+					fontFamily: '"GanhTypeThin"',
 				},
-				".font-PlusJakartaSans": {
-					fontFamily: '"PlusJakartaSans", "Inter"',
+				".font-GanhTypeRegular": {
+					fontFamily: '"GanhTypeRegular"',
+				},
+				".font-MADESoulmaze": {
+					fontFamily: '"MADESoulmaze"',
+				},
+				".font-MADESoulmazeOutline": {
+					fontFamily: '"MADESoulmazeOutline"',
+				},
+				".font-MADESoulmazeOutlineItalic": {
+					fontFamily: '"MADESoulmazeOutlineItalic"',
+				},
+				".font-MADESoulmazeItalic": {
+					fontFamily: '"MADESoulmazeItalic"',
 				},
 			} as CSSRuleObject);
 		},

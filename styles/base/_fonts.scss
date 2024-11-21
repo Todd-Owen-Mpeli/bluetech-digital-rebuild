@@ -1,19 +1,36 @@
 /*===== FONTS =====*/
+
 @font-face {
-	font-family: Inter;
-	src: url("../fonts/Inter.woff");
+	font-family: GanhTypeThin;
+	src: url("../fonts/GanhTypeThin.woff");
 }
 
 @font-face {
-	font-family: PlusJakartaSans;
-	src: url("../fonts/PlusJakartaSans.woff");
+	font-family: GanhTypeRegular;
+	src: url("../fonts/GanhTypeRegular.woff");
 }
 
 @font-face {
-	font-family: TelkaRegular;
-	src: url("../fonts/TelkaRegular.woff");
+	font-family: MADESoulmaze;
+	src: url("../fonts/MADE-Soulmaze.woff");
+}
+
+@font-face {
+	font-family: MADESoulmazeItalic;
+	src: url("../fonts/MADE-SoulmazeItalic.woff");
+}
+
+@font-face {
+	font-family: MADESoulmazeOutline;
+	src: url("../fonts/MADE-SoulmazeOutline.woff");
+}
+
+@font-face {
+	font-family: MADESoulmazeOutlineItalic;
+	src: url("../fonts/MADE-SoulmazeOutlineItalic.woff");
 }
 
 // Font Stack Properties
-$main: "TelkaRegular", "PlusJakartaSans" !default;
-$body: "PlusJakartaSans", "Inter" !default;
+$main: "MADESoulmaze" !default;
+$body: "GanhTypeRegular" !default;
+$bodyThin: "GanhTypeThin" !default;
