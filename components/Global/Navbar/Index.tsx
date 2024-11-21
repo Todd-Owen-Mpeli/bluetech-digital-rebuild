@@ -1,30 +1,33 @@
 "use client";
 
 // Imports
-import {FC, Fragment} from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {motion} from "framer-motion";
 import {INavbar} from "@/types/components";
+import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
 import useLocaleTime from "@/hooks/useLocaleTime";
 import useScrollPosition from "@/hooks/useScrollPosition";
 import {fadeIn, initial, stagger, initialTwo} from "@/animations/animations";
 
 // Styling
-import styles from "@/components/Global/Navbar/styles/Navbar.module.scss";
+import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
 
 // Components
+import OurMissionNav from "@/components/Global/Navbar/Element/OurMissionNav";
 import NavbarMenuLinks from "@/components/Global/Navbar/Element/NavbarMenuLinks";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const Navbar: FC<INavbar.IProps> = () => {
 	const globalContext = useGlobalContext();
 
+	const localeTime = useLocaleTime();
+
 	// Background color scroll position change
 	const scrollPosition = useScrollPosition();
 
-	const localeTime = useLocaleTime();
+	// Hides or Display Our Mission Nav Content
+	const [ourMissionOpen, setOurMissionOpen] = useState(false);
 
 	return (
 		<nav
@@ -46,7 +49,16 @@ const Navbar: FC<INavbar.IProps> = () => {
 							globalContext?.navbarMenuLinks?.map(
 								(item: any, index: number) => (
 									<Fragment key={index}>
-										<NavbarMenuLinks index={index} item={item} />
+										{item?.node?.url === "/mission" ? (
+											<OurMissionNav
+												index={index}
+												item={item}
+												ourMissionOpen={ourMissionOpen}
+												setOurMissionOpen={setOurMissionOpen}
+											/>
+										) : (
+											<NavbarMenuLinks index={index} item={item} />
+										)}
 									</Fragment>
 								)
 							)
@@ -64,7 +76,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 						<h4 className={styles.title}>Bluetech Digital</h4>
 					</Link>
 				</ContentSliceRevealMaskAnimation>
-				<ContentSliceRevealMaskAnimation className={styles.other}>
+				<ContentSliceRevealMaskAnimation className={styles.menuContainer}>
 					<time className={styles.localeTime}>London {localeTime}</time>
 				</ContentSliceRevealMaskAnimation>
 			</div>

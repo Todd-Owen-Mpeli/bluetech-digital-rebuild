@@ -8,7 +8,7 @@ import {INavbar} from "@/types/components";
 import {initial, arrayLoopStaggerChildren} from "@/animations/animations";
 
 // Styling
-import styles from "@/components/Global/Navbar/styles/Navbar.module.scss";
+import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
 
 const NavbarMenuLinks: FC<INavbar.INavbarMenuLinks> = ({index, item}) => {
 	return (

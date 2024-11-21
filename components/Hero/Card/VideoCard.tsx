@@ -7,7 +7,7 @@ import {useTiltEffect} from "@/hooks/useTiltEffect";
 import {initial, fadeInUp} from "@/animations/animations";
 
 // Styling
-import styles from "@/components/Hero/styles/Hero.module.scss";
+import styles from "@/components/Hero/Styles/Hero.module.scss";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";

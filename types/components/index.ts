@@ -45,6 +45,12 @@ export namespace IHero {
 }
 export namespace INavbar {
 	export type IProps = {};
+	export type IOurMissionNav = {
+		item: any;
+		index: number;
+		ourMissionOpen: boolean;
+		setOurMissionOpen: Dispatch<SetStateAction<boolean>>;
+	};
 	export type INavbarMenuLinks = {
 		item: any;
 		index: number;

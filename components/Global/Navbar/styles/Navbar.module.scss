@@ -13,6 +13,18 @@
 				.link {
 					@apply font-GanhTypeRegular text-pureBlack text-center text-tiny leading-tight tracking-[0.05rem];
 				}
+
+				.ourMissionNav {
+					@apply relative;
+
+					.link {
+						@apply font-GanhTypeRegular text-pureBlack text-center text-tiny leading-tight tracking-[0.05rem];
+					}
+
+					.contentWrapper {
+						@apply fixed mt-[1.65rem] w-[80%] h-[250px] bg-pureBlack flex flex-col items-center justify-center;
+					}
+				}
 			}
 		}
 
@@ -24,7 +36,7 @@
 			}
 		}
 
-		.other {
+		.menuContainer {
 			@apply hidden sm:flex items-center justify-end gap-6;
 
 			.localeTime {

@@ -10,7 +10,7 @@ import {motion} from "framer-motion";
 import {IHero} from "@/types/components/index";
 
 // Styling
-import styles from "@/components/Hero/styles/Hero.module.scss";
+import styles from "@/components/Hero/Styles/Hero.module.scss";
 
 // Components
 import Title from "@/components/Elements/Title";
