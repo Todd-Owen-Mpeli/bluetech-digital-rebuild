@@ -48,11 +48,11 @@ const config: Config = {
 				lightGreyTwo: "#fafafa",
 
 				primary: {
-					default: "#2563eb",
+					default: "#0044CC",
 					two: "#3978ff",
 					light: "#3d77f3",
-					dark: "#09275e",
-					darker: "#0d172a",
+					dark: "#001b66",
+					darker: "#00072D",
 				},
 				accent: {
 					default: "#833df4",

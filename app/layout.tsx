@@ -3,7 +3,7 @@ import type {AppProps} from "next/app";
 import {IGlobal} from "@/types/context";
 
 // Global Styling
-import "@/styles/globals.scss";
+import "@/styles/global/globals.scss";
 
 // Queries Functions
 import {
@@ -21,11 +21,14 @@ import {getThemesOptionsContent} from "@/graphql/GetAllThemesOptions";
 import {getAllCaseStudiesContent} from "@/graphql/GetAllCaseStudies";
 import {getAllTestimonialsContent} from "@/graphql/GetAllTestimonials";
 
+// Hooks
+
 // Components
 import Head from "@/app/head";
 // import Navbar from "@/components/Global/Navbar";
 // import Footer from "@/components/Global/Footer";
 import SmoothScrolling from "@/components/Global/SmoothScrolling";
+import BlurryCursorMouse from "@/components/Global/BlurryCursorMouse";
 import GlobalContextProvider from "@/context/providers/GlobalContextProvider";
 import ApolloContextProvider from "@/context/providers/ApolloContextProvider";
 
@@ -88,6 +91,7 @@ const App = async ({children}: AppProps | any) => {
 							{/* <Navbar /> */}
 							{children}
 							{/* <Footer /> */}
+							<BlurryCursorMouse />
 						</SmoothScrolling>
 					</GlobalContextProvider>
 				</ApolloContextProvider>

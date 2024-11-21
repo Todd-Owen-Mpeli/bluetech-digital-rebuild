@@ -13,7 +13,7 @@ import {motion} from "framer-motion";
 import {IHero} from "@/types/components/index";
 
 // Styling
-import styles from "@/styles/components/Hero.module.scss";
+import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
@@ -36,7 +36,7 @@ const Hero: FC<IHero.IProps> = ({
 		<>
 			<motion.div className={styles.hero}>
 				<div className={styles.container}>
-					<div className={styles.content}></div>
+					<div className={styles.content}>hi</div>
 				</div>
 			</motion.div>
 		</>
