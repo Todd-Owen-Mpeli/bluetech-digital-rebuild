@@ -6,7 +6,7 @@ import {IElements} from "@/types/components";
 import {FC, useEffect, useState} from "react";
 
 // Styling
-import styles from "@/styles/components/Elements/BackHoverButton.module.scss";
+import styles from "@/styles/components/Elements/Buttons.module.scss";
 
 const BackToTopButton: FC<IElements.IBackHoverButton> = ({link}) => {
 	// Background color scroll position change

@@ -4,7 +4,7 @@ import Link from "next/link";
 import {IElements} from "@/types/components";
 
 // Styling
-import styles from "@/styles/components/Elements/BackHoverButton.module.scss";
+import styles from "@/styles/components/Elements/Buttons.module.scss";
 
 const BackHoverButton: FC<IElements.IBackHoverButton> = ({link}) => {
 	return (
