@@ -72,35 +72,31 @@ export default {
 				},
 			},
 			fontFamily: {
+				T1KoriumVF: ["T1KoriumVF"],
+				T1Korium2KG: ["T1Korium2KG"],
 				GanhTypeThin: ["GanhTypeThin"],
+				PeghasRegular: ["PeghasRegular"],
 				GanhTypeRegular: ["GanhTypeRegular"],
-				MADESoulmaze: ["MADESoulmaze"],
-				MADESoulmazeItalic: ["MADESoulmazeItalic"],
-				MADESoulmazeOutline: ["MADESoulmazeOutline"],
-				MADESoulmazeOutlineItalic: ["MADESoulmazeOutlineItalic"],
 			},
 		},
 	},
 	plugins: [
 		function ({addUtilities}: PluginAPI) {
 			addUtilities({
+				".font-T1KoriumVF": {
+					fontFamily: '"T1KoriumVF"',
+				},
+				".font-T1Korium2KG": {
+					fontFamily: '"T1Korium2KG"',
+				},
+				".font-PeghasRegular": {
+					fontFamily: '"PeghasRegular"',
+				},
 				".font-GanhTypeThin": {
 					fontFamily: '"GanhTypeThin"',
 				},
 				".font-GanhTypeRegular": {
 					fontFamily: '"GanhTypeRegular"',
-				},
-				".font-MADESoulmaze": {
-					fontFamily: '"MADESoulmaze"',
-				},
-				".font-MADESoulmazeOutline": {
-					fontFamily: '"MADESoulmazeOutline"',
-				},
-				".font-MADESoulmazeOutlineItalic": {
-					fontFamily: '"MADESoulmazeOutlineItalic"',
-				},
-				".font-MADESoulmazeItalic": {
-					fontFamily: '"MADESoulmazeItalic"',
 				},
 			} as CSSRuleObject);
 		},

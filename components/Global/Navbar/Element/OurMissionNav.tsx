@@ -8,32 +8,107 @@ import {delay, motion} from "framer-motion";
 // Styling
 import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
 
+// Components
+import Paragraph from "@/components/Elements/Paragraph";
+import {offsetStart, offsetFinish} from "@/animations/animations";
+
 // Animation Variants
-const ourMissionNavRevealAnimation = {
+export type IOurMissionNavRevealAnimation = {
 	open: {
-		height: "450px",
-		display: "flex",
+		x: number;
+		opacity: number;
+		visibility: string;
+		transition: {
+			duration: number;
+			delay: number;
+			type: string;
+			ease: number[];
+		};
+	};
+	closed: {
+		x: number;
+		opacity: number;
+		visibility: string;
+		transition: {
+			duration: number;
+			type: string;
+			ease: number[];
+		};
+	};
+};
+export type IContentRevealAnimation = {
+	open: {
+		x: number;
+		opacity: number;
+		visibility: string;
+		transition: {
+			duration: number;
+			delay: number;
+			type: string;
+			ease: number[];
+		};
+	};
+	closed: {
+		x: number;
+		opacity: number;
+		visibility: string;
+		transition: {
+			duration: number;
+			type: string;
+			ease: number[];
+		};
+	};
+};
+
+const ourMissionNavRevealAnimation: IOurMissionNavRevealAnimation | any = {
+	open: {
+		height: "350px",
+		opacity: 1,
+		visibility: "visible",
 		backgroundColor: "#f5f5f5",
 		transition: {
-			delay: 0.5,
-			duration: 0.4,
+			duration: 0.6,
 			type: "tween",
-			ease: [0.23, 1, 0.32, 1],
+			ease: [0.25, 1, 0.5, 1],
 		},
 	},
 	closed: {
 		height: "0px",
-		display: "none",
+		opacity: 0,
+		visibility: "hidden",
 		backgroundColor: "#ffffff",
 		transition: {
-			delay: 0.2,
-			duration: 0.4,
-			ease: "easeOut",
+			duration: 0.6,
+			type: "tween",
+			ease: [0.25, 1, 0.5, 1],
+		},
+	},
+};
+const contentRevealAnimation: IContentRevealAnimation | any = {
+	open: {
+		x: 0,
+		opacity: 1,
+		visibility: "visible",
+		transition: {
+			duration: 0.6,
+			delay: 0.5,
+			type: "tween",
+			ease: [0.4, 0, 0.2, 1],
+		},
+	},
+	closed: {
+		x: -50,
+		opacity: 0,
+		visibility: "hidden",
+		transition: {
+			duration: 0.6,
+			type: "tween",
+			ease: [0.6, 0.04, 0.98, 0.335],
 		},
 	},
 };
 
-const Navbar = ({item, index}: any) => {
+const OurMissionNav = ({item, index}: any) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	// Toggle handlers
@@ -44,8 +119,8 @@ const Navbar = ({item, index}: any) => {
 		<motion.li
 			custom={index}
 			className={styles.ourMissionNav}
-			onMouseEnter={displayOurMission}
 			onMouseLeave={hideOurMission}
+			onMouseEnter={displayOurMission}
 		>
 			<Link
 				href={item?.node?.url || ""}
@@ -64,12 +139,24 @@ const Navbar = ({item, index}: any) => {
 				variants={ourMissionNavRevealAnimation}
 			>
 				{/* Content goes here */}
-				<div className={styles.content}>
-					<p>Your dropdown content</p>
-				</div>
+				<motion.div
+					initial="closed"
+					variants={contentRevealAnimation}
+					animate={isOpen ? "open" : "closed"}
+					className={isOpen ? styles.content : "hidden"}
+				>
+					<h4 className={styles.title}>Our Mission</h4>
+					<Paragraph
+						fadeIn={false}
+						content={`We create websites designed for football creators and their communities.`}
+						offsetStart={offsetStart}
+						offsetFinish={offsetFinish}
+						className={isOpen ? styles.paragraph : "hidden"}
+					/>
+				</motion.div>
 			</motion.div>
 		</motion.li>
 	);
 };
 
-export default Navbar;
+export default OurMissionNav;

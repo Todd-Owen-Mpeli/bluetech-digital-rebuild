@@ -1,5 +1,18 @@
 /*===== FONTS =====*/
 @font-face {
+	font-family: T1Korium2KG;
+	src: url("../fonts/T1Korium-2KG.woff");
+}
+@font-face {
+	font-family: T1KoriumVF;
+	src: url("../fonts/T1KoriumVF.woff");
+}
+@font-face {
+	font-family: PeghasRegular;
+	src: url("../fonts/PeghasRegular.woff");
+}
+
+@font-face {
 	font-family: GanhTypeThin;
 	src: url("../fonts/GanhTypeThin.woff");
 }
@@ -9,27 +22,9 @@
 	src: url("../fonts/GanhTypeRegular.woff");
 }
 
-@font-face {
-	font-family: MADESoulmaze;
-	src: url("../fonts/MADE-Soulmaze.woff");
-}
-
-@font-face {
-	font-family: MADESoulmazeItalic;
-	src: url("../fonts/MADE-SoulmazeItalic.woff");
-}
-
-@font-face {
-	font-family: MADESoulmazeOutline;
-	src: url("../fonts/MADE-SoulmazeOutline.woff");
-}
-
-@font-face {
-	font-family: MADESoulmazeOutlineItalic;
-	src: url("../fonts/MADE-SoulmazeOutlineItalic.woff");
-}
-
 // Font Stack Properties
-$main: "MADESoulmaze" !default;
-$body: "GanhTypeRegular" !default;
-$bodyThin: "GanhTypeThin" !default;
+$T1KoriumVF: "T1KoriumVF" !default;
+$T1Korium2KG: "T1Korium2KG" !default;
+$GanhTypeThin: "GanhTypeThin" !default;
+$PeghasRegular: "PeghasRegular" !default;
+$GanhTypeRegular: "GanhTypeRegular" !default;
