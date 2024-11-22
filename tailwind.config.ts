@@ -1,7 +1,7 @@
 import type {Config} from "tailwindcss";
 import {PluginAPI, CSSRuleObject} from "tailwindcss/types/config";
 
-const config: Config = {
+export default {
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -106,6 +106,4 @@ const config: Config = {
 			} as CSSRuleObject);
 		},
 	],
-};
-
-export default config;
+} satisfies Config;

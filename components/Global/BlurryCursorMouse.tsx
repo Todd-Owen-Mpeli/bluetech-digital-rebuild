@@ -6,7 +6,7 @@ import Image from "next/image";
 import React, {FC, useEffect, useRef, useCallback} from "react";
 
 // Styling
-import styles from "@/styles/hooks/BlurryCursorMouse.module.scss";
+import styles from "@/styles/components/global/BlurryCursorMouse.module.scss";
 
 const BlurryCursorMouse: FC = () => {
 	const size = 50;

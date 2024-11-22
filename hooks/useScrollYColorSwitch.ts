@@ -4,7 +4,7 @@
 import {MotionValue} from "framer-motion";
 import {useState, useEffect} from "react";
 
-export type IUseScrollYColorSwitch = {
+type IUseScrollYColorSwitch = {
 	containerRef: React.RefObject<HTMLDivElement>;
 	scrollY: MotionValue<number>;
 	colorBefore: string;

@@ -1,9 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import {useEffect, useState} from "react";
-import {IAnimation} from "@/types/animations";
+
+type IUseTiltEffect = {
+	rotateX: number;
+	rotateY: number;
+	translateX: number;
+	translateY: number;
+};
 
 // Tilt animation effect
-export const useTiltEffect = (): IAnimation.IUseTiltEffect => {
+export const useTiltEffect = (): IUseTiltEffect => {
 	const [rotateX, setRotateX] = useState(0);
 	const [rotateY, setRotateY] = useState(0);
 	const [translateX, setTranslateX] = useState(0);

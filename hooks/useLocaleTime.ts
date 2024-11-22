@@ -3,7 +3,7 @@
 // Imports
 import {useEffect, useState} from "react";
 
-const useLocaleTime = () => {
+const useLocaleTime = (): string => {
 	const [time, setTime] = useState("");
 
 	useEffect(() => {

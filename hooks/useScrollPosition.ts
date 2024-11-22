@@ -3,7 +3,7 @@
 // Imports
 import {useEffect, useState} from "react";
 
-const useScrollPosition = () => {
+const useScrollPosition = (): number => {
 	// Background color scroll position change
 	const [scrollPosition, setScrollPosition] = useState(0);
 

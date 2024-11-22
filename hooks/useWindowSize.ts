@@ -3,11 +3,13 @@
 // Imports
 import {useState, useEffect} from "react";
 
+type IUseWindowSize = {
+	width: number | undefined;
+	height: number | undefined;
+};
+
 const useWindowSize = () => {
-	const [windowSize, setWindowSize] = useState<{
-		width: number | undefined;
-		height: number | undefined;
-	}>({
+	const [windowSize, setWindowSize] = useState<IUseWindowSize>({
 		width: undefined,
 		height: undefined,
 	});
