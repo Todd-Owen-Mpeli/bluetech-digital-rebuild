@@ -27,13 +27,13 @@ export const getAllFlexibleContentComponents = async (
 												paragraph
 												displayVideo
 												video {
-              										link
-              										title
-              										mediaDetails {
-              											height
-              											width
-              										}
-              									}
+													link
+													title
+													mediaDetails {
+														height
+														width
+													}
+												}
 												buttonLink {
 													url
 													title
@@ -43,6 +43,21 @@ export const getAllFlexibleContentComponents = async (
 													url
 													title
 													target
+												}
+												trustedClients {
+													title
+													textarea
+													clientNumber
+													clientsImages {
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
 												}
 												videoBackgroundImage {
 													altText

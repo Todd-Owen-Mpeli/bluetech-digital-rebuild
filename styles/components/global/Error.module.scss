@@ -1,35 +1,51 @@
 .error {
-	@apply relative h-[100vh] bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center;
+	@apply pt-32 pb-24 relative min-h-[100vh];
 
-	.wrapper {
-		@apply relative z-50 px-10 my-auto overflow-hidden py-44;
+	.container {
+		@apply max-w-[1800px] mx-auto px-4;
 
-		.container {
-			@apply w-full max-w-[1800px] p-0 mx-auto;
+		.contentWrapper {
+			@apply flex flex-wrap -mx-4 items-end mb-12;
 
-			.content {
-				@apply flex flex-col items-baseline justify-center px-4 m-auto;
+			.topContent {
+				@apply w-full md:w-1/2 lg:w-8/12 px-4 mb-10 md:mb-0 flex flex-col items-baseline justify-between gap-4;
 
 				.title {
-					@apply max-w-3xl mx-auto flex flex-col sm:block text-center mb-3 text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-bold leading-[2rem] sm:leading-[3rem] lg:leading-[4rem];
+					@apply max-w-5xl mx-auto lg:mx-0 font-T1KoriumVF flex flex-col sm:block text-center mb-3 text-3xl sm:text-4xl md:text-6xl lg:text-[5.5vw] text-pureBlack tracking-[0.05rem] leading-[2rem] sm:leading-[3rem] lg:leading-tight;
 				}
 
 				.paragraph {
-					@apply mb-6 py-6 text-white leading-[1.75rem] text-base sm:text-medium text-center;
+					@apply max-w-4xl mx-auto lg:mx-0 font-GanhTypeThin text-pureBlack text-3xl md:text-6xl text-center lg:text-left tracking-[0.02rem] leading-tight md:leading-[3.25rem];
+
+					span {
+						@apply text-tertiary-default;
+					}
 				}
+			}
 
-				.button {
-					@apply flex flex-col items-center justify-center mx-auto md:max-w-max;
+			.bottomContent {
+				@apply w-full md:w-1/2 lg:w-4/12 px-4 text-right;
 
-					.link {
-						@apply font-GanhTypeRegular text-white uppercase text-left text-lg bg-primary-default hover:bg-tertiary-default py-4 px-10 transition-all duration-500 ease-in-out;
+				.link {
+					@apply inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black;
+
+					.text {
+						@apply mr-4 font-GanhTypeRegular text-medium tracking-[0.02rem];
+					}
+
+					.svgWrapper {
+						@apply transform transition duration-100;
+
+						.svg {
+							@apply fill-none;
+						}
 					}
 				}
 			}
 		}
-	}
 
-	.fadeDiv {
-		@apply absolute top-0 h-screen bottom-0 left-0 w-full opacity-90 bg-gradient-to-b from-pureBlack/90 from-5% via-pureBlack/90 via-10% to-pureBlack/10;
+		.image {
+			@apply block h-full max-h-[550px] w-full rounded-3xl object-cover object-center;
+		}
 	}
 }

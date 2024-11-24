@@ -47,7 +47,7 @@ export default {
 				lightGreyTwo: "#fafafa",
 
 				primary: {
-					default: "#0044CC",
+					default: "#1161ff",
 					two: "#3978ff",
 					light: "#3d77f3",
 					dark: "#001b66",
@@ -75,7 +75,6 @@ export default {
 				T1KoriumVF: ["T1KoriumVF"],
 				T1Korium2KG: ["T1Korium2KG"],
 				GanhTypeThin: ["GanhTypeThin"],
-				PeghasRegular: ["PeghasRegular"],
 				GanhTypeRegular: ["GanhTypeRegular"],
 			},
 		},
@@ -88,9 +87,6 @@ export default {
 				},
 				".font-T1Korium2KG": {
 					fontFamily: '"T1Korium2KG"',
-				},
-				".font-PeghasRegular": {
-					fontFamily: '"PeghasRegular"',
 				},
 				".font-GanhTypeThin": {
 					fontFamily: '"GanhTypeThin"',

@@ -16,6 +16,21 @@ export namespace IHero {
 		title: string;
 		paragraph: string;
 		displayVideo: boolean;
+		trustedClients: {
+			title: string;
+			textarea: string;
+			clientNumber: string;
+			clientsImages: {
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						height: number;
+						width: number;
+					};
+				};
+			}[];
+		};
 		buttonLink: {
 			url: string;
 			title: string;

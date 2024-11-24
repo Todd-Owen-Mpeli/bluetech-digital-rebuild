@@ -8,15 +8,9 @@
 	src: url("../fonts/T1KoriumVF.woff");
 }
 @font-face {
-	font-family: PeghasRegular;
-	src: url("../fonts/PeghasRegular.woff");
-}
-
-@font-face {
 	font-family: GanhTypeThin;
 	src: url("../fonts/GanhTypeThin.woff");
 }
-
 @font-face {
 	font-family: GanhTypeRegular;
 	src: url("../fonts/GanhTypeRegular.woff");
@@ -26,5 +20,4 @@
 $T1KoriumVF: "T1KoriumVF" !default;
 $T1Korium2KG: "T1Korium2KG" !default;
 $GanhTypeThin: "GanhTypeThin" !default;
-$PeghasRegular: "PeghasRegular" !default;
 $GanhTypeRegular: "GanhTypeRegular" !default;
