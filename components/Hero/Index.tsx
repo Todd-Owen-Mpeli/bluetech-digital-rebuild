@@ -1,16 +1,13 @@
 // Imports
-import {FC} from "react";
-import {motion} from "framer-motion";
+import {FC, useRef} from "react";
 import {IHero} from "@/types/components/index";
 import {useTiltEffect} from "@/hooks/useTiltEffect";
-import {offsetStart, offsetFinish} from "@/animations/animations";
+import {motion, useScroll, useTransform} from "framer-motion";
 
 // Styling
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
-import Title from "@/components/Elements/Title";
-import Paragraph from "@/components/Elements/Paragraph";
 import VideoCard from "@/components/Hero/Card/VideoCard";
 
 const Hero: FC<IHero.IProps> = ({
@@ -22,57 +19,38 @@ const Hero: FC<IHero.IProps> = ({
 	buttonLinkTwo,
 	videoBackgroundImage,
 }) => {
-	console.log(video);
+	// Track the progress of the scroll and scale
+	const container = useRef(null);
+	const {scrollY} = useScroll();
 
-	// Content wrapper tilt animation effect
-	const {rotateX, rotateY, translateX, translateY} = useTiltEffect();
+	// Scale content wrapper
+	const scale = useTransform(scrollY, [0, 400], [1, 0.85]);
 
 	return (
 		<>
-			<motion.div className={styles.hero}>
+			<motion.div ref={container} className={styles.hero}>
 				<div className={styles.container}>
-					<div className="relative w-full h-full">
+					<div className={styles.contentWrapper}>
 						<motion.div
 							style={{
-								x: translateX,
-								y: translateY,
-								rotateX: `${rotateX}deg`,
-								rotateY: `${rotateY}deg`,
-								transformPerspective: 1000, // Adds perspective for the tilt effect
-								transition: "transform 0.2s ease-out", // Smoother transition
+								scale,
 								backgroundImage: `url("${videoBackgroundImage?.sourceUrl}")`,
 							}}
-							className={styles.contentWrapper}
+							className={styles.content}
 						>
-							<motion.video
-								muted
-								autoPlay
-								loop={true}
-								controls={false}
-								playsInline
-								controlsList="nofullscreen"
-								aria-label={`Video Element: ${video?.title}`}
-								className={displayVideo ? styles.video : "hidden"}
-							>
-								<source
-									src={video?.link}
-									type="video/mp4"
-									width={
-										video?.mediaDetails?.width
-											? video?.mediaDetails?.width
-											: 1000
-									}
-									height={
-										video?.mediaDetails?.height
-											? video?.mediaDetails?.height
-											: 550
-									}
-								/>
-							</motion.video>
+							<VideoCard
+								title={title}
+								video={video}
+								paragraph={paragraph}
+								buttonLink={buttonLink}
+								displayVideo={displayVideo}
+								buttonLinkTwo={buttonLinkTwo}
+							/>
 						</motion.div>
 					</div>
 				</div>
 			</motion.div>
+			<div className="h-screen bg-white"></div>
 		</>
 	);
 };

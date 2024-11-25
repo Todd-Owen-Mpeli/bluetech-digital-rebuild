@@ -2,17 +2,45 @@
 	@apply p-0 bg-none;
 
 	.container {
-		@apply mx-auto p-4;
+		@apply mx-auto p-0;
 
 		.contentWrapper {
-			@apply sticky w-full h-[96.5vh] m-auto aspect-[9/16] lg:aspect-[16/9] bg-center bg-no-repeat bg-cover;
+			@apply w-full h-full;
 
-			.video {
-				@apply absolute z-10 top-0 left-0 right-0 w-full h-full object-cover overflow-hidden pointer-events-none #{!important};
-			}
+			.content {
+				@apply relative w-full h-screen m-auto aspect-[9/16] lg:aspect-[16/9] bg-darkGrey;
 
-			.card {
-				@apply relative z-10 w-full h-full overflow-x-hidden flex flex-col items-center lg:justify-center transition-all duration-500 ease-in-out;
+				.video {
+					@apply w-full h-full;
+				}
+
+				.heroCard {
+					@apply absolute z-10 top-0 w-full h-full overflow-x-hidden flex flex-col items-center justify-center;
+
+					.content {
+						@apply flex flex-col items-center justify-center gap-6 py-4 px-16 w-full h-full bg-pureBlack/30 hover:bg-pureBlack/80 transition-all duration-500 ease-in-out;
+
+						.title {
+							@apply lg:max-w-5xl mx-auto font-StretchPro text-white uppercase text-8xl lg:text-12xl xl:text-[7.5vw] text-center tracking-[0.02rem] leading-tight lg:leading-[3.75rem] xl:leading-tight;
+						}
+
+						.paragraph {
+							@apply lg:max-w-7xl mx-auto font-StretchPro uppercase text-white text-3xl md:text-6xl lg:text-7xl text-center tracking-[0.02rem] leading-tight md:leading-[3.25rem];
+
+							span {
+								@apply text-tertiary-default;
+							}
+						}
+
+						.buttonStyling {
+							@apply mt-10 w-full flex flex-col md:flex-row lg:items-center lg:justify-center gap-6;
+
+							.button {
+								@apply py-2 px-10 w-fit font-StretchPro cursor-pointer rounded-full capitalize text-medium lg:text-lg tracking-[0.05rem] text-white border-2 border-solid border-white hover:border-tertiary-default hover:bg-tertiary-default transition-all ease-in-out duration-500;
+							}
+						}
+					}
+				}
 			}
 		}
 	}

@@ -5,17 +5,18 @@ import {Dispatch, SetStateAction} from "react";
 // Components
 export namespace IHero {
 	export type IProps = {
+		title: string;
+		paragraph: string;
+		displayVideo: boolean;
 		video: {
-			link: string;
 			title: string;
+			mimeType: string;
+			mediaItemUrl: string;
 			mediaDetails: {
 				width: number;
 				height: number;
 			};
 		};
-		title: string;
-		paragraph: string;
-		displayVideo: boolean;
 		trustedClients: {
 			title: string;
 			textarea: string;
@@ -51,11 +52,12 @@ export namespace IHero {
 		};
 	};
 	export type IVideoCard = {
+		title: IProps[`title`];
 		video: IProps[`video`];
+		paragraph: IProps[`paragraph`];
 		buttonLink: IProps[`buttonLink`];
 		displayVideo: IProps[`displayVideo`];
 		buttonLinkTwo: IProps[`buttonLinkTwo`];
-		videoBackgroundImage: IProps[`videoBackgroundImage`];
 	};
 }
 export namespace INavbar {

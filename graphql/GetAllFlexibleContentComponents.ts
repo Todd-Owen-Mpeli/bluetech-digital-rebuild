@@ -27,8 +27,9 @@ export const getAllFlexibleContentComponents = async (
 												paragraph
 												displayVideo
 												video {
-													link
 													title
+													mimeType
+													mediaItemUrl
 													mediaDetails {
 														height
 														width
