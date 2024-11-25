@@ -1,5 +1,9 @@
 /*===== FONTS =====*/
 @font-face {
+	font-family: StretchPro;
+	src: url("../fonts/StretchPro.woff");
+}
+@font-face {
 	font-family: T1Korium2KG;
 	src: url("../fonts/T1Korium-2KG.woff");
 }
@@ -17,6 +21,7 @@
 }
 
 // Font Stack Properties
+$StretchPro: "StretchPro" !default;
 $T1KoriumVF: "T1KoriumVF" !default;
 $T1Korium2KG: "T1Korium2KG" !default;
 $GanhTypeThin: "GanhTypeThin" !default;

@@ -7,8 +7,8 @@ import {INavbar} from "@/types/components";
 import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
 import useLocaleTime from "@/hooks/useLocaleTime";
+import {initial, stagger} from "@/animations/animations";
 import useScrollPosition from "@/hooks/useScrollPosition";
-import {fadeIn, initial, stagger, initialTwo} from "@/animations/animations";
 
 // Styling
 import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
@@ -30,12 +30,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 	const [ourMissionOpen, setOurMissionOpen] = useState(false);
 
 	return (
-		<nav
-			className={
-				styles.navbar +
-				`  ${scrollPosition > 50 ? "bg-white" : "bg-transparent"}`
-			}
-		>
+		<nav className={styles.navbar}>
 			<div className={styles.container}>
 				<ContentSliceRevealMaskAnimation className={styles.links}>
 					<motion.ul

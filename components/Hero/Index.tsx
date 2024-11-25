@@ -2,6 +2,7 @@
 import {FC} from "react";
 import {motion} from "framer-motion";
 import {IHero} from "@/types/components/index";
+import {useTiltEffect} from "@/hooks/useTiltEffect";
 import {offsetStart, offsetFinish} from "@/animations/animations";
 
 // Styling
@@ -21,32 +22,54 @@ const Hero: FC<IHero.IProps> = ({
 	buttonLinkTwo,
 	videoBackgroundImage,
 }) => {
+	console.log(video);
+
+	// Content wrapper tilt animation effect
+	const {rotateX, rotateY, translateX, translateY} = useTiltEffect();
+
 	return (
 		<>
 			<motion.div className={styles.hero}>
 				<div className={styles.container}>
-					<div className={styles.content}>
-						<Title
-							content={title}
-							className={title ? styles.title : "hidden"}
-						/>
-						<Paragraph
-							fadeIn={false}
-							content={paragraph}
-							offsetStart={offsetStart}
-							offsetFinish={offsetFinish}
-							className={paragraph ? styles.paragraph : "hidden"}
-						/>
-					</div>
-					<div className={styles.bottomContent}>
-						<div className="hidden lg:block w-full lg:w-2/5"></div>
-						<VideoCard
-							video={video}
-							buttonLink={buttonLink}
-							displayVideo={displayVideo}
-							buttonLinkTwo={buttonLinkTwo}
-							videoBackgroundImage={videoBackgroundImage}
-						/>
+					<div className="relative w-full h-full">
+						<motion.div
+							style={{
+								x: translateX,
+								y: translateY,
+								rotateX: `${rotateX}deg`,
+								rotateY: `${rotateY}deg`,
+								transformPerspective: 1000, // Adds perspective for the tilt effect
+								transition: "transform 0.2s ease-out", // Smoother transition
+								backgroundImage: `url("${videoBackgroundImage?.sourceUrl}")`,
+							}}
+							className={styles.contentWrapper}
+						>
+							<motion.video
+								muted
+								autoPlay
+								loop={true}
+								controls={false}
+								playsInline
+								controlsList="nofullscreen"
+								aria-label={`Video Element: ${video?.title}`}
+								className={displayVideo ? styles.video : "hidden"}
+							>
+								<source
+									src={video?.link}
+									type="video/mp4"
+									width={
+										video?.mediaDetails?.width
+											? video?.mediaDetails?.width
+											: 1000
+									}
+									height={
+										video?.mediaDetails?.height
+											? video?.mediaDetails?.height
+											: 550
+									}
+								/>
+							</motion.video>
+						</motion.div>
 					</div>
 				</div>
 			</motion.div>

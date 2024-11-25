@@ -72,6 +72,7 @@ export default {
 				},
 			},
 			fontFamily: {
+				StretchPro: ["StretchPro"],
 				T1KoriumVF: ["T1KoriumVF"],
 				T1Korium2KG: ["T1Korium2KG"],
 				GanhTypeThin: ["GanhTypeThin"],
@@ -82,6 +83,9 @@ export default {
 	plugins: [
 		function ({addUtilities}: PluginAPI) {
 			addUtilities({
+				".font-StretchPro": {
+					fontFamily: '"StretchPro"',
+				},
 				".font-T1KoriumVF": {
 					fontFamily: '"T1KoriumVF"',
 				},

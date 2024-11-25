@@ -19,6 +19,8 @@ const VideoCard: FC<IHero.IVideoCard> = ({
 	buttonLinkTwo,
 	videoBackgroundImage,
 }) => {
+	console.log(video);
+
 	// Content wrapper tilt animation effect
 	const {rotateX, rotateY, translateX, translateY} = useTiltEffect();
 
@@ -46,7 +48,7 @@ const VideoCard: FC<IHero.IVideoCard> = ({
 							controls={false}
 							controlsList="nofullscreen"
 							aria-label={`Video Element: ${video?.title}`}
-							className={displayVideo ? styles.video : "hidden"}
+							className={true ? styles.video : "hidden"}
 						>
 							<source
 								src={video?.link}
