@@ -26,14 +26,36 @@ const Hero: FC<IHero.IProps> = ({
 	// Scale content wrapper
 	const scale = useTransform(scrollY, [0, 400], [1, 0.85]);
 
+	console.log(scale);
+
+	// Content Wrapper & Background Color
+	const backgroundColor = useTransform(
+		scrollY,
+		[0, 100],
+		["rgba(17, 17, 17, 1)", "#000"]
+	);
+
+	// Content wrapper tilt animation effect
+	const {rotateX, rotateY, translateX, translateY} = useTiltEffect();
+
 	return (
 		<>
-			<motion.div ref={container} className={styles.hero}>
+			<motion.div
+				ref={container}
+				className={styles.hero}
+				style={{backgroundColor: backgroundColor}}
+			>
 				<div className={styles.container}>
 					<div className={styles.contentWrapper}>
 						<motion.div
 							style={{
 								scale,
+								x: translateX,
+								y: translateY,
+								rotateX: `${rotateX}deg`,
+								rotateY: `${rotateY}deg`,
+								transformPerspective: 1000,
+								transition: "transform 0.2s ease-out",
 								backgroundImage: `url("${videoBackgroundImage?.sourceUrl}")`,
 							}}
 							className={styles.content}
@@ -50,7 +72,10 @@ const Hero: FC<IHero.IProps> = ({
 					</div>
 				</div>
 			</motion.div>
-			<div className="h-screen bg-white"></div>
+			<motion.div
+				className="h-[50vh] bg-white"
+				style={{backgroundColor: backgroundColor}}
+			></motion.div>
 		</>
 	);
 };

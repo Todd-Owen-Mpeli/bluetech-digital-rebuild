@@ -145,9 +145,7 @@ export namespace IAnimation {
 		styleTextColor?: any;
 		isPageTitle?: boolean;
 	};
-	export type IContentMaskAnimation = {
-		children: React.ReactNode;
-	};
+
 	export type IParagraphTextMaskAnimation = {
 		text: string;
 		className?: string;

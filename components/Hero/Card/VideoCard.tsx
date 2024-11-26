@@ -14,6 +14,7 @@ import {IHero} from "@/types/components";
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
+import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph";
 
 const VideoCard: FC<IHero.IVideoCard> = ({
@@ -51,6 +52,7 @@ const VideoCard: FC<IHero.IVideoCard> = ({
 				className={styles.heroCard}
 			>
 				<div className={styles.content}>
+					<Title content={title} className={title ? styles.title : "hidden"} />
 					<div>
 						<Paragraph
 							fadeIn={false}
