@@ -50,6 +50,8 @@ export const getAllFlexibleContentComponents = async (
 													textarea
 													clientNumber
 													clientsImages {
+														name
+														channelName
 														image {
 															altText
 															sourceUrl

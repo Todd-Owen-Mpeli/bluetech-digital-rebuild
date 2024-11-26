@@ -1,0 +1,26 @@
+<!-- sample rectangle -->
+<svg xmlns="http://www.w3.org/2000/svg" width="408" height="71" fill="none">
+  <mask id="a" width="408" height="71" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha">
+    <path fill="#696969" d="M408 4a4 4 0 0 0-4-4H4a4 4 0 0 0-4 4v63a4 4 0 0 0 4 4h394.418a4 4 0 0 0 2.736-1.082l5.582-5.233A4.002 4.002 0 0 0 408 61.767V4Z"/>
+  </mask>
+  <g mask="url(#a)">
+    <path fill="url(#b)" fill-opacity=".6" fill-rule="evenodd" d="M-45.427 100.291H-71l59.808-64.645L-71-29h25.573l59.808 64.646-59.808 64.645Zm51.229 0h-25.573l59.808-64.645L-19.771-29H5.802L65.61 35.646 5.802 100.29Zm25.655 0H57.03l59.808-64.645L57.03-29H31.457l59.808 64.646-59.808 64.645Zm76.802 0H82.686l59.808-64.645L82.686-29h25.573l59.808 64.646-59.808 64.645Zm23.218 0h26.303l61.517-64.645L157.78-29h-26.303l61.516 64.646-61.516 64.645Zm77.53 0h-26.304l61.517-64.645L182.703-29h26.304l61.517 64.646-61.517 64.645Zm24.927 0h25.573l59.808-64.645L259.507-29h-25.573l59.808 64.646-59.808 64.645Zm76.801 0h-25.573l59.808-64.645L285.162-29h25.573l59.808 64.646-59.808 64.645Zm25.656 0h25.573l59.808-64.645L361.964-29h-25.573l59.808 64.646-59.808 64.645Zm76.801 0h-25.573l59.808-64.645L387.619-29h25.573L473 35.646l-59.808 64.645Z" clip-rule="evenodd"/>
+    <g fill="#fff" filter="url(#c)" style="mix-blend-mode:overlay">
+      <ellipse cx="330" cy="34" rx="110" ry="41"/>
+      <ellipse cx="330" cy="34" rx="110" ry="41"/>
+      <ellipse cx="330" cy="34" rx="110" ry="41"/>
+      <ellipse cx="330" cy="34" rx="110" ry="41"/>
+    </g>
+  </g>
+  <defs>
+    <linearGradient id="b" x1="475.5" x2="-32" y1="9" y2="11.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F2F6"/>
+      <stop offset="1" stop-color="#F0F2F6" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="c" width="612.889" height="474.889" x="23.556" y="-203.444" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur result="effect1_foregroundBlur_9025_28872" stdDeviation="98.222"/>
+    </filter>
+  </defs>
+</svg>

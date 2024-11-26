@@ -22,6 +22,8 @@ export namespace IHero {
 			textarea: string;
 			clientNumber: string;
 			clientsImages: {
+				name: string;
+				channelName: string;
 				image: {
 					altText: string;
 					sourceUrl: string;
@@ -58,6 +60,18 @@ export namespace IHero {
 		buttonLink: IProps[`buttonLink`];
 		displayVideo: IProps[`displayVideo`];
 		buttonLinkTwo: IProps[`buttonLinkTwo`];
+		trustedClients: IProps[`trustedClients`];
+	};
+	export type IClientsImages = {
+		clientsImages: IProps[`trustedClients`][`clientsImages`];
+	};
+	export type IButton = {
+		className: string;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
 	};
 }
 export namespace INavbar {

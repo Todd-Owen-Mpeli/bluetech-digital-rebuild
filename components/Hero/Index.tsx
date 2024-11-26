@@ -17,6 +17,7 @@ const Hero: FC<IHero.IProps> = ({
 	buttonLink,
 	displayVideo,
 	buttonLinkTwo,
+	trustedClients,
 	videoBackgroundImage,
 }) => {
 	// Track the progress of the scroll and scale
@@ -67,6 +68,7 @@ const Hero: FC<IHero.IProps> = ({
 								buttonLink={buttonLink}
 								displayVideo={displayVideo}
 								buttonLinkTwo={buttonLinkTwo}
+								trustedClients={trustedClients}
 							/>
 						</motion.div>
 					</div>
