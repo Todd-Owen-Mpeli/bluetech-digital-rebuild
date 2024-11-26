@@ -44,6 +44,7 @@ export default {
 				pureBlack: "#000",
 				darkGrey: "#8f8f8f",
 				lightGrey: "#f7f7f7",
+				lightBlack: "#292929",
 				lightGreyTwo: "#fafafa",
 
 				primary: {
@@ -57,7 +58,7 @@ export default {
 					default: "#833df4",
 					two: "#7736f1",
 					three: "#622bc7",
-					dark: "#2d2378",
+					dark: "#521cb7",
 				},
 				tertiary: {
 					default: "#ffb000",

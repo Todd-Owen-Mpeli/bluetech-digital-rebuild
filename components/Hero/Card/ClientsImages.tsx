@@ -8,7 +8,6 @@ import {
 	useMotionValue,
 	AnimatePresence,
 } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
 import {FC, Fragment, useState} from "react";
 import {IHero} from "@/types/components";
@@ -80,10 +79,10 @@ const ClientsImages: FC<IHero.IClientsImages> = ({clientsImages}) => {
 										)}
 									</AnimatePresence>
 									<Image
-										alt={item.name}
 										className={styles.image}
-										src={item.image?.sourceUrl}
+										alt={item.image?.altText}
 										onMouseMove={handleMouseMove}
+										src={`${item.image?.sourceUrl}`}
 										width={item.image?.mediaDetails?.width || 1000}
 										height={item.image?.mediaDetails?.height || 1000}
 									/>

@@ -1,124 +1,128 @@
 .hero {
-	@apply p-0 bg-none;
+	@apply pt-0 pb-10 px-0 flex flex-col;
+
+	.videoContainer {
+		@apply h-[63vh] overflow-hidden aspect-[9/16] lg:aspect-[16/9] bg-center bg-no-repeat bg-cover;
+
+		.backgroundVideo {
+			@apply w-full h-full object-cover !pointer-events-none;
+
+			.source {
+				@apply w-full h-full;
+			}
+		}
+	}
 
 	.container {
-		@apply mx-auto p-0;
+		@apply lg:max-w-[1900px] mx-auto pt-2 px-4 flex flex-col gap-24 lg:gap-44;
 
-		.contentWrapper {
-			@apply w-full h-full;
+		.topContent {
+			@apply flex flex-col items-center justify-between gap-6;
 
-			.content {
-				@apply relative w-full h-full lg:h-screen min-h-screen m-auto aspect-[9/16] lg:aspect-[16/9] bg-darkGrey;
+			.subtitle {
+				@apply lg:max-w-6xl mx-auto lg:my-2 font-GanhTypeRegular text-pureBlack text-2xl lg:text-2xl text-center tracking-[0.05rem] leading-tight;
+			}
 
-				.video {
-					@apply w-full h-full;
+			.title {
+				@apply font-T1Korium2KG uppercase text-pureBlack text-12xl lg:text-[9.5vw] text-center tracking-[0.02rem] leading-[5rem] lg:leading-[6.5rem] 2xl:leading-[8.5rem];
+
+				span {
+					@apply text-accent-default;
+				}
+			}
+
+			.paragraph {
+				@apply lg:max-w-6xl mx-auto lg:my-2 font-GanhTypeRegular text-pureBlack text-2xl lg:text-5xl text-center tracking-[-0.02rem] leading-tight;
+
+				span {
+					@apply text-tertiary-default;
+				}
+			}
+
+			.paragraphTwo {
+				@apply lg:max-w-6xl mx-auto lg:my-2 font-GanhTypeRegular text-pureBlack text-2xl lg:text-5xl text-center tracking-[-0.02rem] leading-tight;
+
+				span {
+					@apply underline text-tertiary-default;
+				}
+			}
+
+			.buttonWrapper {
+				@apply mt-10 w-full flex flex-col md:flex-row items-center justify-center lg:justify-start gap-6;
+
+				.buttonStyling {
+					@apply py-2 w-fit mx-auto lg:mx-0;
+
+					.link {
+						@apply py-2 px-10 w-fit font-StretchPro cursor-pointer uppercase text-medium lg:text-lg tracking-[0.05rem] text-pureBlack border-2 border-solid border-pureBlack hover:text-white hover:border-primary-default hover:bg-primary-default transition-all ease-in-out duration-500;
+					}
+				}
+			}
+
+			.trustedClients {
+				@apply w-fit flex flex-col items-baseline justify-between gap-4;
+
+				.textTitle {
+					@apply font-StretchPro text-pureBlack text-lg uppercase text-left tracking-[0.02rem] leading-tight;
 				}
 
-				.heroCard {
-					@apply absolute z-10 top-0 w-full h-full overflow-x-hidden;
+				.clientsImages {
+					@apply w-fit grid grid-cols-12 items-center justify-center;
 
-					.content {
-						@apply flex flex-col items-center justify-between lg:items-baseline gap-6 pt-36 pb-10 px-4 lg:px-12 w-full h-full bg-pureBlack/30 hover:bg-pureBlack/80 transition-all duration-500 ease-in-out;
+					.contentGrid {
+						@apply -mr-4 relative;
 
-						.title {
-							@apply lg:max-w-[85rem] mx-auto lg:mx-0 font-T1KoriumVF uppercase text-white text-12xl lg:text-[8.5vw] text-center lg:text-left tracking-[0.02rem] leading-[5rem] lg:leading-[8.5rem];
-
-							span {
-								@apply text-accent-default;
-							}
-						}
-
-						.paragraph {
-							@apply lg:max-w-6xl mx-auto lg:mx-0 font-GanhTypeRegular text-white text-3xl md:text-6xl lg:text-2xl text-center lg:text-left tracking-[0.02rem] leading-tight;
-
-							span {
-								@apply text-accent-default;
-							}
-						}
-
-						.buttonWrapper {
-							@apply mt-10 w-full flex flex-col md:flex-row items-center justify-center lg:justify-start gap-6;
-
-							.buttonStyling {
-								@apply py-2 w-fit mx-auto lg:mx-0;
-
-								.link {
-									@apply py-2 px-10 w-fit font-StretchPro cursor-pointer uppercase text-medium lg:text-lg tracking-[0.05rem] text-white border-2 border-solid border-white hover:border-primary-default hover:bg-primary-default transition-all ease-in-out duration-500;
-								}
-							}
-						}
-
-						.bottomContent {
-							@apply w-full flex flex-col md:flex-row items-center justify-between gap-6;
+						.content {
+							@apply absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2;
 
 							.div {
-								@apply hidden lg:block w-[70%];
+								@apply absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px;
 							}
 
-							.trustedClients {
-								@apply w-full lg:w-[30%] bg-white/30 rounded-3xl p-6 flex items-center justify-between gap-8  overflow-hidden hover:bg-white/50 transition-all duration-1000 ease-in-out;
+							.divTwo {
+								@apply absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px;
+							}
 
-								.leftSection {
-									@apply w-full flex flex-col items-baseline justify-between gap-4;
+							.name {
+								@apply font-bold text-white relative z-30 text-base;
+							}
 
-									.textTitle {
-										@apply font-StretchPro text-white text-lg uppercase text-left tracking-[0.02rem] leading-tight;
-									}
-
-									.clientsImages {
-										@apply w-fit grid grid-cols-8 items-center justify-center;
-
-										.contentGrid {
-											@apply -mr-4 relative;
-
-											.content {
-												@apply absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2;
-
-												.div {
-													@apply absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px;
-												}
-
-												.divTwo {
-													@apply absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px;
-												}
-
-												.name {
-													@apply font-bold text-white relative z-30 text-base;
-												}
-
-												.channelName {
-													@apply text-white text-xs;
-												}
-											}
-										}
-
-										.image {
-											@apply object-cover !m-0 !p-0 object-top rounded-full h-12 w-12 border-2 group-hover:scale-105 group-hover:z-30 border-white relative transition duration-500;
-										}
-									}
-								}
-
-								.rightSection {
-									@apply h-full flex flex-col items-center justify-between gap-4;
-
-									.stars {
-										@apply flex flex-col gap-2;
-									}
-
-									.total {
-										@apply flex flex-col gap-2;
-
-										.clientNumber {
-											@apply font-StretchPro text-white uppercase text-6xl text-left tracking-[0.02rem] leading-tight;
-										}
-
-										.textarea {
-											@apply font-GanhTypeRegular text-white text-paragraph text-left tracking-[0.05rem] leading-tight;
-										}
-									}
-								}
+							.channelName {
+								@apply text-white text-xs;
 							}
 						}
+					}
+
+					.image {
+						@apply object-cover !m-0 !p-0 object-top rounded-full h-12 w-12 border-2 group-hover:scale-105 group-hover:z-30 border-white relative transition duration-500;
+					}
+				}
+			}
+		}
+
+		.bottomContent {
+			@apply w-full flex flex-col md:flex-row items-start justify-between gap-24 lg:gap-6;
+
+			.leftSection {
+				@apply flex w-full lg:w-1/2;
+
+				.paragraph {
+					@apply lg:max-w-xl mx-auto lg:mx-0 lg:mb-10 font-GanhTypeRegular text-pureBlack text-2xl lg:text-5xl text-center lg:text-left tracking-[-0.02rem] leading-tight;
+
+					span {
+						@apply text-tertiary-default;
+					}
+				}
+			}
+
+			.videoWrapper {
+				@apply w-full lg:w-1/2 flex flex-col items-end justify-between gap-4 overflow-hidden transition-all duration-1000 ease-in-out;
+
+				.video {
+					@apply w-full h-full object-cover overflow-hidden aspect-[16/9] bg-center bg-no-repeat bg-cover !pointer-events-none;
+
+					.source {
+						@apply w-full h-full;
 					}
 				}
 			}

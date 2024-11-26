@@ -75,6 +75,11 @@ export namespace ICustomPostTypes {
 			title: string;
 			target: string;
 		};
+		navbarCtaLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
 		textarea: string;
 		awardsCertificationsGallery: [
 			{
@@ -88,39 +93,6 @@ export namespace ICustomPostTypes {
 		];
 		displayNoticeBanner: boolean;
 		noticeBannerTextarea: string;
-		menuColumnTwo: {
-			title: string;
-			buttonLink: {
-				url: string;
-				title: string;
-				target: string;
-			};
-			image: {
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					width: number;
-					height: number;
-				};
-			};
-		};
-		menuColumnThree: {
-			title: string;
-			paragraph: string;
-			buttonLink: {
-				url: string;
-				title: string;
-				target: string;
-			};
-			backgroundImage: {
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					width: number;
-					height: number;
-				};
-			};
-		};
 		errorPageContent: {
 			title: string;
 			paragraph: string;

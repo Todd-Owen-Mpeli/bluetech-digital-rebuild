@@ -9,7 +9,7 @@ import React, {FC, useEffect, useRef, useCallback} from "react";
 import styles from "@/styles/components/global/BlurryCursorMouse.module.scss";
 
 const BlurryCursorMouse: FC = () => {
-	const size = 50;
+	const size = 25;
 	const circle = useRef<HTMLDivElement>(null);
 	const rafId = useRef<number | null>(null);
 	const mouse = useRef({x: 0, y: 0});
@@ -60,12 +60,12 @@ const BlurryCursorMouse: FC = () => {
 					width: size,
 					height: size,
 					borderRadius: "100%",
-					// backgroundColor: "#111",
+					backgroundColor: "#ffb000",
 					transition: `height 0.3s ease-out, width 0.3s ease-out, filter 0.3s ease-out`,
 				}}
 				className={styles.element}
 			>
-				<span className={styles.wrapper} style={{color: "#00072d"}}>
+				{/* <span className={styles.wrapper} style={{color: "#00072d"}}>
 					<Image
 						width={1000}
 						height={1000}
@@ -73,7 +73,7 @@ const BlurryCursorMouse: FC = () => {
 						alt="Bluetech Digital Ltd Logo"
 						src="/svg/logo/BluetechDigital-Logo-color.svg"
 					/>
-				</span>
+				</span> */}
 			</div>
 		</div>
 	);

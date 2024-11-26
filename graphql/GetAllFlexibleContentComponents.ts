@@ -24,6 +24,7 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												displaySection
 												title
+												subtitle
 												paragraph
 												displayVideo
 												video {
@@ -47,8 +48,6 @@ export const getAllFlexibleContentComponents = async (
 												}
 												trustedClients {
 													title
-													textarea
-													clientNumber
 													clientsImages {
 														name
 														channelName

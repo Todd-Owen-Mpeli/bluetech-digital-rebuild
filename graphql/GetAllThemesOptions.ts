@@ -37,6 +37,11 @@ export const getThemesOptionsContent =
 										title
 										target
 									}
+									navbarCtaLink {
+										url
+										title
+										target
+									}
 									awardsCertificationsGallery {
 										altText
 										sourceUrl
@@ -47,39 +52,6 @@ export const getThemesOptionsContent =
 									}
 									displayNoticeBanner
 									noticeBannerTextarea
-									menuColumnTwo {
-										title
-										image {
-											altText
-											sourceUrl
-											mediaDetails {
-												height
-												width
-											}
-										}
-										buttonLink {
-											url
-											title
-											target
-										}
-									}
-									menuColumnThree {
-										title
-										paragraph
-										buttonLink {
-											url
-											title
-											target
-										}
-										backgroundImage {
-											altText
-											sourceUrl
-											mediaDetails {
-												height
-												width
-											}
-										}
-									}
 									errorPageContent {
 										displaySection
 										title

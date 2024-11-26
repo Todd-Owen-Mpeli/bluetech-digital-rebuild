@@ -6,6 +6,7 @@ import {Dispatch, SetStateAction} from "react";
 export namespace IHero {
 	export type IProps = {
 		title: string;
+		subtitle: string;
 		paragraph: string;
 		displayVideo: boolean;
 		video: {
@@ -19,8 +20,6 @@ export namespace IHero {
 		};
 		trustedClients: {
 			title: string;
-			textarea: string;
-			clientNumber: string;
 			clientsImages: {
 				name: string;
 				channelName: string;
@@ -61,6 +60,13 @@ export namespace IHero {
 		displayVideo: IProps[`displayVideo`];
 		buttonLinkTwo: IProps[`buttonLinkTwo`];
 		trustedClients: IProps[`trustedClients`];
+		videoBackgroundImage: IProps[`videoBackgroundImage`];
+	};
+	export type ITopVideoContainer = {
+		video: IProps[`video`];
+		scale: MotionValue<number>;
+		displayVideo: IProps[`displayVideo`];
+		videoBackgroundImage: IProps[`videoBackgroundImage`];
 	};
 	export type IClientsImages = {
 		clientsImages: IProps[`trustedClients`][`clientsImages`];
