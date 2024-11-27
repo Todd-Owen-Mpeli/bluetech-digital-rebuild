@@ -5,7 +5,7 @@ import DOMPurify from "isomorphic-dompurify";
 import {IElements} from "@/types/components/index";
 import {fadeIn, initialTwo} from "@/animations/animations";
 
-const Title: FC<IElements.ITitle> = ({content, className}) => {
+const Title: FC<IElements.ITitle> = ({content, className, styleTextColor}) => {
 	/* Sanitize the WYSIWYG title content */
 	function createTitleMarkup(titleContent: string) {
 		return {
@@ -18,7 +18,10 @@ const Title: FC<IElements.ITitle> = ({content, className}) => {
 			initial={initialTwo}
 			whileInView={fadeIn}
 			viewport={{once: true}}
-			className={content ? `block ${className}` : `hidden`}
+			style={{
+				color: styleTextColor,
+			}}
+			className={content ? className : `hidden`}
 			dangerouslySetInnerHTML={createTitleMarkup(content)}
 		/>
 	);

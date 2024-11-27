@@ -131,6 +131,7 @@ export namespace IElements {
 	export type ITitle = {
 		content: string;
 		className: string;
+		styleTextColor?: MotionValue<string> | string;
 	};
 	export type IParagraph = {
 		fadeIn?: boolean;

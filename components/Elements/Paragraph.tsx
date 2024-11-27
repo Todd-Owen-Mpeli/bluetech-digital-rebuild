@@ -1,28 +1,42 @@
 // Imports
-import {FC} from "react";
-import {motion} from "framer-motion";
+import {FC, useRef} from "react";
 import DOMPurify from "isomorphic-dompurify";
+import {motion, useScroll} from "framer-motion";
 import {IElements} from "@/types/components/index";
-import {fadeIn, initialTwo} from "@/animations/animations";
 
 // Styling
 import styles from "@/styles/components/Elements/Paragraph.module.scss";
 
-const Paragraph: FC<IElements.IParagraph> = ({content, className}) => {
+const Paragraph: FC<IElements.IParagraph> = ({
+	fadeIn,
+	content,
+	className,
+	offsetStart,
+	offsetFinish,
+	styleTextColor,
+}) => {
+	const container = useRef(null);
+
+	const {scrollYProgress} = useScroll({
+		target: container,
+		offset: [`start ${offsetStart || 0.9}`, `start ${offsetFinish || 0.5}`],
+	});
+
 	/* Sanitize the WYSIWYG paragraph content */
-	function createParagraphMarkup(paragraphContent: string) {
+	const createParagraphMarkup = (paragraphContent: string) => {
 		return {
 			__html: DOMPurify.sanitize(paragraphContent),
 		};
-	}
-
+	};
 	return (
 		<motion.div
-			initial={initialTwo}
-			whileInView={fadeIn}
-			viewport={{once: true}}
-			className={content ? styles.paragraph + ` block ${className}` : `hidden`}
+			ref={container}
+			style={{
+				color: styleTextColor || "",
+				opacity: fadeIn ? scrollYProgress : 1,
+			}}
 			dangerouslySetInnerHTML={createParagraphMarkup(content)}
+			className={content ? styles.paragraph + ` block ${className}` : `hidden`}
 		/>
 	);
 };

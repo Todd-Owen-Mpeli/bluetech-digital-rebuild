@@ -19,6 +19,26 @@
 	font-family: GanhTypeRegular;
 	src: url("../fonts/GanhTypeRegular.woff");
 }
+@font-face {
+	font-family: BGAPBold;
+	src: url("../fonts/BasisGrotesqueArabicPro-Bold.woff");
+}
+@font-face {
+	font-family: BGAPBlack;
+	src: url("../fonts/BasisGrotesqueArabicPro-Black.woff");
+}
+@font-face {
+	font-family: BGAPLight;
+	src: url("../fonts/BasisGrotesqueArabicPro-Light.woff");
+}
+@font-face {
+	font-family: BGAPMedium;
+	src: url("../fonts/BasisGrotesqueArabicPro-Medium.woff");
+}
+@font-face {
+	font-family: BGAPRegular;
+	src: url("../fonts/BasisGrotesqueArabicPro-Regular.woff");
+}
 
 // Font Stack Properties
 $StretchPro: "StretchPro" !default;
@@ -26,3 +46,8 @@ $T1KoriumVF: "T1KoriumVF" !default;
 $T1Korium2KG: "T1Korium2KG" !default;
 $GanhTypeThin: "GanhTypeThin" !default;
 $GanhTypeRegular: "GanhTypeRegular" !default;
+$BGAPBold: "BGAPBold" !default;
+$BGAPBlack: "BGAPBlack" !default;
+$BGAPLight: "BGAPLight" !default;
+$BGAPMedium: "BGAPMedium" !default;
+$BGAPRegular: "BGAPRegular" !default;

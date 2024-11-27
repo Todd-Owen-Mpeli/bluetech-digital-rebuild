@@ -1,18 +1,7 @@
 // Imports
-import {
-	fadeIn,
-	initial,
-	fadeInUp,
-	initialTwo,
-	offsetStart,
-	offsetFinish,
-	slideInLeftInitial,
-	slideInRightFinish,
-	slideInRightInitial,
-} from "@/animations/animations";
-import Link from "next/link";
 import {FC, useRef} from "react";
 import {IHero} from "@/types/components/index";
+import {fadeIn, initialTwo} from "@/animations/animations";
 import {motion, useScroll, useTransform} from "framer-motion";
 
 // Styling
@@ -20,10 +9,8 @@ import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
 import Title from "@/components/Elements/Title";
-import Paragraph from "@/components/Elements/Paragraph";
 import VideoCard from "@/components/Hero/Card/VideoCard";
 import ClientsImages from "@/components/Hero/Card/ClientsImages";
-import TextBlurScrollEffect from "@/components/Animations/TextBlurScrollEffect";
 
 const TopVideoContainer: FC<IHero.ITopVideoContainer> = ({
 	scale,
@@ -52,10 +39,10 @@ const TopVideoContainer: FC<IHero.ITopVideoContainer> = ({
 				>
 					<source
 						className={styles.source}
-						src={"/video/playgoals.com-Hero-Gameplay-Video.mp4"}
 						type={video?.mimeType || "video/mp4"}
 						width={video?.mediaDetails?.width || 1000}
 						height={video?.mediaDetails?.height || 1000}
+						src={"/video/playgoals.com-Hero-Gameplay-Video.mp4"}
 					/>
 				</motion.video>
 			</motion.div>
@@ -81,12 +68,11 @@ const Hero: FC<IHero.IProps> = ({
 	// Scale content wrapper
 	const scale = useTransform(scrollY, [0, 400], [1, 0.75]);
 
-	// Content Wrapper & Background Color
-	const backgroundColor = useTransform(
-		scrollY,
-		[0, 100],
-		["#ffffff", "#fafafa"]
-	);
+	// Background Color
+	const titleColor = useTransform(scrollY, [0, 100], ["#833df4", "#ffb000"]);
+
+	// Background Color
+	const backgroundColor = useTransform(scrollY, [0, 100], ["#000", "#521cb7"]);
 
 	return (
 		<>
@@ -104,12 +90,7 @@ const Hero: FC<IHero.IProps> = ({
 					videoBackgroundImage={videoBackgroundImage}
 				/>
 				<div className={styles.container}>
-					<motion.div
-						viewport={{once: false}}
-						initial={slideInLeftInitial}
-						className={styles.topContent}
-						whileInView={slideInRightFinish}
-					>
+					<div className={styles.content}>
 						<motion.h4
 							initial={initialTwo}
 							whileInView={fadeIn}
@@ -120,19 +101,8 @@ const Hero: FC<IHero.IProps> = ({
 						</motion.h4>
 						<Title
 							content={title}
+							styleTextColor={titleColor}
 							className={title ? styles.title : "hidden"}
-						/>
-						<Paragraph
-							fadeIn={false}
-							content={paragraph}
-							offsetStart={offsetStart}
-							offsetFinish={offsetFinish}
-							className={paragraph ? styles.paragraph : "hidden"}
-						/>
-
-						<TextBlurScrollEffect
-							content={paragraph}
-							className={styles.paragraphTwo}
 						/>
 
 						<div
@@ -151,21 +121,20 @@ const Hero: FC<IHero.IProps> = ({
 							</motion.h4>
 							<ClientsImages clientsImages={trustedClients?.clientsImages} />
 						</div>
-					</motion.div>
-
-					{/* <VideoCard
-						title={title}
-						video={video}
-						paragraph={paragraph}
-						buttonLink={buttonLink}
-						displayVideo={displayVideo}
-						buttonLinkTwo={buttonLinkTwo}
-						trustedClients={trustedClients}
-						videoBackgroundImage={videoBackgroundImage}
-					/> */}
+					</div>
 				</div>
+				<VideoCard
+					title={title}
+					video={video}
+					paragraph={paragraph}
+					buttonLink={buttonLink}
+					displayVideo={displayVideo}
+					buttonLinkTwo={buttonLinkTwo}
+					trustedClients={trustedClients}
+					videoBackgroundImage={videoBackgroundImage}
+				/>
+				<div className="bg-pureBlack h-screen"></div>
 			</motion.div>
-			<motion.div className="h-[50vh] bg-white" />
 		</>
 	);
 };

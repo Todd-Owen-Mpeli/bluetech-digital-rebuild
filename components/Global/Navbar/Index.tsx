@@ -16,7 +16,6 @@ import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
 // Components
 import OurMissionNav from "@/components/Global/Navbar/Element/OurMissionNav";
 import NavbarMenuLinks from "@/components/Global/Navbar/Element/NavbarMenuLinks";
-import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 // Animation Variants
 export type IRevealAnimation = {

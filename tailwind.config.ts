@@ -57,8 +57,8 @@ export default {
 				accent: {
 					default: "#833df4",
 					two: "#7736f1",
-					three: "#622bc7",
-					dark: "#521cb7",
+					dark: "#622bc7",
+					darker: "#521cb7",
 				},
 				tertiary: {
 					default: "#ffb000",
@@ -78,6 +78,11 @@ export default {
 				T1Korium2KG: ["T1Korium2KG"],
 				GanhTypeThin: ["GanhTypeThin"],
 				GanhTypeRegular: ["GanhTypeRegular"],
+				BGAPBold: ["BGAPBold"],
+				BGAPBlack: ["BGAPBlack"],
+				BGAPLight: ["BGAPLight"],
+				BGAPMedium: ["BGAPMedium"],
+				BGAPRegular: ["BGAPRegular"],
 			},
 		},
 	},
@@ -98,6 +103,21 @@ export default {
 				},
 				".font-GanhTypeRegular": {
 					fontFamily: '"GanhTypeRegular"',
+				},
+				".font-BGAPBold": {
+					fontFamily: '"BGAPBold"',
+				},
+				".font-BGAPBlack": {
+					fontFamily: '"BGAPBlack"',
+				},
+				".font-BGAPLight": {
+					fontFamily: '"BGAPLight"',
+				},
+				".font-BGAPMedium": {
+					fontFamily: '"BGAPMedium"',
+				},
+				".font-BGAPRegular": {
+					fontFamily: '"BGAPRegular"',
 				},
 			} as CSSRuleObject);
 		},

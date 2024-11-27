@@ -10,11 +10,12 @@ import {
 	slideInRightFinish,
 	slideInRightInitial,
 } from "@/animations/animations";
-import {FC} from "react";
 import Link from "next/link";
-import {motion} from "framer-motion";
+import Image from "next/image";
+import {FC, useRef} from "react";
 import {IHero} from "@/types/components";
 import {useTiltEffect} from "@/hooks/useTiltEffect";
+import {motion, useScroll, useTransform} from "framer-motion";
 
 // Styling
 import styles from "@/components/Hero/styles/Hero.module.scss";
@@ -23,6 +24,7 @@ import styles from "@/components/Hero/styles/Hero.module.scss";
 import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph";
 import ClientsImages from "@/components/Hero/Card/ClientsImages";
+import TextBlurScrollEffect from "@/components/Animations/TextBlurScrollEffect";
 
 const Button: FC<IHero.IButton> = ({buttonLink, className}) => {
 	return (
@@ -56,56 +58,25 @@ const VideoCard: FC<IHero.IVideoCard> = ({
 	trustedClients,
 	videoBackgroundImage,
 }) => {
-	// Content wrapper tilt animation effect
-	const {rotateX, rotateY, translateX, translateY} = useTiltEffect();
-
 	return (
 		<>
-			<div className={styles.bottomContent}>
-				<div className={styles.leftSection}>
-					<Paragraph
-						fadeIn={false}
-						content={paragraph}
-						offsetStart={offsetStart}
-						offsetFinish={offsetFinish}
-						className={paragraph ? styles.paragraph : "hidden"}
-					/>
-				</div>
-				<motion.div
-					viewport={{once: false}}
-					initial={slideInRightInitial}
-					whileInView={slideInRightFinish}
-					className={styles.videoWrapper}
-					style={{
-						x: translateX,
-						y: translateY,
-						rotateX: `${rotateX}deg`,
-						rotateY: `${rotateY}deg`,
-						transformPerspective: 200,
-						transition: "transform 0.2s ease-out",
-						backgroundImage: `url("${videoBackgroundImage?.sourceUrl}")`,
-					}}
-				>
-					<motion.video
-						muted
-						controls
-						autoPlay
-						loop={true}
-						playsInline
-						controlsList="nofullscreen"
-						aria-label={`Video Element: ${video?.title}`}
-						className={displayVideo ? styles.video : "hidden"}
-					>
-						<source
-							className={styles.source}
-							src={"/video/playgoals.com-Hero-Gameplay-Video.mp4"}
-							// src={video?.mediaItemUrl}
-							type={video?.mimeType || "video/mp4"}
-							width={video?.mediaDetails?.width || 1000}
-							height={video?.mediaDetails?.height || 1000}
+			<div className={styles.zoomParallax}>
+				<div className={styles.content}>
+					<div className={styles.topSection}>
+						<Paragraph
+							fadeIn={true}
+							content={paragraph}
+							offsetStart={offsetStart}
+							offsetFinish={offsetFinish}
+							className={paragraph ? styles.paragraph : "hidden"}
 						/>
-					</motion.video>
-				</motion.div>
+						<TextBlurScrollEffect
+							content={`For <span>Creators</span> by <span>Creators</span>`}
+							className={styles.subtitle}
+						/>
+					</div>
+					<div className=""></div>
+				</div>
 			</div>
 		</>
 	);

@@ -9,8 +9,8 @@ import {
 	AnimatePresence,
 } from "framer-motion";
 import Image from "next/image";
-import {FC, Fragment, useState} from "react";
 import {IHero} from "@/types/components";
+import {FC, Fragment, useState} from "react";
 
 // Styling
 import styles from "@/components/Hero/styles/Hero.module.scss";
