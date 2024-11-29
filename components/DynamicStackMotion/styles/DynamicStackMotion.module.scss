@@ -10,13 +10,69 @@
 	}
 
 	.stackContainer {
-		@apply w-full;
+		@apply w-full h-full py-10;
 
-		.content {
-			@apply w-full;
+		.wrapper {
+			position: relative;
+			perspective: 1000px;
 
-			.card {
-				@apply w-full;
+			.content {
+				width: 100vw;
+				position: relative;
+				transform-style: preserve-3d;
+				display: grid;
+				grid-template-areas: "card";
+				grid-template-columns: 100%;
+				place-items: center;
+
+				.card {
+					@apply bg-cover bg-center bg-no-repeat;
+					background: rgba(132, 128, 143, 0.36);
+					box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.8);
+					width: 30vw;
+					max-width: 255px;
+					min-width: 150px;
+					aspect-ratio: 2/3;
+					font-size: 9px;
+					text-transform: uppercase;
+					padding: 5px;
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					border-radius: 10px;
+					position: relative;
+					align-items: stretch;
+					outline: 1px solid var(--color-card);
+					background: var(--color-bg-card);
+					grid-template-areas: "card-img card-img" "card-title card-meta" "card-subtitle card-subtitle" "card-desc card-desc";
+				}
+
+				.card:nth-child(1n) {
+					--color-card: var(--color-card-1);
+				}
+
+				.card:nth-child(2n) {
+					--color-card: var(--color-card-2);
+				}
+
+				.card:nth-child(3n) {
+					--color-card: var(--color-card-3);
+				}
+
+				.card:nth-child(4n) {
+					--color-card: var(--color-card-4);
+				}
+
+				.card:nth-child(5n) {
+					--color-card: var(--color-card-5);
+				}
+
+				.card:nth-child(6n) {
+					--color-card: var(--color-card-6);
+				}
+
+				.card > * {
+					background-color: var(--color-bg-card-inner);
+				}
 			}
 		}
 	}

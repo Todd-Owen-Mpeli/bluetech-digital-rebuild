@@ -32,7 +32,7 @@ const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 		>
 			{/* Cookie Policy Pop Up */}
 			{/* <PostHogContextProvider /> */}
-			<motion.div
+			<motion.main
 				exit={{
 					opacity: 0,
 				}}
@@ -40,7 +40,7 @@ const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 				animate="animate"
 			>
 				{children}
-			</motion.div>
+			</motion.main>
 			{/* Vercel Analytics */}
 			<Analytics />
 			{/* Vercel Speed Insights */}

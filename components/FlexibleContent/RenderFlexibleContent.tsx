@@ -24,18 +24,21 @@ const RenderFlexibleContent: FC = () => {
 		<>
 			{content?.content?.length > 0 &&
 				content?.content?.map((item: any, index: number) => (
-					<section
-						key={index}
-						className={item?.displaySection ? "block" : "hidden"}
-					>
-						{componentMap[item?.fieldGroupName] && (
-							<Fragment>
-								{React.createElement(componentMap[item?.fieldGroupName], {
-									...item,
-								})}
-							</Fragment>
+					<Fragment key={index}>
+						{item?.displaySection ? (
+							<section>
+								{componentMap[item?.fieldGroupName] && (
+									<>
+										{React.createElement(componentMap[item?.fieldGroupName], {
+											...item,
+										})}
+									</>
+								)}
+							</section>
+						) : (
+							<></>
 						)}
-					</section>
+					</Fragment>
 				))}
 		</>
 	);

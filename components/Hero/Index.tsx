@@ -83,7 +83,7 @@ const TopVideoContainer: FC<IHero.ITopVideoContainer> = ({
 						type={video?.mimeType || "video/mp4"}
 						width={video?.mediaDetails?.width || 1000}
 						height={video?.mediaDetails?.height || 1000}
-						src={"/video/playgoals.com-Hero-Gameplay-Video.mp4"}
+						src={"/video/AC3-studio.com-showreel-video.mp4"}
 					/>
 				</motion.video>
 			</motion.div>

@@ -16,7 +16,7 @@ const SmoothScrolling: FC<ISmoothScrolling> = ({children}) => {
 				//   syncTouch: true,
 			}}
 		>
-			<main>{children}</main>
+			{children}
 		</ReactLenis>
 	);
 };
