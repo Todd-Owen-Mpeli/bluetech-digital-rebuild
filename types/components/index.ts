@@ -1,7 +1,6 @@
-import {slideInLeftInitial} from "./../../animations/animations";
 // Imports
 import {MotionValue} from "framer-motion";
-import {Dispatch, SetStateAction} from "react";
+import {Dispatch, RefObject, SetStateAction} from "react";
 
 // Components
 export namespace IHero {
@@ -72,6 +71,40 @@ export namespace IHero {
 		scale: MotionValue<number>;
 		displayVideo: IProps[`displayVideo`];
 		videoBackgroundImage: IProps[`videoBackgroundImage`];
+	};
+}
+
+export namespace IDynamicStackMotion {
+	export type IProps = {
+		title: string;
+		subtitle: string;
+		paragraph: string;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		buttonLinkTwo: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		stackMotionGrid: {
+			title: string;
+			paragraph: string;
+			image: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					height: number;
+					width: number;
+				};
+			};
+		}[];
+	};
+	export type I3DStackMotion = {
+		wrapperRef: RefObject<HTMLDivElement>;
+		stackMotionGrid: IProps[`stackMotionGrid`];
 	};
 }
 export namespace INavbar {
