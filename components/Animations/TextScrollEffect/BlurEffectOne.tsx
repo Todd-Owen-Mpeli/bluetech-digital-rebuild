@@ -8,7 +8,7 @@ import DOMPurify from "isomorphic-dompurify";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 // Text Blur Scroll Effect Reveal Animation
-type ITextBlurScrollEffect = {
+type IBlurEffectOne = {
 	content: string;
 	className?: string;
 };
@@ -16,10 +16,7 @@ type ITextBlurScrollEffect = {
 // Register the ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
 
-const TextBlurScrollEffect: FC<ITextBlurScrollEffect> = ({
-	content,
-	className,
-}) => {
+const BlurEffectOne: FC<IBlurEffectOne> = ({content, className}) => {
 	/* Sanitize the WYSIWYG paragraph content */
 	const createParagraphMarkup = (paragraphContent: string) => {
 		return {
@@ -63,14 +60,12 @@ const TextBlurScrollEffect: FC<ITextBlurScrollEffect> = ({
 	}, []);
 
 	return (
-		<>
-			<motion.div
-				ref={wordsRef}
-				className={content ? className : `hidden`}
-				dangerouslySetInnerHTML={createParagraphMarkup(content)}
-			/>
-		</>
+		<motion.div
+			ref={wordsRef}
+			className={content ? className : `hidden`}
+			dangerouslySetInnerHTML={createParagraphMarkup(content)}
+		/>
 	);
 };
 
-export default TextBlurScrollEffect;
+export default BlurEffectOne;

@@ -1,3 +1,4 @@
+import {slideInLeftInitial} from "./../../animations/animations";
 // Imports
 import {MotionValue} from "framer-motion";
 import {Dispatch, SetStateAction} from "react";
@@ -8,6 +9,7 @@ export namespace IHero {
 		title: string;
 		subtitle: string;
 		paragraph: string;
+		actionTitle: string;
 		displayVideo: boolean;
 		video: {
 			title: string;
@@ -52,32 +54,24 @@ export namespace IHero {
 			};
 		};
 	};
-	export type IVideoCard = {
-		title: IProps[`title`];
-		video: IProps[`video`];
-		paragraph: IProps[`paragraph`];
-		buttonLink: IProps[`buttonLink`];
-		displayVideo: IProps[`displayVideo`];
-		buttonLinkTwo: IProps[`buttonLinkTwo`];
-		trustedClients: IProps[`trustedClients`];
-		videoBackgroundImage: IProps[`videoBackgroundImage`];
+	export type IButton = {
+		className: string;
+		slideInLeftAnimation?: boolean;
+		slideInRightAnimation?: boolean;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
+	};
+	export type IClientsImages = {
+		clientsImages: IProps[`trustedClients`][`clientsImages`];
 	};
 	export type ITopVideoContainer = {
 		video: IProps[`video`];
 		scale: MotionValue<number>;
 		displayVideo: IProps[`displayVideo`];
 		videoBackgroundImage: IProps[`videoBackgroundImage`];
-	};
-	export type IClientsImages = {
-		clientsImages: IProps[`trustedClients`][`clientsImages`];
-	};
-	export type IButton = {
-		className: string;
-		buttonLink: {
-			url: string;
-			title: string;
-			target: string;
-		};
 	};
 }
 export namespace INavbar {

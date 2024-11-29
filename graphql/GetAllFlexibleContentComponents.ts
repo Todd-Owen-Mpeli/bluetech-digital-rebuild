@@ -26,6 +26,7 @@ export const getAllFlexibleContentComponents = async (
 												title
 												subtitle
 												paragraph
+												actionTitle
 												displayVideo
 												video {
 													title

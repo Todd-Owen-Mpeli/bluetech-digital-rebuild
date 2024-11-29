@@ -2,7 +2,7 @@
 	@apply relative p-0 flex flex-col;
 
 	.videoContainer {
-		@apply h-[62vh] overflow-hidden aspect-[9/16] lg:aspect-[16/9] bg-center bg-no-repeat bg-cover;
+		@apply h-[50vh] lg:h-[60vh] overflow-hidden aspect-[9/16] lg:aspect-[16/9] bg-center bg-no-repeat bg-cover;
 
 		.backgroundVideo {
 			@apply w-full h-full object-cover !pointer-events-none;
@@ -14,10 +14,10 @@
 	}
 
 	.container {
-		@apply lg:max-w-[1900px] mx-auto pt-2 pb-28 px-4 flex flex-col gap-24 lg:gap-44;
+		@apply lg:max-w-[1900px] mx-auto pt-2 pb-14 px-4 flex flex-col gap-24 lg:gap-44;
 
 		.content {
-			@apply flex flex-col items-center justify-between gap-6;
+			@apply flex flex-col items-center justify-between gap-10;
 
 			.subtitle {
 				@apply lg:my-2 font-BGAPRegular text-white text-2xl lg:text-5xl text-center tracking-[0.05rem] leading-tight;
@@ -31,11 +31,23 @@
 				}
 			}
 
+			.buttonWrapper {
+				@apply w-full flex flex-col md:flex-row items-center justify-center gap-10 lg:gap-6;
+
+				.buttonStyling {
+					@apply py-2 w-fit mx-auto lg:mx-0;
+
+					.link {
+						@apply py-4 px-10 w-fit font-StretchPro cursor-pointer uppercase text-medium lg:text-lg tracking-[0.05rem] text-white border-2 border-solid border-white hover:border-pureBlack hover:bg-pureBlack transition-all ease-in-out duration-500;
+					}
+				}
+			}
+
 			.trustedClients {
 				@apply w-fit flex flex-col items-center justify-between gap-4;
 
 				.textTitle {
-					@apply font-StretchPro text-white text-xl uppercase text-left tracking-[0.02rem] leading-tight;
+					@apply font-StretchPro text-white text-xl uppercase text-center tracking-[0.02rem] leading-tight;
 				}
 
 				.clientsImages {
@@ -73,70 +85,29 @@
 		}
 	}
 
-	// Zoom Content Scale section
-	.zoomParallax {
-		@apply bg-pureBlack w-full min-h-screen p-6 lg:px-16 flex flex-col items-center justify-center;
+	.bottomContent {
+		@apply bg-pureBlack w-full min-h-screen px-6 pb-12 pt-44 lg:pt-64 lg:px-16;
 
 		.content {
-			@apply flex flex-col;
+			@apply flex flex-col items-center justify-center gap-6 lg:gap-24;
 
-			.topSection {
-				@apply w-full flex flex-col gap-16;
+			.subtitle {
+				@apply mt-20  font-T1Korium2KG uppercase italic text-white text-12xl md:text-[20vw] lg:text-[17.5vw] text-center tracking-[0.05rem] leading-tight md:leading-[9rem] lg:leading-[17.5rem];
 
-				.subtitle {
-					@apply lg:my-2 font-T1Korium2KG uppercase italic text-white text-12xl lg:text-[9.5vw] text-center tracking-[0.05rem] leading-tight lg:leading-[8.5rem];
+				span {
+					@apply text-tertiary-default;
 
-					span {
-						@apply text-tertiary-default;
-					}
-				}
-
-				.paragraph {
-					@apply lg:max-w-6xl mx-auto lg:my-2 font-GanhTypeRegular text-white text-2xl lg:text-7xl text-center tracking-[-0.02rem] leading-tight;
-
-					span {
-						@apply text-tertiary-default;
-					}
-				}
-
-				.buttonWrapper {
-					@apply mt-10 w-full flex flex-col md:flex-row items-center justify-center lg:justify-start gap-6;
-
-					.buttonStyling {
-						@apply py-2 w-fit mx-auto lg:mx-0;
-
-						.link {
-							@apply py-2 px-10 w-fit font-StretchPro cursor-pointer uppercase text-medium lg:text-lg tracking-[0.05rem] text-pureBlack border-2 border-solid border-pureBlack hover:text-white hover:border-primary-default hover:bg-primary-default transition-all ease-in-out duration-500;
-						}
+					strong {
+						@apply font-normal text-accent-default;
 					}
 				}
 			}
 
-			.bottomSection {
-				@apply flex w-full lg:w-1/2;
+			.paragraph {
+				@apply font-BGAPRegular text-white text-7xl lg:text-[5vw] text-left tracking-[-0.02rem] leading-tight lg:leading-[6rem];
 
-				.leftSection {
-					@apply flex w-full lg:w-1/2;
-
-					.paragraph {
-						@apply lg:max-w-xl mx-auto lg:mx-0 lg:mb-10 font-GanhTypeRegular text-pureBlack text-2xl lg:text-5xl text-center lg:text-left tracking-[-0.02rem] leading-tight;
-
-						span {
-							@apply text-tertiary-default;
-						}
-					}
-				}
-
-				.videoWrapper {
-					@apply w-full lg:w-1/2 flex flex-col items-end justify-between gap-4 overflow-hidden transition-all duration-1000 ease-in-out;
-
-					.video {
-						@apply w-full h-full object-cover overflow-hidden aspect-[16/9] bg-center bg-no-repeat bg-cover !pointer-events-none;
-
-						.source {
-							@apply w-full h-full;
-						}
-					}
+				span {
+					@apply mx-2 inline-block;
 				}
 			}
 		}

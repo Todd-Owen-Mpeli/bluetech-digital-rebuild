@@ -1,7 +1,14 @@
 // Imports
+import {
+	fadeIn,
+	initialTwo,
+	slideInLeftInitial,
+	slideInRightFinish,
+	slideInRightInitial,
+} from "@/animations/animations";
+import Link from "next/link";
 import {FC, useRef} from "react";
 import {IHero} from "@/types/components/index";
-import {fadeIn, initialTwo} from "@/animations/animations";
 import {motion, useScroll, useTransform} from "framer-motion";
 
 // Styling
@@ -9,8 +16,42 @@ import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
 import Title from "@/components/Elements/Title";
-import VideoCard from "@/components/Hero/Card/VideoCard";
 import ClientsImages from "@/components/Hero/Card/ClientsImages";
+import BlurEffectTwo from "@/components/Animations/TextScrollEffect/BlurEffectTwo";
+import BlurEffectOne from "@/components/Animations/TextScrollEffect/BlurEffectOne";
+
+const Button: FC<IHero.IButton> = ({
+	buttonLink,
+	className,
+	slideInLeftAnimation,
+	slideInRightAnimation,
+}) => {
+	return (
+		<>
+			<motion.button
+				viewport={{once: false}}
+				initial={
+					slideInLeftAnimation
+						? slideInLeftInitial
+						: slideInRightAnimation
+						? slideInRightInitial
+						: ""
+				}
+				whileInView={slideInRightFinish}
+				className={buttonLink?.url ? className : "hidden"}
+			>
+				<Link
+					className={styles.link}
+					href={`${buttonLink?.url}`}
+					target={buttonLink?.target}
+					aria-label={`${buttonLink?.title}`}
+				>
+					{buttonLink?.title}
+				</Link>
+			</motion.button>
+		</>
+	);
+};
 
 const TopVideoContainer: FC<IHero.ITopVideoContainer> = ({
 	scale,
@@ -56,6 +97,7 @@ const Hero: FC<IHero.IProps> = ({
 	subtitle,
 	paragraph,
 	buttonLink,
+	actionTitle,
 	displayVideo,
 	buttonLinkTwo,
 	trustedClients,
@@ -104,7 +146,6 @@ const Hero: FC<IHero.IProps> = ({
 							styleTextColor={titleColor}
 							className={title ? styles.title : "hidden"}
 						/>
-
 						<div
 							className={styles.trustedClients}
 							style={{
@@ -121,19 +162,26 @@ const Hero: FC<IHero.IProps> = ({
 							</motion.h4>
 							<ClientsImages clientsImages={trustedClients?.clientsImages} />
 						</div>
+						<div className={styles.buttonWrapper}>
+							<Button
+								buttonLink={buttonLink}
+								slideInLeftAnimation={true}
+								className={styles.buttonStyling}
+							/>
+							<Button
+								buttonLink={buttonLinkTwo}
+								slideInRightAnimation={true}
+								className={styles.buttonStyling}
+							/>
+						</div>
 					</div>
 				</div>
-				<VideoCard
-					title={title}
-					video={video}
-					paragraph={paragraph}
-					buttonLink={buttonLink}
-					displayVideo={displayVideo}
-					buttonLinkTwo={buttonLinkTwo}
-					trustedClients={trustedClients}
-					videoBackgroundImage={videoBackgroundImage}
-				/>
-				<div className="bg-pureBlack h-screen"></div>
+				<div className={styles.bottomContent}>
+					<div className={styles.content}>
+						<BlurEffectTwo content={paragraph} className={styles.paragraph} />
+						<BlurEffectOne content={actionTitle} className={styles.subtitle} />
+					</div>
+				</div>
 			</motion.div>
 		</>
 	);
