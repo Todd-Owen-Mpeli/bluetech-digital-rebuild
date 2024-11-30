@@ -53,7 +53,7 @@ export namespace IHero {
 			};
 		};
 	};
-	export type IButton = {
+	export type IHeroButton = {
 		className: string;
 		slideInLeftAnimation?: boolean;
 		slideInRightAnimation?: boolean;
@@ -63,10 +63,18 @@ export namespace IHero {
 			target: string;
 		};
 	};
+	export type IMainContent = {
+		title: IProps[`title`];
+		subtitle: IProps[`subtitle`];
+		titleColor: MotionValue<string>;
+		buttonLink: IProps[`buttonLink`];
+		buttonLinkTwo: IProps[`buttonLinkTwo`];
+		trustedClients: IProps[`trustedClients`];
+	};
 	export type IClientsImages = {
 		clientsImages: IProps[`trustedClients`][`clientsImages`];
 	};
-	export type ITopVideoContainer = {
+	export type IVideoContainer = {
 		video: IProps[`video`];
 		scale: MotionValue<number>;
 		displayVideo: IProps[`displayVideo`];
