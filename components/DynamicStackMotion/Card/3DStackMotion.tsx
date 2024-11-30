@@ -1,93 +1,175 @@
 "use client";
 
+import {
+	fadeIn,
+	initialTwo,
+	offsetStart,
+	offsetFinish,
+} from "@/animations/animations";
 import {gsap} from "gsap";
+import Image from "next/image";
+import {motion} from "framer-motion";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import useWindowSize from "@/hooks/useWindowSize";
-import {FC, useEffect, Fragment} from "react";
+import {FC, useEffect, Fragment, useRef} from "react";
 import {IDynamicStackMotion} from "@/types/components";
 
 // Styling
 import styles from "@/components/DynamicStackMotion/styles/DynamicStackMotion.module.scss";
 
+// Components
+import Paragraph from "@/components/Elements/Paragraph";
+
+// Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
 const ThreeDStackMotion: FC<IDynamicStackMotion.I3DStackMotion> = ({
-	stackMotionGrid,
 	wrapperRef,
+	stackMotionGrid,
 }) => {
-	const size = useWindowSize();
+	const contentRef = useRef<HTMLDivElement>(null);
+	const {width, height} = useWindowSize();
 
-	// useEffect(() => {
-	// 	if (!wrapperRef.current) return;
+	useEffect(() => {
+		if (!wrapperRef.current || !contentRef.current) return;
 
-	// 	const wrapElement = wrapperRef.current;
-	// 	const contentElement = wrapElement.querySelector<HTMLDivElement>(
-	// 		`.${styles.content}`
-	// 	);
-	// 	const imageElements = Array.from(
-	// 		wrapElement.querySelectorAll(`.${styles.card}`)
-	// 	);
+		const wrapperElement = wrapperRef.current;
+		const contentElement = contentRef.current;
+		const cardElements = contentElement.querySelectorAll<HTMLDivElement>(
+			`.${styles.cardWrapper}`
+		);
 
-	// 	let winSize = {
-	// 		width: size.width || window.innerWidth,
-	// 		height: size.height || window.innerHeight,
-	// 	};
+		// Update window size dynamically
+		let winSize = {
+			width: width || window.innerWidth,
+			height: height || window.innerHeight,
+		};
 
-	// 	const resizeHandler = () => {
-	// 		winSize = {width: window.innerWidth, height: window.innerHeight};
-	// 	};
+		// Helper function for throttling
+		const throttle = (func: any, limit: number) => {
+			let inThrottle: boolean;
+			return function (this: any) {
+				// eslint-disable-next-line prefer-rest-params
+				const args = arguments;
+				// eslint-disable-next-line @typescript-eslint/no-this-alias
+				const context = this;
+				if (!inThrottle) {
+					func.apply(context, args);
+					inThrottle = true;
+					setTimeout(() => (inThrottle = false), limit);
+				}
+			};
+		};
 
-	// 	const initScrollAnimation = () => {
-	// 		if (!contentElement) return;
+		// Animation logic
+		const initializeEffect = () => {
+			gsap.set(contentElement, {
+				transform: "rotate3d(1, 0, 0, 55deg) rotate3d(0, 1, 0, 30deg)",
+				opacity: 0,
+				visibility: "hidden",
+			});
 
-	// 		const tl = gsap.timeline({
-	// 			defaults: {ease: "sine.inOut"},
-	// 			scrollTrigger: {
-	// 				trigger: wrapElement,
-	// 				start: "top center",
-	// 				end: "bottom+=150%",
-	// 				scrub: true,
-	// 			},
-	// 		});
+			const timeline = gsap.timeline({
+				defaults: {ease: "sine.inOut"},
+				scrollTrigger: {
+					trigger: wrapperElement,
+					start: "top 60%",
+					end: "+=200%",
+					scrub: true,
+					onEnter: () =>
+						gsap.to(contentElement, {opacity: 1, visibility: "visible"}),
+					onEnterBack: () =>
+						gsap.to(contentElement, {opacity: 1, visibility: "visible"}),
+					onLeave: () =>
+						gsap.to(contentElement, {opacity: 0, visibility: "hidden"}),
+					onLeaveBack: () =>
+						gsap.to(contentElement, {opacity: 0, visibility: "hidden"}),
+				},
+			});
 
-	// 		tl.fromTo(
-	// 			imageElements,
-	// 			{z: (index) => -1.2 * winSize.height - index * 0.1 * winSize.height},
-	// 			{z: (index) => 3 * winSize.height + index * 0.1 * winSize.height},
-	// 			0
-	// 		).fromTo(
-	// 			imageElements,
-	// 			{rotationZ: -130},
-	// 			{rotationZ: 360, stagger: 0.06},
-	// 			0
-	// 		);
-	// 	};
+			timeline
+				.fromTo(
+					cardElements,
+					{
+						z: (index) => -1.2 * winSize.height - index * 0.08 * winSize.height,
+					},
+					{
+						z: (index) =>
+							3 * winSize.height +
+							(cardElements.length - index - 1) * 0.08 * winSize.height,
+					},
+					0
+				)
+				.fromTo(
+					cardElements,
+					{rotationZ: -130},
+					{rotationZ: 360, stagger: 0.006},
+					0
+				);
+		};
 
-	// 	initScrollAnimation();
-	// 	window.addEventListener("resize", resizeHandler);
+		initializeEffect();
 
-	// 	return () => {
-	// 		ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-	// 		window.removeEventListener("resize", resizeHandler);
-	// 	};
-	// }, [size, wrapperRef]);
+		const handleResize = throttle(() => {
+			winSize = {width: window.innerWidth, height: window.innerHeight};
+			initializeEffect();
+		}, 100);
+
+		window.addEventListener("resize", handleResize);
+		return () => {
+			ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+			window.removeEventListener("resize", handleResize);
+		};
+	}, [width, height, wrapperRef]);
 
 	return (
-		<div className={styles.stackContainer}>
-			<div className={styles.wrapper}>
-				<div className={styles.content}>
-					{stackMotionGrid?.map((item, index) => (
+		<>
+			<div className={styles.stackInner}>
+				<div className={styles.container} ref={contentRef}>
+					{[
+						...stackMotionGrid,
+						...stackMotionGrid,
+						...stackMotionGrid,
+						...stackMotionGrid,
+					].map((item, index) => (
 						<Fragment key={index}>
-							<div
-								className={styles.card}
-								aria-label={item.image.altText}
-								style={{backgroundImage: `url(${item.image.sourceUrl})`}}
-							/>
+							<div className={styles.cardWrapper}>
+								<div className={styles.card} aria-label={item.image.altText}>
+									<div className={styles.imageWrapper}>
+										<Image
+											className={styles.image}
+											alt={item.image.altText}
+											src={item.image.sourceUrl}
+											width={item.image.mediaDetails.width || 1000}
+											height={item.image.mediaDetails.height || 1000}
+										/>
+									</div>
+									<div className={styles.content}>
+										<motion.h4
+											initial={initialTwo}
+											whileInView={fadeIn}
+											viewport={{once: false}}
+											className={styles.text}
+										>
+											{item?.title?.length > 25
+												? item?.title?.substring(0, 25) + "..."
+												: item?.title}
+										</motion.h4>
+										<Paragraph
+											fadeIn={false}
+											content={item?.paragraph}
+											offsetStart={offsetStart}
+											offsetFinish={offsetFinish}
+											className={item?.paragraph ? styles.paragraph : "hidden"}
+										/>
+									</div>
+								</div>
+							</div>
 						</Fragment>
 					))}
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

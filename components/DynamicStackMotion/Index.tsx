@@ -18,13 +18,16 @@ const DynamicStackMotion: FC<IDynamicStackMotion.IProps> = ({
 	const wrapperRef = useRef<HTMLDivElement>(null);
 
 	return (
-		<motion.div ref={wrapperRef} className={styles.dynamicStackMotion}>
-			{title && <Title content={title} className={styles.title} />}
-			<ThreeDStackMotion
-				wrapperRef={wrapperRef}
-				stackMotionGrid={stackMotionGrid}
-			/>
-		</motion.div>
+		<>
+			<motion.div ref={wrapperRef} className={styles.dynamicStackMotion}>
+				{title && <Title content={title} className={styles.title} />}
+				<ThreeDStackMotion
+					wrapperRef={wrapperRef}
+					stackMotionGrid={stackMotionGrid}
+				/>
+			</motion.div>
+			<div className="bg-pureBlack h-[20vh]"></div>
+		</>
 	);
 };
 

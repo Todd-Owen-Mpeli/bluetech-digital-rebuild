@@ -1,77 +1,83 @@
 .dynamicStackMotion {
-	@apply relative px-0 py-44 overflow-hidden min-h-screen;
+	@apply relative bg-pureBlack w-full h-[110vh] px-0 py-24 overflow-hidden flex flex-col items-center justify-center;
 
 	.title {
-		@apply font-T1Korium2KG uppercase text-12xl lg:text-[9.5vw] text-center tracking-[0.02rem] leading-[5rem] lg:leading-[6.5rem] 2xl:leading-[8.5rem];
+		@apply absolute top-10 z-10 font-T1Korium2KG uppercase text-white text-12xl lg:text-[9.5vw] text-center tracking-[0.02rem] leading-[5rem] lg:leading-[6.5rem] 2xl:leading-[8.5rem];
 
 		span {
 			@apply text-white;
 		}
 	}
 
-	.stackContainer {
-		@apply w-full h-full py-10;
+	.stackInner {
+		perspective: 1000px;
+		@apply w-full h-[80%] lg:h-full flex items-center justify-center;
 
-		.wrapper {
-			position: relative;
-			perspective: 1000px;
+		.container {
+			transform-style: preserve-3d;
+			@apply relative w-full lg:w-[50%] 2xl:w-[30%] h-full;
 
-			.content {
-				width: 100vw;
-				position: relative;
-				transform-style: preserve-3d;
-				display: grid;
-				grid-template-areas: "card";
-				grid-template-columns: 100%;
-				place-items: center;
+			.cardWrapper {
+				backface-visibility: hidden;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+				@apply absolute w-full h-full rounded-[10px] bg-white/20 outline outline-4 outline-[#d09df2]/80 overflow-hidden hover:scale-105;
 
 				.card {
-					@apply bg-cover bg-center bg-no-repeat;
-					background: rgba(132, 128, 143, 0.36);
-					box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.8);
-					width: 30vw;
-					max-width: 255px;
-					min-width: 150px;
-					aspect-ratio: 2/3;
-					font-size: 9px;
-					text-transform: uppercase;
-					padding: 5px;
-					display: grid;
-					grid-template-columns: 1fr 1fr;
-					border-radius: 10px;
-					position: relative;
-					align-items: stretch;
-					outline: 1px solid var(--color-card);
-					background: var(--color-bg-card);
-					grid-template-areas: "card-img card-img" "card-title card-meta" "card-subtitle card-subtitle" "card-desc card-desc";
+					filter: brightness(0.85) saturate(1.1);
+					transition: transform 0.3s ease, filter 0.3s ease;
+					@apply absolute w-full h-full flex flex-col items-center justify-center cursor-pointer;
+
+					&:hover {
+						// transform: scale(1.05);
+						filter: brightness(1) saturate(1.2);
+					}
+
+					.imageWrapper {
+						@apply p-4 w-full h-3/4;
+
+						.image {
+							@apply w-full h-full object-cover object-center;
+						}
+					}
+
+					.content {
+						@apply bg-white p-8 w-full h-1/4 flex flex-col items-baseline justify-start gap-6;
+
+						.text {
+							@apply font-StretchPro uppercase text-pureBlack text-[4.5vw] lg:text-[1.5vw] text-center lg:text-left tracking-[0.02rem] leading-[1.5rem] lg:leading-[1.5rem];
+
+							span {
+								@apply text-white;
+							}
+						}
+
+						.paragraph {
+							@apply font-BGAPRegular text-pureBlack text-base text-left tracking-[-0.02rem] leading-tight;
+
+							span {
+								@apply mx-2 inline-block;
+							}
+						}
+					}
 				}
 
-				.card:nth-child(1n) {
-					--color-card: var(--color-card-1);
+				&:nth-child(1n) {
+					@apply outline outline-4 outline-[#d09df2]/80;
 				}
-
-				.card:nth-child(2n) {
-					--color-card: var(--color-card-2);
+				&:nth-child(2n) {
+					@apply outline outline-4 outline-[#9df2eb]/80;
 				}
-
-				.card:nth-child(3n) {
-					--color-card: var(--color-card-3);
+				&:nth-child(3n) {
+					@apply outline outline-4 outline-[#f5e2a4]/80;
 				}
-
-				.card:nth-child(4n) {
-					--color-card: var(--color-card-4);
+				&:nth-child(4n) {
+					@apply outline outline-4 outline-[#d09df2]/80;
 				}
-
-				.card:nth-child(5n) {
-					--color-card: var(--color-card-5);
+				&:nth-child(5n) {
+					@apply outline outline-4 outline-[#9dcaf2]/80;
 				}
-
-				.card:nth-child(6n) {
-					--color-card: var(--color-card-6);
-				}
-
-				.card > * {
-					background-color: var(--color-bg-card-inner);
+				&:nth-child(6n) {
+					@apply outline outline-4 outline-[#f29dcc]/80;
 				}
 			}
 		}
