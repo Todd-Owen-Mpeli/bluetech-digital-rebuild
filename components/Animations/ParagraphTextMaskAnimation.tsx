@@ -4,7 +4,7 @@
 import {FC, useRef} from "react";
 import {motion, useInView} from "framer-motion";
 
-// Content Animation
+// Content & Animation Types
 namespace ITypes {
 	export type IProps = {
 		content: string;
@@ -65,28 +65,26 @@ const ParagraphTextMaskAnimation: FC<ITypes.IProps> = ({
 	const isInView = useInView(body, {once: false, margin: "-5%"});
 
 	return (
-		<>
-			<div ref={body} className="overflow-hidden">
-				{phrases.map((phrase: any, index: number) => {
-					return (
-						<div key={index} className="overflow-hidden">
-							<motion.p
-								custom={index}
-								initial="initial"
-								variants={animation}
-								className={className}
-								animate={isInView ? "enter" : ""}
-								style={{
-									color: styleTextColor ? styleTextColor : "none",
-								}}
-							>
-								{phrase}
-							</motion.p>
-						</div>
-					);
-				})}
-			</div>
-		</>
+		<div ref={body} className="overflow-hidden">
+			{phrases.map((phrase: any, index: number) => {
+				return (
+					<div key={index} className="overflow-hidden">
+						<motion.p
+							custom={index}
+							initial="initial"
+							variants={animation}
+							className={className}
+							animate={isInView ? "enter" : ""}
+							style={{
+								color: styleTextColor ? styleTextColor : "none",
+							}}
+						>
+							{phrase}
+						</motion.p>
+					</div>
+				);
+			})}
+		</div>
 	);
 };
 

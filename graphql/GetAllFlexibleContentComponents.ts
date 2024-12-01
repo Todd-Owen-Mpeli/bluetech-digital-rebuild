@@ -25,8 +25,6 @@ export const getAllFlexibleContentComponents = async (
 												displaySection
 												title
 												subtitle
-												paragraph
-												actionTitle
 												displayVideo
 												video {
 													title
@@ -70,6 +68,13 @@ export const getAllFlexibleContentComponents = async (
 														width
 													}
 												}
+											}
+											... on ${postTypeFlexibleContent}_AboutIntro {
+												fieldGroupName
+												displaySection
+												paragraph
+												actionTitle
+												paragraphTwo
 											}
 											... on ${postTypeFlexibleContent}_DynamicStackMotion {
 												fieldGroupName

@@ -7,8 +7,6 @@ export namespace IHero {
 	export type IProps = {
 		title: string;
 		subtitle: string;
-		paragraph: string;
-		actionTitle: string;
 		displayVideo: boolean;
 		video: {
 			title: string;
@@ -79,6 +77,14 @@ export namespace IHero {
 		scale: MotionValue<number>;
 		displayVideo: IProps[`displayVideo`];
 		videoBackgroundImage: IProps[`videoBackgroundImage`];
+	};
+}
+
+export namespace IAboutIntro {
+	export type IProps = {
+		paragraph: string;
+		actionTitle: string;
+		paragraphTwo: string;
 	};
 }
 

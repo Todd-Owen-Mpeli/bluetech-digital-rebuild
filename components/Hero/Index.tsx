@@ -7,21 +7,14 @@ import {motion, useScroll, useTransform} from "framer-motion";
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph";
 import MainContent from "@/components/Hero/Fragments/MainContent";
 import VideoContainer from "@/components/Hero/Fragments/VideoContainer";
-import BlurEffectTwo from "@/components/Animations/TextScrollEffect/BlurEffectTwo";
-import BlurEffectOne from "@/components/Animations/TextScrollEffect/BlurEffectOne";
-import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
-import ParagraphTextMaskAnimation from "../Animations/ParagraphTextMaskAnimation";
 
 const Hero: FC<IHero.IProps> = ({
 	video,
 	title,
 	subtitle,
-	paragraph,
 	buttonLink,
-	actionTitle,
 	displayVideo,
 	buttonLinkTwo,
 	trustedClients,
@@ -35,14 +28,10 @@ const Hero: FC<IHero.IProps> = ({
 	const scale = useTransform(scrollY, [0, 400], [1, 0.75]);
 
 	// Background Color
-	const titleColor = useTransform(scrollY, [0, 100], ["#ffb000", "#833df4"]);
+	const titleColor = useTransform(scrollY, [0, 100], ["#833df4", "#ffb000"]);
 
 	// Background Color
-	const backgroundColor = useTransform(
-		scrollY,
-		[0, 100],
-		["#521cb7", "rgba(0, 0, 0, 1)"]
-	);
+	const backgroundColor = useTransform(scrollY, [0, 100], ["#000", "#050506"]);
 
 	return (
 		<>
@@ -67,15 +56,6 @@ const Hero: FC<IHero.IProps> = ({
 					buttonLinkTwo={buttonLinkTwo}
 					trustedClients={trustedClients}
 				/>
-				<div className={styles.bottomContent}>
-					<div className={styles.content}>
-						<ParagraphTextMaskAnimation
-							content={paragraph}
-							className={paragraph ? styles.paragraph : "hidden"}
-						/>
-						<BlurEffectOne content={actionTitle} className={styles.subtitle} />
-					</div>
-				</div>
 			</motion.div>
 		</>
 	);

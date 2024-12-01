@@ -4,7 +4,7 @@
 import {FC, useRef} from "react";
 import {motion, useInView} from "framer-motion";
 
-// Content Slice Reveal Mask Animation
+// Content & Animation Types
 namespace ITypes {
 	export type IProps = {
 		className?: string;
@@ -49,19 +49,17 @@ const ContentMaskAnimation: FC<ITypes.IProps> = ({children}) => {
 	const isInView = useInView(body, {once: false, margin: "-5%"});
 
 	return (
-		<>
-			<div ref={body} className="overflow-hidden">
-				<div className="overflow-hidden">
-					<motion.div
-						initial="initial"
-						animate={isInView ? "enter" : ""}
-						variants={animation}
-					>
-						{children}
-					</motion.div>
-				</div>
+		<div ref={body} className="overflow-hidden">
+			<div className="overflow-hidden">
+				<motion.div
+					initial="initial"
+					animate={isInView ? "enter" : ""}
+					variants={animation}
+				>
+					{children}
+				</motion.div>
 			</div>
-		</>
+		</div>
 	);
 };
 

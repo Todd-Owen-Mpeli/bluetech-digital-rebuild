@@ -6,6 +6,7 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
 import Hero from "@/components/Hero/Index";
+import AboutIntro from "@/components/AboutIntro/Index";
 import TitleParagraph from "@/components/TitleParagraph";
 import DynamicStackMotion from "@/components/DynamicStackMotion/Index";
 
@@ -16,6 +17,7 @@ const RenderFlexibleContent: FC = () => {
 	// Components Key Value Pairs
 	const componentMap: any = {
 		[`${FlexibleContent}_Hero`]: Hero,
+		[`${FlexibleContent}_AboutIntro`]: AboutIntro,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 		[`${FlexibleContent}_DynamicStackMotion`]: DynamicStackMotion,
 	};
