@@ -1,5 +1,5 @@
 // Imports
-import {NextPage, Metadata} from "next";
+import {Metadata} from "next";
 import {flexibleContentType, postType} from "@/context/pages";
 
 // Queries Functions
@@ -21,7 +21,7 @@ export async function generateMetadata({params}: any): Promise<Metadata> {
 	};
 }
 
-const dynamicPages: NextPage = async ({params}: any) => {
+const DynamicPages: any = async ({params}: any) => {
 	// Fetch priority content
 	const flexibleContentComponents: any = await getAllFlexibleContentComponents(
 		params?.slug,
@@ -42,4 +42,4 @@ const dynamicPages: NextPage = async ({params}: any) => {
 	);
 };
 
-export default dynamicPages;
+export default DynamicPages;

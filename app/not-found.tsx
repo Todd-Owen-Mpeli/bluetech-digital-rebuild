@@ -1,5 +1,5 @@
 // Imports
-import {Metadata, NextPage} from "next";
+import {Metadata} from "next";
 
 // Components
 import ErrorPage from "@/components/Global/Error";
@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 	description: "...",
 };
 
-const notFound: NextPage = async () => {
+const NotFound = async () => {
 	return <ErrorPage />;
 };
 
-export default notFound;
+export default NotFound;

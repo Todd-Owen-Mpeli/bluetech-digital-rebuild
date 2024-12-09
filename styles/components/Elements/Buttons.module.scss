@@ -100,10 +100,10 @@
 
 .buttonStylingAlt {
 	@extend .buttonStyling;
-	@apply py-2 font-GanhTypeRegular capitalize text-medium lg:text-lg tracking-[0.02rem] text-white border-white hover:border-pureBlack hover:bg-pureBlack;
+	@apply py-2 font-GanhTypeRegular capitalize text-medium lg:text-lg tracking-[0.02rem] text-white border-white hover:border-black hover:bg-black;
 }
 
 .buttonStylingAltTwo {
 	@extend .buttonStylingAlt;
-	@apply text-pureBlack border-pureBlack hover:text-white hover:border-primary-default hover:bg-primary-default;
+	@apply text-black border-black hover:text-white hover:border-primary-default hover:bg-primary-default;
 }

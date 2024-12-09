@@ -11,11 +11,11 @@
 				@apply w-full md:w-1/2 lg:w-8/12 px-4 mb-10 md:mb-0 flex flex-col items-baseline justify-between gap-4;
 
 				.title {
-					@apply max-w-5xl mx-auto lg:mx-0 font-T1KoriumVF flex flex-col sm:block text-center mb-3 text-3xl sm:text-4xl md:text-6xl lg:text-[5.5vw] text-pureBlack tracking-[0.05rem] leading-[2rem] sm:leading-[3rem] lg:leading-tight;
+					@apply max-w-5xl mx-auto lg:mx-0 font-T1KoriumVF flex flex-col sm:block text-center mb-3 text-3xl sm:text-4xl md:text-6xl lg:text-[5.5vw] text-black tracking-[0.05rem] leading-[2rem] sm:leading-[3rem] lg:leading-tight;
 				}
 
 				.paragraph {
-					@apply max-w-4xl mx-auto lg:mx-0 font-GanhTypeThin text-pureBlack text-3xl md:text-6xl text-center lg:text-left tracking-[0.02rem] leading-tight md:leading-[3.25rem];
+					@apply max-w-4xl mx-auto lg:mx-0 font-GanhTypeThin text-black text-3xl md:text-6xl text-center lg:text-left tracking-[0.02rem] leading-tight md:leading-[3.25rem];
 
 					span {
 						@apply text-tertiary-default;

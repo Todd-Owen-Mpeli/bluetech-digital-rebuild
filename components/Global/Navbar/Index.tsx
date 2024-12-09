@@ -139,7 +139,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 						}}
 					>
 						<Link
-							className={styles.link + " text-pureBlack group-hover:text-white"}
+							className={styles.link + " text-black group-hover:text-white"}
 							href={`${globalContext?.themesOptionsContent?.navbarCtaLink?.url}`}
 							target={
 								globalContext?.themesOptionsContent?.navbarCtaLink?.target

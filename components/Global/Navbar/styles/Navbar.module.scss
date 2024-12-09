@@ -2,7 +2,7 @@
 	@apply z-[998] py-2 px-4 w-full fixed bg-transparent hover:opacity-100 transition-all ease-in-out duration-500;
 
 	.container {
-		@apply bg-pureBlack py-1 px-6 w-full grid grid-cols-2 lg:grid-cols-3;
+		@apply bg-black py-1 px-6 w-full grid grid-cols-2 lg:grid-cols-3;
 
 		.links {
 			@apply hidden lg:flex items-center justify-start gap-6;
@@ -24,11 +24,11 @@
 							@apply w-full h-full flex flex-col items-baseline justify-start gap-6;
 
 							.title {
-								@apply font-T1KoriumVF text-pureBlack text-left text-7xl leading-tight tracking-[0.05rem];
+								@apply font-T1KoriumVF text-black text-left text-7xl leading-tight tracking-[0.05rem];
 							}
 
 							.paragraph {
-								@apply max-w-2xl mx-0 font-GanhTypeThin text-pureBlack text-left text-2xl leading-tight tracking-[0.02rem];
+								@apply max-w-2xl mx-0 font-GanhTypeThin text-black text-left text-2xl leading-tight tracking-[0.02rem];
 							}
 						}
 					}

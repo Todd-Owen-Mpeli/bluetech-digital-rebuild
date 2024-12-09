@@ -1,12 +1,9 @@
 "use client";
 
-// Imports
-import {NextPage} from "next";
-
 // Components
 import ErrorPage from "@/components/Global/Error";
 
-const Error: NextPage = () => {
+const Error: any = () => {
 	return <ErrorPage />;
 };
 

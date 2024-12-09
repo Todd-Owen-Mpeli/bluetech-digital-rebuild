@@ -3,7 +3,7 @@ import type {AppProps} from "next/app";
 import {IGlobal} from "@/types/context";
 
 // Global Styling
-import "./globals.scss";
+import "@/styles/globals.scss";
 
 // Queries Functions
 import {
