@@ -6,10 +6,10 @@ import Image from "next/image";
 import React, {FC, useEffect, useRef, useCallback} from "react";
 
 // Styling
-import styles from "@/styles/components/global/BlurryCursorMouse.module.scss";
+import styles from "@/components/Global/BlurryCursorMouse/styles/BlurryCursorMouse.module.scss";
 
 const BlurryCursorMouse: FC = () => {
-	const size = 25;
+	const size = 15;
 	const circle = useRef<HTMLDivElement>(null);
 	const rafId = useRef<number | null>(null);
 	const mouse = useRef({x: 0, y: 0});
@@ -19,7 +19,7 @@ const BlurryCursorMouse: FC = () => {
 
 	const moveCircle = useCallback((x: number, y: number) => {
 		if (circle.current) {
-			gsap.set(circle.current, {x, y, xPercent: -75, yPercent: 25});
+			gsap.set(circle.current, {x, y, xPercent: -50, yPercent: -50});
 		}
 	}, []);
 

@@ -1,10 +1,19 @@
 "use client";
 
-// Components
-import ErrorPage from "@/components/Global/Error";
+// Imports
+import {Metadata} from "next";
 
-const Error: any = () => {
-	return <ErrorPage />;
+// Components
+import ErrorComponent from "@/components/Global/Error/Index";
+
+// Not-Found Page Generated Metadata
+export const metadata: Metadata = {
+	title: "404 - Not Found",
+	description: "...",
+};
+
+const Error = () => {
+	return <ErrorComponent />;
 };
 
 export default Error;

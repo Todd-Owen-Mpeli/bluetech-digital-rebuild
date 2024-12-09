@@ -1,8 +1,5 @@
 /*===== FONTS =====*/
-@font-face {
-	font-family: StretchPro;
-	src: url("../fonts/StretchPro.woff");
-}
+
 @font-face {
 	font-family: T1Korium2KG;
 	src: url("../fonts/T1Korium-2KG.woff");
@@ -10,14 +7,6 @@
 @font-face {
 	font-family: T1KoriumVF;
 	src: url("../fonts/T1KoriumVF.woff");
-}
-@font-face {
-	font-family: GanhTypeThin;
-	src: url("../fonts/GanhTypeThin.woff");
-}
-@font-face {
-	font-family: GanhTypeRegular;
-	src: url("../fonts/GanhTypeRegular.woff");
 }
 @font-face {
 	font-family: BGAPBold;
@@ -41,11 +30,8 @@
 }
 
 // Font Stack Properties
-$StretchPro: "StretchPro" !default;
 $T1KoriumVF: "T1KoriumVF" !default;
 $T1Korium2KG: "T1Korium2KG" !default;
-$GanhTypeThin: "GanhTypeThin" !default;
-$GanhTypeRegular: "GanhTypeRegular" !default;
 $BGAPBold: "BGAPBold" !default;
 $BGAPBlack: "BGAPBlack" !default;
 $BGAPLight: "BGAPLight" !default;

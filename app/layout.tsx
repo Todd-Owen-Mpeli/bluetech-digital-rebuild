@@ -26,7 +26,7 @@ import Head from "@/app/head";
 // import Footer from "@/components/Global/Footer";
 import Navbar from "@/components/Global/Navbar/Index";
 import SmoothScrolling from "@/components/Global/SmoothScrolling";
-import BlurryCursorMouse from "@/components/Global/BlurryCursorMouse";
+import BlurryCursorMouse from "@/components/Global/BlurryCursorMouse/Index";
 import GlobalContextProvider from "@/context/providers/GlobalContextProvider";
 import ApolloContextProvider from "@/context/providers/ApolloContextProvider";
 

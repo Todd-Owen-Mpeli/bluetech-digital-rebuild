@@ -85,36 +85,6 @@ const Navbar: FC<INavbar.IProps> = () => {
 			variants={revealAnimation}
 		>
 			<div className={styles.container}>
-				<div className={styles.links}>
-					<motion.ul
-						initial={initial}
-						variants={stagger}
-						whileInView="animate"
-						viewport={{once: true}}
-						className={styles.ul}
-					>
-						{globalContext?.navbarMenuLinks?.length > 0 ? (
-							globalContext?.navbarMenuLinks?.map(
-								(item: any, index: number) => (
-									<Fragment key={index}>
-										{item?.node?.url === "/mission" ? (
-											<OurMissionNav
-												index={index}
-												item={item}
-												ourMissionOpen={ourMissionOpen}
-												setOurMissionOpen={setOurMissionOpen}
-											/>
-										) : (
-											<NavbarMenuLinks index={index} item={item} />
-										)}
-									</Fragment>
-								)
-							)
-						) : (
-							<></>
-						)}
-					</motion.ul>
-				</div>
 				<div className={styles.logo}>
 					<Link
 						href="/"
@@ -131,7 +101,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 						viewport={{once: false}}
 						className={
 							globalContext?.themesOptionsContent?.navbarCtaLink?.url
-								? styles.buttonStyling + " group"
+								? styles.buttonStyling
 								: "hidden"
 						}
 						style={{
@@ -139,7 +109,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 						}}
 					>
 						<Link
-							className={styles.link + " text-black group-hover:text-white"}
+							className={styles.link}
 							href={`${globalContext?.themesOptionsContent?.navbarCtaLink?.url}`}
 							target={
 								globalContext?.themesOptionsContent?.navbarCtaLink?.target

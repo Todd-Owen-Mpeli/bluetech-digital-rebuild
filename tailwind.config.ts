@@ -48,17 +48,17 @@ export default {
 				lightGreyTwo: "#fafafa",
 
 				primary: {
-					default: "#8094ee",
-					two: "#8094ee",
-					light: "#8094ee",
-					dark: "#8094ee",
-					darker: "#8094ee",
+					default: "#003844",
+					two: "#003844",
+					light: "#003844",
+					dark: "#003844",
+					darker: "#003844",
 				},
 				accent: {
-					default: "#c0a6f8",
-					two: "#7736f1",
-					dark: "#622bc7",
-					darker: "#521cb7",
+					default: "#646536",
+					two: "#646536",
+					dark: "#646536",
+					darker: "#646536",
 				},
 				tertiary: {
 					default: "#ffbd59",
@@ -73,11 +73,8 @@ export default {
 				},
 			},
 			fontFamily: {
-				StretchPro: ["StretchPro"],
 				T1KoriumVF: ["T1KoriumVF"],
 				T1Korium2KG: ["T1Korium2KG"],
-				GanhTypeThin: ["GanhTypeThin"],
-				GanhTypeRegular: ["GanhTypeRegular"],
 				BGAPBold: ["BGAPBold"],
 				BGAPBlack: ["BGAPBlack"],
 				BGAPLight: ["BGAPLight"],
@@ -89,20 +86,11 @@ export default {
 	plugins: [
 		function ({addUtilities}: PluginAPI) {
 			addUtilities({
-				".font-StretchPro": {
-					fontFamily: '"StretchPro"',
-				},
 				".font-T1KoriumVF": {
 					fontFamily: '"T1KoriumVF"',
 				},
 				".font-T1Korium2KG": {
 					fontFamily: '"T1Korium2KG"',
-				},
-				".font-GanhTypeThin": {
-					fontFamily: '"GanhTypeThin"',
-				},
-				".font-GanhTypeRegular": {
-					fontFamily: '"GanhTypeRegular"',
 				},
 				".font-BGAPBold": {
 					fontFamily: '"BGAPBold"',

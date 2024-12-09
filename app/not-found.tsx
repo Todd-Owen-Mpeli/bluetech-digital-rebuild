@@ -2,7 +2,7 @@
 import {Metadata} from "next";
 
 // Components
-import ErrorPage from "@/components/Global/Error";
+import Error from "@/components/Global/Error/Index";
 
 // Not-Found Page Generated Metadata
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const NotFound = async () => {
-	return <ErrorPage />;
+	return <Error />;
 };
 
 export default NotFound;
