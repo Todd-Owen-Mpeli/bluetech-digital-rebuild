@@ -9,7 +9,7 @@ import React, {FC, useEffect, useRef, useCallback} from "react";
 import styles from "@/styles/components/global/BlurryCursorMouse.module.scss";
 
 const BlurryCursorMouse: FC = () => {
-	const size = 15;
+	const size = 25;
 	const circle = useRef<HTMLDivElement>(null);
 	const rafId = useRef<number | null>(null);
 	const mouse = useRef({x: 0, y: 0});

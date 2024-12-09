@@ -28,6 +28,23 @@ export namespace IAnimation {
 		preset?: IPresetType;
 	};
 
+	// Title & Paragraph Text Sliced Slant Mask Animation
+	export type ITextSlicedSlantMaskAnimation = {
+		initial: {
+			y: string;
+			rotate: string;
+		};
+		enter: (i: number) => {
+			y: string;
+			rotate: string;
+			transition: {
+				duration: number;
+				ease: number[];
+				delay: number;
+			};
+		};
+	};
+
 	// Text Wrap Scroll Effect Reveal Animation
 	export type IIntroTextAnimation = {
 		title: string;

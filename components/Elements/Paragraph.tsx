@@ -28,7 +28,6 @@ const Paragraph: FC<IElements.IParagraph> = ({
 			__html: DOMPurify.sanitize(paragraphContent),
 		};
 	};
-
 	return (
 		<motion.div
 			ref={container}

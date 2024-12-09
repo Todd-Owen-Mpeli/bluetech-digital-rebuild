@@ -1,126 +1,14 @@
 // Imports
 import {MotionValue} from "framer-motion";
-import {Dispatch, RefObject, SetStateAction} from "react";
+import {Dispatch, SetStateAction} from "react";
 
 // Components
 export namespace IHero {
 	export type IProps = {
 		title: string;
-		subtitle: string;
-		displayVideo: boolean;
-		video: {
-			title: string;
-			mimeType: string;
-			mediaItemUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-		trustedClients: {
-			title: string;
-			clientsImages: {
-				name: string;
-				channelName: string;
-				image: {
-					altText: string;
-					sourceUrl: string;
-					mediaDetails: {
-						height: number;
-						width: number;
-					};
-				};
-			}[];
-		};
-		buttonLink: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		buttonLinkTwo: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		videoBackgroundImage: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				height: number;
-				width: number;
-			};
-		};
-	};
-	export type IHeroButton = {
-		className: string;
-		slideInLeftAnimation?: boolean;
-		slideInRightAnimation?: boolean;
-		buttonLink: {
-			url: string;
-			title: string;
-			target: string;
-		};
-	};
-	export type IMainContent = {
-		title: IProps[`title`];
-		subtitle: IProps[`subtitle`];
-		titleColor: MotionValue<string>;
-		buttonLink: IProps[`buttonLink`];
-		buttonLinkTwo: IProps[`buttonLinkTwo`];
-		trustedClients: IProps[`trustedClients`];
-	};
-	export type IClientsImages = {
-		clientsImages: IProps[`trustedClients`][`clientsImages`];
-	};
-	export type IVideoContainer = {
-		video: IProps[`video`];
-		scale: MotionValue<number>;
-		displayVideo: IProps[`displayVideo`];
-		videoBackgroundImage: IProps[`videoBackgroundImage`];
 	};
 }
 
-export namespace IAboutIntro {
-	export type IProps = {
-		paragraph: string;
-		actionTitle: string;
-		paragraphTwo: string;
-	};
-}
-
-export namespace IDynamicStackMotion {
-	export type IProps = {
-		title: string;
-		subtitle: string;
-		paragraph: string;
-		buttonLink: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		buttonLinkTwo: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		stackMotionGrid: {
-			title: string;
-			paragraph: string;
-			image: {
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					height: number;
-					width: number;
-				};
-			};
-		}[];
-	};
-	export type I3DStackMotion = {
-		wrapperRef: RefObject<HTMLDivElement>;
-		stackMotionGrid: IProps[`stackMotionGrid`];
-	};
-}
 export namespace INavbar {
 	export type IProps = {};
 	export type IOurMissionNav = {
