@@ -34,8 +34,8 @@ const BlurryCursorMouse: FC = () => {
 
 	const animate = useCallback(() => {
 		delayedMouse.current = {
-			x: lerp(delayedMouse.current.x, mouse.current.x, 0.075),
-			y: lerp(delayedMouse.current.y, mouse.current.y, 0.075),
+			x: lerp(delayedMouse.current.x, mouse.current.x, 0.2),
+			y: lerp(delayedMouse.current.y, mouse.current.y, 0.2),
 		};
 
 		moveCircle(delayedMouse.current.x, delayedMouse.current.y);

@@ -68,29 +68,23 @@ export default {
 					darker: "#ffbd59",
 				},
 				quaternary: {
-					default: "#e5dfd0",
+					default: "#fffbf2",
 					two: "#e5dfd0",
 				},
-			},
-			fontFamily: {
-				T1KoriumVF: ["T1KoriumVF"],
-				T1Korium2KG: ["T1Korium2KG"],
-				BGAPBold: ["BGAPBold"],
-				BGAPBlack: ["BGAPBlack"],
-				BGAPLight: ["BGAPLight"],
-				BGAPMedium: ["BGAPMedium"],
-				BGAPRegular: ["BGAPRegular"],
 			},
 		},
 	},
 	plugins: [
 		function ({addUtilities}: PluginAPI) {
 			addUtilities({
-				".font-T1KoriumVF": {
-					fontFamily: '"T1KoriumVF"',
+				".font-MTVBlack": {
+					fontFamily: '"MTVBlack"',
 				},
-				".font-T1Korium2KG": {
-					fontFamily: '"T1Korium2KG"',
+				".font-MTVLight": {
+					fontFamily: '"MTVLight"',
+				},
+				".font-MTVRegular": {
+					fontFamily: '"MTVRegular"',
 				},
 				".font-BGAPBold": {
 					fontFamily: '"BGAPBold"',

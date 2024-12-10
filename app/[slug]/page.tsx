@@ -21,7 +21,7 @@ export const generateMetadata = async ({params}: any): Promise<Metadata> => {
 	};
 };
 
-const DynamicPages: any = async ({params}: any) => {
+const DynamicPages = async ({params}: any): Promise<JSX.Element> => {
 	// Fetch priority content
 	const flexibleContentComponents: any = await getAllFlexibleContentComponents(
 		params?.slug,
