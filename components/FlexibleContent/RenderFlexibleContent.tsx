@@ -6,7 +6,7 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
 import Hero from "@/components/Hero/Index";
-import TitleParagraph from "@/components/TitleParagraph";
+import TitleParagraph from "@/components/TitleParagraph/Index";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();

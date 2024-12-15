@@ -2,7 +2,7 @@
 Custom reusable Animation Properties/variables */
 
 // Imports
-import {IAnimation} from "@/types/animations/index";
+import {IAnimation} from "@/animations/types/index";
 
 /* This is the default framer-motion scrollYProgress content reveal.
  Provides When in view should the content be revealed */

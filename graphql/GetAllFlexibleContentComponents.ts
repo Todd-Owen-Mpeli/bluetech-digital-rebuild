@@ -24,6 +24,24 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												displaySection
 												title
+												paragraph
+												video {
+													title
+													mimeType
+													mediaItemUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
+												videoBackgroundImage {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
 											}
 											... on ${postTypeFlexibleContent}_TitleParagraph {
 												fieldGroupName

@@ -3,7 +3,10 @@
 // Imports
 import {FC} from "react";
 import {ReactLenis} from "lenis/react";
-import {ISmoothScrolling} from "@/types/components";
+
+export type ISmoothScrolling = {
+	children: React.ReactNode;
+};
 
 const SmoothScrolling: FC<ISmoothScrolling> = ({children}) => {
 	return (

@@ -1,13 +1,22 @@
 // Imports
 import {FC, useRef} from "react";
+import {MotionValue} from "framer-motion";
 import DOMPurify from "isomorphic-dompurify";
 import {motion, useScroll} from "framer-motion";
-import {IElements} from "@/types/components/index";
 
 // Styling
 import styles from "@/styles/components/Elements/Paragraph.module.scss";
 
-const Paragraph: FC<IElements.IParagraph> = ({
+type IParagraph = {
+	fadeIn?: boolean;
+	content: string;
+	className: string;
+	offsetStart?: number;
+	offsetFinish?: number;
+	styleTextColor?: MotionValue<string> | string;
+};
+
+const Paragraph: FC<IParagraph> = ({
 	fadeIn,
 	content,
 	className,

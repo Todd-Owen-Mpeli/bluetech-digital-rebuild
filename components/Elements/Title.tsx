@@ -1,11 +1,17 @@
 // Imports
 import {FC} from "react";
 import {motion} from "framer-motion";
+import {MotionValue} from "framer-motion";
 import DOMPurify from "isomorphic-dompurify";
-import {IElements} from "@/types/components/index";
 import {fadeIn, initialTwo} from "@/animations/animations";
 
-const Title: FC<IElements.ITitle> = ({content, className, styleTextColor}) => {
+type ITitle = {
+	content: string;
+	className: string;
+	styleTextColor?: MotionValue<string> | string;
+};
+
+const Title: FC<ITitle> = ({content, className, styleTextColor}) => {
 	/* Sanitize the WYSIWYG title content */
 	function createTitleMarkup(titleContent: string) {
 		return {

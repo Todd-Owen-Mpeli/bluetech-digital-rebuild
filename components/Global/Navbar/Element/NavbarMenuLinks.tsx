@@ -4,7 +4,7 @@
 import {FC} from "react";
 import Link from "next/link";
 import {motion} from "framer-motion";
-import {INavbar} from "@/types/components";
+import {INavbar} from "@/components/Global/Navbar/types/index";
 import {initial, arrayLoopStaggerChildren} from "@/animations/animations";
 
 // Styling

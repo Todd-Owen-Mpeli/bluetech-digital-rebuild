@@ -4,12 +4,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import {delay, motion} from "framer-motion";
-import {INavbar} from "@/types/components";
 import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
 import useLocaleTime from "@/hooks/useLocaleTime";
-import fadeInUp, {initial, stagger} from "@/animations/animations";
 import useScrollPosition from "@/hooks/useScrollPosition";
+import {INavbar} from "@/components/Global/Navbar/types/index";
+import fadeInUp, {initial, stagger} from "@/animations/animations";
 
 // Styling
 import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
@@ -19,31 +19,7 @@ import OurMissionNav from "@/components/Global/Navbar/Element/OurMissionNav";
 import NavbarMenuLinks from "@/components/Global/Navbar/Element/NavbarMenuLinks";
 
 // Animation Variants
-export type IRevealAnimation = {
-	open: {
-		y: number;
-		opacity: number;
-		visibility: string;
-		transition: {
-			duration: number;
-			delay: number;
-			type: string;
-			ease: number[];
-		};
-	};
-	closed: {
-		y: number;
-		opacity: number;
-		visibility: string;
-		transition: {
-			duration: number;
-			type: string;
-			ease: number[];
-		};
-	};
-};
-
-const revealAnimation: IRevealAnimation | any = {
+const revealAnimation: INavbar.IRevealAnimation | any = {
 	open: {
 		y: 0,
 		opacity: 1,
@@ -115,7 +91,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 							globalContext?.navbarMenuLinks?.map(
 								(item: any, index: number) => (
 									<Fragment key={index}>
-										{item?.node?.url === "/services" ? (
+										{item?.node?.url === "/mission" ? (
 											<OurMissionNav
 												index={index}
 												item={item}

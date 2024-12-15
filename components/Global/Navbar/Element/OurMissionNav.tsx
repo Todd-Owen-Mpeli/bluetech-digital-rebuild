@@ -4,6 +4,7 @@
 import Link from "next/link";
 import {useState} from "react";
 import {delay, motion} from "framer-motion";
+import {INavbar} from "@/components/Global/Navbar/types/index";
 
 // Styling
 import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
@@ -12,57 +13,9 @@ import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
 import Paragraph from "@/components/Elements/Paragraph";
 import {offsetStart, offsetFinish} from "@/animations/animations";
 
-// Animation Variants
-export type IOurMissionNavRevealAnimation = {
-	open: {
-		x: number;
-		opacity: number;
-		visibility: string;
-		transition: {
-			duration: number;
-			delay: number;
-			type: string;
-			ease: number[];
-		};
-	};
-	closed: {
-		x: number;
-		opacity: number;
-		visibility: string;
-		transition: {
-			duration: number;
-			delay: number;
-			type: string;
-			ease: number[];
-		};
-	};
-};
-export type IContentRevealAnimation = {
-	open: {
-		x: number;
-		opacity: number;
-		visibility: string;
-		transition: {
-			duration: number;
-			delay: number;
-			type: string;
-			ease: number[];
-		};
-	};
-	closed: {
-		x: number;
-		opacity: number;
-		visibility: string;
-		transition: {
-			duration: number;
-			delay: number;
-			type: string;
-			ease: number[];
-		};
-	};
-};
-
-const ourMissionNavRevealAnimation: IOurMissionNavRevealAnimation | any = {
+const ourMissionNavRevealAnimation:
+	| INavbar.IOurMissionNavRevealAnimation
+	| any = {
 	open: {
 		height: "350px",
 		opacity: 1,
@@ -87,7 +40,7 @@ const ourMissionNavRevealAnimation: IOurMissionNavRevealAnimation | any = {
 		},
 	},
 };
-const contentRevealAnimation: IContentRevealAnimation | any = {
+const contentRevealAnimation: INavbar.IContentRevealAnimation | any = {
 	open: {
 		x: 0,
 		opacity: 1,

@@ -7,13 +7,18 @@ import {
 } from "@/animations/animations";
 import {FC} from "react";
 import {motion} from "framer-motion";
-import {ITitleParagraph} from "@/types/components";
 
 // Styling
-import styles from "@/styles/components/Elements/Paragraph.module.scss";
+import styles from "@/components/TitleParagraph/styles/TitleParagraph.module.scss";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
+
+export type ITitleParagraph = {
+	title: string;
+	paragraph: string;
+	displayParagraph: boolean;
+};
 
 const TitleParagraph: FC<ITitleParagraph> = ({
 	title,

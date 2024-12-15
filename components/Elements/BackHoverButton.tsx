@@ -1,12 +1,15 @@
 // Imports
 import {FC} from "react";
 import Link from "next/link";
-import {IElements} from "@/types/components";
 
 // Styling
 import styles from "@/styles/components/Elements/Buttons.module.scss";
 
-const BackHoverButton: FC<IElements.IBackHoverButton> = ({link}) => {
+type IBackHoverButton = {
+	link: string;
+};
+
+const BackHoverButton: FC<IBackHoverButton> = ({link}) => {
 	return (
 		<>
 			<div className="absolute items-center justify-center hidden w-full h-full xl:flex">

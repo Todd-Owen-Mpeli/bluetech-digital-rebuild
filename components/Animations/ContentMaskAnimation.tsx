@@ -2,10 +2,10 @@
 
 // Imports
 import {FC, useRef} from "react";
-import {IAnimation} from "@/types/animations";
 import {motion, useInView} from "framer-motion";
+import {IAnimation} from "@/animations/types/index";
 
-export type IContentMaskAnimation = {
+type IContentMaskAnimation = {
 	children: React.ReactNode;
 };
 
