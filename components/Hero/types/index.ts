@@ -26,14 +26,15 @@ export namespace IHero {
 	};
 
 	export type IVideoCard = {
-		rotateX: number;
-		rotateY: number;
-		translateX: number;
-		translateY: number;
 		video: IProps[`video`];
-		scale: MotionValue<number>;
 		displayVideo: IProps[`displayVideo`];
-		contentWrapperBackgroundColor: MotionValue<string>;
-		videoBackgroundImage: IProps[`videoBackgroundImage`];
+	};
+
+	export type IHeroCard = {
+		title: IProps[`title`];
+		paragraph: IProps[`paragraph`];
+		titleColor: MotionValue<string>;
+		paragraphColor: MotionValue<string>;
+		displayVideo: IProps[`displayVideo`];
 	};
 }

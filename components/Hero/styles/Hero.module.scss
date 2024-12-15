@@ -2,26 +2,72 @@
 	@apply relative p-0 flex flex-col;
 
 	.container {
-		@apply lg:max-w-[1900px] mx-auto pt-2 pb-14 px-4 flex flex-col gap-24 lg:gap-44;
+		@apply lg:max-w-[1900px] mx-auto p-2 px-0 flex flex-col gap-24 lg:gap-44;
 
-		.content {
-			@apply flex flex-col items-center justify-between gap-10;
+		.main {
+			@apply relative w-full h-full flex flex-col items-center justify-center;
 
-			.videoContainer {
-				@apply relative w-full h-full px-6 lg:px-8;
+			.wrapper {
+				@apply sticky top-0 h-[90vh] lg:h-screen w-full flex flex-col items-center justify-center;
 
-				.videoWrapper {
-					@apply sticky top-0 h-[90vh] lg:h-[85vh] w-full flex flex-col items-center justify-center;
+				.content {
+					@apply sticky w-[90vw] h-[77.5vh] lg:w-[95vw] lg:h-[95vh] m-auto aspect-[9/16] lg:aspect-[16/9] bg-center bg-no-repeat bg-cover;
+
+					.video {
+						@apply absolute top-0 left-0 w-full h-full object-cover overflow-hidden !pointer-events-none;
+						pointer-events: none; // Additional fallback if the !important from Tailwind is overridden
+					}
+
+					.heroCard {
+						@apply relative z-10 w-full h-full overflow-x-hidden;
+
+						.content {
+							@apply w-full h-full px-12 flex flex-col items-start justify-center gap-6 lg:gap-16;
+
+							.title {
+								@apply lg:max-w-7xl mx-auto lg:mx-0 font-MTVBlack text-paragraph text-left lg:text-[7.5vw] tracking-[-0.02rem] leading-tight lg:leading-[7.5rem];
+							}
+
+							.paragraph {
+								@apply lg:max-w-xl mx-auto font-MTVRegular text-base text-left tracking-[0.02rem] leading-tight;
+
+								span {
+									@apply text-primary-default;
+								}
+							}
+						}
+					}
 				}
 			}
 
 			.scrollDown {
-				@apply flex flex-col items-center justify-between gap-10;
-			}
-		}
+				@apply hidden lg:block absolute bottom-[25px] left-0 right-0 w-fit mx-auto;
 
-		.divFade {
-			@apply flex flex-col items-center justify-between gap-10;
+				.wrapper {
+					@apply w-[20px] h-[45px] cursor-pointer border-2 border-solid border-quaternary-default/30 rounded-[60px] hover:border-accent-default transition-all duration-500 ease-in-out;
+
+					&::before {
+						content: "";
+						transform: translateX(-50%);
+						animation: wheel 2s infinite;
+						-webkit-animation: wheel 2s infinite;
+
+						@apply w-[7px] h-[7px] absolute top-[10px] left-[50%] bg-quaternary-default/30 rounded-[50%] opacity-100 hover:bg-accent-default transition-all duration-500 ease-in-out;
+					}
+				}
+			}
+
+			@keyframes wheel {
+				to {
+					@apply top-[25px] opacity-0;
+				}
+			}
+
+			@-webkit-keyframes wheel {
+				to {
+					@apply top-[25px] opacity-0;
+				}
+			}
 		}
 	}
 }

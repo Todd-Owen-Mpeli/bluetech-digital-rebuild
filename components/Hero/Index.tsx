@@ -1,16 +1,15 @@
 // Imports
-import {FC, useRef} from "react";
 import Link from "next/link";
+import {FC, useRef} from "react";
 import {IHero} from "@/components/Hero/types/index";
-import {fadeIn, initialTwo} from "@/animations/animations";
 import {motion, useScroll, useTransform} from "framer-motion";
 
 // Styling
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
-import Title from "@/components/Elements/Title";
 import {useTiltEffect} from "@/hooks/useTiltEffect";
+import HeroCard from "@/components/Hero/Cards/HeroCard";
 import VideoCard from "@/components/Hero/Cards/VideoCard";
 
 const Hero: FC<IHero.IProps> = ({
@@ -27,12 +26,17 @@ const Hero: FC<IHero.IProps> = ({
 	// Scale content wrapper
 	const scale = useTransform(scrollY, [0, 400], [1, 0.9]);
 
+	// Scroll Opacity Div
+	const scrollOpacity = useTransform(scrollY, [0, 25], [1, 0]);
+
 	// Content Wrapper & Background Color
-	const backgroundColor = useTransform(scrollY, [0, 100], ["#ece5d5", "#000"]);
+	const titleColor = useTransform(scrollY, [0, 100], ["#ece5d5", "#000"]);
+	const paragraphColor = useTransform(scrollY, [0, 100], ["#ece5d5", "#000"]);
+	const backgroundColor = useTransform(scrollY, [0, 100], ["#000", "#ffffff"]);
 	const contentWrapperBackgroundColor = useTransform(
 		scrollY,
 		[0, 100],
-		["#1a1a1a", "#292929"]
+		["#0f0e0e", "#ece5d5"]
 	);
 
 	// Content wrapper tilt animation effect
@@ -48,31 +52,50 @@ const Hero: FC<IHero.IProps> = ({
 				}}
 			>
 				<div className={styles.container}>
-					<div className={styles.content}>
-						<div className={styles.videoContainer}>
-							<VideoCard
-								scale={scale}
-								video={video}
-								rotateY={rotateY}
-								rotateX={rotateX}
-								translateX={translateX}
-								translateY={translateY}
-								contentWrapperBackgroundColor={contentWrapperBackgroundColor}
-								displayVideo={displayVideo}
-								videoBackgroundImage={videoBackgroundImage}
-							/>
+					<div className={styles.main}>
+						<div className={styles.wrapper}>
+							<motion.div
+								className={styles.content}
+								style={{
+									scale,
+									x: translateX,
+									y: translateY,
+									rotateX: `${rotateX}deg`,
+									rotateY: `${rotateY}deg`,
+									transformPerspective: 1000, // Adds perspective for the tilt effect
+									transition: "transform 0.2s ease-out", // Smoother transition
+									backgroundColor: contentWrapperBackgroundColor,
+									backgroundImage: `url("${videoBackgroundImage?.sourceUrl}")`,
+								}}
+							>
+								<VideoCard video={video} displayVideo={displayVideo} />
+								<HeroCard
+									title={title}
+									paragraph={paragraph}
+									titleColor={titleColor}
+									displayVideo={displayVideo}
+									paragraphColor={paragraphColor}
+								/>
+							</motion.div>
 						</div>
-						<Link
-							target="_self"
-							href="#starDescription"
-							aria-label={`Scroll Down`}
+						<motion.div
+							className={styles.scrollDown}
+							style={{
+								opacity: scrollOpacity,
+							}}
 						>
-							<div className={styles.scrollDown} />
-						</Link>
+							<Link
+								target="_self"
+								href="#starDescription"
+								aria-label={`Scroll Down`}
+							>
+								<div className={styles.wrapper} />
+							</Link>
+						</motion.div>
 					</div>
-					<div className={styles.divFade} />
 				</div>
 			</motion.div>
+			<div className="h-screen bg-white"></div>
 		</>
 	);
 };

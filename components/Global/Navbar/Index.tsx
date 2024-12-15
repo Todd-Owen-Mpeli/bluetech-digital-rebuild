@@ -58,7 +58,10 @@ const Navbar: FC<INavbar.IProps> = () => {
 		<motion.nav
 			animate="open"
 			initial="closed"
-			className={styles.navbar}
+			className={
+				styles.navbar +
+				` ${scrollPosition < 50 ? " bg-transparent" : "bg-pureBlack"}`
+			}
 			variants={revealAnimation}
 		>
 			<div className={styles.container}>
