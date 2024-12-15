@@ -31,6 +31,7 @@ export type IOurMissionNavRevealAnimation = {
 		visibility: string;
 		transition: {
 			duration: number;
+			delay: number;
 			type: string;
 			ease: number[];
 		};
@@ -54,6 +55,7 @@ export type IContentRevealAnimation = {
 		visibility: string;
 		transition: {
 			duration: number;
+			delay: number;
 			type: string;
 			ease: number[];
 		};
@@ -76,9 +78,10 @@ const ourMissionNavRevealAnimation: IOurMissionNavRevealAnimation | any = {
 		height: "0px",
 		opacity: 0,
 		visibility: "hidden",
-		backgroundColor: "#ffffff",
+		backgroundColor: "#f5f5f5",
 		transition: {
 			duration: 0.6,
+			delay: 0.25,
 			type: "tween",
 			ease: [0.25, 1, 0.5, 1],
 		},
@@ -102,6 +105,7 @@ const contentRevealAnimation: IContentRevealAnimation | any = {
 		visibility: "hidden",
 		transition: {
 			duration: 0.6,
+			delay: 0.25,
 			type: "tween",
 			ease: [0.6, 0.04, 0.98, 0.335],
 		},

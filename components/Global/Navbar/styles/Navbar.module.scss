@@ -5,22 +5,54 @@
 		@apply w-full flex items-center justify-between;
 
 		.logo {
-			@apply flex flex-col items-baseline lg:items-center justify-center;
+			@apply flex items-center justify-center gap-6;
 
-			.title {
-				@apply pr-1 font-MTVLight text-quaternary-default text-center text-xl leading-tight tracking-[-0.02rem];
+			.image {
+				@apply object-contain object-center w-[30px] h-[30px] hover:opacity-50 transition-all duration-500 ease-in-out;
+			}
+
+			.localeTime {
+				@apply font-MTVRegular uppercase text-primary-default text-center text-base tracking-[-0.02rem];
 			}
 		}
 
-		.menuContainer {
+		.menuLinks {
+			@apply hidden sm:flex items-center justify-end gap-6;
+
+			.ul {
+				@apply flex items-center gap-x-6;
+
+				.link {
+					@apply font-MTVRegular cursor-pointer text-primary-default text-center text-paragraph tracking-[0.05rem] hover:text-accent-default transition-all duration-500 ease-in-out;
+				}
+
+				.ourMissionNav {
+					@apply relative;
+
+					.contentWrapper {
+						@apply block fixed mt-[1.45rem] w-full left-0 right-0 p-16;
+
+						.content {
+							@apply w-full h-full flex flex-col items-baseline justify-start gap-6;
+
+							.title {
+								@apply font-MTVRegular text-pureBlack text-left text-7xl leading-tight tracking-[0.05rem];
+							}
+
+							.paragraph {
+								@apply max-w-xl mx-0 font-BGAPLight text-pureBlack text-left text-lg leading-tight tracking-[0.02rem];
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.buttonSection {
 			@apply hidden sm:flex items-center justify-end gap-6;
 
 			.buttonStyling {
-				@apply py-2 w-fit mx-auto lg:mx-0 rounded-full bg-primary-default hover:bg-accent-default transition-all ease-in-out duration-500;
-
-				.link {
-					@apply py-2 px-8 w-fit font-MTVBlack cursor-pointer uppercase text-white text-paragraph tracking-[0.05rem]  transition-all ease-in-out duration-500;
-				}
+				@apply pt-2 pb-1 px-4 w-fit border-[1px] border-primary-default rounded-full font-MTVRegular cursor-pointer text-pureBlack text-paragraph tracking-[0.05rem] hover:text-quaternary-default hover:border-primary-default hover:bg-primary-default transition-all ease-in-out duration-500;
 			}
 		}
 	}

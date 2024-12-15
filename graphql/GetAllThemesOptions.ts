@@ -42,14 +42,6 @@ export const getThemesOptionsContent =
 										title
 										target
 									}
-									awardsCertificationsGallery {
-										altText
-										sourceUrl
-										mediaDetails {
-											height
-											width
-										}
-									}
 									displayNoticeBanner
 									noticeBannerTextarea
 									errorPageContent {

@@ -81,16 +81,6 @@ export namespace ICustomPostTypes {
 			target: string;
 		};
 		textarea: string;
-		awardsCertificationsGallery: [
-			{
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					width: number;
-					height: number;
-				};
-			}
-		];
 		displayNoticeBanner: boolean;
 		noticeBannerTextarea: string;
 		errorPageContent: {

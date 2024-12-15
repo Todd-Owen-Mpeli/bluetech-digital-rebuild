@@ -22,6 +22,7 @@ export namespace INavbar {
 		index: number;
 	};
 }
+
 export type ITitleParagraph = {
 	title: string;
 	paragraph: string;

@@ -2,6 +2,7 @@
 
 // Imports
 import Link from "next/link";
+import Image from "next/image";
 import {delay, motion} from "framer-motion";
 import {INavbar} from "@/types/components";
 import {FC, Fragment, useState} from "react";
@@ -91,34 +92,56 @@ const Navbar: FC<INavbar.IProps> = () => {
 						target="_self"
 						aria-label={`Bluetech Digital Homepage Link`}
 					>
-						<h4 className={styles.title}>Bluetech Digital</h4>
+						<Image
+							priority
+							width={1000}
+							height={1000}
+							className={styles.image}
+							alt="Bluetech Digital Logo"
+							src="/svg/logo/BluetechDigital-Logo-color.svg"
+						/>
 					</Link>
+					<time className={styles.localeTime}>London {localeTime}</time>
 				</div>
-				<div className={styles.menuContainer}>
-					<motion.button
+				<div className={styles.menuLinks}>
+					<motion.ul
 						initial={initial}
-						whileInView={fadeInUp}
-						viewport={{once: false}}
-						className={
-							globalContext?.themesOptionsContent?.navbarCtaLink?.url
-								? styles.buttonStyling
-								: "hidden"
-						}
-						style={{
-							backgroundImage: `url("/svg/button-arrow-bg.svg")`,
-						}}
+						variants={stagger}
+						whileInView="animate"
+						viewport={{once: true}}
+						className={styles.ul}
 					>
-						<Link
-							className={styles.link}
-							href={`${globalContext?.themesOptionsContent?.navbarCtaLink?.url}`}
-							target={
-								globalContext?.themesOptionsContent?.navbarCtaLink?.target
-							}
-							aria-label={`${globalContext?.themesOptionsContent?.navbarCtaLink?.title}`}
-						>
-							{globalContext?.themesOptionsContent?.navbarCtaLink?.title}
-						</Link>
-					</motion.button>
+						{globalContext?.navbarMenuLinks?.length > 0 ? (
+							globalContext?.navbarMenuLinks?.map(
+								(item: any, index: number) => (
+									<Fragment key={index}>
+										{item?.node?.url === "/services" ? (
+											<OurMissionNav
+												index={index}
+												item={item}
+												ourMissionOpen={ourMissionOpen}
+												setOurMissionOpen={setOurMissionOpen}
+											/>
+										) : (
+											<NavbarMenuLinks index={index} item={item} />
+										)}
+									</Fragment>
+								)
+							)
+						) : (
+							<></>
+						)}
+					</motion.ul>
+				</div>
+				<div className={styles.buttonSection}>
+					<Link
+						className={styles.buttonStyling}
+						href={`${globalContext?.themesOptionsContent?.navbarCtaLink?.url}`}
+						target={globalContext?.themesOptionsContent?.navbarCtaLink?.target}
+						aria-label={`${globalContext?.themesOptionsContent?.navbarCtaLink?.title}`}
+					>
+						{globalContext?.themesOptionsContent?.navbarCtaLink?.title}
+					</Link>
 				</div>
 			</div>
 		</motion.nav>
