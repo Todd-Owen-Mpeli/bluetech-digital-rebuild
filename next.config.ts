@@ -113,6 +113,12 @@ const nextConfig: NextConfig = {
 				port: "",
 				pathname: `${process.env.IMAGE_REMOTE_PATHNAME}`,
 			},
+			{
+				protocol: "https",
+				hostname: `${process.env.IMAGE_TWO_REMOTE_PATTERNS_HOSTNAME}`,
+				port: "",
+				pathname: `${process.env.IMAGE_TWO_REMOTE_PATHNAME}`,
+			},
 		],
 	},
 };

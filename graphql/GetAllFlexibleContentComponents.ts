@@ -25,6 +25,7 @@ export const getAllFlexibleContentComponents = async (
 												displaySection
 												title
 												paragraph
+												displayVideo
 												video {
 													title
 													mimeType

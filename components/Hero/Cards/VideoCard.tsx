@@ -16,12 +16,11 @@ const VideoCard: FC<IHero.IVideoCard> = ({video, displayVideo}) => {
 				controls={false}
 				playsInline
 				controlsList="nofullscreen"
-				aria-label={`Video Element: ${video?.title}`}
+				aria-label={`Video: ${video?.title}`}
 				className={displayVideo ? styles.video : "hidden"}
 			>
 				<source
-					src={`/video/AC3-studio.com-showreel-video.mp4`}
-					// src={video?.mediaItemUrl}
+					src={video?.mediaItemUrl}
 					type={video?.mimeType || "video/mp4"}
 					width={video?.mediaDetails?.width ? video?.mediaDetails?.width : 550}
 					height={
