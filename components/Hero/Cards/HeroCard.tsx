@@ -8,8 +8,8 @@ import {offsetStart, offsetFinish} from "@/animations/animations";
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
-import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph";
+import IntroTextAnimation from "@/components/Hero/Elements/IntroTextAnimation";
 import ContentMaskAnimation from "@/components/Animations/ContentMaskAnimation";
 
 const HeroCard: FC<IHero.IHeroCard> = ({
@@ -24,18 +24,15 @@ const HeroCard: FC<IHero.IHeroCard> = ({
 			<motion.div
 				className={styles.heroCard}
 				style={{
-					backdropFilter: displayVideo ? `blur(2px)` : `blur(0px)`,
+					backdropFilter: displayVideo ? `blur(0.5px)` : `blur(0px)`,
 				}}
 			>
 				<div className={styles.content}>
-					<motion.h1
-						className={title ? styles.title : "hidden"}
-						style={{
-							color: titleColor,
-						}}
-					>
-						{title}
-					</motion.h1>
+					<IntroTextAnimation
+						title={title}
+						titleColor={titleColor}
+						className={styles.title}
+					/>
 					<div>
 						<ContentMaskAnimation>
 							<Paragraph

@@ -1,8 +1,8 @@
 .hero {
-	@apply relative p-0 flex flex-col;
+	@apply p-0 flex flex-col;
 
 	.container {
-		@apply p-0 flex flex-col gap-24 lg:gap-44;
+		@apply relative z-10 p-0 flex flex-col gap-24 lg:gap-44;
 
 		.main {
 			@apply relative flex flex-col items-center justify-center;
@@ -11,14 +11,14 @@
 				@apply sticky top-0 h-[90vh] lg:h-screen w-full flex flex-col items-center justify-center;
 
 				.content {
-					@apply sticky w-[90vw] h-[77.5vh] lg:w-[100vw] lg:h-screen m-auto aspect-[9/16] lg:aspect-[16/9] bg-center bg-no-repeat bg-cover;
+					@apply sticky w-[90vw] h-[77.5vh] lg:w-[99vw] lg:h-[99vh] m-auto aspect-[9/16] lg:aspect-[16/9] bg-center bg-no-repeat bg-cover;
 
 					.video {
 						@apply absolute top-0 left-0 w-full h-full object-cover overflow-hidden pointer-events-none #{!important};
 					}
 
 					.heroCard {
-						@apply relative z-10 w-full h-full overflow-x-hidden bg-pureBlack/80;
+						@apply relative z-10 w-full h-full overflow-x-hidden bg-pureBlack/50;
 
 						.content {
 							@apply w-full h-full px-12 flex flex-col items-start justify-center gap-6 lg:gap-16;
@@ -28,7 +28,7 @@
 							}
 
 							.paragraph {
-								@apply lg:max-w-xl mx-auto font-MTVRegular text-base text-left tracking-[0.02rem] leading-tight;
+								@apply lg:max-w-3xl mx-auto font-MTVRegular text-2xl text-left tracking-[0.02rem] leading-tight;
 
 								span {
 									@apply text-primary-default;
@@ -40,7 +40,7 @@
 			}
 
 			.scrollDown {
-				@apply hidden lg:block absolute bottom-[25px] left-0 right-0 w-fit mx-auto;
+				@apply hidden lg:block absolute bottom-[20px] left-0 right-0 w-fit mx-auto;
 
 				.wrapper {
 					@apply w-[20px] h-[45px] cursor-pointer border-2 border-solid border-quaternary-default/30 rounded-[60px] hover:border-accent-default transition-all duration-500 ease-in-out;
@@ -69,4 +69,8 @@
 			}
 		}
 	}
+}
+
+.afterContent {
+	@apply relative h-screen bg-pureBlack;
 }

@@ -24,7 +24,7 @@ const Hero: FC<IHero.IProps> = ({
 	const {scrollY} = useScroll();
 
 	// Scale content wrapper
-	const scale = useTransform(scrollY, [0, 400], [1, 0.9]);
+	const scale = useTransform(scrollY, [0, 50], [1, 0.9]);
 
 	// Scroll Opacity Div
 	const scrollOpacity = useTransform(scrollY, [0, 25], [1, 0]);
@@ -99,7 +99,7 @@ const Hero: FC<IHero.IProps> = ({
 					</div>
 				</div>
 			</motion.div>
-			<div className="h-screen bg-pureBlack"></div>
+			<div className={styles.afterContent}></div>
 		</>
 	);
 };
