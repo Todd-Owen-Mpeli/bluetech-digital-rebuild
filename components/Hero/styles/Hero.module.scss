@@ -18,7 +18,7 @@
 					}
 
 					.heroCard {
-						@apply relative z-10 w-full h-full overflow-x-hidden bg-pureBlack/50;
+						@apply relative z-10 w-full h-full overflow-x-hidden bg-pureBlack/30;
 
 						.content {
 							@apply w-full h-full px-12 flex flex-col items-start justify-center gap-6 lg:gap-16;

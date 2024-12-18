@@ -47,10 +47,10 @@ const IntroTextAnimation: FC<IIntroTextAnimation> = ({
 					xPercent: 0,
 					yPercent: 0,
 					z: 0,
-					duration: 1,
+					duration: 0.5,
 					delay: 0.1,
 					stagger: {
-						each: 0.09,
+						each: 0.05,
 						from: "random",
 					},
 				}

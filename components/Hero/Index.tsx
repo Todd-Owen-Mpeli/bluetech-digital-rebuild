@@ -36,7 +36,7 @@ const Hero: FC<IHero.IProps> = ({
 		[0, 100],
 		["#ece5d5", "#ffb000"]
 	);
-	const backgroundColor = useTransform(scrollY, [0, 100], ["#ffb000", "#000"]);
+	const backgroundColor = useTransform(scrollY, [0, 100], ["#ece5d5", "#000"]);
 	const contentWrapperBackgroundColor = useTransform(
 		scrollY,
 		[0, 100],

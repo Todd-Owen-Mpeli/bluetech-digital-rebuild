@@ -52,7 +52,7 @@
 			@apply hidden sm:flex items-center justify-end gap-6;
 
 			.buttonStyling {
-				@apply pt-2 pb-1 px-4 w-fit bg-pureBlack rounded-full font-MTVRegular cursor-pointer text-quaternary-default text-paragraph tracking-[0.05rem] hover:text-pureBlack hover:bg-accent-default transition-all ease-in-out duration-500;
+				@apply pt-2 pb-1 px-4 w-fit bg-accent-default rounded-full font-MTVRegular cursor-pointer text-pureBlack text-paragraph tracking-[0.05rem] hover:text-quaternary-default hover:bg-pureBlack transition-all ease-in-out duration-500;
 			}
 		}
 	}
