@@ -27,12 +27,12 @@ export const useTiltEffect = (): IUseTiltEffect => {
 			const mouseY = (event.clientY / window.innerHeight) * 2 - 1;
 
 			// Tilt effect (rotation)
-			targetRotateX = mouseY * 1; // Max tilt angle
-			targetRotateY = mouseX * 1;
+			targetRotateX = mouseY * 2; // Max tilt angle
+			targetRotateY = mouseX * 2;
 
 			// Translation effect (movement)
-			targetTranslateX = mouseX * 1; // Max translation on X axis
-			targetTranslateY = mouseY * 1; // Max translation on Y axis
+			targetTranslateX = mouseX * 2; // Max translation on X axis
+			targetTranslateY = mouseY * 2; // Max translation on Y axis
 		};
 
 		const updateTilt = () => {

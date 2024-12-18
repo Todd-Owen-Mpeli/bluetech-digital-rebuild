@@ -34,7 +34,7 @@ const Hero: FC<IHero.IProps> = ({
 	const paragraphColor = useTransform(
 		scrollY,
 		[0, 100],
-		["#ece5d5", "#ffb000"]
+		["#ece5d5", "#ece5d5"]
 	);
 	const backgroundColor = useTransform(scrollY, [0, 100], ["#ece5d5", "#000"]);
 	const contentWrapperBackgroundColor = useTransform(
@@ -99,7 +99,7 @@ const Hero: FC<IHero.IProps> = ({
 					</div>
 				</div>
 			</motion.div>
-			<div className={styles.afterContent}></div>
+			<div className={styles.afterContent} />
 		</>
 	);
 };

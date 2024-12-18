@@ -30,7 +30,7 @@
 					@apply relative;
 
 					.contentWrapper {
-						@apply block fixed mt-[1rem] w-full left-0 right-0 p-16;
+						@apply block fixed mt-[0.8rem] w-full left-0 right-0 p-16;
 
 						.content {
 							@apply w-full h-full flex flex-col items-baseline justify-start gap-6;
