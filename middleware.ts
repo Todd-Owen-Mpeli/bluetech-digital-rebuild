@@ -20,6 +20,7 @@ const middleware = () => {
 		img-src 'self' ${process.env.CMS_URL} ${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME} data:;
 		script-src 'self' 'nonce-${nonce}' 'unsafe-eval';
 		style-src 'self' 'unsafe-inline';
+		media-src 'self' ${process.env.CMS_URL} ${process.env.DEV_CMS_URL};
 		connect-src 'self' ${process.env.CMS_URL};
 		frame-src 'self';
 		object-src 'none';

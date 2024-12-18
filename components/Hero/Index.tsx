@@ -30,13 +30,17 @@ const Hero: FC<IHero.IProps> = ({
 	const scrollOpacity = useTransform(scrollY, [0, 25], [1, 0]);
 
 	// Content Wrapper & Background Color
-	const titleColor = useTransform(scrollY, [0, 100], ["#ece5d5", "#000"]);
-	const paragraphColor = useTransform(scrollY, [0, 100], ["#ece5d5", "#000"]);
-	const backgroundColor = useTransform(scrollY, [0, 100], ["#000", "#ffffff"]);
+	const titleColor = useTransform(scrollY, [0, 100], ["#ece5d5", "#ffb000"]);
+	const paragraphColor = useTransform(
+		scrollY,
+		[0, 100],
+		["#ece5d5", "#ffb000"]
+	);
+	const backgroundColor = useTransform(scrollY, [0, 100], ["#ffb000", "#000"]);
 	const contentWrapperBackgroundColor = useTransform(
 		scrollY,
 		[0, 100],
-		["#0f0e0e", "#ece5d5"]
+		["#ffb000", "#ffb000"]
 	);
 
 	// Content wrapper tilt animation effect
@@ -95,7 +99,7 @@ const Hero: FC<IHero.IProps> = ({
 					</div>
 				</div>
 			</motion.div>
-			<div className="h-screen bg-white"></div>
+			<div className="h-screen bg-pureBlack"></div>
 		</>
 	);
 };
