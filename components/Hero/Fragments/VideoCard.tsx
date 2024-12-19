@@ -6,7 +6,11 @@ import {IHero} from "@/components/Hero/types/index";
 // Styling
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
-const VideoCard: FC<IHero.IVideoCard> = ({video, displayVideo}) => {
+const VideoCard: FC<IHero.IVideoCard> = ({
+	video,
+	borderRadius,
+	displayVideo,
+}) => {
 	return (
 		<>
 			<motion.video
@@ -15,6 +19,7 @@ const VideoCard: FC<IHero.IVideoCard> = ({video, displayVideo}) => {
 				loop={true}
 				controls={false}
 				playsInline
+				style={{borderRadius}}
 				controlsList="nofullscreen"
 				aria-label={`Video: ${video?.title}`}
 				className={displayVideo ? styles.video : "hidden"}

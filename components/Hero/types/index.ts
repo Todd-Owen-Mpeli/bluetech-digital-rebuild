@@ -27,14 +27,14 @@ export namespace IHero {
 
 	export type IVideoCard = {
 		video: IProps[`video`];
+		borderRadius: MotionValue<string>;
 		displayVideo: IProps[`displayVideo`];
 	};
 
 	export type IHeroCard = {
 		title: IProps[`title`];
-		paragraph: IProps[`paragraph`];
 		titleColor: MotionValue<string>;
-		paragraphColor: MotionValue<string>;
+		borderRadius: MotionValue<string>;
 		displayVideo: IProps[`displayVideo`];
 	};
 }
