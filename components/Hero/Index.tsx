@@ -9,7 +9,6 @@ import {motion, useScroll, useTransform} from "framer-motion";
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
-import {useTiltEffect} from "@/hooks/useTiltEffect";
 import HeroCard from "@/components/Hero/Fragments/HeroCard";
 import VideoCard from "@/components/Hero/Fragments/VideoCard";
 import TextRevealBlurEffect from "@/components/Hero/Fragments/TextRevealBlurEffect";

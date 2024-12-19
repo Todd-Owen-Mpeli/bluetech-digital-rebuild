@@ -24,15 +24,7 @@
 							@apply w-full h-full px-6 lg:px-12 flex flex-col items-start justify-center gap-6 lg:gap-16;
 
 							.title {
-								@apply lg:max-w-4xl mx-auto lg:mx-0 font-MTVBlack text-left text-[8.5vw] lg:text-[5vw] tracking-[-0.02rem] leading-tight sm:leading-[2.5rem] lg:leading-[5rem];
-							}
-
-							.paragraph {
-								@apply lg:max-w-3xl mx-auto font-MTVRegular text-2xl text-left tracking-[0.02rem] leading-tight;
-
-								span {
-									@apply text-primary-default;
-								}
+								@apply lg:max-w-5xl mx-auto lg:mx-0 font-MTVBlack text-left text-[8.5vw] lg:text-[4.5vw] tracking-[-0.02rem] leading-tight sm:leading-[2.5rem] lg:leading-[4.5rem];
 							}
 						}
 					}
@@ -72,10 +64,10 @@
 }
 
 .bottomContent {
-	@apply bg-pureBlack w-full h-full min-h-screen px-6 pb-4 pt-44 lg:pt-64 lg:px-16 flex flex-col items-center justify-start;
+	@apply bg-pureBlack w-full h-screen px-6 pb-16 pt-24 lg:pt-32 lg:px-16 flex flex-col items-center justify-start;
 
 	.paragraph {
-		@apply lg:max-w-6xl mx-auto text-quaternary-default text-6xl lg:text-7xl text-left tracking-[-0.02rem] leading-tight lg:leading-[3.5rem];
+		@apply lg:max-w-6xl mx-auto text-quaternary-default text-5xl lg:text-5xl text-left tracking-[-0.02rem] leading-tight lg:leading-[3rem];
 
 		p {
 			@apply font-BGAPLight;
