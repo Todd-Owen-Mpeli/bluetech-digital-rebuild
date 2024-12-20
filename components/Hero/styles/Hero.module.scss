@@ -64,7 +64,7 @@
 }
 
 .bottomContent {
-	@apply bg-pureBlack w-full h-screen px-6 pb-16 pt-24 lg:pt-32 lg:px-16 flex flex-col items-center justify-start;
+	@apply bg-pureBlack w-full h-full px-6 pb-16 pt-24 lg:pt-32 lg:px-16 flex flex-col items-center justify-start;
 
 	.paragraph {
 		@apply lg:max-w-6xl mx-auto text-quaternary-default text-5xl lg:text-5xl text-left tracking-[-0.02rem] leading-tight lg:leading-[3rem];

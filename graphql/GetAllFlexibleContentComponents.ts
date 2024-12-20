@@ -44,34 +44,12 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
-											... on ${postTypeFlexibleContent}_DynamicStackMotion {
+											... on ${postTypeFlexibleContent}_Samurai {
 												fieldGroupName
 												displaySection
 												title
 												subtitle
 												paragraph
-												buttonLinks {
-													url
-													title
-													target
-												}
-												buttonLinksTwo {
-													url
-													title
-													target
-												}
-												stackMotionGrid {
-													title
-													paragraph
-													image {
-														altText
-														sourceUrl
-														mediaDetails {
-															height
-															width
-														}
-													}
-												}
 											}
 											... on ${postTypeFlexibleContent}_TitleParagraph {
 												fieldGroupName

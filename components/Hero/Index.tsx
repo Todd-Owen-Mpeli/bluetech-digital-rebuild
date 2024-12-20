@@ -9,9 +9,9 @@ import {motion, useScroll, useTransform} from "framer-motion";
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
-import HeroCard from "@/components/Hero/Fragments/HeroCard";
-import VideoCard from "@/components/Hero/Fragments/VideoCard";
-import TextRevealBlurEffect from "@/components/Hero/Fragments/TextRevealBlurEffect";
+import HeroCard from "@/components/Hero/fragments/HeroCard";
+import VideoCard from "@/components/Hero/fragments/VideoCard";
+import TextRevealBlurEffect from "@/components/Hero/fragments/TextRevealBlurEffect";
 
 const MemoizedMotionDiv = React.memo(motion.div);
 

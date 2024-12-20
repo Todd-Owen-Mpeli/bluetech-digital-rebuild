@@ -60,10 +60,10 @@ export default {
 					darker: "#ffb000",
 				},
 				tertiary: {
-					default: "#fffbf2",
-					two: "#fffbf2",
-					dark: "#fffbf2",
-					darker: "#fffbf2",
+					default: "#8531ed",
+					two: "#8531ed",
+					dark: "#8531ed",
+					darker: "#8531ed",
 				},
 				quaternary: {
 					default: "#ECE5D5",

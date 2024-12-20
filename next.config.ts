@@ -1,10 +1,17 @@
 import type {NextConfig} from "next";
 
 const nextConfig: NextConfig = {
-	/* config options here */
+	/* Config options here */
 	reactStrictMode: true,
 	poweredByHeader: false,
-	// All routes edge network caching
+	// Add Webpack support for shader files
+	webpack: (config) => {
+		config.module.rules.push({
+			test: /\.glsl$/,
+			use: "glslify-loader",
+		});
+		return config;
+	},
 	async headers() {
 		return [
 			{
