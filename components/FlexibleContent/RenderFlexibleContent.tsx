@@ -6,7 +6,6 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
 import Hero from "@/components/Hero/Index";
-import Samurai from "@/components/Samurai/Index";
 import TitleParagraph from "@/components/TitleParagraph/Index";
 
 const RenderFlexibleContent: FC = () => {
@@ -17,28 +16,24 @@ const RenderFlexibleContent: FC = () => {
 	const componentMap: any = {
 		[`${FlexibleContent}_Hero`]: Hero,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
-		[`${FlexibleContent}_Samurai`]: Samurai,
 	};
 
 	return (
 		<>
 			{content?.content?.length > 0 &&
 				content?.content?.map((item: any, index: number) => (
-					<Fragment key={index}>
-						{item?.displaySection ? (
-							<section>
-								{componentMap[item?.fieldGroupName] && (
-									<>
-										{React.createElement(componentMap[item?.fieldGroupName], {
-											...item,
-										})}
-									</>
-								)}
-							</section>
-						) : (
-							<></>
+					<section
+						key={index}
+						className={item?.displaySection ? "block" : "hidden"}
+					>
+						{componentMap[item?.fieldGroupName] && (
+							<Fragment>
+								{React.createElement(componentMap[item?.fieldGroupName], {
+									...item,
+								})}
+							</Fragment>
 						)}
-					</Fragment>
+					</section>
 				))}
 		</>
 	);

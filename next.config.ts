@@ -4,14 +4,6 @@ const nextConfig: NextConfig = {
 	/* Config options here */
 	reactStrictMode: true,
 	poweredByHeader: false,
-	// Add Webpack support for shader files
-	webpack: (config) => {
-		config.module.rules.push({
-			test: /\.glsl$/,
-			use: "glslify-loader",
-		});
-		return config;
-	},
 	async headers() {
 		return [
 			{

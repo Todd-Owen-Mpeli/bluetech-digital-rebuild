@@ -21,43 +21,36 @@ export const getAllFlexibleContentComponents = async (
 									flexibleContent {
 										flexibleContent {
 											... on ${postTypeFlexibleContent}_Hero {
-												fieldGroupName
-												displaySection
-												title
-												paragraph
-												displayVideo
-												video {
-													title
-													mimeType
-													mediaItemUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
-												videoBackgroundImage {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
-											}
-											... on ${postTypeFlexibleContent}_Samurai {
-												fieldGroupName
-												displaySection
-												title
-												subtitle
-												paragraph
-											}
-											... on ${postTypeFlexibleContent}_TitleParagraph {
-												fieldGroupName
-												displaySection
-												title
-												paragraph
-												displayParagraph
-											}
+                								fieldGroupName
+                								displaySection
+                								title
+                								paragraph
+                								displayVideo
+                								video {
+                									title
+                									mimeType
+                									mediaItemUrl
+                									mediaDetails {
+                										height
+                										width
+                									}
+                								}
+                								videoBackgroundImage {
+                									altText
+                									sourceUrl
+                									mediaDetails {
+                										height
+                										width
+                									}
+                								}
+                							}
+                							... on ${postTypeFlexibleContent}_TitleParagraph {
+                								fieldGroupName
+                								displaySection
+                								title
+                								paragraph
+                								displayParagraph
+                							}
 										}
 									}
 								}
