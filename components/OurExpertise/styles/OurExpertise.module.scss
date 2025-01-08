@@ -1,8 +1,27 @@
 .ourExpertise {
-	@apply relative p-0 flex flex-col overflow-hidden h-screen bg-black;
+	@apply relative py-20 lg:py-44 px-16 flex flex-col overflow-hidden h-screen bg-white;
 
 	.container {
 		@apply relative z-10 p-0 flex flex-col gap-4 lg:gap-44;
 
+		.top {
+			@apply p-0 flex flex-col lg:flex-row gap-4 lg:gap-44;
+
+			.title {
+				@apply w-full lg:w-1/2 text-black lg:max-w-5xl mx-auto lg:mx-0 font-MTVBlack text-left text-[8.5vw] lg:text-[4.5vw] tracking-[-0.02rem] leading-tight sm:leading-[2.5rem] lg:leading-[4.5rem];
+			}
+
+			.paragraph {
+				@apply w-full lg:w-1/2 lg:max-w-6xl mx-auto text-black text-5xl lg:text-[5vw] text-left tracking-[-0.30rem] leading-tight lg:leading-[6rem];
+
+				p {
+					@apply font-BGAPLight;
+				}
+			}
+		}
+
+		.main {
+			@apply p-0 flex flex-col;
+		}
 	}
 }
