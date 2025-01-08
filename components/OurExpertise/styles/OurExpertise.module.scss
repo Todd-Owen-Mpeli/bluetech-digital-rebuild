@@ -1,0 +1,8 @@
+.ourExpertise {
+	@apply relative p-0 flex flex-col overflow-hidden h-screen bg-black;
+
+	.container {
+		@apply relative z-10 p-0 flex flex-col gap-4 lg:gap-44;
+
+	}
+}

@@ -38,7 +38,7 @@ export default {
 				"12xl": "5.5rem",
 			},
 			colors: {
-				black: "#212020",
+				black: "#020202",
 				grey: "#cecece",
 				white: "#ffffff",
 				pureBlack: "#000",

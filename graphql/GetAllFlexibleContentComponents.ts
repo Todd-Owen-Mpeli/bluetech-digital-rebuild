@@ -44,6 +44,12 @@ export const getAllFlexibleContentComponents = async (
                 									}
                 								}
                 							}
+											... on ${postTypeFlexibleContent}_OurExpertise {
+                								fieldGroupName
+                								displaySection
+                								title
+                								paragraph
+                							}
                 							... on ${postTypeFlexibleContent}_TitleParagraph {
                 								fieldGroupName
                 								displaySection
