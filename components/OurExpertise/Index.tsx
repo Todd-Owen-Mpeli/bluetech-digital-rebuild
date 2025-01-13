@@ -7,7 +7,8 @@ import {IOurExpertise} from "@/components/OurExpertise/types/index";
 import styles from "@/components/OurExpertise/styles/OurExpertise.module.scss";
 
 // Components
-import TextRevealBlurEffect from "@/components/Hero/Fragments/TextRevealBlurEffect";
+import TextRevealBlurEffect from "@/components/OurExpertise/Fragments/TextRevealBlurEffect";
+import HorizontalParallax from "@/components/OurExpertise/Fragments/HorizontalParallax/Index";
 
 const OurExpertise: FC<IOurExpertise.IProps> = ({title, paragraph}) => {
 	// Track the progress of the scroll and scale
@@ -19,15 +20,16 @@ const OurExpertise: FC<IOurExpertise.IProps> = ({title, paragraph}) => {
 	return (
 		<motion.div ref={container} className={styles.ourExpertise}>
 			<div className={styles.container}>
-				<div className={styles.top}>
+				{/* <div className={styles.top}>
 					<motion.h2 className={styles.title}>{title}</motion.h2>
 					<TextRevealBlurEffect
 						content={paragraph}
 						scrollOpacity={scrollOpacity}
 						className={paragraph ? styles.paragraph : "hidden"}
 					/>
-				</div>
-				<div className={styles.main}></div>
+				</div> */}
+				<HorizontalParallax />
+				<div className="h-screen bg-quaternary-default"></div>
 			</div>
 		</motion.div>
 	);

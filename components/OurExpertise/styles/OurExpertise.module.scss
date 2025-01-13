@@ -1,27 +1,50 @@
 .ourExpertise {
-	@apply relative py-20 lg:py-44 px-16 flex flex-col overflow-hidden h-screen bg-white;
+	@apply relative overflow-hidden bg-white;
 
 	.container {
-		@apply relative z-10 p-0 flex flex-col gap-4 lg:gap-44;
+		@apply relative z-10 p-0 flex flex-col;
 
 		.top {
-			@apply p-0 flex flex-col lg:flex-row gap-4 lg:gap-44;
+			@apply py-20 lg:py-0 px-16 flex flex-col lg:flex-row gap-4 lg:gap-44;
 
 			.title {
-				@apply w-full lg:w-1/2 text-black lg:max-w-5xl mx-auto lg:mx-0 font-MTVBlack text-left text-[8.5vw] lg:text-[4.5vw] tracking-[-0.02rem] leading-tight sm:leading-[2.5rem] lg:leading-[4.5rem];
+				@apply w-full lg:w-1/2 text-white lg:max-w-5xl mx-auto lg:mx-0 font-MTVBlack text-left text-[8.5vw] lg:text-[4.5vw] tracking-[-0.02rem] leading-tight sm:leading-[2.5rem] lg:leading-[4.5rem];
 			}
 
 			.paragraph {
-				@apply w-full lg:w-1/2 lg:max-w-6xl mx-auto text-black text-5xl lg:text-[5vw] text-left tracking-[-0.30rem] leading-tight lg:leading-[6rem];
+				@apply w-full lg:w-1/2 lg:max-w-6xl mx-auto text-white text-5xl lg:text-[3.5vw] text-left tracking-[-0.30rem] leading-tight lg:leading-[3.5rem];
 
 				p {
 					@apply font-BGAPLight;
 				}
 			}
 		}
+	}
 
-		.main {
-			@apply p-0 flex flex-col;
+	.horizontalParallax {
+		@apply overflow-hidden;
+
+		.container {
+			@apply flex w-full flex-row;
+			flex-wrap: nowrap;
+
+			.panelOne,
+			.panelTwo,
+			.panelThree {
+				@apply flex flex-col md:flex-row items-center justify-center h-screen w-full min-w-full font-MTVBlack text-[4.5vw];
+			}
+
+			.panelOne {
+				@apply bg-pureBlack text-white;
+			}
+
+			.panelTwo {
+				@apply bg-accent-default;
+			}
+
+			.panelThree {
+				@apply bg-black text-white;
+			}
 		}
 	}
 }

@@ -4,5 +4,8 @@ export namespace IOurExpertise {
 		title: string;
 		paragraph: string;
 	};
-
+	export type IHorizontalParallax = {
+		// title: string;
+		// paragraph: string;
+	};
 }
