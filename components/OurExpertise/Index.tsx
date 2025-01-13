@@ -20,16 +20,16 @@ const OurExpertise: FC<IOurExpertise.IProps> = ({title, paragraph}) => {
 	return (
 		<motion.div ref={container} className={styles.ourExpertise}>
 			<div className={styles.container}>
-				{/* <div className={styles.top}>
+				<div className={styles.top}>
 					<motion.h2 className={styles.title}>{title}</motion.h2>
 					<TextRevealBlurEffect
 						content={paragraph}
 						scrollOpacity={scrollOpacity}
 						className={paragraph ? styles.paragraph : "hidden"}
 					/>
-				</div> */}
+				</div>
 				<HorizontalParallax />
-				<div className="h-screen bg-quaternary-default"></div>
+				<div className="h-screen bg-white"></div>
 			</div>
 		</motion.div>
 	);
