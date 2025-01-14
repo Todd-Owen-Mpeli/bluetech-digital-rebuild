@@ -18,7 +18,7 @@ const middleware = () => {
 	const contentSecurityPolicy = `
         default-src 'self';
 		img-src 'self' ${process.env.CMS_URL} ${process.env.DEV_CMS_URL} ${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME} ${process.env.IMAGE_TWO_REMOTE_PATTERNS_HOSTNAME} data:;
-		script-src 'self' 'nonce-${nonce}' 'unsafe-eval';
+		script-src 'self' 'nonce-${nonce}' 'unsafe-eval' ${process.env.VERCEL_SCRIPT_URL};
 		style-src 'self' 'unsafe-inline';
 		media-src 'self' ${process.env.CMS_URL} ${process.env.DEV_CMS_URL};
 		connect-src 'self' ${process.env.CMS_URL};

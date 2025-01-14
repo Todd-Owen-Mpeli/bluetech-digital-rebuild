@@ -13,8 +13,11 @@ import TextRevealBlurEffect from "@/components/OurExpertise/Fragments/TextReveal
 const MainContent: FC<IOurExpertise.IMainContent> = ({
 	title,
 	paragraph,
-	scrollOpacity,
+	scrollY,
 }) => {
+	// Scroll Opacity Div
+	const scrollOpacity = useTransform(scrollY, [0, 500], [1, 0]);
+
 	return (
 		<div className={styles.content}>
 			<motion.h2 className={styles.title}>{title}</motion.h2>
@@ -35,9 +38,6 @@ const TopSection: FC<IOurExpertise.ITopSection> = ({
 	displayVideo,
 	videoBackgroundImage,
 }) => {
-	// Scroll Opacity Div
-	const scrollOpacity = useTransform(scrollY, [0, 500], [1, 0]);
-
 	return (
 		<div className={styles.topSection}>
 			<VideoCard
@@ -45,11 +45,7 @@ const TopSection: FC<IOurExpertise.ITopSection> = ({
 				displayVideo={displayVideo}
 				videoBackgroundImage={videoBackgroundImage}
 			/>
-			<MainContent
-				title={title}
-				paragraph={paragraph}
-				scrollOpacity={scrollOpacity}
-			/>
+			<MainContent title={title} scrollY={scrollY} paragraph={paragraph} />
 		</div>
 	);
 };

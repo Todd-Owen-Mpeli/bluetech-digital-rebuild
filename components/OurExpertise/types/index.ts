@@ -40,7 +40,7 @@ export namespace IOurExpertise {
 	export type IMainContent = {
 		title: IProps[`title`];
 		paragraph: IProps[`paragraph`];
-		scrollOpacity: MotionValue<number>;
+		scrollY: MotionValue<number>;
 	};
 	export type IHorizontalParallax = {
 		// title: string;
