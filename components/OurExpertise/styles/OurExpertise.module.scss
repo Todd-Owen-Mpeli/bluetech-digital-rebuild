@@ -26,14 +26,6 @@
 					}
 				}
 			}
-
-			.mask {
-				@apply absolute z-20 w-[5vw] h-[5vh] m-auto;
-
-				.image {
-					@apply w-full h-full m-auto;
-				}
-			}
 		}
 	}
 

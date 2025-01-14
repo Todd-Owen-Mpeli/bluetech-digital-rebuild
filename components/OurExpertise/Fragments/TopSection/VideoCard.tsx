@@ -6,7 +6,11 @@ import {IOurExpertise} from "@/components/OurExpertise/types/index";
 // Styling
 import styles from "@/components/OurExpertise/styles/OurExpertise.module.scss";
 
-const VideoCard: FC<IOurExpertise.IVideoCard> = ({video, displayVideo}) => {
+const VideoCard: FC<IOurExpertise.IVideoCard> = ({
+	video,
+	displayVideo,
+	videoBackgroundImage,
+}) => {
 	return (
 		<motion.video
 			muted
@@ -15,6 +19,7 @@ const VideoCard: FC<IOurExpertise.IVideoCard> = ({video, displayVideo}) => {
 			controls={false}
 			playsInline
 			controlsList="nofullscreen"
+			poster={`${videoBackgroundImage}`}
 			aria-label={`Video: ${video?.title}`}
 			className={displayVideo ? styles.video : "hidden"}
 		>

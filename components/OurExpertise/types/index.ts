@@ -25,38 +25,22 @@ export namespace IOurExpertise {
 		};
 	};
 	export type IVideoCard = {
-		displayVideo: boolean;
-		video: {
-			title: string;
-			mimeType: string;
-			mediaItemUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
+		video: IProps[`video`];
+		displayVideo: IProps[`displayVideo`];
+		videoBackgroundImage: IProps[`videoBackgroundImage`];
 	};
 	export type ITopSection = {
-		title: string;
-		paragraph: string;
-		displayVideo: boolean;
-		video: {
-			title: string;
-			mimeType: string;
-			mediaItemUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-		videoBackgroundImage: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				height: number;
-				width: number;
-			};
-		};
+		title: IProps[`title`];
+		video: IProps[`video`];
+		scrollY: MotionValue<number>;
+		paragraph: IProps[`paragraph`];
+		displayVideo: IProps[`displayVideo`];
+		videoBackgroundImage: IProps[`videoBackgroundImage`];
+	};
+	export type IMainContent = {
+		title: IProps[`title`];
+		paragraph: IProps[`paragraph`];
+		scrollOpacity: MotionValue<number>;
 	};
 	export type IHorizontalParallax = {
 		// title: string;
