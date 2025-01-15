@@ -5,7 +5,7 @@
 		@apply relative z-10 p-0 flex flex-col;
 
 		.topSection {
-			@apply sticky top-0 h-screen w-full py-20 lg:py-44 px-16 flex flex-col items-center justify-center;
+			@apply sticky top-0 min-h-screen h-full w-full py-20 lg:py-44 px-16 flex flex-col items-center justify-center;
 
 			.video {
 				@apply absolute top-0 left-0 w-full h-full object-cover overflow-hidden pointer-events-none #{!important};

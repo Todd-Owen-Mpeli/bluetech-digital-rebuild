@@ -39,14 +39,16 @@ const TopSection: FC<IOurExpertise.ITopSection> = ({
 	videoBackgroundImage,
 }) => {
 	return (
-		<div className={styles.topSection}>
-			<VideoCard
-				video={video}
-				displayVideo={displayVideo}
-				videoBackgroundImage={videoBackgroundImage}
-			/>
-			<MainContent title={title} scrollY={scrollY} paragraph={paragraph} />
-		</div>
+		<>
+			<div className={styles.topSection}>
+				<VideoCard
+					video={video}
+					displayVideo={displayVideo}
+					videoBackgroundImage={videoBackgroundImage}
+				/>
+				<MainContent title={title} scrollY={scrollY} paragraph={paragraph} />
+			</div>
+		</>
 	);
 };
 
