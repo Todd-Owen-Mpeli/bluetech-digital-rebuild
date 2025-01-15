@@ -11,7 +11,9 @@ import styles from "@/components/Hero/styles/Hero.module.scss";
 // Components
 import HeroCard from "@/components/Hero/Fragments/HeroCard";
 import VideoCard from "@/components/Hero/Fragments/VideoCard";
+import IntroTextAnimation from "@/components/Hero/Elements/IntroTextAnimation";
 import TextRevealBlurEffect from "@/components/Hero/Fragments/TextRevealBlurEffect";
+import fadeInUp, {fadeIn, initial, initialTwo} from "@/animations/animations";
 
 const MemoizedMotionDiv = React.memo(motion.div);
 
@@ -19,7 +21,9 @@ const Hero: FC<IHero.IProps> = ({
 	video,
 	title,
 	paragraph,
+	buttonLink,
 	displayVideo,
+	trustedClients,
 	videoBackgroundImage,
 }) => {
 	// Track the progress of the scroll and scale
@@ -34,7 +38,7 @@ const Hero: FC<IHero.IProps> = ({
 
 	// Content & Background Color
 	const titleColor = useTransform(scrollY, [0, 100], ["#ece5d5", "#ffb000"]);
-	const borderRadius = useTransform(scrollY, [0, 1000], ["25px", "2500px"]);
+	const borderRadius = useTransform(scrollY, [0, 1000], ["25px", "500px"]);
 	const backgroundColor = useTransform(scrollY, [0, 100], ["#ffb000", "#000"]);
 	const contentWrapperBackgroundColor = useTransform(
 		scrollY,
@@ -78,8 +82,10 @@ const Hero: FC<IHero.IProps> = ({
 								<HeroCard
 									title={title}
 									titleColor={titleColor}
+									buttonLink={buttonLink}
 									borderRadius={borderRadius}
 									displayVideo={displayVideo}
+									trustedClients={trustedClients}
 								/>
 							</MemoizedMotionDiv>
 						</div>
@@ -89,6 +95,24 @@ const Hero: FC<IHero.IProps> = ({
 						>
 							<Link href="#starDescription" aria-label="Scroll Down">
 								<div className={styles.wrapper} />
+							</Link>
+							<Link
+								href={`${buttonLink?.url}`}
+								target={buttonLink?.target}
+								aria-label={`${buttonLink?.title}`}
+								className={styles.buttonLink + " group"}
+							>
+								<motion.button
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className={
+										styles.link +
+										" text-quaternary-default group-hover:text-accent-default"
+									}
+								>
+									{buttonLink?.title}
+								</motion.button>
 							</Link>
 						</motion.div>
 					</div>

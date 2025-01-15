@@ -24,6 +24,7 @@ export const getAllFlexibleContentComponents = async (
                 								fieldGroupName
                 								displaySection
                 								title
+												subtitle
                 								paragraph
                 								displayVideo
                 								video {
@@ -35,6 +36,11 @@ export const getAllFlexibleContentComponents = async (
                 										width
                 									}
                 								}
+												buttonLink {
+													url
+													title
+													target
+												}
                 								videoBackgroundImage {
                 									altText
                 									sourceUrl
@@ -43,6 +49,21 @@ export const getAllFlexibleContentComponents = async (
                 										width
                 									}
                 								}
+												trustedClients {
+													title
+													clientsImages {
+														name
+														channelName
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
+												}
                 							}
 											... on ${postTypeFlexibleContent}_OurExpertise {
                 								fieldGroupName

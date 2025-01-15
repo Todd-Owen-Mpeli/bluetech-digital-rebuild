@@ -15,6 +15,11 @@ export namespace IHero {
 				height: number;
 			};
 		};
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
 		videoBackgroundImage: {
 			altText: string;
 			sourceUrl: string;
@@ -22,6 +27,21 @@ export namespace IHero {
 				height: number;
 				width: number;
 			};
+		};
+		trustedClients: {
+			title: string;
+			clientsImages: {
+				name: string;
+				channelName: string;
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						height: number;
+						width: number;
+					};
+				};
+			}[];
 		};
 	};
 
@@ -34,7 +54,19 @@ export namespace IHero {
 	export type IHeroCard = {
 		title: IProps[`title`];
 		titleColor: MotionValue<string>;
+		buttonLink: IProps[`buttonLink`];
 		borderRadius: MotionValue<string>;
 		displayVideo: IProps[`displayVideo`];
+		trustedClients: IProps[`trustedClients`];
+	};
+
+	export type IRenderStars = {
+		rating: number;
+		color: string;
+	};
+
+	export type IClientsImages = {
+		title: IProps[`trustedClients`][`title`];
+		clientsImages: IProps[`trustedClients`][`clientsImages`];
 	};
 }

@@ -21,10 +21,58 @@
 						@apply relative z-10 w-full h-full overflow-x-hidden bg-pureBlack/30;
 
 						.content {
-							@apply w-full h-full px-6 lg:px-12 flex flex-col items-start justify-center gap-6 lg:gap-16;
+							@apply w-full h-full px-6 lg:px-12 flex flex-col items-start justify-center gap-6 lg:gap-4;
 
 							.title {
-								@apply lg:max-w-5xl mx-auto lg:mx-0 font-MTVBlack text-left text-[8.5vw] lg:text-[4.5vw] tracking-[-0.02rem] leading-tight sm:leading-[2.5rem] lg:leading-[4.5rem];
+								@apply lg:max-w-5xl mx-auto lg:mx-0 font-MTVBlack text-left text-[8.5vw] lg:text-[4.5vw] tracking-[-0.02rem] leading-tight sm:leading-[2.5rem] md:leading-[3.5rem] lg:leading-[4.5rem];
+							}
+
+							.trustedClients {
+								@apply w-fit flex flex-col lg:flex-row items-start justify-center gap-2 lg:gap-8;
+
+								.clientsImages {
+									@apply w-fit grid grid-cols-5 items-center justify-center;
+
+									.contentGrid {
+										@apply -mr-4 relative;
+
+										.content {
+											@apply absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs flex-col items-center justify-center bg-pureBlack z-50 shadow-xl px-4 gap-1;
+
+											.div {
+												@apply absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px;
+											}
+
+											.divTwo {
+												@apply absolute left-10 w-[50%] mx-auto z-30 -bottom-px bg-gradient-to-r from-transparent via-accent-default to-transparent h-px;
+											}
+
+											.name {
+												@apply font-bold font-MTVRegular text-white relative z-30 text-base;
+											}
+
+											.channelName {
+												@apply font-BGAPRegular text-white text-xs;
+											}
+										}
+									}
+
+									.image {
+										@apply object-cover !m-0 !p-0 object-top rounded-full h-10 w-10 md:h-12 md:w-12 border-2 group-hover:scale-105 group-hover:z-30 border-transparent relative transition duration-500;
+									}
+								}
+
+								.stats {
+									@apply w-fit mx-0 flex flex-col gap-2;
+
+									.starts {
+										@apply w-fit grid grid-cols-5 items-center justify-center;
+									}
+
+									.title {
+										@apply font-MTVRegular text-quaternary-default text-base lg:text-paragraph text-left tracking-[-0.02rem] leading-tight;
+									}
+								}
 							}
 						}
 					}
@@ -32,7 +80,7 @@
 			}
 
 			.scrollDown {
-				@apply hidden lg:block absolute bottom-[20px] left-0 right-0 w-fit mx-auto;
+				@apply hidden lg:flex absolute bottom-[20px] left-0 right-0 w-fit mx-auto items-center justify-center gap-2;
 
 				.wrapper {
 					@apply w-[20px] h-[45px] cursor-pointer border-2 border-solid border-quaternary-default/30 rounded-[60px] hover:border-accent-default transition-all duration-500 ease-in-out;
@@ -44,6 +92,14 @@
 						-webkit-animation: wheel 2s infinite;
 
 						@apply w-[7px] h-[7px] absolute top-[10px] left-[50%] bg-quaternary-default/30 rounded-[50%] opacity-100 hover:bg-accent-default transition-all duration-500 ease-in-out;
+					}
+				}
+
+				.buttonLink {
+					@apply py-1.5 px-6 cursor-pointer border-2 border-solid border-quaternary-default/30 rounded-[60px] hover:border-accent-default transition-all duration-500 ease-in-out;
+
+					.link {
+						@apply font-MTVRegular text-base lg:text-paragraph text-left tracking-[-0.02rem] leading-tight transition-all duration-500 ease-in-out;
 					}
 				}
 			}
@@ -65,7 +121,6 @@
 
 .bottomContent {
 	@apply bg-pureBlack w-full h-full px-6 pb-16 pt-24 lg:pt-32 lg:px-16 flex flex-col items-center justify-start;
-
 	.paragraph {
 		@apply lg:max-w-6xl mx-auto text-quaternary-default text-5xl lg:text-5xl text-left tracking-[-0.02rem] leading-tight lg:leading-[3rem];
 

@@ -7,13 +7,16 @@ import {IHero} from "@/components/Hero/types/index";
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
+import ClientsImages from "@/components/Hero/Fragments/ClientsImages";
 import IntroTextAnimation from "@/components/Hero/Elements/IntroTextAnimation";
 
 const HeroCard: FC<IHero.IHeroCard> = ({
 	title,
 	titleColor,
+	buttonLink,
 	borderRadius,
 	displayVideo,
+	trustedClients,
 }) => {
 	return (
 		<>
@@ -29,6 +32,10 @@ const HeroCard: FC<IHero.IHeroCard> = ({
 						title={title}
 						titleColor={titleColor}
 						className={styles.title}
+					/>
+					<ClientsImages
+						title={trustedClients.title}
+						clientsImages={trustedClients.clientsImages}
 					/>
 				</div>
 			</motion.div>
