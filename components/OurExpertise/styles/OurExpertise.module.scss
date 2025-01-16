@@ -31,17 +31,21 @@
 				}
 
 				.mainContent {
-					@apply absolute z-20 w-full h-full py-20 lg:py-44 px-16 flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-12;
+					@apply absolute z-20 w-full h-full p-0 flex flex-col items-center justify-end gap-4 lg:gap-12;
 
-					.title {
-						@apply w-full lg:w-1/2 text-white lg:max-w-5xl mx-auto lg:mx-0 font-MTVBlack text-center text-[8.5vw] lg:text-[8.5vw] tracking-[-0.02rem] leading-tight sm:leading-[2.5rem] lg:leading-[8rem];
-					}
+					.wrapper {
+						@apply bg-white px-8 lg:px-16 py-16 lg:py-24 w-full h-fit flex flex-col lg:flex-row items-center justify-between gap-6;
 
-					.paragraph {
-						@apply w-full lg:w-1/2 lg:max-w-6xl mx-auto text-white text-5xl lg:text-[2.5vw] text-left tracking-[-0.10rem] leading-tight lg:leading-[2.75rem];
+						.title {
+							@apply w-full lg:max-w-7xl mx-auto lg:mx-0 text-pureBlack font-MTVBlack text-left text-5xl sm:text-5xl lg:text-[3.5vw] tracking-[-0.02rem] leading-tight sm:leading-[2.5rem] lg:leading-[3.5rem];
+						}
 
-						p {
-							@apply font-BGAPLight;
+						.paragraph {
+							@apply w-full lg:max-w-7xl mx-auto text-pureBlack text-left text-5xl tracking-[-0.10rem] leading-tight lg:leading-[2.75rem];
+
+							p {
+								@apply font-BGAPLight;
+							}
 						}
 					}
 				}

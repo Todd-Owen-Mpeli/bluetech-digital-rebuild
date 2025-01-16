@@ -10,24 +10,31 @@ import {IOurExpertise} from "@/components/OurExpertise/types/index";
 import styles from "@/components/OurExpertise/styles/OurExpertise.module.scss";
 
 // Components
+import TextRevealBlurEffect from "@/components/Elements/TextRevealBlurEffect";
 import VideoCard from "@/components/OurExpertise/Fragments/TopSection/VideoCard";
-import TextRevealBlurEffect from "@/components/OurExpertise/Fragments/TextRevealBlurEffect";
+
 const MainContent: FC<IOurExpertise.IMainContent> = ({
 	title,
-	paragraph,
 	scrollY,
+	paragraph,
 }) => {
 	// Scroll Opacity Div
 	const scrollOpacity = useTransform(scrollY, [0, 500], [1, 0]);
 
 	return (
 		<div className={styles.mainContent}>
-			<motion.h2 className={styles.title}>{title}</motion.h2>
-			<TextRevealBlurEffect
-				content={paragraph}
-				scrollOpacity={scrollOpacity}
-				className={paragraph ? styles.paragraph : "hidden"}
-			/>
+			<div />
+			<motion.div
+				className={styles.wrapper}
+				style={{opacity: scrollOpacity, backdropFilter: "blur(24px)"}}
+			>
+				<motion.h2 className={styles.title}>{title}</motion.h2>
+				<TextRevealBlurEffect
+					content={paragraph}
+					scrollOpacity={scrollOpacity}
+					className={paragraph ? styles.paragraph : "hidden"}
+				/>
+			</motion.div>
 		</div>
 	);
 };
@@ -47,7 +54,7 @@ const TopSection: FC<IOurExpertise.ITopSection> = ({
 		offset: ["start start", "end end"],
 	});
 
-	const scale = useTransform(scrollYProgress, [0, 1], [2, 26]);
+	const scale = useTransform(scrollYProgress, [0, 1], [2, 28]);
 
 	return (
 		<>

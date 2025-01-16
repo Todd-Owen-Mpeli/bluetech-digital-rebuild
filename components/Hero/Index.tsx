@@ -4,6 +4,7 @@ import Link from "next/link";
 import {FC, useRef, useMemo} from "react";
 import {IHero} from "@/components/Hero/types/index";
 import {motion, useScroll, useTransform} from "framer-motion";
+import fadeInUp, {initial} from "@/animations/animations";
 
 // Styling
 import styles from "@/components/Hero/styles/Hero.module.scss";
@@ -11,9 +12,7 @@ import styles from "@/components/Hero/styles/Hero.module.scss";
 // Components
 import HeroCard from "@/components/Hero/Fragments/HeroCard";
 import VideoCard from "@/components/Hero/Fragments/VideoCard";
-import IntroTextAnimation from "@/components/Hero/Elements/IntroTextAnimation";
-import TextRevealBlurEffect from "@/components/Hero/Fragments/TextRevealBlurEffect";
-import fadeInUp, {fadeIn, initial, initialTwo} from "@/animations/animations";
+import TextRevealBlurEffect from "@/components/Elements/TextRevealBlurEffect";
 
 const MemoizedMotionDiv = React.memo(motion.div);
 

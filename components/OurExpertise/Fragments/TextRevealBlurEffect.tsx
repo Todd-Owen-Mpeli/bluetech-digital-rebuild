@@ -77,11 +77,13 @@ const TextRevealBlurEffect: FC<ITextRevealBlurEffect> = ({
 			{
 				filter: "blur(10px) brightness(0%)",
 				willChange: "filter",
+				opacity: "0%",
 			},
 			{
 				filter: "blur(0px) brightness(100%)",
 				stagger: 0.035,
 				ease: "none",
+				opacity: "100%",
 				scrollTrigger: {
 					trigger: containerRef.current,
 					start: "top bottom-=15%",
