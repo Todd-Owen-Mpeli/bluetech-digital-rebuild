@@ -7,7 +7,6 @@ import styles from "@/components/OurExpertise/styles/OurExpertise.module.scss";
 
 // Components
 import TopSection from "@/components/OurExpertise/Fragments/TopSection/Index";
-import HorizontalParallax from "@/components/OurExpertise/Fragments/HorizontalParallax/Index";
 
 const OurExpertise: FC<IOurExpertise.IProps> = ({
 	video,
@@ -26,8 +25,6 @@ const OurExpertise: FC<IOurExpertise.IProps> = ({
 					displayVideo={displayVideo}
 					videoBackgroundImage={videoBackgroundImage}
 				/>
-				<HorizontalParallax />
-				<div className="h-screen bg-accent-default"></div>
 			</div>
 		</div>
 	);

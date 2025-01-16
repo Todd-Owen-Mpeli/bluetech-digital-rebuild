@@ -2,18 +2,28 @@
 
 // Imports
 import gsap from "gsap";
+import Image from "next/image";
 import {motion} from "framer-motion";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import {FC, useRef, useLayoutEffect} from "react";
-import {IOurExpertise} from "@/components/OurExpertise/types/index";
+import {IOurServices} from "@/components/OurServices/types/index";
 
 // Styling
-import styles from "@/components/OurExpertise/styles/OurExpertise.module.scss";
+import styles from "@/components/OurServices/styles/OurServices.module.scss";
+
+// Components
+import ServiceOne from "@/components/OurServices/Fragments/HorizontalParallax/ServiceOne";
+import ServiceTwo from "@/components/OurServices/Fragments/HorizontalParallax/ServiceTwo";
+import ServiceThree from "@/components/OurServices/Fragments/HorizontalParallax/ServiceThree";
 
 // Gsap Register Plugin
 gsap.registerPlugin(ScrollTrigger);
 
-const HorizontalParallax: FC<IOurExpertise.IHorizontalParallax> = ({}) => {
+const HorizontalParallax: FC<IOurServices.IHorizontalParallax> = ({
+	serviceOne,
+	serviceTwo,
+	serviceThree,
+}) => {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const sliderRef = useRef<HTMLDivElement>(null);
 
@@ -88,10 +98,16 @@ const HorizontalParallax: FC<IOurExpertise.IHorizontalParallax> = ({}) => {
 
 	return (
 		<div ref={containerRef} className={styles.horizontalParallax}>
-			<motion.div ref={sliderRef} className={styles.container}>
-				<div className={`${styles.panelOne} panel`}>ONE</div>
-				<div className={`${styles.panelTwo} panel`}>TWO</div>
-				<div className={`${styles.panelThree} panel`}>THREE</div>
+			<motion.div ref={sliderRef} className={styles.wrapper}>
+				<ServiceOne serviceOne={serviceOne} />
+				<div
+					className={`${styles.imageDivider} panel`}
+					style={{
+						backgroundImage: `url(https://vzt.nmy.mybluehost.me/website_bffab4f5/wp-content/uploads/2025/01/cs-atlassian-3918-web-scaled.jpg)`,
+					}}
+				/>
+				<ServiceTwo serviceTwo={serviceTwo} />
+				<ServiceThree serviceThree={serviceThree} />
 			</motion.div>
 		</div>
 	);

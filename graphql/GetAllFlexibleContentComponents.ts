@@ -65,6 +65,26 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
                 							}
+											... on ${postTypeFlexibleContent}_OurServices {
+                								fieldGroupName
+                								displaySection
+                								serviceOne {
+                									title
+													paragraph
+                									image {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+                								}
+                								serviceTwo {
+                									title
+													paragraph
+                								}
+                							}
 											... on ${postTypeFlexibleContent}_OurExpertise {
                 								fieldGroupName
                 								displaySection

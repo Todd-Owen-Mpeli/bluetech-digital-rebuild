@@ -1,0 +1,39 @@
+.ourServices {
+	@apply bg-pureBlack;
+
+	.container {
+		@apply p-0 flex flex-col;
+
+		.horizontalParallax {
+			@apply overflow-hidden;
+
+			.wrapper {
+				@apply flex w-full flex-col md:flex-row;
+				flex-wrap: nowrap;
+
+				.serviceOne,
+				.serviceTwo,
+				.serviceThree,
+				.imageDivider {
+					@apply flex flex-col md:flex-row items-center justify-center h-screen w-full min-w-full font-MTVBlack text-[4.5vw];
+				}
+
+				.serviceOne {
+					@apply bg-white text-pureBlack;
+				}
+
+				.serviceTwo {
+					@apply bg-quaternary-default;
+				}
+
+				.serviceThree {
+					@apply bg-black text-white;
+				}
+
+				.imageDivider {
+					@apply bg-black text-white hidden md:flex w-[50%] min-w-[100%] bg-cover bg-center bg-no-repeat #{!important};
+				}
+			}
+		}
+	}
+}

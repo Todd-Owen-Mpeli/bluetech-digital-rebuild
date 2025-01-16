@@ -6,6 +6,7 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
 import Hero from "@/components/Hero/Index";
+import OurServices from "@/components/OurServices/Index";
 import OurExpertise from "@/components/OurExpertise/Index";
 import TitleParagraph from "@/components/TitleParagraph/Index";
 
@@ -16,6 +17,7 @@ const RenderFlexibleContent: FC = () => {
 	// Components Key Value Pairs
 	const componentMap: any = {
 		[`${FlexibleContent}_Hero`]: Hero,
+		[`${FlexibleContent}_OurServices`]: OurServices,
 		[`${FlexibleContent}_OurExpertise`]: OurExpertise,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 	};
