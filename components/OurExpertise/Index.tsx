@@ -1,6 +1,5 @@
 // Imports
-import {FC, useRef} from "react";
-import {motion, useScroll} from "framer-motion";
+import {FC} from "react";
 import {IOurExpertise} from "@/components/OurExpertise/types/index";
 
 // Styling
@@ -17,17 +16,12 @@ const OurExpertise: FC<IOurExpertise.IProps> = ({
 	displayVideo,
 	videoBackgroundImage,
 }) => {
-	// Track the progress of the scroll and scale
-	const container = useRef(null);
-	const {scrollY} = useScroll();
-
 	return (
-		<motion.div ref={container} className={styles.ourExpertise}>
+		<div className={styles.ourExpertise}>
 			<div className={styles.container}>
 				<TopSection
 					video={video}
 					title={title}
-					scrollY={scrollY}
 					paragraph={paragraph}
 					displayVideo={displayVideo}
 					videoBackgroundImage={videoBackgroundImage}
@@ -35,7 +29,7 @@ const OurExpertise: FC<IOurExpertise.IProps> = ({
 				<HorizontalParallax />
 				<div className="h-screen bg-accent-default"></div>
 			</div>
-		</motion.div>
+		</div>
 	);
 };
 

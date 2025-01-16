@@ -19,8 +19,8 @@ const VideoCard: FC<IOurExpertise.IVideoCard> = ({
 			controls={false}
 			playsInline
 			controlsList="nofullscreen"
-			poster={`${videoBackgroundImage}`}
 			aria-label={`Video: ${video?.title}`}
+			poster={`${videoBackgroundImage.sourceUrl}`}
 			className={displayVideo ? styles.video : "hidden"}
 		>
 			<source

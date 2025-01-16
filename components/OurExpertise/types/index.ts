@@ -32,7 +32,6 @@ export namespace IOurExpertise {
 	export type ITopSection = {
 		title: IProps[`title`];
 		video: IProps[`video`];
-		scrollY: MotionValue<number>;
 		paragraph: IProps[`paragraph`];
 		displayVideo: IProps[`displayVideo`];
 		videoBackgroundImage: IProps[`videoBackgroundImage`];
