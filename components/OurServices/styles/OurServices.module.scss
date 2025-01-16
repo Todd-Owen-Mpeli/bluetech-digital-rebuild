@@ -29,10 +29,6 @@
 				.serviceThree {
 					@apply bg-black text-white;
 				}
-
-				.imageDivider {
-					@apply bg-black text-white hidden md:flex w-[50%] min-w-[100%] bg-cover bg-center bg-no-repeat #{!important};
-				}
 			}
 		}
 	}

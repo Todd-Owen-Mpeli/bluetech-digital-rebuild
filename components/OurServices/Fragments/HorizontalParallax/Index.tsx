@@ -100,12 +100,6 @@ const HorizontalParallax: FC<IOurServices.IHorizontalParallax> = ({
 		<div ref={containerRef} className={styles.horizontalParallax}>
 			<motion.div ref={sliderRef} className={styles.wrapper}>
 				<ServiceOne serviceOne={serviceOne} />
-				<div
-					className={`${styles.imageDivider} panel`}
-					style={{
-						backgroundImage: `url(https://vzt.nmy.mybluehost.me/website_bffab4f5/wp-content/uploads/2025/01/cs-atlassian-3918-web-scaled.jpg)`,
-					}}
-				/>
 				<ServiceTwo serviceTwo={serviceTwo} />
 				<ServiceThree serviceThree={serviceThree} />
 			</motion.div>

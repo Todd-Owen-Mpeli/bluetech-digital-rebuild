@@ -32,11 +32,9 @@ export namespace IAnimation {
 	export type ITextSlicedSlantMaskAnimation = {
 		initial: {
 			y: string;
-			rotate: string;
 		};
 		enter: (i: number) => {
 			y: string;
-			rotate: string;
 			transition: {
 				duration: number;
 				ease: number[];

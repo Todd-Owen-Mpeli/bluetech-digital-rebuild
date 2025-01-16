@@ -9,6 +9,7 @@ import styles from "@/components/OurExpertise/styles/OurExpertise.module.scss";
 // Components
 import TextRevealBlurEffect from "@/components/Elements/TextRevealBlurEffect";
 import VideoCard from "@/components/OurExpertise/Fragments/TopSection/VideoCard";
+import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 
 const MainContent: FC<IOurExpertise.IMainContent> = ({
 	title,
@@ -25,7 +26,9 @@ const MainContent: FC<IOurExpertise.IMainContent> = ({
 				className={styles.wrapper}
 				style={{opacity: scrollOpacity, backdropFilter: "blur(24px)"}}
 			>
-				<motion.h2 className={styles.title}>{title}</motion.h2>
+				<SlideInXLeftAnimation>
+					<motion.h2 className={styles.title}>{title}</motion.h2>
+				</SlideInXLeftAnimation>
 				<TextRevealBlurEffect
 					content={paragraph}
 					scrollOpacity={scrollOpacity}

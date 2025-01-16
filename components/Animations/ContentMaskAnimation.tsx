@@ -13,11 +13,9 @@ export const TextSlicedSlantMaskAnimation: IAnimation.ITextSlicedSlantMaskAnimat
 	{
 		initial: {
 			y: "100%",
-			rotate: "3.5deg", // Start with a 40-degree slant
 		},
 		enter: (i: number) => ({
 			y: "0", // Move into view
-			rotate: "0deg", // Finish rotation to a straight line
 			transition: {
 				duration: 1,
 				ease: [0.5, 0.5, 0.75, 1],
