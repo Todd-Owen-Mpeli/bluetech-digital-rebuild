@@ -2,7 +2,6 @@
 
 // Imports
 import gsap from "gsap";
-import Image from "next/image";
 import {motion} from "framer-motion";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import {FC, useRef, useLayoutEffect} from "react";

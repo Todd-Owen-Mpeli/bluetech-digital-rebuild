@@ -269,6 +269,7 @@ export namespace IAnimation {
 // ScrollY Progress Based Content Reveal Animation
 export namespace IScrollYProgressReveal {
 	export type IProps = {
+		style?: any;
 		className?: string;
 		children: React.ReactNode;
 	};

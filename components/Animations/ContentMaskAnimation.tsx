@@ -1,5 +1,3 @@
-"use client";
-
 // Imports
 import {FC, useRef} from "react";
 import {motion, useInView} from "framer-motion";
@@ -30,15 +28,13 @@ const ContentMaskAnimation: FC<IContentMaskAnimation> = ({children}) => {
 	return (
 		<>
 			<div ref={body} className="overflow-hidden">
-				<div className="overflow-hidden">
-					<motion.div
-						initial="initial"
-						animate={isInView ? "enter" : ""}
-						variants={TextSlicedSlantMaskAnimation}
-					>
-						{children}
-					</motion.div>
-				</div>
+				<motion.div
+					initial="initial"
+					animate={isInView ? "enter" : ""}
+					variants={TextSlicedSlantMaskAnimation}
+				>
+					{children}
+				</motion.div>
 			</div>
 		</>
 	);
