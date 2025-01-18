@@ -31,7 +31,15 @@
 								@apply w-full xl:w-1/4 bg-pureBlack;
 
 								.image {
-									@apply w-full h-full bg-cover bg-left bg-no-repeat;
+									@apply w-full h-full bg-cover bg-center bg-no-repeat;
+								}
+							}
+
+							.contentContainer {
+								@apply w-full xl:w-3/4 px-4;
+
+								.content {
+									@apply flex flex-wrap h-full -mx-4;
 								}
 							}
 						}
