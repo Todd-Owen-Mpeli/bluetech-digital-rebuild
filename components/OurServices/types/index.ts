@@ -15,6 +15,14 @@ export namespace IOurServices {
 		serviceTwo: {
 			title: string;
 			paragraph: string;
+			image: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					height: number;
+					width: number;
+				};
+			};
 		};
 		serviceThree: {
 			title: string;

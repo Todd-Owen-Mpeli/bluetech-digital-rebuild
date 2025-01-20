@@ -19,35 +19,47 @@
 				}
 
 				.serviceOne {
-					@apply bg-accent-default w-full py-10 lg:pt-24 lg:pb-4 px-0 overflow-hidden;
+					@apply bg-white w-full py-10 lg:pt-24 lg:pb-4 px-0 overflow-hidden bg-cover bg-center bg-no-repeat;
 
 					.container {
-						@apply w-full h-full flex flex-col justify-between gap-8 lg:gap-14;
+						@apply w-full h-full flex flex-col justify-between gap-8 lg:gap-14 px-16;
 
 						.main {
-							@apply w-full h-full flex flex-col-reverse  lg:flex-row -mx-4 justify-between;
-
-							.imageContainer {
-								@apply w-full xl:w-1/4;
-
-								.image {
-									@apply w-full h-full max-h-[500px] lg:max-h-full bg-cover bg-center bg-no-repeat;
-								}
-							}
-
-							.contentContainer {
-								@apply w-full xl:w-3/4 px-4;
-
-								.content {
-									@apply flex flex-wrap h-full -mx-4;
-								}
-							}
+							@apply w-full h-full flex flex-col -mx-4 gap-6 items-start justify-between;
 						}
 					}
 				}
 
 				.serviceTwo {
-					@apply bg-quaternary-default;
+					@apply relative bg-quaternary-default w-full py-10 lg:pt-24 lg:pb-4 px-0 overflow-hidden bg-cover bg-center bg-no-repeat;
+
+					.divFade {
+						@apply absolute top-0 left-0 right-0 w-full h-96 bg-gradient-to-t from-white/0 to-white;
+					}
+
+					.container {
+						@apply relative z-10 w-full h-full flex flex-col justify-between gap-8 lg:gap-14 px-16;
+
+						.main {
+							@apply w-full h-full flex flex-col -mx-4 gap-6 items-start justify-between;
+
+							.card {
+								@apply w-1/2 h-[250px] p-8 lg:pr-16 rounded-lg bg-white/20 flex flex-col gap-8 items-start justify-between;
+
+								.subtitle {
+									@apply font-MTVLight font-light italic text-pureBlack text-left text-lg lg:text-xl tracking-[-0.15rem] leading-tight;
+								}
+
+								.title {
+									@apply text-pureBlack font-extrabold font-MTVRegular text-left text-3xl lg:text-[3.5vw] tracking-[-0.15rem] leading-tight;
+
+									span {
+										@apply font-MTVLight font-light italic;
+									}
+								}
+							}
+						}
+					}
 				}
 
 				.serviceThree {

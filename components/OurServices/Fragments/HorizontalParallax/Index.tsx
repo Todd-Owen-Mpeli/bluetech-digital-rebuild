@@ -103,7 +103,11 @@ const HorizontalParallax: FC<IOurServices.IHorizontalParallax> = ({
 					image={serviceOne.image}
 					paragraph={serviceOne.paragraph}
 				/>
-				<ServiceTwo serviceTwo={serviceTwo} />
+				<ServiceTwo
+					title={serviceTwo.title}
+					image={serviceOne.image}
+					paragraph={serviceTwo.paragraph}
+				/>
 				<ServiceThree serviceThree={serviceThree} />
 			</motion.div>
 		</div>
