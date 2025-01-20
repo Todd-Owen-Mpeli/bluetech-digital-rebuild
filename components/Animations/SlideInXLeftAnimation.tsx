@@ -1,14 +1,15 @@
 // Imports
 import {FC, useRef} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
-import {IScrollYProgressReveal} from "@/animations/types/index";
 import {fadeIn, offsetFinish, offsetStart} from "@/animations/animations";
 
-const SlideInXLeftAnimation: FC<IScrollYProgressReveal.ISlideInXAnimation> = ({
-	style,
-	children,
-	className,
-}) => {
+type IProps = {
+	style?: any;
+	className?: string;
+	children: React.ReactNode;
+};
+
+const SlideInXLeftAnimation: FC<IProps> = ({style, children, className}) => {
 	const container = useRef(null);
 	const {scrollYProgress} = useScroll({
 		target: container,

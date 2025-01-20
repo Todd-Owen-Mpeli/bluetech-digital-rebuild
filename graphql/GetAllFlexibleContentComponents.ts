@@ -79,10 +79,36 @@ export const getAllFlexibleContentComponents = async (
 															width
 														}
 													}
+													servicesRoles {
+														title
+														paragraph
+														backgroundColor
+														link {
+															url
+															title
+															target
+														}
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
                 								}
                 								serviceTwo {
                 									title
 													paragraph
+													backgroundImage {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
                 								}
                 							}
 											... on ${postTypeFlexibleContent}_OurExpertise {

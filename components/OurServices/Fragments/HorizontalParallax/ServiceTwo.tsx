@@ -13,13 +13,13 @@ import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSlic
 
 const ServiceTwo: FC<IOurServices.IProps[`serviceTwo`]> = ({
 	title,
-	image,
 	paragraph,
+	backgroundImage,
 }) => {
 	return (
 		<div
 			className={`${styles.serviceTwo} panel`}
-			style={{backgroundImage: `url(${image?.sourceUrl})`}}
+			style={{backgroundImage: `url(${backgroundImage?.sourceUrl})`}}
 		>
 			<div className={styles.container}>
 				<div className={styles.main}>

@@ -11,9 +11,9 @@ import {IOurServices} from "@/components/OurServices/types/index";
 import styles from "@/components/OurServices/styles/OurServices.module.scss";
 
 // Components
-import ServiceOne from "@/components/OurServices/Fragments/HorizontalParallax/ServiceOne";
 import ServiceTwo from "@/components/OurServices/Fragments/HorizontalParallax/ServiceTwo";
 import ServiceThree from "@/components/OurServices/Fragments/HorizontalParallax/ServiceThree";
+import ServiceOne from "@/components/OurServices/Fragments/HorizontalParallax/ServiceOne/Index";
 
 // Gsap Register Plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -102,11 +102,13 @@ const HorizontalParallax: FC<IOurServices.IHorizontalParallax> = ({
 					title={serviceOne.title}
 					image={serviceOne.image}
 					paragraph={serviceOne.paragraph}
+					buttonLink={serviceOne.buttonLink}
+					servicesRoles={serviceOne.servicesRoles}
 				/>
 				<ServiceTwo
 					title={serviceTwo.title}
-					image={serviceOne.image}
 					paragraph={serviceTwo.paragraph}
+					backgroundImage={serviceTwo.backgroundImage}
 				/>
 				<ServiceThree serviceThree={serviceThree} />
 			</motion.div>
