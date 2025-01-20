@@ -7,7 +7,7 @@ import {IOurExpertise} from "@/components/OurExpertise/types/index";
 import styles from "@/components/OurExpertise/styles/OurExpertise.module.scss";
 
 const SvgMask: FC<IOurExpertise.ISvgMask> = ({scrollYProgress}) => {
-	const scale = useTransform(scrollYProgress, [0, 1], [2, 28]);
+	const scale = useTransform(scrollYProgress, [0, 1], [3, 28]);
 
 	return (
 		<div className={styles.stickySection}>

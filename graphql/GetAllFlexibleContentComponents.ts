@@ -79,6 +79,24 @@ export const getAllFlexibleContentComponents = async (
 															width
 														}
 													}
+													services {
+														title
+														paragraph
+														backgroundColor
+														link {
+															url
+															title
+															target
+														}
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
                 								}
                 								serviceTwo {
                 									title

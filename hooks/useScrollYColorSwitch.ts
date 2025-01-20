@@ -6,13 +6,13 @@ import {useState, useEffect} from "react";
 
 type IUseScrollYColorSwitch = {
 	containerRef: React.RefObject<HTMLDivElement>;
-	scrollY: MotionValue<number>;
+	scrollYProgress: MotionValue<number>;
 	colorBefore: string;
 	colorAfter: string;
 };
 
 export const useScrollYColorSwitch = ({
-	scrollY,
+	scrollYProgress,
 	colorAfter,
 	colorBefore,
 	containerRef,
@@ -28,14 +28,16 @@ export const useScrollYColorSwitch = ({
 				 would be Halfway Point of the selected element / div */
 				const halfwayPoint = containerOffsetTop + containerHeight / 2.25;
 
-				setColor(scrollY.get() >= halfwayPoint ? colorAfter : colorBefore);
+				setColor(
+					scrollYProgress.get() >= halfwayPoint ? colorAfter : colorBefore
+				);
 			}
 		};
 
-		const unsubscribe = scrollY.onChange(updateColor);
+		const unsubscribe = scrollYProgress.onChange(updateColor);
 
 		return () => unsubscribe();
-	}, [containerRef, scrollY, colorBefore, colorAfter]);
+	}, [containerRef, scrollYProgress, colorBefore, colorAfter]);
 
 	return color;
 };

@@ -5,6 +5,7 @@ import {IOurServices} from "@/components/OurServices/types/index";
 
 // Styling
 import styles from "@/components/OurServices/styles/OurServices.module.scss";
+
 // Components
 import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph";
@@ -12,8 +13,11 @@ import TextRevealBlurEffect from "@/components/Elements/TextRevealBlurEffect";
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
 
-const ServiceOne: FC<IOurServices.IProps[`serviceOne`] | any> = ({
-	serviceOne,
+const ServiceOne: FC<IOurServices.IProps[`serviceOne`]> = ({
+	title,
+	image,
+	services,
+	paragraph,
 }) => {
 	const container = useRef(null);
 	const {scrollYProgress} = useScroll({
@@ -26,14 +30,14 @@ const ServiceOne: FC<IOurServices.IProps[`serviceOne`] | any> = ({
 	const scrollOpacity = useTransform(scrollYProgress, [0, 500], [1, 0]);
 
 	return (
-		<div ref={container} className={`${styles.serviceOne} panel`}>
+		<motion.div ref={container} className={`${styles.serviceOne} panel`}>
 			<div className={styles.container}>
 				<div className={styles.main}>
 					<SlideInXLeftAnimation className={styles.imageContainer}>
 						<div
 							className={styles.image}
 							style={{
-								backgroundImage: `url("${serviceOne.image.sourceUrl}")`,
+								backgroundImage: `url("${image.sourceUrl}")`,
 							}}
 						/>
 					</SlideInXLeftAnimation>
@@ -56,7 +60,7 @@ const ServiceOne: FC<IOurServices.IProps[`serviceOne`] | any> = ({
 												navigation easy and engaging.`}
 											/>
 											<span className="text-3xl font-semibold text-pureBlack">
-												User Interaction (UI)
+												User Interaction (UI){}
 											</span>
 										</div>
 										<img
@@ -117,7 +121,7 @@ const ServiceOne: FC<IOurServices.IProps[`serviceOne`] | any> = ({
 					</div>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

@@ -98,7 +98,12 @@ const HorizontalParallax: FC<IOurServices.IHorizontalParallax> = ({
 	return (
 		<div ref={containerRef} className={styles.horizontalParallax}>
 			<motion.div ref={sliderRef} className={styles.wrapper}>
-				<ServiceOne serviceOne={serviceOne} />
+				<ServiceOne
+					title={serviceOne.title}
+					image={serviceOne.image}
+					services={serviceOne.services}
+					paragraph={serviceOne.paragraph}
+				/>
 				<ServiceTwo serviceTwo={serviceTwo} />
 				<ServiceThree serviceThree={serviceThree} />
 			</motion.div>

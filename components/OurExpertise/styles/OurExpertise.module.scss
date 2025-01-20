@@ -28,7 +28,7 @@
 							h4,
 							h5,
 							h6 {
-								@apply text-pureBlack font-extrabold font-MTVRegular text-left text-5xl lg:text-[3.25vw] tracking-[-0.15rem] leading-tight sm:leading-[2.5rem] lg:leading-[3.75rem];
+								@apply text-pureBlack font-extrabold font-MTVRegular text-left text-5xl lg:text-[3vw] tracking-[-0.15rem] leading-tight sm:leading-[2.5rem] lg:leading-[3.25vw];
 
 								span {
 									@apply font-MTVLight font-light italic;
@@ -40,7 +40,7 @@
 							@apply w-full lg:max-w-2xl mx-auto text-pureBlack text-left text-2xl lg:text-3xl tracking-[-0.10rem] leading-normal;
 
 							p {
-								@apply font-BGAPLight;
+								@apply font-BGAPRegular;
 							}
 						}
 					}
@@ -69,123 +69,3 @@
 		}
 	}
 }
-
-// .ourExpertise {
-// 	@apply bg-pureBlack;
-
-// 	.container {
-// 		@apply p-0 flex flex-col;
-
-// 		.contentWrapper {
-// 			@apply relative h-[125vh];
-
-// 			.content {
-// 				@apply absolute top-0 left-0 z-[1] flex flex-col items-center justify-center;
-
-// 				.video {
-// 					@apply absolute z-10 h-full w-full aspect-[9/16] lg:aspect-[16/9] object-cover pointer-events-none #{!important};
-// 				}
-
-// 				.mainContent {
-// 					@apply absolute z-20 w-full h-full p-0 flex flex-col items-center justify-end gap-4 lg:gap-12;
-
-// 					.wrapper {
-// 						@apply bg-white px-8 lg:px-16 py-16 lg:py-24 w-full h-fit flex flex-col lg:flex-row items-center justify-between gap-6;
-
-// 						.title {
-// 							@apply lg:max-w-4xl mx-auto lg:mx-0;
-
-// 							h3 {
-// 								@apply text-pureBlack font-extrabold font-MTVRegular text-left text-5xl lg:text-[4vw] tracking-[-0.15rem] leading-tight sm:leading-[2.5rem] lg:leading-[5rem];
-
-// 								span {
-// 									@apply font-MTVLight font-light italic;
-// 								}
-// 							}
-// 						}
-
-// 						.paragraph {
-// 							@apply w-full lg:max-w-2xl mx-auto text-pureBlack text-left text-2xl lg:text-3xl tracking-[-0.10rem] leading-normal;
-
-// 							p {
-// 								@apply font-BGAPLight;
-// 							}
-// 						}
-// 					}
-// 				}
-// 			}
-
-// 			.stickySection {
-// 				@apply sticky overflow-hidden top-0 z-10 flex h-[100vh];
-
-// 				.element {
-// 					@apply h-full w-full top-0 absolute flex items-center justify-center;
-
-// 					.maskContainer {
-// 						@apply absolute z-20 top-0 bottom-0 w-full h-full flex flex-col items-center justify-center;
-
-// 						.svg {
-// 							@apply object-contain;
-
-// 							rect {
-// 								fill: pureBlack;
-// 							}
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-
-// 		.topSection {
-// 			@apply relative h-[125vh];
-
-// 			.content {
-// 				@apply absolute top-0 left-0 z-[1] flex flex-col items-center justify-center;
-
-// 				.video {
-// 					@apply absolute z-10 h-full w-full aspect-[9/16] lg:aspect-[16/9] object-cover pointer-events-none #{!important};
-// 				}
-
-// 				.mainContent {
-// 					@apply absolute z-20 w-full h-full p-0 flex flex-col items-center justify-end gap-4 lg:gap-12;
-
-// 					.wrapper {
-// 						@apply bg-white px-8 lg:px-16 py-16 lg:py-24 w-full h-fit flex flex-col lg:flex-row items-center justify-between gap-6;
-
-// 						.title {
-// 							@apply w-full lg:max-w-2xl mx-auto lg:mx-0 text-pureBlack font-MTVBlack text-left text-5xl sm:text-5xl lg:text-[3.5vw] tracking-[-0.02rem] leading-tight sm:leading-[2.5rem] lg:leading-[4.05rem];
-// 						}
-
-// 						.paragraph {
-// 							@apply w-full lg:max-w-2xl mx-auto text-pureBlack text-left text-5xl tracking-[-0.10rem] leading-tight lg:leading-[2.75rem];
-
-// 							p {
-// 								@apply font-BGAPLight;
-// 							}
-// 						}
-// 					}
-// 				}
-// 			}
-
-// 			.stickySection {
-// 				@apply sticky overflow-hidden top-0 z-10 flex h-[100vh];
-
-// 				.element {
-// 					@apply h-full w-full top-0 absolute flex items-center justify-center;
-
-// 					.maskContainer {
-// 						@apply absolute z-20 top-0 bottom-0 w-full h-full flex flex-col items-center justify-center;
-
-// 						.svg {
-// 							@apply object-contain;
-
-// 							rect {
-// 								fill: pureBlack;
-// 							}
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
