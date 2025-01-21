@@ -72,15 +72,6 @@ export const getAllFlexibleContentComponents = async (
 													title
 													paragraph
 													buttonLink {
-													url
-													title
-													target
-													}
-													roles {
-													title
-													paragraph
-													backgroundColor
-													link {
 														url
 														title
 														target
@@ -89,22 +80,39 @@ export const getAllFlexibleContentComponents = async (
 														altText
 														sourceUrl
 														mediaDetails {
-														height
-														width
+															height
+															width
 														}
 													}
+													roles {
+														title
+														paragraph
+														backgroundColor
+														link {
+															url
+															title
+															target
+														}
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
 													}
 												}
 												serviceTwo {
 													title
 													paragraph
 													backgroundImage {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
 													}
 												}
                 							}
