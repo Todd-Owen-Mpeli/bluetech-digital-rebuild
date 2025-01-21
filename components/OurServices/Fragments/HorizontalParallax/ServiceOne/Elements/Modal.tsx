@@ -53,7 +53,7 @@ export const scaleAnimation: IScaleAnimation = {
 	},
 };
 
-const Modal: FC<IOurServices.IServicesOneModal> = ({modal, servicesRoles}) => {
+const Modal: FC<IOurServices.IServicesOneModal> = ({modal, roles}) => {
 	const {active, index} = modal;
 
 	const modalContainer = useRef(null);
@@ -119,8 +119,8 @@ const Modal: FC<IOurServices.IServicesOneModal> = ({modal, servicesRoles}) => {
 				animate={active ? "enter" : "closed"}
 			>
 				<div style={{top: index * -100 + "%"}} className={styles.modalSlider}>
-					{servicesRoles?.length > 0 ? (
-						servicesRoles?.map((item: any, index: number) => {
+					{roles?.length > 0 ? (
+						roles?.map((item: any, index: number) => {
 							return (
 								<div
 									key={`modal_${index}`}

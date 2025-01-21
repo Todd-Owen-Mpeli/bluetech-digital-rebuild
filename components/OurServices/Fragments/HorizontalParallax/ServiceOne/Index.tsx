@@ -2,12 +2,9 @@
 
 // Imports
 import {FC, Fragment, useRef, useState} from "react";
-import fadeInUp, {
-	arrayLoopStaggerChildren,
-	initial,
-} from "@/animations/animations";
 import {motion, useScroll, useTransform} from "framer-motion";
 import {IOurServices} from "@/components/OurServices/types/index";
+import {initial, arrayLoopStaggerChildren} from "@/animations/animations";
 
 // Styling
 import styles from "@/components/OurServices/styles/OurServices.module.scss";
@@ -19,10 +16,10 @@ import Modal from "@/components/OurServices/Fragments/HorizontalParallax/Service
 
 const ServiceOne: FC<IOurServices.IProps[`serviceOne`]> = ({
 	title,
+	roles,
 	image,
 	paragraph,
 	buttonLink,
-	servicesRoles,
 }) => {
 	const container = useRef(null);
 	const {scrollYProgress} = useScroll({
@@ -39,9 +36,9 @@ const ServiceOne: FC<IOurServices.IProps[`serviceOne`]> = ({
 
 	return (
 		<div ref={container} className={`${styles.serviceOne} panel`}>
-			<div className={styles.container}>
-				{/* {servicesRoles?.length > 0 ? (
-					servicesRoles?.map((item: any, index: number) => (
+			<div className={styles.main}>
+				{roles?.length > 0 ? (
+					roles?.map((item: any, index: number) => (
 						<Fragment key={index}>
 							<motion.div
 								custom={index}
@@ -68,9 +65,9 @@ const ServiceOne: FC<IOurServices.IProps[`serviceOne`]> = ({
 					))
 				) : (
 					<></>
-				)} */}
+				)}
 			</div>
-			{/* <Modal modal={modal} servicesRoles={servicesRoles} /> */}
+			<Modal modal={modal} roles={roles} />
 		</div>
 	);
 };

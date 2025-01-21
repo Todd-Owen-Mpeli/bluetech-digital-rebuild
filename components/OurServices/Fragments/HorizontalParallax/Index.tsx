@@ -101,9 +101,9 @@ const HorizontalParallax: FC<IOurServices.IHorizontalParallax> = ({
 				<ServiceOne
 					title={serviceOne.title}
 					image={serviceOne.image}
+					roles={serviceOne.roles}
 					paragraph={serviceOne.paragraph}
 					buttonLink={serviceOne.buttonLink}
-					servicesRoles={serviceOne.servicesRoles}
 				/>
 				<ServiceTwo
 					title={serviceTwo.title}

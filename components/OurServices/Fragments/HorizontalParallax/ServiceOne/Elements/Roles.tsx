@@ -48,7 +48,7 @@ const Roles: FC<IOurServices.IServicesOneRoles> = ({
 					whileInView={fadeIn}
 					viewport={{once: true}}
 					className={styles.title + ` group-hover:lg:translate-x-[-10px]`}
-					style={{color: `${isHovering ? backgroundColor : backgroundColor}`}}
+					style={{color: `${isHovering ? backgroundColor : "#000"}`}}
 				>
 					{title}
 				</motion.h4>
@@ -56,7 +56,11 @@ const Roles: FC<IOurServices.IServicesOneRoles> = ({
 					<TextRevealBlurEffect
 						content={paragraph}
 						scrollOpacity={scrollOpacity}
-						className={paragraph ? styles.paragraph : "hidden"}
+						className={
+							paragraph
+								? styles.paragraph + "  group-hover:lg:translate-x-[10px]"
+								: "hidden"
+						}
 					/>
 				</div>
 			</div>

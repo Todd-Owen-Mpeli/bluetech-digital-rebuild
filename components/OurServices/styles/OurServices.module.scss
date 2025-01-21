@@ -13,20 +13,68 @@
 
 				.serviceOne,
 				.serviceTwo,
-				.serviceThree,
-				.imageDivider {
+				.serviceThree {
 					@apply flex flex-col md:flex-row items-center justify-center h-screen w-full min-w-full font-MTVBlack text-[4.5vw];
 				}
 
 				.serviceOne {
-					@apply bg-white w-full py-10 lg:pt-24 lg:pb-4 px-0 overflow-hidden bg-cover bg-center bg-no-repeat;
+					@apply bg-white w-full flex py-10 lg:pt-24 lg:pb-4 px-0;
 
-					.container {
-						@apply w-full h-full flex flex-col justify-between gap-8 lg:gap-14 px-16;
+					.main {
+						@apply w-full max-w-[1200px] flex flex-col gap-0;
 
-						.main {
-							@apply w-full h-full flex flex-col -mx-4 gap-6 items-start justify-between;
+						.roles {
+							@apply w-full h-full min-h-[150px] flex flex-col lg:flex-row gap-20 px-2 xl:px-12 py-20 lg:py-8 items-center justify-between border-t-[1px] border-b-0 border-solid cursor-pointer transition-all duration-200 ease-in-out;
+
+							.title {
+								@apply text-pureBlack font-extrabold font-MTVRegular text-left text-2xl lg:text-3xl tracking-[-0.15rem] leading-tight;
+							}
+
+							.paragraph {
+								@apply w-full lg:max-w-sm mx-auto lg:mx-0 text-pureBlack text-left text-base lg:text-paragraph tracking-[-0.02rem] leading-normal transition-all duration-200 ease-in-out;
+
+								p {
+									@apply font-BGAPRegular;
+								}
+							}
 						}
+					}
+
+					/* Hide the div on touch devices */
+					@media (hover: none) and (pointer: coarse) {
+						.modalContainer {
+							@apply hidden;
+						}
+					}
+
+					/* Show the div on devices that support hover
+ 					and fine pointer interactions (like desktops) */
+					@media (hover: hover) and (pointer: fine) {
+						.modalContainer {
+							@apply flex w-[350px] h-[250px] lg:w-[650px] lg:h-[450px] absolute bg-white overflow-hidden pointer-events-none items-center justify-center;
+
+							.modalSlider {
+								@apply h-full w-full absolute;
+								transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+
+								.modal {
+									@apply h-full w-full p-2 lg:p-4 flex items-center justify-center;
+
+									img {
+										@apply w-full h-full object-cover object-center;
+									}
+								}
+							}
+						}
+					}
+
+					.cursor,
+					.cursorLabel {
+						@apply w-24 h-24 rounded-full text-white absolute z-20 flex items-center justify-center font-MTVRegular text-lg tracking-[0.05rem] uppercase pointer-events-none;
+					}
+
+					.cursorLabel {
+						@apply bg-transparent;
 					}
 				}
 

@@ -20,7 +20,7 @@ export namespace IOurServices {
 					width: number;
 				};
 			};
-			servicesRoles: {
+			roles: {
 				title: string;
 				paragraph: string;
 				backgroundColor: string;
@@ -79,7 +79,7 @@ export namespace IOurServices {
 			active: boolean;
 			index: number;
 		};
-		servicesRoles: IProps[`serviceOne`][`servicesRoles`];
+		roles: IProps[`serviceOne`][`roles`];
 	};
 	export type IHorizontalParallax = {
 		serviceOne: IProps[`serviceOne`];

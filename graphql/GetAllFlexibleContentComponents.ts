@@ -68,48 +68,45 @@ export const getAllFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_OurServices {
                 								fieldGroupName
                 								displaySection
-                								serviceOne {
-                									title
+												serviceOne {
+													title
 													paragraph
-                									image {
+													buttonLink {
+													url
+													title
+													target
+													}
+													roles {
+													title
+													paragraph
+													backgroundColor
+													link {
+														url
+														title
+														target
+													}
+													image {
 														altText
 														sourceUrl
 														mediaDetails {
-															height
-															width
+														height
+														width
 														}
 													}
-													servicesRoles {
-														title
-														paragraph
-														backgroundColor
-														link {
-															url
-															title
-															target
-														}
-														image {
-															altText
-															sourceUrl
-															mediaDetails {
-																height
-																width
-															}
-														}
 													}
-                								}
-                								serviceTwo {
-                									title
+												}
+												serviceTwo {
+													title
 													paragraph
 													backgroundImage {
-															altText
-															sourceUrl
-															mediaDetails {
-																height
-																width
-															}
-														}
-                								}
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+													}
+												}
                 							}
 											... on ${postTypeFlexibleContent}_OurExpertise {
                 								fieldGroupName
