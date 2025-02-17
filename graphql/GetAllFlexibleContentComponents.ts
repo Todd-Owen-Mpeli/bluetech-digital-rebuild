@@ -2,6 +2,12 @@
 import {client} from "@/config/apollo";
 import {DocumentNode, gql} from "@apollo/client";
 
+// Components: ACF Flexible Content Post Types
+import { Hero } from "@/components/Hero/graphql";
+import { OurServices } from "@/components/OurServices/graphql";
+import { OurExpertise } from "@/components/OurExpertise/graphql";
+import { TitleParagraph } from "@/components/TitleParagraph/graphql";
+
 /* PAGES & BLOGS POSTS*/
 /* Fetch all Flexible Content Components 
 (For every flexible content page) */
@@ -20,133 +26,10 @@ export const getAllFlexibleContentComponents = async (
 								... on DefaultTemplate {
 									flexibleContent {
 										flexibleContent {
-											... on ${postTypeFlexibleContent}_Hero {
-                								fieldGroupName
-                								displaySection
-                								title
-												subtitle
-                								paragraph
-                								displayVideo
-                								video {
-                									title
-                									mimeType
-                									mediaItemUrl
-                									mediaDetails {
-                										height
-                										width
-                									}
-                								}
-												buttonLink {
-													url
-													title
-													target
-												}
-                								videoBackgroundImage {
-                									altText
-                									sourceUrl
-                									mediaDetails {
-                										height
-                										width
-                									}
-                								}
-												trustedClients {
-													title
-													clientsImages {
-														name
-														channelName
-														image {
-															altText
-															sourceUrl
-															mediaDetails {
-																height
-																width
-															}
-														}
-													}
-												}
-                							}
-											... on ${postTypeFlexibleContent}_OurServices {
-                								fieldGroupName
-                								displaySection
-												serviceOne {
-													title
-													paragraph
-													buttonLink {
-														url
-														title
-														target
-													}
-													image {
-														altText
-														sourceUrl
-														mediaDetails {
-															height
-															width
-														}
-													}
-													roles {
-														title
-														paragraph
-														backgroundColor
-														link {
-															url
-															title
-															target
-														}
-														image {
-															altText
-															sourceUrl
-															mediaDetails {
-																height
-																width
-															}
-														}
-													}
-												}
-												serviceTwo {
-													title
-													paragraph
-													backgroundImage {
-														altText
-														sourceUrl
-														mediaDetails {
-															height
-															width
-														}
-													}
-												}
-                							}
-											... on ${postTypeFlexibleContent}_OurExpertise {
-                								fieldGroupName
-                								displaySection
-                								title
-                								paragraph
-												displayVideo
-                								video {
-                									title
-                									mimeType
-                									mediaItemUrl
-                									mediaDetails {
-                										height
-                										width
-                									}
-                								}
-                								videoBackgroundImage {
-                									altText
-                									sourceUrl
-                									mediaDetails {
-                										height
-                										width
-                									}
-                								}
-                							}
-                							... on ${postTypeFlexibleContent}_TitleParagraph {
-                								fieldGroupName
-                								displaySection
-                								title
-                								paragraph
-                								displayParagraph
-                							}
+											... on ${postTypeFlexibleContent}_Hero {${Hero}}
+											... on ${postTypeFlexibleContent}_OurServices {${OurServices}}
+											... on ${postTypeFlexibleContent}_OurExpertise {${OurExpertise}}
+                							... on ${postTypeFlexibleContent}_TitleParagraph {${TitleParagraph}}
 										}
 									}
 								}

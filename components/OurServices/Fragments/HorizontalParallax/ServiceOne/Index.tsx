@@ -6,6 +6,7 @@ import {
 	fadeInUp,
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
+import Link from "next/link";
 import {FC, Fragment, useRef, useState} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 import {IOurServices} from "@/components/OurServices/types/index";
@@ -19,7 +20,6 @@ import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal
 import Roles from "@/components/OurServices/Fragments/HorizontalParallax/ServiceOne/Elements/Roles";
 import Modal from "@/components/OurServices/Fragments/HorizontalParallax/ServiceOne/Elements/Modal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
-import Link from "next/link";
 
 const ServiceOne: FC<IOurServices.IProps[`serviceOne`]> = ({
 	title,
