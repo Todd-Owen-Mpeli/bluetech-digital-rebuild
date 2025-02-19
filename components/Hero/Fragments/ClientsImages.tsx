@@ -8,14 +8,15 @@ import {
 	useMotionValue,
 	AnimatePresence,
 } from "framer-motion";
-import Image from "next/image";
-import {FC, Fragment, useState} from "react";
-import {IHero} from "@/components/Hero/types/index";
 import {
 	slideInLeftInitial,
 	slideInRightFinish,
 	slideInRightInitial,
 } from "@/animations/animations";
+import Image from "next/image";
+import {FC, Fragment, useState} from "react";
+import {IHero} from "@/components/Hero/types/index";
+
 
 // Styling
 import styles from "@/components/Hero/styles/Hero.module.scss";
