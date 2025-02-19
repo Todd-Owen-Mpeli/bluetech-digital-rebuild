@@ -115,10 +115,13 @@ const ClientsImages: FC<IHero.IClientsImages> = ({title, clientsImages}) => {
 				initial={slideInRightInitial}
 				whileInView={slideInRightFinish}
 			>
-				<div className={styles.starts}>
-					<RenderStars rating={5} color="Yellow" />
+				<div className={styles.starsWrapper}>
+					<h5 className={styles.rating}>4.9</h5>
+					<div className={styles.stars}>
+						<RenderStars rating={5} color="Yellow" />
+					</div>
 				</div>
-				<div className={styles.title}>{title}</div>
+				<h5 className={styles.title}>{title}</h5>
 			</motion.div>
 		</div>
 	);

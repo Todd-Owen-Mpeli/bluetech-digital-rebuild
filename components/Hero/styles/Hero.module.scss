@@ -65,8 +65,16 @@
 								.stats {
 									@apply w-fit mx-0 flex flex-col gap-2;
 
-									.starts {
-										@apply w-fit grid grid-cols-5 items-center justify-center;
+									.starsWrapper {
+										@apply flex gap-2 items-center justify-center;
+
+										.rating {
+											@apply mt-2 font-MTVRegular text-quaternary-default text-lg lg:text-xl text-left tracking-[-0.02rem] leading-tight;
+										}
+
+										.stars {
+											@apply w-fit grid grid-cols-5 items-center justify-center;
+										}
 									}
 
 									.title {
