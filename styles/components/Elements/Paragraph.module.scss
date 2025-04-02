@@ -1,4 +1,7 @@
 // Imports
+// @use "../../../styles/globals.scss";
+@reference "tailwindcss";
+
 .paragraph {
 	h2,
 	h3,
@@ -15,7 +18,7 @@
 
 	ul,
 	ol {
-		@apply p-4 flex gap-2 sm:px-6 flex-col items-baseline justify-center border-l-2 border-primary-two;
+		@apply p-4 flex gap-2 sm:px-6 flex-col items-baseline justify-center border-l-2 border-[--color-primary-two];
 
 		li {
 			@apply px-2 list-disc text-left ml-4;
@@ -25,14 +28,14 @@
 			}
 
 			a {
-				@apply font-semibold underline text-primary-two hover:text-tertiary-two transition-all ease-in-out duration-500;
+				@apply font-semibold underline text-[--color-primary-two] hover:text-[--color-tertiary-two] transition-all ease-in-out duration-500;
 			}
 		}
 	}
 
 	p {
 		a {
-			@apply font-semibold underline text-primary-two hover:text-tertiary-two transition-all ease-in-out duration-500;
+			@apply font-semibold underline text-[--color-primary-two] hover:text-[--color-tertiary-two] transition-all ease-in-out duration-500;
 		}
 
 		img {

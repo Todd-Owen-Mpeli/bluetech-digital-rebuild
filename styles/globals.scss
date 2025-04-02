@@ -1,21 +1,66 @@
-@use "../styles/base/fonts";
-@use "../styles/base/colors";
+// This file is used to import the tailwindcss styles and custom styles
+// into the global styles of the application. It also includes custom font-face declarations for specific fonts used in the project.
+@use "tailwindcss";
 
+// Inject Tailwind's base and component styles
 @tailwind base;
 @tailwind components;
+
+// Inject Tailwind's utility classes
 @tailwind utilities;
 
+@theme {
+	// Fonts
+	--font-MTVBlack: "MTVBlack", sans-serif;
+	--font-MTVLight: "MTVLight", sans-serif;
+	--font-MTVRegular: "MTVRegular", sans-serif;
+	--font-BGAPBold: "BGAPBold", sans-serif;
+	--font-BGAPBlack: "BGAPBlack", sans-serif;
+	--font-BGAPLight: "BGAPLight", sans-serif;
+	--font-BGAPMedium: "BGAPMedium", sans-serif;
+	--font-BGAPRegular: "BGAPRegular", sans-serif;
+
+	// Font Sizes
+	--text-medium: 1.15rem;
+
+	// Colours
+	--color-black: #020202;
+	--color-grey: #cecece;
+	--color-white: #ffffff;
+	--color-pureBlack: #000;
+	--color-darkGrey: #8f8f8f;
+	--color-lightGrey: #f5f5f5;
+	--color-lightBlack: #292929;
+	--color-lightGreyTwo: #fafafa;
+
+	// Main Colours
+	--color-primary-default: #012b27;
+	--color-primary-two: #041b15;
+	--color-primary-dark: #041b15;
+	--color-primary-darker: #041b15;
+
+	--color-accent-default: #bff007;
+	--color-accent-two: #ffb000;
+	--color-accent-dark: #ffb000;
+	--color-accent-darker: #ffb000;
+
+	--color-tertiary-default: #8531ed;
+	--color-tertiary-two: #8531ed;
+	--color-tertiary-dark: #8531ed;
+	--color-tertiary-darker: #8531ed;
+
+	--color-quaternary-default: #ece5d5;
+	--color-quaternary-two: #ece5d5;
+}
+
 body {
-	@apply p-0 m-0 bg-pureBlack;
-	font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
-		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-		sans-serif;
+	@apply bg-white text-black;
+	font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+		"Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 body::-webkit-scrollbar {
-	display: none;
-	width: 0.65rem;
-	height: 0.65rem;
+	@apply hidden h-[0.65rem] w-[0.65rem];
 }
 
 body::-webkit-scrollbar-track {
@@ -23,19 +68,15 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-	@apply bg-primary-default rounded-[100px];
+	@apply bg-[--color-primary-default] rounded-[100px];
 
 	&:hover {
-		@apply bg-primary-two transition-all duration-500 ease-in-out;
+		@apply bg-[--color-primary-two] transition-all duration-500 ease-in-out;
 	}
 }
 
-a {
-	@apply text-inherit no-underline;
-}
-
 * {
-	@apply box-border;
+	@apply font-BGAPLight;
 	cursor: none !important;
 }
 
@@ -50,4 +91,38 @@ h4,
 h5,
 h6 {
 	@apply font-MTVBlack;
+}
+
+// Fonts Styles Imports
+@font-face {
+	font-family: MTVBlack;
+	src: url("./fonts/MalintonTrialVersion-Black.woff");
+}
+@font-face {
+	font-family: MTVLight;
+	src: url("./fonts/MalintonTrialVersion-Light.woff");
+}
+@font-face {
+	font-family: MTVRegular;
+	src: url("./fonts/MalintonTrialVersion-Regular.woff");
+}
+@font-face {
+	font-family: BGAPBold;
+	src: url("./fonts/BasisGrotesqueArabicPro-Bold.woff");
+}
+@font-face {
+	font-family: BGAPBlack;
+	src: url("./fonts/BasisGrotesqueArabicPro-Black.woff");
+}
+@font-face {
+	font-family: BGAPLight;
+	src: url("./fonts/BasisGrotesqueArabicPro-Light.woff");
+}
+@font-face {
+	font-family: BGAPMedium;
+	src: url("./fonts/BasisGrotesqueArabicPro-Medium.woff");
+}
+@font-face {
+	font-family: BGAPRegular;
+	src: url("./fonts/BasisGrotesqueArabicPro-Regular.woff");
 }

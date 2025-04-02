@@ -86,7 +86,7 @@ const App = async ({children}: AppProps | any) => {
 				<ApolloContextProvider>
 					<GlobalContextProvider globalProps={globalProps}>
 						<SmoothScrolling>
-							<Navbar />
+							{/* <Navbar /> */}
 							{children}
 							{/* <Footer /> */}
 							<BlurryCursorMouse />

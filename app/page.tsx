@@ -20,6 +20,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 	};
 };
 
+
 const HomePage: any = async () => {
 	// Fetch priority content
 	const flexibleContentComponents: any = await getAllFlexibleContentComponents(
@@ -33,8 +34,8 @@ const HomePage: any = async () => {
 			content={flexibleContentComponents?.content}
 			postTypeFlexibleContent={flexibleContentType?.pages}
 		>
-			<RenderFlexibleContent />
-		</PageContextProvider>
+    	  <RenderFlexibleContent />
+    	</PageContextProvider>
 	);
 };
 

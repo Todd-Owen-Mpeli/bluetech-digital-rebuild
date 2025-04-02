@@ -21,65 +21,63 @@ const CookiePolicyCard: FC = () => {
 	};
 
 	return (
-		<>
-			<div
-				className={
-					showCookiePolicyCard
-						? `fixed bottom-0 right-0 mx-4 max-w-6xl px-0 md:max-w-xl z-[999]`
-						: `hidden`
-				}
+		<div
+			className={
+				showCookiePolicyCard
+					? `fixed bottom-0 right-0 mx-4 max-w-6xl px-0 md:max-w-xl z-[999]`
+					: `hidden`
+			}
+		>
+			<motion.div
+				initial={initial}
+				variants={stagger}
+				whileInView="animate"
+				viewport={{once: true}}
+				className="px-6 py-4 mb-3 mr-3 bg-white border-solid border-l-[5px] border-b-[5px] border-lightGrey"
+				style={{
+					boxShadow: "0px 30px 2px -25px rgba(0,0,0,0.1)",
+				}}
 			>
+				<motion.h3
+					initial={initial}
+					whileInView={fadeInUp}
+					viewport={{once: true}}
+					className="font-bold text-base tracking-wide text-black"
+				>
+					Cookie Policy
+				</motion.h3>
+				<Paragraph
+					content={`<p>This website uses cookies to enhance the user experience and ensure the proper functioningof the site. By using this website, you agree to the use of cookies in accordance with this CookiePolicy.</p>`}
+					className="mt-1 mb-2 text-sm text-left text-black"
+				/>
 				<motion.div
 					initial={initial}
 					variants={stagger}
 					whileInView="animate"
 					viewport={{once: true}}
-					className="px-6 py-4 mb-3 mr-3 bg-white border-solid border-l-[5px] border-b-[5px] border-lightGrey"
-					style={{
-						boxShadow: "0px 30px 2px -25px rgba(0,0,0,0.1)",
-					}}
+					className="flex items-center justify-start gap-4"
 				>
-					<motion.h3
+					<motion.button
+						onClick={acceptCookies}
 						initial={initial}
 						whileInView={fadeInUp}
 						viewport={{once: true}}
-						className="font-bold text-base tracking-wide text-black"
+						className="inline-block px-6 py-3 mr-2 text-xs leading-none text-white transition-all duration-200ease-in-out bg-[--color-primary-two] hover:bg-tertiary-dark"
 					>
-						Cookie Policy
-					</motion.h3>
-					<Paragraph
-						content={`<p>This website uses cookies to enhance the user experience and ensure the proper functioning of the site. By using this website, you agree to the use of cookies in accordance with this Cookie Policy.</p>`}
-						className="mt-1 mb-2 text-sm text-left text-black"
-					/>
-					<motion.div
+						Accept Cookies
+					</motion.button>
+					<motion.button
+						onClick={refuseCookies}
 						initial={initial}
-						variants={stagger}
-						whileInView="animate"
+						whileInView={fadeInUp}
 						viewport={{once: true}}
-						className="flex items-center justify-start gap-4"
+						className="inline-block px-6 py-3 text-xs leading-none text-white bg-[--color-primary-dark] hover:bg[--color-[--color-primary-dark]er]"
 					>
-						<motion.button
-							onClick={acceptCookies}
-							initial={initial}
-							whileInView={fadeInUp}
-							viewport={{once: true}}
-							className="inline-block px-6 py-3 mr-2 text-xs leading-none text-white transition-all duration-200 ease-in-out bg-primary-two hover:bg-tertiary-dark"
-						>
-							Accept Cookies
-						</motion.button>
-						<motion.button
-							onClick={refuseCookies}
-							initial={initial}
-							whileInView={fadeInUp}
-							viewport={{once: true}}
-							className="inline-block px-6 py-3 text-xs leading-none text-white bg-primary-dark hover:bg-primary-darker"
-						>
-							Refuse Cookies
-						</motion.button>
-					</motion.div>
+						Refuse Cookies
+					</motion.button>
 				</motion.div>
-			</div>
-		</>
+			</motion.div>
+		</div>
 	);
 };
 

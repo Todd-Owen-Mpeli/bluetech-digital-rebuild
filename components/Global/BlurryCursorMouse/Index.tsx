@@ -60,7 +60,7 @@ const BlurryCursorMouse: FC = () => {
 					width: size,
 					height: size,
 					borderRadius: "100%",
-					backgroundColor: "#ffb000",
+					backgroundColor: "#bff007",
 					transition: `height 0.3s ease-out, width 0.3s ease-out, filter 0.3s ease-out`,
 				}}
 				className={styles.element}
