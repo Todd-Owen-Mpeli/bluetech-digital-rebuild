@@ -1,0 +1,73 @@
+.hero {
+    @apply relative p-0 flex flex-col overflow-hidden;
+
+    .horizontalParallax {
+        @apply relative z-10 p-0 flex flex-col gap-4;
+
+        .wrapper {
+            @apply relative z-10 p-0 flex flex-col gap-4;
+
+            // Hero View One
+            .heroViewOne {
+                @apply relative flex flex-col items-center justify-center;
+
+                .container {
+                    @apply sticky top-0 h-screen w-full flex flex-col items-center justify-center;
+
+                    .content {
+                        @apply sticky w-full h-full m-auto aspect-[9/16] lg:aspect-[16/9] bg-center bg-no-repeat bg-cover;
+
+                        .video {
+                            @apply absolute top-0 left-0 w-full h-full object-cover overflow-hidden pointer-events-none #{!important};
+                        }
+
+                        .heroCard {
+                            @apply relative z-10 w-full h-full overflow-x-hidden bg-pureBlack/30;
+
+                            .content {
+                                @apply w-full h-full px-6 lg:px-12 flex flex-col items-center justify-center gap-6 lg:gap-4;
+
+                                .title {
+                                    @apply lg:max-w-7xl mx-auto lg:mx-0 font-primary text-white text-center text-7xl lg:text-[5vw] leading-tight;
+                                }
+
+                                .subtitle {
+                                    @apply lg:max-w-5xl mx-auto lg:mx-0 font-secondaryMedium text-white text-center text-5xl;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Hero View One
+            .heroViewTwo {
+                @apply bg-white relative flex flex-col items-center justify-center;
+
+                .container {
+                    @apply h-screen w-full flex flex-col;
+
+                    .content {
+                        @apply w-full h-full py-4 px-12 flex flex-col items-baseline justify-center;
+
+                        .paragraph {
+                            @apply lg:max-w-6xl text-pureBlack text-8xl text-left tracking-[-0.02rem] leading-normal;
+
+                            p {
+                                @apply font-primary;
+                            }
+                        }
+                    }
+
+                    .videoWrapper {
+                        @apply sticky top-0 h-[65vh] w-full flex flex-col items-center justify-center;
+
+                        .video {
+                            @apply absolute top-0 left-0 w-full h-[50vh] object-cover overflow-hidden pointer-events-none #{!important};
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

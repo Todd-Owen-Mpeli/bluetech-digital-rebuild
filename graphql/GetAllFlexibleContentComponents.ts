@@ -3,7 +3,8 @@ import {client} from "@/config/apollo";
 import {DocumentNode, gql} from "@apollo/client";
 
 // Components: ACF Flexible Content Post Types
-import { TitleParagraph } from "@/components/TitleParagraph/graphql";
+import { Hero } from "@/components/Hero/graphql/index";
+import { TitleParagraph } from "@/components/TitleParagraph/graphql/index";
 
 /* PAGES & BLOGS POSTS*/
 /* Fetch all Flexible Content Components 
@@ -23,6 +24,7 @@ export const getAllFlexibleContentComponents = async (
 								... on DefaultTemplate {
 									flexibleContent {
 										flexibleContent {
+											... on ${postTypeFlexibleContent}_Hero {${Hero}}
                 							... on ${postTypeFlexibleContent}_TitleParagraph {${TitleParagraph}}
 										}
 									}
