@@ -75,6 +75,9 @@ export default {
 	plugins: [
 		function ({addUtilities}: PluginAPI) {
 			addUtilities({
+				".font-primary": {
+					fontFamily: '"primary"',
+				},
 				".font-MTVBlack": {
 					fontFamily: '"MTVBlack"',
 				},
@@ -87,17 +90,17 @@ export default {
 				".font-BGAPBold": {
 					fontFamily: '"BGAPBold"',
 				},
-				".font-BGAPBlack": {
-					fontFamily: '"BGAPBlack"',
+				".font-secondaryBlack": {
+					fontFamily: '"secondaryBlack"',
 				},
-				".font-BGAPLight": {
-					fontFamily: '"BGAPLight"',
+				".font-secondaryLight": {
+					fontFamily: '"secondaryLight"',
 				},
-				".font-BGAPMedium": {
-					fontFamily: '"BGAPMedium"',
+				".font-secondaryMedium": {
+					fontFamily: '"secondaryMedium"',
 				},
-				".font-BGAPRegular": {
-					fontFamily: '"BGAPRegular"',
+				".font-secondaryRegular": {
+					fontFamily: '"secondaryRegular"',
 				},
 			} as CSSRuleObject);
 		},

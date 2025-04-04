@@ -15,7 +15,7 @@
 				}
 
 				.paragraph {
-					@apply max-w-4xl mx-auto lg:mx-0 font-BGAPRegular text-black text-3xl md:text-6xl text-center lg:text-left tracking-[0.02rem] leading-tight md:leading-[3.25rem];
+					@apply max-w-4xl mx-auto lg:mx-0 font-secondaryRegular text-black text-3xl md:text-6xl text-center lg:text-left tracking-[0.02rem] leading-tight md:leading-[3.25rem];
 
 					span {
 						@apply text-secondary-default;
@@ -30,7 +30,7 @@
 					@apply inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black;
 
 					.text {
-						@apply mr-4 font-BGAPRegular text-medium tracking-[0.02rem];
+						@apply mr-4 font-secondaryRegular text-medium tracking-[0.02rem];
 					}
 
 					.svgWrapper {
