@@ -10,7 +10,7 @@ import {INavbar} from "@/components/Global/Navbar/types/index";
 import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
 
 // Animation
-const mobileMenuAnimation: INavbar.IMobileMenuAnimation = {
+const megaMenuAnimation: INavbar.IMegaMenuAnimation = {
 	open: {
 		width: "55vw",
 		height: "55vh",
@@ -39,18 +39,18 @@ const mobileMenuAnimation: INavbar.IMobileMenuAnimation = {
 	},
 };
 
-const MobileMenu: FC<INavbar.IMobileMenu> = ({ menuActive, mobileLinks, setMenuActive }) => {
+const MegaMenu: FC<INavbar.IMegaMenu> = ({ menuActive, mobileLinks, setMenuActive }) => {
     
     const closeMenu = () => {
 		setMenuActive(false);
     };
     
     return (
-        <div className={menuActive ? styles.mobileMenu: "hidden"}>
+        <div className={menuActive ? styles.megaMenu: "hidden"}>
             <motion.div
 				initial="closed"
                 className={styles.container}
-				variants={mobileMenuAnimation}
+				variants={megaMenuAnimation}
 				animate={menuActive ? "open" : "closed"}
             >
                 Enter
@@ -59,4 +59,4 @@ const MobileMenu: FC<INavbar.IMobileMenu> = ({ menuActive, mobileLinks, setMenuA
     );
 }
 
-export default MobileMenu;
+export default MegaMenu;

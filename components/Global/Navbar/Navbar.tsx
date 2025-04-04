@@ -14,7 +14,7 @@ import fadeInUp, {initial, stagger} from "@/animations/animations";
 import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
 
 // Components
-import MobileMenu from "@/components/Global/Navbar/Element/MobileMenu";
+import MegaMenu from "@/components/Global/Navbar/Element/MegaMenu";
 
 // Animation Variants
 const revealAnimation: INavbar.IRevealAnimation | any = {
@@ -94,7 +94,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 			</div>
 			{/* Hidden Mobile Menu */}
 			<div className={styles.mobileMenuWrapper}>
-				<MobileMenu
+				<MegaMenu
 					menuActive={menuActive}
 					setMenuActive={setMenuActive}
 					mobileLinks={globalContext?.mobileLinks}

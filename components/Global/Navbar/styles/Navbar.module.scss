@@ -29,8 +29,8 @@
 		}
 	}
 
-	.mobileMenu {
-		@apply w-fit min-w-[60%] h-full mx-auto bg-white py-5 px-6;
+	.megaMenu {
+		@apply hidden lg:flex w-fit min-w-[60%] h-full mx-auto bg-white py-5 px-6;
 
 		.container {
 			@apply w-full flex items-start justify-start;

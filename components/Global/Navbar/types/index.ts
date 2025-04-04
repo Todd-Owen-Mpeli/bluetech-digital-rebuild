@@ -10,7 +10,7 @@ export namespace INavbar {
 		index: number;
 	};
 
-	export type IMobileMenu = {
+	export type IMegaMenu = {
 		menuActive: boolean;
 		mobileLinks: IGlobal.IContext[`mobileLinks`];
 		setMenuActive: Dispatch<SetStateAction<boolean>>;
@@ -41,7 +41,7 @@ export namespace INavbar {
 		};
 	};
 
-	export type IMobileMenuAnimation = {
+	export type IMegaMenuAnimation = {
 		open: {
 			width: string;
 			height: string;
