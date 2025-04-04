@@ -24,6 +24,7 @@ export namespace IHero {
         };
         heroViewTwo: {
 			paragraph: string;
+			paragraphTwo: string;
 			displayVideo: boolean;
             video: {
                 title: string;
@@ -33,6 +34,11 @@ export namespace IHero {
                     width: number;
                     height: number;
                 };
+            };
+            buttonLink: {
+                url: string;
+                title: string;
+                target: string;
             };
 			videoBackgroundImage: {
 				altText: string;
@@ -65,14 +71,6 @@ export namespace IHero {
 	export type IVideoCard = {
 		video: IProps[`heroViewOne`][`video`];
 		displayVideo: IProps[`heroViewOne`][`displayVideo`];
-    };
-
-    export type IHeroViewOne = {
-		heroViewOne: IProps[`heroViewOne`];
-    };
-
-    export type IHeroViewTwo = {
-		heroViewTwo: IProps[`heroViewTwo`];
     };
     
     export type IHorizontalParallax = {

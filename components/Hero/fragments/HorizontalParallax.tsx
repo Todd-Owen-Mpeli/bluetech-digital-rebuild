@@ -11,8 +11,9 @@ import {IHero} from "@/components/Hero/types/index";
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
-import HeroViewOne from "./HeroViewOne/Index";
-import HeroViewTwo from "./HeroViewTwo/Index";
+import HeroViewOne from "./HeroViewOne/HeroViewOne";
+import HeroViewTwo from "./HeroViewTwo/HeroViewTwo";
+import HeroViewThree from "./HeroViewThree/HeroViewThree";
 
 // Gsap Register Plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -97,8 +98,24 @@ const HorizontalParallax: FC<IHero.IHorizontalParallax> = ({
 	return (
 		<div ref={containerRef} className={styles.horizontalParallax}>
 			<motion.div ref={sliderRef} className={styles.wrapper}>
-                <HeroViewOne heroViewOne={heroViewOne} />
-                <HeroViewTwo heroViewTwo={heroViewTwo} />
+				<HeroViewOne
+					video={heroViewOne.video}
+					title={heroViewOne.title}
+					subtitle={heroViewOne.subtitle}
+					displayVideo={heroViewOne.displayVideo}
+					videoBackgroundImage={heroViewOne.videoBackgroundImage}
+				/>
+				<HeroViewTwo
+					video={heroViewTwo.video}
+					paragraph={heroViewTwo.paragraph}
+					buttonLink={heroViewTwo.buttonLink}
+					paragraphTwo={heroViewTwo.paragraphTwo}
+					displayVideo={heroViewTwo.displayVideo}
+					videoBackgroundImage={heroViewTwo.videoBackgroundImage}
+				/>
+				<HeroViewThree
+					trustedClients={heroViewThree.trustedClients}
+				/>
 			</motion.div>
 		</div>
 	);

@@ -14,14 +14,16 @@ const Hero: FC<IHero.IProps> = ({
 	heroViewThree,
 }) => {
     return (
-        <div className={styles.hero}>
-            <HorizontalParallax
-				heroViewOne={heroViewOne}
-				heroViewTwo={heroViewTwo}
-				heroViewThree={heroViewThree}
-			/>
-			<div className="h-screen bg-accent-default"></div>
-        </div>
+		<div className={styles.hero}>
+			<div className={styles.container}>
+				<HorizontalParallax
+					heroViewOne={heroViewOne}
+					heroViewTwo={heroViewTwo}
+					heroViewThree={heroViewThree}
+				/>
+				<div className="h-screen bg-accent-default"></div>
+			</div>
+		</div>
     );
 }
 

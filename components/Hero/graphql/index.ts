@@ -26,6 +26,7 @@ export const Hero = `
 		}
 		heroViewTwo {
 			paragraph
+			paragraphTwo
 			displayVideo
 			video {
 				title
@@ -35,6 +36,11 @@ export const Hero = `
 					height
 					width
 				}
+			}
+			buttonLink {
+				url
+				title
+				target
 			}
 			videoBackgroundImage {
 				altText

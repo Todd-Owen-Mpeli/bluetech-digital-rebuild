@@ -1,71 +1,99 @@
 .hero {
-    @apply relative p-0 flex flex-col overflow-hidden;
+    @apply bg-white;
 
-    .horizontalParallax {
-        @apply relative z-10 p-0 flex flex-col gap-4;
+    .container {
+        @apply m-0 p-0;
 
-        .wrapper {
-            @apply relative z-10 p-0 flex flex-col gap-4;
+        .horizontalParallax {
+            @apply overflow-hidden;
 
-            // Hero View One
-            .heroViewOne {
-                @apply relative flex flex-col items-center justify-center;
+            .wrapper {
+                @apply w-full h-full flex flex-col md:flex-row;
+                flex-wrap: nowrap;
 
-                .container {
-                    @apply sticky top-0 h-screen w-full flex flex-col items-center justify-center;
+                .heroViewOne,
+                .heroViewTwo,
+                .heroViewThree {
+                    @apply h-full w-full min-h-screen min-w-full flex flex-col md:flex-row items-center justify-center;
+                }
+
+                // Hero View One
+                .heroViewOne {
+                    @apply relative flex p-0 items-center justify-between;
 
                     .content {
-                        @apply sticky w-full h-full m-auto aspect-[9/16] lg:aspect-[16/9] bg-center bg-no-repeat bg-cover;
+                        @apply w-full h-full aspect-[9/16] lg:aspect-[16/9] bg-center bg-no-repeat bg-cover;
 
                         .video {
                             @apply absolute top-0 left-0 w-full h-full object-cover overflow-hidden pointer-events-none #{!important};
                         }
 
                         .heroCard {
-                            @apply relative z-10 w-full h-full overflow-x-hidden bg-pureBlack/30;
+                            @apply relative z-10 w-full h-full overflow-x-hidden bg-pureBlack/20 hover:bg-pureBlack/60 transition-all duration-1000 ease-in-out;
 
                             .content {
                                 @apply w-full h-full px-6 lg:px-12 flex flex-col items-center justify-center gap-6 lg:gap-4;
 
                                 .title {
-                                    @apply lg:max-w-7xl mx-auto lg:mx-0 font-primary text-white text-center text-7xl lg:text-[5vw] leading-tight;
+                                    @apply lg:max-w-7xl mx-auto lg:mx-0 font-primary text-white text-center text-7xl lg:text-[7.5vw]  leading-normal xl:leading-[7vw];
                                 }
 
                                 .subtitle {
-                                    @apply lg:max-w-5xl mx-auto lg:mx-0 font-secondaryMedium text-white text-center text-5xl;
+                                    @apply lg:max-w-xl mx-auto lg:mx-0 font-secondaryLight text-white text-center text-xl;
                                 }
                             }
                         }
                     }
                 }
-            }
 
-            // Hero View One
-            .heroViewTwo {
-                @apply bg-white relative flex flex-col items-center justify-center;
+                // Hero View Two
+                .heroViewTwo {
+                    @apply relative p-0 overflow-hidden bg-cover bg-center bg-no-repeat;
 
-                .container {
-                    @apply h-screen w-full flex flex-col;
+                    .container {
+                        @apply w-full h-full flex flex-col items-center;
 
-                    .content {
-                        @apply w-full h-full py-4 px-12 flex flex-col items-baseline justify-center;
+                        .content {
+                            @apply w-full h-full py-4 px-12 lg:px-20 flex flex-col lg:flex-row items-baseline justify-between;
 
-                        .paragraph {
-                            @apply lg:max-w-6xl text-pureBlack text-8xl text-left tracking-[-0.02rem] leading-normal;
+                            .paragraph {
+                                @apply lg:max-w-5xl text-pureBlack text-8xl lg:text-10xl text-left tracking-[-0.02rem] leading-normal lg:leading-[4vw];
 
-                            p {
-                                @apply font-primary;
+                                p {
+                                    @apply font-primary;
+                                }
+                            }
+
+                            .rightSection {
+                                @apply w-full h-full lg:max-w-lg pb-10 flex flex-col items-start justify-between;
+
+                                .content {
+                                    @apply flex flex-col items-start justify-end gap-4;
+
+                                    .paragraphTwo {
+                                        @apply lg:max-w-xs flex flex-col items-center justify-between;
+                                    }
+
+                                    .buttonStyling {
+                                        @apply py-3 px-6 w-fit bg-accent-default rounded-full font-secondaryMedium cursor-pointer capitalize text-pureBlack text-lg tracking-[0.05rem] hover:text-white hover:bg-pureBlack transition-all ease-in-out duration-500;
+                                    }
+                                }
+                            }
+                        }
+
+                        .videoWrapper {
+                            @apply sticky top-0 h-[65vh] w-full flex flex-col items-center justify-center;
+
+                            .video {
+                                @apply absolute top-0 left-0 w-full h-[50vh] object-cover overflow-hidden pointer-events-none #{!important};
                             }
                         }
                     }
+                }
 
-                    .videoWrapper {
-                        @apply sticky top-0 h-[65vh] w-full flex flex-col items-center justify-center;
-
-                        .video {
-                            @apply absolute top-0 left-0 w-full h-[50vh] object-cover overflow-hidden pointer-events-none #{!important};
-                        }
-                    }
+                // Hero View Three
+                .heroViewThree {
+                    @apply bg-black text-white;
                 }
             }
         }
