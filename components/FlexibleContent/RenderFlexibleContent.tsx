@@ -5,7 +5,7 @@ import React, {FC, Fragment} from "react";
 import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
-import TitleParagraph from "@/components/TitleParagraph/Index";
+import TitleParagraph from "@/components/TitleParagraph/TitleParagraph";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();

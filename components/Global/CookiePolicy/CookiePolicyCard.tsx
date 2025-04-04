@@ -4,8 +4,13 @@
 import postHog from "posthog-js";
 import {FC, useState} from "react";
 import {motion} from "framer-motion";
-import Paragraph from "@/components/Elements/Paragraph";
 import {fadeInUp, initial, stagger} from "@/animations/animations";
+
+// Styling
+import styles from "@/components/Global/CookiePolicy/styles/CookiePolicyCard.module.scss";
+
+// Components
+import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 
 const CookiePolicyCard: FC = () => {
 	const [showCookiePolicyCard, setShowCookiePolicyCard] = useState(true);
@@ -24,7 +29,7 @@ const CookiePolicyCard: FC = () => {
 		<div
 			className={
 				showCookiePolicyCard
-					? `fixed bottom-0 right-0 mx-4 max-w-6xl px-0 md:max-w-xl z-[999]`
+					? styles.cookiePolicyCard
 					: `hidden`
 			}
 		>
@@ -33,7 +38,7 @@ const CookiePolicyCard: FC = () => {
 				variants={stagger}
 				whileInView="animate"
 				viewport={{once: true}}
-				className="px-6 py-4 mb-3 mr-3 bg-white border-solid border-l-[5px] border-b-[5px] border-lightGrey"
+				className={styles.content}
 				style={{
 					boxShadow: "0px 30px 2px -25px rgba(0,0,0,0.1)",
 				}}
@@ -42,36 +47,36 @@ const CookiePolicyCard: FC = () => {
 					initial={initial}
 					whileInView={fadeInUp}
 					viewport={{once: true}}
-					className="font-bold text-base tracking-wide text-black"
+					className={styles.title}
 				>
 					Cookie Policy
 				</motion.h3>
 				<Paragraph
-					content={`<p>This website uses cookies to enhance the user experience and ensure the proper functioningof the site. By using this website, you agree to the use of cookies in accordance with this CookiePolicy.</p>`}
-					className="mt-1 mb-2 text-sm text-left text-black"
+					className={styles.paragraph}
+					content={`<p>This website uses cookies to enhance the user experience and ensure the proper functioning of the site. By using this website, you agree to the use of cookies in accordance with this CookiePolicy.</p>`}
 				/>
 				<motion.div
 					initial={initial}
 					variants={stagger}
 					whileInView="animate"
 					viewport={{once: true}}
-					className="flex items-center justify-start gap-4"
+					className={styles.buttonSection}
 				>
 					<motion.button
-						onClick={acceptCookies}
 						initial={initial}
 						whileInView={fadeInUp}
+						onClick={acceptCookies}
 						viewport={{once: true}}
-						className="inline-block px-6 py-3 mr-2 text-xs leading-none text-white transition-all duration-200ease-in-out bg-[--color-primary-two] hover:bg-tertiary-dark"
+						className={styles.acceptButton}
 					>
 						Accept Cookies
 					</motion.button>
 					<motion.button
-						onClick={refuseCookies}
 						initial={initial}
 						whileInView={fadeInUp}
+						onClick={refuseCookies}
 						viewport={{once: true}}
-						className="inline-block px-6 py-3 text-xs leading-none text-white bg-[--color-primary-dark] hover:bg[--color-[--color-primary-dark]er]"
+						className={styles.refuseButton}
 					>
 						Refuse Cookies
 					</motion.button>

@@ -1,9 +1,59 @@
-@reference "tailwindcss";
-
 .navbar {
 	@apply z-[998] py-2 px-4 w-full fixed hover:opacity-100 transition-all ease-in-out duration-500;
 
 	.container {
 		@apply w-full flex items-center justify-between;
+
+		.logo {
+			@apply flex items-center justify-center gap-6;
+
+			.image {
+				@apply object-contain object-center w-[30px] h-[30px] hover:opacity-50 transition-all duration-500 ease-in-out;
+			}
+
+			.localeTime {
+				@apply hidden xl:flex font-MTVRegular text-tertiary-default text-center text-base tracking-[-0.02rem];
+			}
+		}
+
+		.menuLinks {
+			@apply hidden xl:flex items-center justify-end gap-6;
+
+			.ul {
+				@apply flex items-center gap-x-6;
+
+				.link {
+					@apply font-MTVLight font-light cursor-pointer text-tertiary-default text-center text-paragraph tracking-[0.05rem] hover:text-accent-default transition-all duration-500 ease-in-out;
+				}
+
+				.ourMissionNav {
+					@apply relative;
+
+					.contentWrapper {
+						@apply block fixed mt-[0.8rem] w-full left-0 right-0 p-16;
+
+						.content {
+							@apply w-full h-full flex flex-col items-baseline justify-start gap-6;
+
+							.title {
+								@apply font-MTVLight text-pureBlack text-left text-5xl lg:text-[3vw] tracking-[-0.15rem] leading-tight sm:leading-[2.5rem] lg:leading-[3.25vw];
+							}
+
+							.paragraph {
+								@apply max-w-xl mx-0 font-BGAPLight text-pureBlack text-left text-lg leading-tight tracking-[0.02rem];
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.buttonSection {
+			@apply hidden xl:flex items-center justify-end gap-6;
+
+			.buttonStyling {
+				@apply pt-2 pb-1 px-4 w-fit bg-accent-default rounded-full font-MTVRegular cursor-pointer text-pureBlack text-paragraph tracking-[0.05rem] hover:text-tertiary-default hover:bg-pureBlack transition-all ease-in-out duration-500;
+			}
+		}
 	}
 }

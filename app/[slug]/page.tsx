@@ -7,8 +7,8 @@ import {getAllSeoContent} from "@/graphql/GetAllSeoContent";
 import {getAllFlexibleContentComponents} from "@/graphql/GetAllFlexibleContentComponents";
 
 // Components
-import BackToTopButton from "@/components/Elements/BackToTopButton";
 import PageContextProvider from "@/context/providers/PageContextProvider";
+import BackToTopButton from "@/components/Elements/BackToTopButton/BackToTopButton";
 import RenderFlexibleContent from "@/components/FlexibleContent/RenderFlexibleContent";
 
 // Dynamic Pages Generated Metadata

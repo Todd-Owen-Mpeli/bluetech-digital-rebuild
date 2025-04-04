@@ -12,9 +12,9 @@ import {motion} from "framer-motion";
 import styles from "@/components/TitleParagraph/styles/TitleParagraph.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph";
+import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 
-export type ITitleParagraph = {
+type ITitleParagraph = {
 	title: string;
 	paragraph: string;
 	displayParagraph: boolean;

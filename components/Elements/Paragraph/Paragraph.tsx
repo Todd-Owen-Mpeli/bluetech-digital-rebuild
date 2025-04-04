@@ -5,7 +5,7 @@ import DOMPurify from "isomorphic-dompurify";
 import {motion, useScroll} from "framer-motion";
 
 // Styling
-import styles from "@/styles/components/Elements/Paragraph.module.scss";
+import styles from "@/components/Elements/Paragraph/Styles/Paragraph.module.scss";
 
 type IParagraph = {
 	fadeIn?: boolean;

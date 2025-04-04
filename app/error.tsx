@@ -4,7 +4,7 @@
 import {Metadata} from "next";
 
 // Components
-import ErrorComponent from "@/components/Global/Error/Index";
+import ErrorComponent from "@/components/Global/Error/Error";
 
 // Not-Found Page Generated Metadata
 export const metadata: Metadata = {
