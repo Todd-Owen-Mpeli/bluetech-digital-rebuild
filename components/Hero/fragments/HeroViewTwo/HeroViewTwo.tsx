@@ -12,6 +12,7 @@ import styles from "@/components/Hero/styles/Hero.module.scss";
 import VideoCard from "../VideoCard";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import TextRevealBlurEffect from "@/components/Elements/TextRevealBlurEffect";
+import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
 
 const MemoizedMotionDiv = React.memo(motion.div);
 
@@ -44,17 +45,17 @@ const HeroViewTwo: FC<IHero.IProps[`heroViewTwo`]> = ({
     
     
     return (
-        <div className={`${styles.heroViewTwo} panel`}>
+        <div  ref={container} className={`${styles.heroViewTwo} panel`}>
             <div className={styles.container}>
                 <motion.div className={styles.content}>
                     <TextRevealBlurEffect
-                        scrollOpacity={scrollOpacity}
                         content={paragraph}
+                        scrollOpacity={scrollOpacity}
                         className={paragraph ? styles.paragraph : "hidden"}
                     />
                     <div className={styles.rightSection}>
                         <div className="h-1/2"/>
-                        <div className={styles.content}>
+                        <SlideInXRightAnimation className={styles.content}>
                             <Paragraph
                                 fadeIn={false}
                                 content={paragraphTwo}
@@ -74,7 +75,7 @@ const HeroViewTwo: FC<IHero.IProps[`heroViewTwo`]> = ({
                             >
                                 {buttonLink?.title}
                             </Link>
-                        </div>
+                        </SlideInXRightAnimation>
                     </div>
                 </motion.div>
                 <MemoizedMotionDiv style={motionStyle} className={styles.videoWrapper}>
