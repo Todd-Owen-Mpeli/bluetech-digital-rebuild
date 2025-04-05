@@ -1,6 +1,16 @@
 export namespace IOurServices {
 	export type IProps = {
         title: string;
+        hoverImages: {
+            image: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					height: number;
+					width: number;
+				};
+            };
+        }[]
         serviceOne: {
 			title: string;
             paragraph: string;
@@ -41,5 +51,10 @@ export namespace IOurServices {
                 text: string;
             }[];
         };
+    };
+    
+    export type ITitleSection = {
+        title: IProps['title'];
+        hoverImages: IProps['hoverImages']
 	};
 }

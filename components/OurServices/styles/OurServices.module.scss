@@ -2,6 +2,28 @@
     @apply bg-white;
 
     .container {
-        @apply m-0 p-0;
+        @apply max-w-[1700px] mx-auto;
+
+        .titleSection {
+            @apply relative min-h-screen overflow-hidden;
+
+            .wrapper {
+                @apply absolute w-full flex flex-col items-center justify-center h-full gap-[3vw];
+
+                .title {
+                    @apply text-pureBlack font-primary text-5xl lg:text-[8vw] text-center leading-normal;
+                }
+            }
+
+            .hoverImages {
+                .image {
+                    @apply absolute w-[1px] h-[1px] top-0 left-0 invisible pointer-events-none;
+                }
+            }
+        }
+
+        .servicesGrid {
+            @apply py-24 px-6 lg:px-16;
+        }
     }
 }

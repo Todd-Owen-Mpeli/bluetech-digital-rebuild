@@ -3,6 +3,16 @@ export const OurServices = `
         fieldGroupName
         displaySection
 		title
+		hoverImages {
+			image {
+				altText
+				sourceUrl
+				mediaDetails {
+					height
+					width
+				}
+			}
+		}
 		serviceOne {
 			title
 			paragraph
