@@ -3,7 +3,7 @@ import Link from "next/link";
 import React , { FC, useMemo, useRef } from "react";
 import {IHero} from "@/components/Hero/types/index";
 import { motion, useScroll, useTransform } from "framer-motion";
-import fadeInUp, { initial, offsetFinish, offsetStart } from "@/animations/animations";
+import { offsetFinish, offsetStart } from "@/animations/animations";
 
 // Styling
 import styles from "@/components/Hero/styles/Hero.module.scss";

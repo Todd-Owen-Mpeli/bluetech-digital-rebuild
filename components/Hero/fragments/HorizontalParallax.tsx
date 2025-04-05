@@ -113,9 +113,9 @@ const HorizontalParallax: FC<IHero.IHorizontalParallax> = ({
 					displayVideo={heroViewTwo.displayVideo}
 					videoBackgroundImage={heroViewTwo.videoBackgroundImage}
 				/>
-				<HeroViewThree
+				{/* <HeroViewThree
 					trustedClients={heroViewThree.trustedClients}
-				/>
+				/> */}
 			</motion.div>
 		</div>
 	);

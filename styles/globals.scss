@@ -45,29 +45,13 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-MTVBlack;
+	@apply font-primary;
 }
 
 /*===== FONTS =====*/
 @font-face {
 	font-family: primary;
-	src: url("./fonts/Instrumentserif-italic.woff");
-}
-@font-face {
-	font-family: MTVBlack;
-	src: url("./fonts/MalintonTrialVersion-Black.woff");
-}
-@font-face {
-	font-family: MTVLight;
-	src: url("./fonts/MalintonTrialVersion-Light.woff");
-}
-@font-face {
-	font-family: MTVRegular;
-	src: url("./fonts/MalintonTrialVersion-Regular.woff");
-}
-@font-face {
-	font-family: BGAPBold;
-	src: url("./fonts/BasisGrotesqueArabicPro-Bold.woff");
+	src: url("./fonts/POICarbonicTrial-Light.woff");
 }
 @font-face {
 	font-family: secondaryBlack;

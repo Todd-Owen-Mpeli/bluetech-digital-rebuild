@@ -78,18 +78,6 @@ export default {
 				".font-primary": {
 					fontFamily: '"primary"',
 				},
-				".font-MTVBlack": {
-					fontFamily: '"MTVBlack"',
-				},
-				".font-MTVLight": {
-					fontFamily: '"MTVLight"',
-				},
-				".font-MTVRegular": {
-					fontFamily: '"MTVRegular"',
-				},
-				".font-BGAPBold": {
-					fontFamily: '"BGAPBold"',
-				},
 				".font-secondaryBlack": {
 					fontFamily: '"secondaryBlack"',
 				},
