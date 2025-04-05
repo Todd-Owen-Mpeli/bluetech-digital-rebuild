@@ -21,7 +21,6 @@ const Hero: FC<IHero.IProps> = ({
 					heroViewTwo={heroViewTwo}
 					heroViewThree={heroViewThree}
 				/>
-				<div className="h-screen bg-white"></div>
 			</div>
 		</div>
     );
