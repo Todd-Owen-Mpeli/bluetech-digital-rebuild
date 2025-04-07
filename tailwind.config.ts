@@ -78,17 +78,23 @@ export default {
 				".font-primary": {
 					fontFamily: '"primary"',
 				},
-				".font-secondaryBlack": {
-					fontFamily: '"secondaryBlack"',
+				".font-primaryBold": {
+					fontFamily: '"primaryBold"',
 				},
-				".font-secondaryLight": {
-					fontFamily: '"secondaryLight"',
+				".font-secondary": {
+					fontFamily: '"secondary"',
 				},
-				".font-secondaryMedium": {
-					fontFamily: '"secondaryMedium"',
+				".font-tertiaryLight": {
+					fontFamily: '"tertiaryLight"',
 				},
-				".font-secondaryRegular": {
-					fontFamily: '"secondaryRegular"',
+				".font-tertiaryRegular": {
+					fontFamily: '"tertiaryRegular"',
+				},
+				".font-tertiaryMedium": {
+					fontFamily: '"tertiaryMedium"',
+				},
+				".font-tertiaryBlack": {
+					fontFamily: '"tertiaryBlack"',
 				},
 			} as CSSRuleObject);
 		},

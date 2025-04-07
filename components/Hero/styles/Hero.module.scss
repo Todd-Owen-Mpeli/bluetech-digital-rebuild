@@ -35,11 +35,11 @@
                                 @apply w-full h-full px-6 lg:px-12 flex flex-col items-center justify-center gap-6 lg:gap-4;
 
                                 .title {
-                                    @apply lg:max-w-[90rem] mx-auto lg:mx-0 font-primary text-white text-center text-7xl lg:text-[5vw]  leading-normal xl:leading-[5vw];
+                                    @apply lg:max-w-[90rem] mx-auto lg:mx-0 font-primaryBold text-white text-center text-7xl lg:text-[8vw] leading-normal xl:leading-[6vw];
                                 }
 
                                 .subtitle {
-                                    @apply mt-8 py-1 px-6 w-fit bg-accent-default rounded-full lg:max-w-xl mx-auto lg:mx-0 font-secondaryRegular text-pureBlack text-center text-lg;
+                                    @apply mt-8 py-1 px-6 w-fit bg-accent-default rounded-full lg:max-w-xl mx-auto lg:mx-0 font-tertiaryRegular text-pureBlack text-center text-lg;
                                 }
                             }
                         }
@@ -60,7 +60,7 @@
                                 @apply lg:max-w-5xl text-pureBlack text-5xl lg:text-7xl text-left leading-normal;
 
                                 p {
-                                    @apply font-primary;
+                                    @apply font-secondary;
                                 }
                             }
 
@@ -74,12 +74,12 @@
                                         @apply lg:max-w-sm text-lg text-pureBlack tracking-wide leading-normal flex flex-col items-center justify-between;
 
                                         p {
-                                            @apply font-secondaryRegular;
+                                            @apply font-secondary;
                                         }
                                     }
 
                                     .buttonStyling {
-                                        @apply py-3 px-6 w-fit bg-accent-default rounded-full font-secondaryMedium cursor-pointer capitalize text-pureBlack text-lg hover:text-white hover:bg-tertiary-default transition-all ease-in-out duration-500;
+                                        @apply py-3 px-6 w-fit bg-accent-default rounded-full font-tertiaryMedium cursor-pointer capitalize text-pureBlack text-lg hover:text-white hover:bg-tertiary-default transition-all ease-in-out duration-500;
                                     }
                                 }
                             }

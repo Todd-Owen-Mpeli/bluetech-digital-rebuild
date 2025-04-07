@@ -36,7 +36,7 @@ a {
 }
 
 p {
-	@apply font-secondaryMedium;
+	@apply font-tertiaryMedium;
 }
 
 h1,
@@ -51,21 +51,29 @@ h6 {
 /*===== FONTS =====*/
 @font-face {
 	font-family: primary;
+	src: url("./fonts/Ppmondwest-regular.woff");
+}
+@font-face {
+	font-family: primaryBold;
+	src: url("./fonts/Ppmondwest-bold.woff");
+}
+@font-face {
+	font-family: secondary;
 	src: url("./fonts/POICarbonicTrial-Light.woff");
 }
 @font-face {
-	font-family: secondaryBlack;
-	src: url("./fonts/BasisGrotesqueArabicPro-Black.woff");
-}
-@font-face {
-	font-family: secondaryLight;
+	font-family: tertiaryLight;
 	src: url("./fonts/BasisGrotesqueArabicPro-Light.woff");
 }
 @font-face {
-	font-family: secondaryMedium;
+	font-family: tertiaryRegular;
+	src: url("./fonts/BasisGrotesqueArabicPro-Regular.woff");
+}
+@font-face {
+	font-family: tertiaryMedium;
 	src: url("./fonts/BasisGrotesqueArabicPro-Medium.woff");
 }
 @font-face {
-	font-family: secondaryRegular;
-	src: url("./fonts/BasisGrotesqueArabicPro-Regular.woff");
+	font-family: tertiaryBlack;
+	src: url("./fonts/BasisGrotesqueArabicPro-Black.woff");
 }
