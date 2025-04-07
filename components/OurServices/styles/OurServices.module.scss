@@ -1,5 +1,5 @@
 .ourServices {
-    @apply bg-white;
+    @apply bg-pureBlack;
 
     .container {
         @apply max-w-[1700px] mx-auto;
@@ -7,17 +7,27 @@
         .titleSection {
             @apply relative min-h-screen overflow-hidden;
 
-            .wrapper {
-                @apply absolute w-full flex flex-col items-center justify-center h-full gap-[3vw];
+            .containerWrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                position: absolute;
+                gap: 3vw;
 
-                .title {
-                    @apply text-pureBlack font-primary text-5xl lg:text-[8vw] text-center leading-normal;
+                .wrapper {
+                    @apply absolute w-full flex flex-col items-center justify-center h-full gap-[3vw];
+
+                    .title {
+                        @apply text-white font-primary text-5xl lg:text-[8vw] text-center leading-normal;
+                    }
                 }
-            }
 
-            .hoverImages {
-                .image {
-                    @apply absolute w-[1px] h-[1px] top-0 left-0 invisible pointer-events-none;
+                .hoverImages {
+                    .image {
+                        @apply absolute w-[1px] h-[1px] top-0 left-0 invisible pointer-events-none;
+                    }
                 }
             }
         }

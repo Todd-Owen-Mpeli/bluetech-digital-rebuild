@@ -56,5 +56,16 @@ export namespace IOurServices {
     export type ITitleSection = {
         title: IProps['title'];
         hoverImages: IProps['hoverImages']
-	};
+    };
+    
+    export type IImage = {
+        image: {
+            altText: string;
+            sourceUrl: string;
+            mediaDetails?: {
+            width?: number;
+            height?: number;
+            };
+        };
+    }
 }
