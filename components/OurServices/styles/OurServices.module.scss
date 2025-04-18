@@ -1,15 +1,15 @@
 .ourServices {
-    @apply bg-pureBlack;
+    @apply bg-white;
 
     .titleSection {
-        @apply relative min-h-screen lg:min-h-[110vh] overflow-hidden bg-cover bg-center bg-no-repeat;
+        @apply relative min-h-screen overflow-hidden bg-cover bg-center bg-no-repeat;
 
         .containerWrapper {
             @apply absolute w-full h-full flex flex-col items-center justify-center gap-[3vw];
 
             .wrapper {
                 .title {
-                    @apply max-w-4xl text-white font-extrabold text-5xl sm:text-[7vw] uppercase italic text-center leading-[6.25rem];
+                    @apply max-w-5xl text-white font-extrabold text-5xl sm:text-[6vw] uppercase italic text-center leading-[6.25rem];
 
                     p {
                         @apply font-primary;
@@ -29,7 +29,7 @@
     }
 
     .servicesGrid {
-        @apply py-24 px-6 lg:px-16;
+        @apply min-h-screen py-24 px-6 lg:px-16 bg-white;
 
         .container {
             @apply max-w-[1700px] mx-auto;

@@ -9,6 +9,7 @@ import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
 import VideoCard from "../VideoCard";
+import IntroTextAnimation from '@/components/Hero/Elements/IntroTextAnimation';
 
 const MemoizedMotionDiv = React.memo(motion.div);
 
@@ -39,14 +40,7 @@ const HeroViewOne: FC<IHero.IProps[`heroViewOne`]> = ({ video, title, subtitle, 
                     }}
                 >
                     <div className={styles.content}>
-                        <motion.h1
-                            initial={initial}
-                            whileInView={fadeInUp}
-                            viewport={{once: true}}
-                            className={title ? styles.title : "hidden"}
-                        >
-                            {title}
-                        </motion.h1>
+                        <IntroTextAnimation title={title} className={styles.title} />
                         <motion.h2
                             initial={initial}
                             whileInView={fadeInUp}

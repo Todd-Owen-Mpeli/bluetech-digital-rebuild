@@ -124,12 +124,9 @@ const TitleSection: FC<IOurServices.ITitleSection> = ({ title, hoverImages, back
         <div ref={rootRef} className={styles.titleSection}
             style={{
 		    	clipPath: `polygon(0 0, 68% 0, 100% 0, 100% 99%, 25% 95%, 0 100%)`,
-		    	backgroundImage: `linear-gradient(
-					0deg,
-					rgba(0, 0, 0, 0.45),
-					rgba(0, 0, 0, 0.95),
-					rgba(0, 0, 0, 1)
-				),url("${backgroundImage?.sourceUrl}")`,
+                backgroundImage: `linear-gradient(0deg,rgba(0, 0, 0, 0.25),
+                rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95),
+                rgba(0, 0, 0, 1)),url("${backgroundImage?.sourceUrl}")`,
             }}
         >
             <div className={styles.containerWrapper}>

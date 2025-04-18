@@ -34,8 +34,12 @@
                             .content {
                                 @apply w-full h-full px-6 lg:px-12 flex flex-col items-center justify-center gap-6 lg:gap-4;
 
-                                .title {
-                                    @apply max-w-5xl 2xl:max-w-[90rem] mx-auto lg:mx-0 font-primaryBold text-white text-center text-7xl lg:text-[8vw] leading-normal xl:leading-[6vw];
+                                .titleWrapper {
+                                    @apply min-h-[15vh] w-full max-w-[1800px] mx-auto lg:mx-0 flex items-center justify-center;
+
+                                    .title {
+                                        @apply max-w-5xl 2xl:max-w-[90rem] mx-auto lg:mx-0 font-primary font-semibold text-white text-center text-7xl lg:text-[7vw] leading-normal xl:leading-[6.5vw];
+                                    }
                                 }
 
                                 .subtitle {
