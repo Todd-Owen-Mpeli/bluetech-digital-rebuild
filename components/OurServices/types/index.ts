@@ -67,14 +67,8 @@ export namespace IOurServices {
         backgroundImage: IProps['backgroundImage']
     };
     
-    export type IImage = {
-        image: {
-            altText: string;
-            sourceUrl: string;
-            mediaDetails?: {
-            width?: number;
-            height?: number;
-            };
-        };
+    export type IServiceOne= {
+        serviceOne: IProps['serviceOne']
+
     }
 }

@@ -131,7 +131,7 @@ const TitleSection: FC<IOurServices.ITitleSection> = ({ title, hoverImages, back
         >
             <div className={styles.containerWrapper}>
                 <ScrollYProgressReveal className={styles.wrapper}>
-                    <Title content={title} className={title ? styles.title : "hidden"}/>
+                    <Title content={title} className={title ? styles.title : "hidden"} />
                 </ScrollYProgressReveal>
             </div>
         </div>

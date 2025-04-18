@@ -6,6 +6,7 @@ import {IOurServices} from "@/components/OurServices/types/index";
 import styles from "@/components/OurServices/styles/OurServices.module.scss";
 
 // Components
+import ServiceOne from "@/components/OurServices/fragments/ServiceOne";
 import TitleSection from "@/components/OurServices/fragments/TitleSection";
 
 const OurServices: FC<IOurServices.IProps> = ({
@@ -20,7 +21,7 @@ const OurServices: FC<IOurServices.IProps> = ({
 			<div className={styles.container}>
                 <TitleSection title={title} hoverImages={hoverImages} backgroundImage={backgroundImage} />
                 <div className={styles.servicesGrid}>
-                    <div className={styles.container}></div>
+                    <ServiceOne serviceOne={serviceOne} />
                 </div>
 			</div>
 		</div>
