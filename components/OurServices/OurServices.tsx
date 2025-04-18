@@ -1,7 +1,5 @@
 // Imports
 import { FC } from "react";
-import { motion } from "framer-motion";
-import fadeInUp, { initial } from "@/animations/animations";
 import {IOurServices} from "@/components/OurServices/types/index";
 
 // Styling
@@ -15,12 +13,15 @@ const OurServices: FC<IOurServices.IProps> = ({
 	serviceOne,
 	serviceTwo,
     hoverImages,
+    backgroundImage
 }) => {
     return (
         <div className={styles.ourServices}>
 			<div className={styles.container}>
-                <TitleSection title={title} hoverImages={hoverImages} />
-                <div className={styles.servicesGrid}></div>
+                <TitleSection title={title} hoverImages={hoverImages} backgroundImage={backgroundImage} />
+                <div className={styles.servicesGrid}>
+                    <div className={styles.container}></div>
+                </div>
 			</div>
 		</div>
     );

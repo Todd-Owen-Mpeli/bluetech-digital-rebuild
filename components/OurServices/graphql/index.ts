@@ -13,6 +13,14 @@ export const OurServices = `
 				}
 			}
 		}
+		backgroundImage {
+			altText
+			sourceUrl
+			mediaDetails {
+				height
+				width
+			}
+		}
 		serviceOne {
 			title
 			paragraph

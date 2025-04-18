@@ -39,7 +39,8 @@ const RenderFlexibleContent: FC = () => {
 							<></>
 						)}
 					</Fragment>
-				))}
+				))
+			}
 		</>
 	);
 };

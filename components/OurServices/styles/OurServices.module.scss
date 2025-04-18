@@ -1,39 +1,38 @@
 .ourServices {
     @apply bg-pureBlack;
 
-    .container {
-        @apply max-w-[1700px] mx-auto;
+    .titleSection {
+        @apply relative min-h-screen lg:min-h-[110vh] overflow-hidden bg-cover bg-center bg-no-repeat;
 
-        .titleSection {
-            @apply relative min-h-screen overflow-hidden;
+        .containerWrapper {
+            @apply absolute w-full h-full flex flex-col items-center justify-center gap-[3vw];
 
-            .containerWrapper {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-                position: absolute;
-                gap: 3vw;
+            .wrapper {
+                .title {
+                    @apply max-w-4xl text-white font-extrabold text-5xl sm:text-[7vw] uppercase italic text-center leading-[6.25rem];
 
-                .wrapper {
-                    @apply absolute w-full flex flex-col items-center justify-center h-full gap-[3vw];
+                    p {
+                        @apply font-primary;
 
-                    .title {
-                        @apply text-white font-primary text-5xl lg:text-[8vw] text-center leading-normal;
-                    }
-                }
-
-                .hoverImages {
-                    .image {
-                        @apply absolute w-[1px] h-[1px] top-0 left-0 invisible pointer-events-none;
+                        span {
+                            @apply text-accent-default;
+                        }
                     }
                 }
             }
         }
 
-        .servicesGrid {
-            @apply py-24 px-6 lg:px-16;
+        .image {
+            @apply absolute z-50 top-0 left-0 w-[25vw] h-[25vw] md:w-[15vw] md:h-[15vw] pointer-events-none object-cover object-center;
+            image-rendering: pixelated;
+        }
+    }
+
+    .servicesGrid {
+        @apply py-24 px-6 lg:px-16;
+
+        .container {
+            @apply max-w-[1700px] mx-auto;
         }
     }
 }

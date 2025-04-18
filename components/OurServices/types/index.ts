@@ -11,6 +11,14 @@ export namespace IOurServices {
 				};
             };
         }[]
+        backgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				height: number;
+				width: number;
+			};
+        };
         serviceOne: {
 			title: string;
             paragraph: string;
@@ -56,6 +64,7 @@ export namespace IOurServices {
     export type ITitleSection = {
         title: IProps['title'];
         hoverImages: IProps['hoverImages']
+        backgroundImage: IProps['backgroundImage']
     };
     
     export type IImage = {
