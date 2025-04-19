@@ -9,7 +9,7 @@ import { offsetFinish, offsetStart } from "@/animations/animations";
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
-import VideoCard from "../VideoCard";
+import VideoCard from "@/components/Hero/fragments/VideoCard";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import TextRevealBlurEffect from "@/components/Elements/TextRevealBlurEffect";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
@@ -79,11 +79,8 @@ const HeroViewTwo: FC<IHero.IProps[`heroViewTwo`]> = ({
                     </div>
                 </motion.div>
                 <MemoizedMotionDiv style={motionStyle} className={styles.videoWrapper}>
-					<VideoCard
-						video={video}
-						displayVideo={displayVideo}
-					/>
-				</MemoizedMotionDiv>
+                    <VideoCard video={video} displayVideo={displayVideo}/>
+                </MemoizedMotionDiv>
             </div>
         </div>
     );

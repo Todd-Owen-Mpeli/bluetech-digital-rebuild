@@ -32,38 +32,10 @@
         @apply relative py-24 px-0 bg-white overflow-hidden;
 
         .serviceOne {
-            @apply w-full min-h-screen;
+            @apply w-full h-full min-h-screen;
 
             .contentWrapper {
                 @apply w-full h-full;
-                perspective: 250vw;
-
-                .content {
-                    @apply absolute flex flex-col justify-between py-[50px] px-[25px];
-                    inset: 0;
-                    transform-style: preserve-3d; /* inherits the perspective from the parent */
-                    transform-origin: 50% 10%;
-
-                    .top {
-                        @apply flex items-center justify-between pb-24;
-
-                        .title {
-                            @apply w-full lg:max-w-2xl mx-0 text-pureBlack font-secondary text-5xl sm:text-[5vw] italic text-center leading-[6.25rem];
-                        }
-                    }
-
-                    .bottom {
-                        @apply flex justify-between items-end;
-
-                        .paragraph {
-                            @apply lg:max-w-5xl text-pureBlack text-5xl lg:text-xl text-left leading-normal;
-
-                            p {
-                                @apply font-secondary;
-                            }
-                        }
-                    }
-                }
             }
         }
     }
