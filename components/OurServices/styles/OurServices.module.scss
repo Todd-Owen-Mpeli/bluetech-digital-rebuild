@@ -1,5 +1,5 @@
 .ourServices {
-    @apply bg-white p-0;
+    @apply p-0 bg-white;
 
     .titleSection {
         @apply relative min-h-screen overflow-hidden bg-cover bg-center bg-no-repeat;
@@ -9,7 +9,7 @@
 
             .wrapper {
                 .title {
-                    @apply max-w-5xl text-white font-extrabold text-5xl sm:text-[6vw] uppercase italic text-center leading-[6.25rem];
+                    @apply max-w-5xl text-white font-extrabold text-[11.5vw] lg:text-[6vw] uppercase italic text-center leading-tight lg:leading-[6.25rem];
 
                     p {
                         @apply font-primary;
@@ -23,26 +23,26 @@
         }
 
         .image {
-            @apply absolute z-50 top-0 left-0 w-[25vw] h-[25vw] md:w-[15vw] md:h-[15vw] pointer-events-none object-cover object-center;
+            @apply absolute z-50 top-0 left-0 w-[25vw] h-[25vw] md:w-[15vw] md:h-[15vw] pointer-events-none object-contain object-center;
             image-rendering: pixelated;
         }
     }
 
     .servicesGrid {
-        @apply relative min-h-screen py-36 px-0 bg-white;
+        @apply relative min-h-screen lg:py-36 px-0 bg-white;
 
         .cardContainer {
-            @apply sticky h-screen py-24 flex items-center justify-center top-0;
+            @apply sticky h-full min-h-screen lg:py-24 flex items-center justify-center top-0;
 
             .card {
                 transform-origin: top;
-                @apply relative w-full h-screen p-12 flex flex-col items-center justify-center top-0;
+                @apply relative w-full h-full min-h-screen px-12 flex flex-col items-center justify-center top-0;
 
                 .topSection {
-                    @apply w-full flex flex-col lg:flex-row items-center justify-between gap-4;
+                    @apply w-full flex flex-col sm:flex-row items-center justify-between gap-4;
 
                     .title {
-                        @apply font-secondary text-5xl sm:text-[4.5vw] italic text-left leading-[5.5rem];
+                        @apply max-w-full lg:max-w-5xl lg:px-4 font-secondary text-[12.5vw] lg:text-[6vw] italic text-center lg:text-left leading-tight lg:leading-[7rem];
 
                         &::first-letter {
                             @apply font-primary;
@@ -50,8 +50,10 @@
                     }
 
                     .svgWrapper {
+                        @apply hidden lg:flex;
+
                         .svg {
-                            @apply transition-all duration-500 ease-in-out;
+                            @apply h-[40px] lg:h-full transition-all duration-500 ease-in-out;
 
                             path {
                                 @apply w-full h-full transition-all duration-500 ease-in-out;
@@ -61,13 +63,13 @@
                 }
 
                 .bottomSection {
-                    @apply flex h-full mt-12 gap-32 items-end;
+                    @apply flex flex-col lg:flex-row h-full my-12 gap-8 lg:gap-32 items-end;
 
                     .description {
-                        @apply relative w-full lg:w-1/2 flex flex-col gap-4 lg:gap-12;
+                        @apply relative w-full lg:w-1/2 flex flex-col gap-8 lg:gap-12;
 
                         .paragraph {
-                            @apply lg:max-w-4xl text-3xl lg:text-2xl text-left leading-normal;
+                            @apply lg:max-w-4xl text-xl lg:text-2xl text-left leading-normal;
 
                             p {
                                 @apply font-secondary;
@@ -75,15 +77,15 @@
                         }
 
                         .options {
-                            @apply flex flex-wrap justify-start gap-y-8 gap-x-2;
+                            @apply hidden lg:flex flex-wrap justify-start gap-y-8 gap-x-2;
 
                             .text {
-                                @apply py-3 px-6 border-solid border-2 rounded-full font-tertiaryMedium cursor-pointer capitalize text-lg tracking-[0.05rem];
+                                @apply py-3 px-6 border-solid border-2 rounded-full font-tertiaryMedium cursor-pointer capitalize text-sm lg:text-lg tracking-[0.05rem];
                             }
                         }
 
                         .buttonSection {
-                            @apply hidden w-fit py-3 px-6 xl:flex items-center justify-start gap-6 rounded-full transition-all ease-in-out duration-500;
+                            @apply w-fit py-3 px-6 flex items-center justify-start gap-6 rounded-full transition-all ease-in-out duration-500;
 
                             .buttonStyling {
                                 @apply font-tertiaryMedium cursor-pointer capitalize text-lg tracking-[0.05rem];
@@ -98,13 +100,13 @@
                     }
 
                     .imageContainer {
-                        @apply relative w-full lg:w-1/2 h-full overflow-hidden;
+                        @apply relative w-full lg:w-1/2 h-full hidden lg:block overflow-hidden;
 
                         .inner {
                             @apply w-full h-full;
 
                             .image {
-                                @apply w-full h-full object-cover object-center;
+                                @apply w-full h-full min-h-[500px] object-cover object-center;
                             }
                         }
                     }

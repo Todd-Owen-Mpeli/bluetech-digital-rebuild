@@ -15,6 +15,7 @@ const OurServices: FC<IOurServices.IProps> = ({
     hoverImages,
     backgroundImage
 }) => {
+    
     return (
         <div className={styles.ourServices}>
             <TitleSection title={title} hoverImages={hoverImages} backgroundImage={backgroundImage} />

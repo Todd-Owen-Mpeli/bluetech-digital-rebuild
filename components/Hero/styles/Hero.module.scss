@@ -38,7 +38,7 @@
                                     @apply min-h-[15vh] w-full max-w-[1800px] mx-auto lg:mx-0 flex items-center justify-center;
 
                                     .title {
-                                        @apply max-w-5xl 2xl:max-w-[90rem] mx-auto lg:mx-0 font-primary font-semibold text-white text-center text-7xl lg:text-[7vw] leading-normal xl:leading-[6.5vw];
+                                        @apply max-w-5xl 2xl:max-w-[90rem] mx-auto lg:mx-0 font-primary font-extrabold uppercase italic text-white text-center text-7xl lg:text-[7vw] leading-tight xl:leading-[6.5vw];
                                     }
                                 }
 
@@ -60,12 +60,21 @@
                         .content {
                             @apply w-full h-full py-32 lg:py-4 px-8 2xl:px-20 flex flex-col lg:flex-row items-baseline justify-between;
 
-                            .paragraph {
+                            .paragraph,
+                            .paragraphMobile {
                                 @apply lg:max-w-5xl text-pureBlack text-5xl lg:text-7xl text-left leading-normal;
 
                                 p {
                                     @apply font-secondary;
                                 }
+                            }
+
+                            .paragraph {
+                                @apply hidden lg:block;
+                            }
+
+                            .paragraphMobile {
+                                @apply block lg:hidden;
                             }
 
                             .rightSection {
@@ -90,7 +99,7 @@
                         }
 
                         .videoWrapper {
-                            @apply sticky top-0 h-[35vh] lg:h-[65vh] w-full flex flex-col items-center justify-center;
+                            @apply hidden sticky top-0 h-[35vh] lg:h-[65vh] w-full lg:flex flex-col items-center justify-center;
 
                             .video {
                                 @apply absolute top-0 left-0 w-full h-full object-cover overflow-hidden pointer-events-none #{!important};

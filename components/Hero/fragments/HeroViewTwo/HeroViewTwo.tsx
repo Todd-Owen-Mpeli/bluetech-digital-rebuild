@@ -39,19 +39,21 @@ const HeroViewTwo: FC<IHero.IProps[`heroViewTwo`]> = ({
 			transition: "transform 0.2s ease-out",
 			backgroundImage: `url(${videoBackgroundImage?.sourceUrl})`,
 		};
-	}, [
-		videoBackgroundImage,
-    ]);
+	}, [videoBackgroundImage,]);
     
     
     return (
         <div  ref={container} className={`${styles.heroViewTwo} panel`}>
             <div className={styles.container}>
                 <motion.div className={styles.content}>
+                    <Paragraph
+                        content={paragraph}
+                        className={paragraph ? styles.paragraph : "hidden"}
+                    />
                     <TextRevealBlurEffect
                         content={paragraph}
                         scrollOpacity={scrollOpacity}
-                        className={paragraph ? styles.paragraph : "hidden"}
+                        className={paragraph ? styles.paragraphMobile : "hidden"}
                     />
                     <div className={styles.rightSection}>
                         <div className="h-1/2"/>
