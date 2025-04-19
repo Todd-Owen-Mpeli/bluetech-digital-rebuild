@@ -1,6 +1,31 @@
+
+// Imports
+import { MotionValue } from "framer-motion";
+
 export namespace IOurServices {
 	export type IProps = {
         title: string;
+        service: {
+            title: string;
+            paragraph: string;
+            backgroundColour: string;
+            options: {
+                text: string;
+            }[];
+            buttonLink: {
+                url: string;
+                title: string;
+                target: string;
+            };
+            image: {
+                altText: string;
+                sourceUrl: string;
+                mediaDetails: {
+                    height: number;
+                    width: number;
+                };
+            };
+        }[];
         hoverImages: {
             image: {
 				altText: string;
@@ -19,46 +44,6 @@ export namespace IOurServices {
 				width: number;
 			};
         };
-        serviceOne: {
-			title: string;
-            paragraph: string;
-		    buttonLink: {
-                url: string;
-                title: string;
-                target: string;
-            };
-            image: {
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					height: number;
-					width: number;
-				};
-            };
-            options: {
-                text: string;
-            }[];
-        };
-        serviceTwo: {
-			title: string;
-            paragraph: string;
-		    buttonLink: {
-                url: string;
-                title: string;
-                target: string;
-            };
-            image: {
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					height: number;
-					width: number;
-				};
-            };
-            options: {
-                text: string;
-            }[];
-        };
     };
     
     export type ITitleSection = {
@@ -67,8 +52,20 @@ export namespace IOurServices {
         backgroundImage: IProps['backgroundImage']
     };
     
-    export type IServiceOne= {
-        serviceOne: IProps['serviceOne']
+    export type IServices= {
+        service: IProps['service']
+    }
 
+    export type ICard= {
+        range: any;
+        index: number;
+        targetScale: number;
+        progress: MotionValue<number>;
+        title: IProps['service'][0][`title`];
+        image: IProps['service'][0][`image`];
+        options: IProps['service'][0][`options`];
+        paragraph: IProps['service'][0][`paragraph`];
+        buttonLink: IProps['service'][0][`buttonLink`];
+        backgroundColour: IProps['service'][0][`backgroundColour`];
     }
 }

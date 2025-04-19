@@ -118,18 +118,10 @@ const Error: FC = () => {
 						}
 						width={
 							globalContext?.themesOptionsContent?.errorPageContent
-								?.backgroundImage?.mediaDetails?.width
-								? globalContext?.themesOptionsContent?.errorPageContent
-										?.backgroundImage?.mediaDetails?.width
-								: 1000
-						}
+								?.backgroundImage?.mediaDetails?.width || 1000}
 						height={
 							globalContext?.themesOptionsContent?.errorPageContent
-								?.backgroundImage?.mediaDetails?.height
-								? globalContext?.themesOptionsContent?.errorPageContent
-										?.backgroundImage?.mediaDetails?.height
-								: 1000
-						}
+								?.backgroundImage?.mediaDetails?.height || 1000}
 					/>
 				</div>
 			</section>
