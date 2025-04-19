@@ -29,10 +29,10 @@
     }
 
     .servicesGrid {
-        @apply relative min-h-screen lg:py-36 px-0 bg-white;
+        @apply relative min-h-screen lg:py-16 px-0 bg-white;
 
         .cardContainer {
-            @apply sticky h-full min-h-screen lg:py-24 flex items-center justify-center top-0;
+            @apply sticky h-full min-h-screen lg:py-12 flex items-center justify-center top-0;
 
             .card {
                 transform-origin: top;
@@ -42,7 +42,7 @@
                     @apply w-full flex flex-col sm:flex-row items-center justify-between gap-4;
 
                     .title {
-                        @apply max-w-full lg:max-w-5xl lg:px-4 font-secondary text-[12.5vw] lg:text-[6vw] italic text-center lg:text-left leading-tight lg:leading-[7rem];
+                        @apply max-w-full lg:max-w-5xl lg:px-4 font-secondary text-[12.5vw] lg:text-[5vw] italic text-center lg:text-left leading-tight lg:leading-[7rem];
 
                         &::first-letter {
                             @apply font-primary;

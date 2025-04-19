@@ -1,0 +1,17 @@
+.rightPartner {
+    @apply py-24 px-16 bg-white min-h-screen;
+
+    .scrollYProgressParagraph {
+        @apply p-0 h-[250vh] min-h-screen;
+
+        .paragraph {
+            @apply lg:max-w-[60%];
+
+            .word {
+                @apply inline-block text-xl lg:text-[2vw] font-secondary text-pureBlack text-left leading-normal;
+                transform: translateX(calc(100vw - 25px));
+                will-change: transform;
+            }
+        }
+    }
+}
