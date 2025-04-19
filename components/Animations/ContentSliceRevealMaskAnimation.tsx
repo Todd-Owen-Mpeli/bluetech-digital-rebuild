@@ -46,21 +46,19 @@ const ContentSliceRevealMaskAnimation: FC<ITypes.IProps> = ({
 	const isInView = useInView(body, {once: false, margin: "-5%"});
 
 	return (
-		<>
-			<div className={className}>
-				<div ref={body} className="overflow-hidden">
-					<div className="overflow-hidden">
-						<motion.div
-							initial="initial"
-							animate={isInView ? "enter" : ""}
-							variants={AnimationProps}
-						>
-							{children}
-						</motion.div>
-					</div>
+		<div className={className}>
+			<div ref={body} className="overflow-hidden">
+				<div className="overflow-hidden">
+					<motion.div
+						initial="initial"
+						animate={isInView ? "enter" : ""}
+						variants={AnimationProps}
+					>
+						{children}
+					</motion.div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

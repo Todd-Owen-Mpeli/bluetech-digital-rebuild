@@ -20,7 +20,7 @@ const Services: FC<IOurServices.IServices> = ({ service }) => {
   
     return (
         <div ref={container} className={styles.servicesGrid}>
-            {service.map((item: any, index: number) => {
+            {service?.map((item: any, index: number) => {
                 const targetScale = 1 - ( (service.length - index) * 0.05);
                     return (
                         <Card

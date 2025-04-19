@@ -42,7 +42,7 @@
                     @apply w-full flex flex-col lg:flex-row items-center justify-between gap-4;
 
                     .title {
-                        @apply max-w-5xl text-pureBlack font-secondary text-5xl sm:text-[5vw] italic text-left leading-[5.25rem];
+                        @apply font-secondary text-5xl sm:text-[4.5vw] italic text-left leading-[5.5rem];
 
                         &::first-letter {
                             @apply font-primary;
@@ -64,13 +64,21 @@
                     @apply flex h-full mt-12 gap-32 items-end;
 
                     .description {
-                        @apply relative w-full lg:w-1/2 flex flex-col gap-4;
+                        @apply relative w-full lg:w-1/2 flex flex-col gap-4 lg:gap-12;
 
                         .paragraph {
-                            @apply lg:max-w-4xl text-pureBlack text-3xl lg:text-4xl text-left leading-normal;
+                            @apply lg:max-w-4xl text-3xl lg:text-2xl text-left leading-normal;
 
                             p {
                                 @apply font-secondary;
+                            }
+                        }
+
+                        .options {
+                            @apply flex flex-wrap justify-start gap-y-8 gap-x-2;
+
+                            .text {
+                                @apply py-3 px-6 border-solid border-2 rounded-full font-tertiaryMedium cursor-pointer capitalize text-lg tracking-[0.05rem];
                             }
                         }
 
