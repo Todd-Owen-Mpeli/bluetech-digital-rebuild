@@ -2,9 +2,9 @@
 
 // Imports
 import gsap from 'gsap';
+import { motion } from 'framer-motion';
 import { FC, useEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { motion } from 'framer-motion';
 import { IRightPartner } from '@/components/RightPartner/types/index';
 
 // Styling
@@ -29,11 +29,11 @@ const RightPartner: FC<IRightPartner.IProps> = ({
     if (!container || !paragraphEl) return;
 
     const wrapWordsInSpan = (element: HTMLElement) => {
-      const text = element.textContent || '';
-      element.innerHTML = text
-        .split(' ')
-        .map((word) => `<span class="${styles.word}">${word}</span>`)
-        .join(' ');
+        const text = element.textContent || '';
+        element.innerHTML = text
+            .split(' ')
+            .map((word) => `<span class="${styles.word}">${word}</span>`)
+            .join(' ');
     };
 
     wrapWordsInSpan(paragraphEl);
@@ -60,20 +60,21 @@ const RightPartner: FC<IRightPartner.IProps> = ({
     );
 
     return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-      gsap.killTweensOf(wordEls);
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+        gsap.killTweensOf(wordEls);
     };
   }, [paragraph]);
 
   return (
-    <motion.div ref={containerRef} className={styles.rightPartner}>
-        <div className={styles.scrollYProgressParagraph}>
-            <p ref={paragraphRef} className={paragraph ? styles.paragraph : 'hidden'}>
-                {paragraph}
-            </p>
-        </div>
-    </motion.div>
-  );
+        <motion.div ref={containerRef} className={styles.rightPartner}>
+            <div className={styles.topSection}></div>
+            <div className={styles.scrollYProgressParagraph}>
+                <p ref={paragraphRef} className={paragraph ? styles.paragraph : 'hidden'}>
+                    {paragraph}
+                </p>
+            </div>
+        </motion.div>
+    );
 };
 
 export default RightPartner;
