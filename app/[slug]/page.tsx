@@ -1,4 +1,5 @@
 // Imports
+import { JSX } from "react";
 import {Metadata} from "next";
 import {flexibleContentType, postType} from "@/context/pages";
 

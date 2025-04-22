@@ -1,4 +1,5 @@
 // Imports
+import { JSX } from "react";
 import {Variants} from "framer-motion";
 
 /*  FRAMER-MOTION ANIMATIONS
