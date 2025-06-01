@@ -17,6 +17,14 @@ export const RightPartner = `
 			width
 		}
 	}
+	hoverImage {
+		altText
+		sourceUrl
+		mediaDetails {
+			height
+			width
+		}
+	}
 	backgroundImage {
 		altText
 		sourceUrl

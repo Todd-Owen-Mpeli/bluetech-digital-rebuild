@@ -16,6 +16,14 @@ export namespace IRightPartner {
                 width: number;
             };
         };
+        hoverImage: {
+            altText: string;
+            sourceUrl: string;
+            mediaDetails: {
+                height: number;
+                width: number;
+            };
+        };
         backgroundImage: {
             altText: string;
             sourceUrl: string;

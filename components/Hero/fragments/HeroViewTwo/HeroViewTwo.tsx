@@ -10,20 +10,19 @@ import React, { FC, useMemo, useRef } from "react";
 import {IHero} from "@/components/Hero/types/index";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-
 // Styling
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
 import Button from "@/components/Elements/Button/Button";
-import VideoCard from "@/components/Hero/fragments/VideoCard";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import TextRevealBlurEffect from "@/components/Elements/TextRevealBlurEffect";
+import VideoCard from "@/components/Hero/fragments/HeroViewTwo/Elements/VideoCard";
 import SlideUpDivMaskReveal from "@/components/Animations/SlideUpDivMaskReveal/SlideUpDivMaskReveal";
 
 const MemoizedMotionDiv = React.memo(motion.div);
 
-const HeroViewTwo: FC<IHero.IProps[`heroViewTwo`]> = ({
+const HeroViewTwo: FC<IHero.IHeroViewTwo.IProps> = ({
     video,
     paragraph,
     buttonLink,

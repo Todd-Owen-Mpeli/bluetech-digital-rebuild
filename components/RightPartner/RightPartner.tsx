@@ -13,6 +13,7 @@ const RightPartner: FC<IRightPartner.IProps> = ({
   image,
   stats,
   paragraph,
+  hoverImage,
   backgroundImage,
 }) => {
   return (

@@ -8,12 +8,18 @@ import fadeInUp, { initial } from "@/animations/animations";
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
-import VideoCard from "@/components/Hero/fragments/VideoCard";
 import IntroTextAnimation from '@/components/Hero/Elements/IntroTextAnimation';
+import VideoCard from "@/components/Hero/fragments/HeroViewOne/Elements/VideoCard";
 
 const MemoizedMotionDiv = React.memo(motion.div);
 
-const HeroViewOne: FC<IHero.IProps[`heroViewOne`]> = ({ video, title, subtitle, displayVideo, videoBackgroundImage }) => {
+const HeroViewOne: FC<IHero.IHeroViewOne.IProps> = ({
+    video,
+    title,
+    subtitle,
+    displayVideo,
+    videoBackgroundImage
+}) => {
 
     // Memoize the styles to prevent unnecessary recalculations
 	const motionStyle = useMemo(() => {
