@@ -4,8 +4,10 @@ import {DocumentNode, gql} from "@apollo/client";
 
 // Components: ACF Flexible Content Post Types
 import { Hero } from "@/components/Hero/graphql/index";
+import { CTATwo } from "@/components/CTATwo/graphql/index";
 import { OurServices } from "@/components/OurServices/graphql/index";
 import { RightPartner } from "@/components/RightPartner/graphql/index";
+import { PartnersLogos } from "@/components/PartnersLogos/graphql/index";
 import { TitleParagraph } from "@/components/TitleParagraph/graphql/index";
 
 /* PAGES & BLOGS POSTS*/
@@ -27,8 +29,10 @@ export const getAllFlexibleContentComponents = async (
 									flexibleContent {
 										flexibleContent {
 											... on ${postTypeFlexibleContent}_Hero {${Hero}}
+											... on ${postTypeFlexibleContent}_CtaTwo {${CTATwo}}
 											... on ${postTypeFlexibleContent}_OurServices {${OurServices}}
                 							... on ${postTypeFlexibleContent}_RightPartner {${RightPartner}}
+											... on ${postTypeFlexibleContent}_PartnersLogos {${PartnersLogos}}
                 							... on ${postTypeFlexibleContent}_TitleParagraph {${TitleParagraph}}
 										}
 									}

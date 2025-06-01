@@ -1,0 +1,19 @@
+.partnersLogos {
+    @apply py-12 px-0 bg-white;
+
+    .container {
+        @apply p-0;
+
+        .partnersLogosGrid {
+            @apply w-full flex-col gap-0;
+
+            .infiniteSlider {
+                @apply w-full;
+
+                .image {
+                    @apply grayscale object-contain md:object-cover object-center w-[125px] md:w-full h-[125px] md:h-[125px] lg:h-[225px] p-6 lg:p-16 border-[1px] border-solid border-grey hover:grayscale-0 transition-all duration-500 ease-in-out;
+                }
+            }
+        }
+    }
+}

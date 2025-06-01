@@ -6,8 +6,10 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
 import Hero from "@/components/Hero/Hero";
+import CTATwo from "@/components/CTATwo/CTATwo";
 import OurServices from "@/components/OurServices/OurServices";
 import RightPartner from "@/components/RightPartner/RightPartner";
+import PartnersLogos from "@/components/PartnersLogos/PartnersLogos";
 import TitleParagraph from "@/components/TitleParagraph/TitleParagraph";
 
 const RenderFlexibleContent: FC = () => {
@@ -17,8 +19,10 @@ const RenderFlexibleContent: FC = () => {
 	// Components Key Value Pairs
 	const componentMap: any = {
 		[`${FlexibleContent}_Hero`]: Hero,
+		[`${FlexibleContent}_CtaTwo`]: CTATwo,
 		[`${FlexibleContent}_OurServices`]: OurServices,
 		[`${FlexibleContent}_RightPartner`]: RightPartner,
+		[`${FlexibleContent}_PartnersLogos`]: PartnersLogos,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 	};
 

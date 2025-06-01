@@ -1,0 +1,19 @@
+.ctaTwo {
+    @apply py-28 px-8 2xl:px-16 bg-primary-default bg-cover bg-no-repeat bg-center;
+
+    .container {
+        @apply max-w-[1700px] m-auto w-full p-0 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-14;
+
+        .leftSection {
+            @apply w-full lg:w-4/5;
+
+            .title {
+                @apply capitalize text-center lg:text-left font-primary font-semibold text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[2.5rem] md:leading-tight xl:leading-[4rem];
+            }
+        }
+
+        .rightSection {
+            @apply w-full lg:w-1/5 flex flex-col self-center items-center lg:items-baseline justify-end;
+        }
+    }
+}
