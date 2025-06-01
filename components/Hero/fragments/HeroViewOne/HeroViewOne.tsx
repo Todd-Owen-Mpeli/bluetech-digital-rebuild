@@ -8,7 +8,7 @@ import fadeInUp, { initial } from "@/animations/animations";
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
-import VideoCard from "../VideoCard";
+import VideoCard from "@/components/Hero/fragments/VideoCard";
 import IntroTextAnimation from '@/components/Hero/Elements/IntroTextAnimation';
 
 const MemoizedMotionDiv = React.memo(motion.div);
@@ -35,9 +35,7 @@ const HeroViewOne: FC<IHero.IProps[`heroViewOne`]> = ({ video, title, subtitle, 
 				/>
                 <motion.div
                     className={styles.heroCard}
-                    style={{
-                        backdropFilter: displayVideo ? `blur(0.5px)` : `blur(0px)`,
-                    }}
+                    style={{backdropFilter: displayVideo ? `blur(0.5px)` : `blur(0px)`}}
                 >
                     <div className={styles.content}>
                         <IntroTextAnimation title={title} className={styles.title} />

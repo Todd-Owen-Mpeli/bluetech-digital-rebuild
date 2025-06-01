@@ -9,10 +9,12 @@ import { offsetFinish, offsetStart } from "@/animations/animations";
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
+import Button from "@/components/Elements/Button/Button";
 import VideoCard from "@/components/Hero/fragments/VideoCard";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import TextRevealBlurEffect from "@/components/Elements/TextRevealBlurEffect";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
+import SlideUpDivMaskReveal from "@/components/Animations/SlideUpDivMaskReveal/SlideUpDivMaskReveal";
 
 const MemoizedMotionDiv = React.memo(motion.div);
 
@@ -46,15 +48,15 @@ const HeroViewTwo: FC<IHero.IProps[`heroViewTwo`]> = ({
         <div  ref={container} className={`${styles.heroViewTwo} panel`}>
             <div className={styles.container}>
                 <motion.div className={styles.content}>
-                    <Paragraph
-                        content={paragraph}
-                        className={paragraph ? styles.paragraph : "hidden"}
-                    />
                     <TextRevealBlurEffect
-                        content={paragraph}
-                        scrollOpacity={scrollOpacity}
-                        className={paragraph ? styles.paragraphMobile : "hidden"}
-                    />
+						content={paragraph}
+						scrollOpacity={scrollOpacity}
+						className={paragraph ? styles.paragraph + " block lg:hidden" : "hidden"}
+					/>
+					<Paragraph
+						content={paragraph}
+						className={paragraph ? styles.paragraph + " hidden lg:block" : "hidden"}
+					/>
                     <div className={styles.rightSection}>
                         <div className="h-1/2"/>
                         <SlideInXRightAnimation className={styles.content}>
@@ -69,20 +71,15 @@ const HeroViewTwo: FC<IHero.IProps[`heroViewTwo`]> = ({
                                         : "hidden"
                                 }
                             />
-                            <Link
-                                className={styles.buttonStyling}
-                                href={`${buttonLink?.url}`}
-                                target={buttonLink?.target}
-                                aria-label={`${buttonLink?.title}`}
-                            >
-                                {buttonLink?.title}
-                            </Link>
+                            <Button styleNumber={0} link={buttonLink} />
                         </SlideInXRightAnimation>
                     </div>
                 </motion.div>
+                <SlideUpDivMaskReveal backgroundColor={"bg-white"}>
                 <MemoizedMotionDiv style={motionStyle} className={styles.videoWrapper}>
                     <VideoCard video={video} displayVideo={displayVideo}/>
-                </MemoizedMotionDiv>
+                    </MemoizedMotionDiv>
+                </SlideUpDivMaskReveal>
             </div>
         </div>
     );

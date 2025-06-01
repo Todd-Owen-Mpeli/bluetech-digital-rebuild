@@ -15,7 +15,9 @@ type IProps = {
 
 const SlideUpDivMaskReveal: FC<IProps> = ({ style, children, className, triggerOnce = false, backgroundColor }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.5 });
+  const isInView = useInView(ref, {
+    amount: 0.15
+  });
   const controls = useAnimation();
 
   const revealVariants = {
