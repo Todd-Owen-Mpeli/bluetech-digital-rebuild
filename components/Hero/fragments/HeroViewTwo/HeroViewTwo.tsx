@@ -1,9 +1,15 @@
 // Imports
-import Link from "next/link";
-import React , { FC, useMemo, useRef } from "react";
+import {
+    offsetStart,
+    offsetFinish,
+    slideInLeftInitial,
+    slideInRightFinish,
+    slideInRightInitial
+} from "@/animations/animations";
+import React, { FC, useMemo, useRef } from "react";
 import {IHero} from "@/components/Hero/types/index";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { offsetFinish, offsetStart, slideInLeftInitial, slideInRightFinish } from "@/animations/animations";
+
 
 // Styling
 import styles from "@/components/Hero/styles/Hero.module.scss";
@@ -13,7 +19,6 @@ import Button from "@/components/Elements/Button/Button";
 import VideoCard from "@/components/Hero/fragments/VideoCard";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import TextRevealBlurEffect from "@/components/Elements/TextRevealBlurEffect";
-import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
 import SlideUpDivMaskReveal from "@/components/Animations/SlideUpDivMaskReveal/SlideUpDivMaskReveal";
 
 const MemoizedMotionDiv = React.memo(motion.div);
@@ -66,7 +71,12 @@ const HeroViewTwo: FC<IHero.IProps[`heroViewTwo`]> = ({
                     </motion.div>
                     <div className={styles.rightSection}>
                         <div className="h-1/2"/>
-                        <SlideInXRightAnimation className={styles.wrapper}>
+                        <motion.div
+                            viewport={{once: false}}
+                            className={styles.wrapper}
+                            initial={slideInRightInitial}
+                            whileInView={slideInRightFinish}
+                        >
                             <Paragraph
                                 fadeIn={false}
                                 content={paragraphTwo}
@@ -79,7 +89,7 @@ const HeroViewTwo: FC<IHero.IProps[`heroViewTwo`]> = ({
                                 }
                             />
                             <Button styleNumber={0} link={buttonLink} />
-                        </SlideInXRightAnimation>
+                        </motion.div>
                     </div>
                 </motion.div>
                 <SlideUpDivMaskReveal backgroundColor={"bg-white"}>
