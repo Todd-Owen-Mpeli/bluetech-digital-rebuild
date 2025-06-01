@@ -13,13 +13,14 @@ const OurServices: FC<IOurServices.IProps> = ({
     title,
 	service,
     hoverImages,
-    backgroundImage
+    backgroundImage,
+    servicesBackgroundImage
 }) => {
     
     return (
         <div className={styles.ourServices}>
             <TitleSection title={title} hoverImages={hoverImages} backgroundImage={backgroundImage} />
-            <Services service={service} />
+            <Services service={service} servicesBackgroundImage={servicesBackgroundImage} />
 		</div>
     );
 }

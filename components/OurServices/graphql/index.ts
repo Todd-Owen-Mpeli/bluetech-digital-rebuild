@@ -42,4 +42,12 @@ export const OurServices = `
 			}
 		}
 	}
+	servicesBackgroundImage {
+		altText
+		sourceUrl
+		mediaDetails {
+			height
+			width
+		}
+	}
 `;

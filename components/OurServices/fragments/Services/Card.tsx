@@ -1,12 +1,19 @@
 'use client';
 
 // Imports
+import {
+    initial,
+    offsetStart,
+    offsetFinish,
+    slideInLeftInitial,
+    slideInRightFinish,
+    arrayLoopStaggerChildren,
+} from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
 import { FC, Fragment, useRef } from "react";
 import { useTransform, motion, useScroll } from 'framer-motion';
 import {IOurServices} from "@/components/OurServices/types/index";
-import { arrayLoopStaggerChildren, initial, offsetFinish, offsetStart } from "@/animations/animations";
 
 // Styling
 import styles from "@/components/OurServices/styles/OurServices.module.scss";
@@ -14,6 +21,7 @@ import styles from "@/components/OurServices/styles/OurServices.module.scss";
 // Components
 import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const Card: FC<IOurServices.ICard> = ({
@@ -26,7 +34,8 @@ const Card: FC<IOurServices.ICard> = ({
     paragraph,
     buttonLink,
     targetScale,
-    backgroundColour
+    backgroundColour,
+    servicesBackgroundImage
 }) => {
 
     const container = useRef(null);
@@ -47,8 +56,8 @@ const Card: FC<IOurServices.ICard> = ({
 
     switch (backgroundColour) {
 		case "#ffffff":
-			svgColor = "fill-pureBlack group-hover:fill-primary-default";
-			titleColor = "text-pureBlack group-hover:text-primary-default";
+			svgColor = "fill-primary-default group-hover:fill-accent-default";
+			titleColor = "text-primary-default group-hover:text-accent-default";
 			buttonColor = "text-white bg-pureBlack hover:text-pureBlack hover:bg-accent-default";
 			buttonSVGColor = "fill-accent-default group-hover/button:fill-pureBlack";
             paragraphColor = "text-pureBlack";
@@ -93,7 +102,8 @@ const Card: FC<IOurServices.ICard> = ({
                 style={{
                     scale,
                     backgroundColor: backgroundColour,
-                    top: `calc(-5vh + ${index * 25}px)`
+                    top: `calc(-5vh + ${index * 25}px)`,
+                    backgroundImage: `${backgroundColour === "#ffffff" ? `linear-gradient(0deg,rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 0.9)),url("${servicesBackgroundImage?.sourceUrl}")` : "none"}`,
                 }}
             >
                 <div className={styles.topSection}>
@@ -113,14 +123,21 @@ const Card: FC<IOurServices.ICard> = ({
                 </div>
                 <div className={styles.bottomSection}>
                     <div className={styles.description}>
-                        <Paragraph
-                            fadeIn={false}
-                            content={paragraph}
-                            offsetStart={offsetStart}
-                            offsetFinish={offsetFinish}
-                            className={paragraph ? styles.paragraph + ` ${paragraphColor}`: "hidden"}
-                        />
-                        <div className={styles.options}>
+                        <SlideInXLeftAnimation className="w-full h-full">
+                            <Paragraph
+                                fadeIn={false}
+                                content={paragraph}
+                                offsetStart={offsetStart}
+                                offsetFinish={offsetFinish}
+                                className={paragraph ? styles.paragraph + ` ${paragraphColor}`: "hidden"}
+                            />
+                        </SlideInXLeftAnimation>
+                        <motion.div
+                            viewport={{once: false}}
+                            className={styles.options}
+                            initial={slideInLeftInitial}
+                            whileInView={slideInRightFinish}
+                        >
                             {options?.length > 0 ? (
                                 options?.map(
                                     (item: any, index: number) => (
@@ -142,8 +159,13 @@ const Card: FC<IOurServices.ICard> = ({
                             ) : (
                                 <></>
                             )}
-                        </div>
-                        <div className={styles.buttonSection + ` group/button ${buttonColor}`}>
+                        </motion.div>
+                        <motion.div
+                            viewport={{once: false}}
+                            initial={slideInLeftInitial}
+                            whileInView={slideInRightFinish}
+                            className={styles.buttonSection + ` group/button ${buttonColor}`}
+                        >
                             <Link
                                 href={`${buttonLink?.url}`}
                                 target={buttonLink?.target}
@@ -155,7 +177,7 @@ const Card: FC<IOurServices.ICard> = ({
                             <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.svg}>
                                 <path className={buttonSVGColor} d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z" fill="currentColor"/>
                             </svg>
-                        </div>
+                        </motion.div>
                     </div>
                     <div className={styles.imageContainer}>
                         <motion.div

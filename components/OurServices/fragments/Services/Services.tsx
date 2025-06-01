@@ -11,7 +11,9 @@ import styles from "@/components/OurServices/styles/OurServices.module.scss";
 import Card from "@/components/OurServices/fragments/Services/Card";
 import { useScroll } from "framer-motion";
 
-const Services: FC<IOurServices.IServices> = ({ service }) => {
+const Services: FC<IOurServices.IServices> = ({
+    service, servicesBackgroundImage
+}) => {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
         target: container,
@@ -19,7 +21,10 @@ const Services: FC<IOurServices.IServices> = ({ service }) => {
     })
   
     return (
-        <div ref={container} className={styles.servicesGrid}>
+        <div
+            ref={container}
+            className={styles.servicesGrid}
+        >
             {service?.map((item: any, index: number) => {
                 const targetScale = 1 - ( (service.length - index) * 0.05);
                     return (
@@ -36,6 +41,7 @@ const Services: FC<IOurServices.IServices> = ({ service }) => {
                             paragraph={item?.paragraph}
                             buttonLink={item?.buttonLink}
                             backgroundColour={item?.backgroundColour}
+                            servicesBackgroundImage={servicesBackgroundImage}
                         />
                     )
                 })

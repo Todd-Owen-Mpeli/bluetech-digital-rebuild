@@ -32,11 +32,11 @@
         @apply relative min-h-screen lg:py-16 px-0 bg-white;
 
         .cardContainer {
-            @apply sticky h-full min-h-screen lg:py-12 flex items-center justify-center top-0;
+            @apply sticky overflow-hidden h-full min-h-screen lg:py-12 flex items-center justify-center top-0;
 
             .card {
                 transform-origin: top;
-                @apply relative w-full h-full min-h-screen px-12 flex flex-col items-center justify-center top-0;
+                @apply relative w-full h-full min-h-screen px-12 flex flex-col items-center justify-center top-0 bg-cover bg-center bg-no-repeat;
 
                 .topSection {
                     @apply w-full flex flex-col sm:flex-row items-center justify-between gap-4;
@@ -66,7 +66,7 @@
                     @apply flex flex-col lg:flex-row h-full my-12 gap-8 lg:gap-32 items-end;
 
                     .description {
-                        @apply relative w-full lg:w-1/2 flex flex-col gap-8 lg:gap-12;
+                        @apply relative w-full lg:w-1/2 h-full flex flex-col gap-8 lg:gap-12;
 
                         .paragraph {
                             @apply lg:max-w-4xl text-xl lg:text-2xl text-left leading-normal;

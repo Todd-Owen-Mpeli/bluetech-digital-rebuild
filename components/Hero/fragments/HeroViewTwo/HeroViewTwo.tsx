@@ -3,7 +3,7 @@ import Link from "next/link";
 import React , { FC, useMemo, useRef } from "react";
 import {IHero} from "@/components/Hero/types/index";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { offsetFinish, offsetStart } from "@/animations/animations";
+import { offsetFinish, offsetStart, slideInLeftInitial, slideInRightFinish } from "@/animations/animations";
 
 // Styling
 import styles from "@/components/Hero/styles/Hero.module.scss";
@@ -48,18 +48,25 @@ const HeroViewTwo: FC<IHero.IProps[`heroViewTwo`]> = ({
         <div  ref={container} className={`${styles.heroViewTwo} panel`}>
             <div className={styles.container}>
                 <motion.div className={styles.content}>
-                    <TextRevealBlurEffect
-						content={paragraph}
-						scrollOpacity={scrollOpacity}
-						className={paragraph ? styles.paragraph + " block lg:hidden" : "hidden"}
-					/>
-					<Paragraph
-						content={paragraph}
-						className={paragraph ? styles.paragraph + " hidden lg:block" : "hidden"}
-					/>
+                    <motion.div
+                        viewport={{once: false}}
+                        initial={slideInLeftInitial}
+                        className={styles.leftSection}
+                        whileInView={slideInRightFinish}
+                    >
+                        <TextRevealBlurEffect
+                            content={paragraph}
+                            scrollOpacity={scrollOpacity}
+                            className={paragraph ? styles.paragraph + " block lg:hidden" : "hidden"}
+                        />
+                        <Paragraph
+                            content={paragraph}
+                            className={paragraph ? styles.paragraph + " hidden lg:block" : "hidden"}
+                        />
+                    </motion.div>
                     <div className={styles.rightSection}>
                         <div className="h-1/2"/>
-                        <SlideInXRightAnimation className={styles.content}>
+                        <SlideInXRightAnimation className={styles.wrapper}>
                             <Paragraph
                                 fadeIn={false}
                                 content={paragraphTwo}

@@ -44,6 +44,14 @@ export namespace IOurServices {
 				width: number;
 			};
         };
+        servicesBackgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				height: number;
+				width: number;
+			};
+        };
     };
     
     export type ITitleSection = {
@@ -54,6 +62,7 @@ export namespace IOurServices {
     
     export type IServices= {
         service: IProps['service']
+        servicesBackgroundImage: IProps['servicesBackgroundImage']
     }
 
     export type ICard= {
@@ -66,6 +75,7 @@ export namespace IOurServices {
         options: IProps['service'][0][`options`];
         paragraph: IProps['service'][0][`paragraph`];
         buttonLink: IProps['service'][0][`buttonLink`];
+        servicesBackgroundImage: IProps['servicesBackgroundImage']
         backgroundColour: IProps['service'][0][`backgroundColour`];
     }
 }
