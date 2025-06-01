@@ -17,4 +17,12 @@ export const RightPartner = `
 			width
 		}
 	}
+	backgroundImage {
+		altText
+		sourceUrl
+		mediaDetails {
+			height
+			width
+		}
+	}
 `;

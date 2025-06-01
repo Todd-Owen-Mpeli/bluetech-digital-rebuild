@@ -17,6 +17,7 @@ const RightPartner: FC<IRightPartner.IProps> = ({
   image,
   stats,
   paragraph,
+  backgroundImage,
 }) => {
 
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -66,7 +67,14 @@ const RightPartner: FC<IRightPartner.IProps> = ({
   }, [paragraph]);
 
   return (
-        <motion.div ref={containerRef} className={styles.rightPartner}>
+      <motion.div
+          ref={containerRef}
+          className={styles.rightPartner}
+          style={{
+              backgroundImage: `linear-gradient(0deg,rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 0.9)),url("${backgroundImage?.sourceUrl}")`,
+        }}
+      >
             <div className={styles.topSection}></div>
             <div className={styles.scrollYProgressParagraph}>
                 <p ref={paragraphRef} className={paragraph ? styles.paragraph : 'hidden'}>

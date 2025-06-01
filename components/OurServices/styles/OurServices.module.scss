@@ -32,11 +32,11 @@
         @apply relative min-h-screen lg:py-16 px-0 bg-white;
 
         .cardContainer {
-            @apply sticky overflow-hidden h-full min-h-screen lg:py-12 flex items-center justify-center top-0;
+            @apply sticky h-full min-h-screen lg:py-12 flex items-center justify-center top-0;
 
             .card {
                 transform-origin: top;
-                @apply relative w-full h-full min-h-screen px-12 flex flex-col items-center justify-center top-0 bg-cover bg-center bg-no-repeat;
+                @apply relative overflow-hidden w-full h-full min-h-screen px-12 flex flex-col items-center justify-center top-0 bg-cover bg-center bg-no-repeat;
 
                 .topSection {
                     @apply w-full flex flex-col sm:flex-row items-center justify-between gap-4;

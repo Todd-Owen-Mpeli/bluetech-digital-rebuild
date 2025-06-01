@@ -16,5 +16,13 @@ export namespace IRightPartner {
                 width: number;
             };
         };
+        backgroundImage: {
+            altText: string;
+            sourceUrl: string;
+            mediaDetails: {
+                height: number;
+                width: number;
+            };
+        };
     };
 }
