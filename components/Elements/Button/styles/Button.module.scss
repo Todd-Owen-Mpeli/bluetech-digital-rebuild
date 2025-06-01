@@ -1,0 +1,51 @@
+.linkWrapper {
+    .buttonStyling,
+    .buttonStylingAlt,
+    .buttonStylingAltTwo,
+    .buttonStylingAltThree {
+        .wrapper {
+            @apply w-fit flex items-center justify-start gap-4;
+
+            .icon {
+                @apply w-[25px] lg:w-fit h-[25px] object-contain object-center;
+
+                g {
+                    @apply transition-all duration-500 ease-in-out;
+                }
+            }
+
+            .text {
+                @apply w-full;
+            }
+        }
+    }
+
+    .buttonStyling {
+        @apply w-fit px-6 py-3 flex uppercase font-primary font-light tracking-wide text-white text-paragraph lg:text-medium sm:mx-0 border-2 border-solid border-white hover:bg-primary-default hover:border-primary-default transition-all duration-500 ease-in-out;
+    }
+
+    .buttonStylingAlt {
+        @extend .buttonStyling;
+        @apply border-primary-default bg-primary-default hover:border-primary-darker hover:bg-primary-darker;
+    }
+
+    .buttonStylingAltTwo {
+        @extend .buttonStyling;
+        @apply border-primary-default bg-primary-default hover:border-primary-dark hover:bg-primary-dark;
+    }
+
+    .buttonStylingAltThree {
+        @extend .buttonStyling;
+        @apply p-0 border-none bg-none text-pureBlack text-medium lg:text-lg tracking-wide hover:text-primary-default hover:border-none hover:bg-transparent;
+    }
+
+    .buttonStylingAltFour {
+        @extend .buttonStyling;
+        @apply border-primary-dark bg-primary-dark hover:border-primary-darker hover:bg-primary-darker;
+    }
+
+    .buttonStylingAltFive {
+        @extend .buttonStyling;
+        @apply hover:border-primary-darker hover:bg-primary-darker;
+    }
+}
