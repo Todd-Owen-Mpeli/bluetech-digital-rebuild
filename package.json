@@ -32,8 +32,7 @@
 		"react-use-measure": "^2.1.7",
 		"sass": "^1.81.0",
 		"sass-loader": "^16.0.5",
-		"swiper": "^11.1.15",
-		"three": "^0.177.0"
+		"swiper": "^11.1.15"
 	},
 	"devDependencies": {
 		"@types/node": "^22.15.29",
@@ -47,7 +46,6 @@
 		"glslify-loader": "^2.0.0",
 		"lil-gui": "^0.20.0",
 		"postcss": "^8.4.49",
-		"postprocessing": "^6.36.4",
 		"rollup-plugin-terser": "^7.0.2",
 		"stats.js": "^0.17.0",
 		"tailwindcss": "^3.4.17",

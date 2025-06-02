@@ -127,7 +127,7 @@
 
                 // Hero View Four
                 .heroViewFour {
-                    @apply w-full h-full;
+                    @apply w-full h-full bg-accent-default;
 
                     .contentWrapper {
                         @apply py-28 px-8 lg:px-16 flex flex-col justify-end;

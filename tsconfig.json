@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Animations/WaterDistortionEffect/WaterDistortionEffectApp.js", "components/Animations/WaterDistortionEffect/Elements/WaterEffect.js", "components/Animations/WaterDistortionEffect/Elements/TouchTexture.js"],
   "exclude": ["node_modules"]
 }
