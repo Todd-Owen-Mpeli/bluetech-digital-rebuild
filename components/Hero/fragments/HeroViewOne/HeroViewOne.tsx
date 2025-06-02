@@ -10,6 +10,7 @@ import styles from "@/components/Hero/styles/Hero.module.scss";
 // Components
 import IntroTextAnimation from '@/components/Hero/Elements/IntroTextAnimation';
 import VideoCard from "@/components/Hero/fragments/HeroViewOne/Elements/VideoCard";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const MemoizedMotionDiv = React.memo(motion.div);
 
@@ -45,14 +46,16 @@ const HeroViewOne: FC<IHero.IHeroViewOne.IProps> = ({
                 >
                     <div className={styles.content}>
                         <IntroTextAnimation title={title} className={styles.title} />
-                        <motion.h2
-                            initial={initial}
-                            whileInView={fadeInUp}
-                            viewport={{once: true}}
-                            className={subtitle ? styles.subtitle : "hidden"}
-                        >
-                            {subtitle}
-                        </motion.h2>
+                        <ContentSliceRevealMaskAnimation>
+                            <motion.h2
+                                initial={initial}
+                                whileInView={fadeInUp}
+                                viewport={{once: true}}
+                                className={subtitle ? styles.subtitle : "hidden"}
+                            >
+                                {subtitle}
+                            </motion.h2>
+                        </ContentSliceRevealMaskAnimation>
                     </div>
                 </motion.div>
 			</MemoizedMotionDiv>

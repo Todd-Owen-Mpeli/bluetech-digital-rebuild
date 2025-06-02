@@ -22,48 +22,48 @@ const HeroViewThree: FC<IHero.IHeroViewThree.IProps> = ({
     backgroundImage
  }) => {
     return (
-        <div className={`${styles.heroViewThree} panel`}>
+		<div className={`${styles.heroViewThree} panel`}>
 			<Link
-                href={`${link?.url || "/"}`}
-                aria-label={`${link?.title}`}
-                className={styles.linkWrapper}
-                target={link?.target || "_self"}
-            >
-                <SlideUpDivMaskReveal
-                    triggerOnce={true}
-                    className={styles.mainContainer}
-                    backgroundColor={"bg-pureBlack"}
-                    style={{
-                        backgroundImage: `url("${backgroundImage?.sourceUrl}")`,
-                    }}
-                >
-                    <VideoCard video={video} displayVideo={displayVideo}/>
-                    <div className={styles.contentWrapper}>
-                    <motion.div
-                        viewport={{once: false}}
-                        className={styles.content}
-                        initial={slideInLeftInitial}
-                        whileInView={slideInRightFinish}
-                    >
-                        <ContentSliceRevealMaskAnimation>
-                            <motion.h4
-                                initial={initialTwo}
-                                whileInView={fadeIn}
-                                viewport={{once: true}}
-                                className={styles.title}
-                            >
-                                {title}
-                            </motion.h4>
-                        </ContentSliceRevealMaskAnimation>
-                        <div className={styles.playButton}>
-                            <Button styleNumber={0} link={link}/>
-                        </div>
-                    </motion.div>
-                    </div>
-                </SlideUpDivMaskReveal>
-            </Link>
+				href={`${link?.url || "/"}`}
+				aria-label={`${link?.title}`}
+				className={styles.linkWrapper}
+				target={link?.target || "_self"}
+			>
+				<SlideUpDivMaskReveal
+					triggerOnce={true}
+					className={styles.mainContainer}
+					backgroundColor={"bg-pureBlack"}
+					style={{
+						backgroundImage: `url("${backgroundImage?.sourceUrl}")`,
+					}}
+				>
+					<VideoCard video={video} displayVideo={displayVideo}/>
+					<div className={styles.contentWrapper}>
+					<motion.div
+						viewport={{once: false}}
+						className={styles.content}
+						initial={slideInLeftInitial}
+						whileInView={slideInRightFinish}
+					>
+						<ContentSliceRevealMaskAnimation>
+							<motion.h4
+									initial={initialTwo}
+									whileInView={fadeIn}
+									viewport={{once: true}}
+									className={styles.title}
+								>
+									{title}
+							</motion.h4>
+						</ContentSliceRevealMaskAnimation>
+						<div className={styles.playButton}>
+							<Button styleNumber={0} link={link}/>
+						</div>
+					</motion.div>
+					</div>
+				</SlideUpDivMaskReveal>
+			</Link>
 		</div>
     );
 }
 
-export default HeroViewThree;
+export default HeroViewThree
