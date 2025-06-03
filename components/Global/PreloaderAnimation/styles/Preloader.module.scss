@@ -1,0 +1,25 @@
+.preloaderAnimation {
+	@apply w-screen h-screen flex items-center justify-center fixed z-[999] bg-pureBlack;
+
+	svg {
+		height: calc(100% + 300px);
+
+		@apply absolute top-0 w-full;
+
+		path {
+			@apply fill-pureBlack;
+		}
+	}
+
+	p {
+		@apply absolute z-[1] flex items-center uppercase text-white font-primaryBold text-4xl sm:text-6xl xl:text-7xl leading-tight;
+
+		span {
+			@apply block bg-accent-default w-[10px] h-[10px] ml-[10px] rounded-[50%];
+		}
+
+		div {
+			@apply rounded-[50%] mr-[10px] text-5xl sm:text-7xl xl:text-12xl text-accent-default;
+		}
+	}
+}

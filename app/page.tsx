@@ -9,6 +9,7 @@ import {getAllFlexibleContentComponents} from "@/graphql/GetAllFlexibleContentCo
 // Components
 import PageContextProvider from "@/context/providers/PageContextProvider";
 import RenderFlexibleContent from "@/components/FlexibleContent/RenderFlexibleContent";
+import PreloaderAnimation from "@/components/Global/PreloaderAnimation/PreloaderAnimation";
 
 // Home Page Generated Metadata
 export const generateMetadata = async (): Promise<Metadata> => {
@@ -33,6 +34,7 @@ const HomePage: any = async () => {
 			content={flexibleContentComponents?.content}
 			postTypeFlexibleContent={flexibleContentType?.pages}
 		>
+			<PreloaderAnimation />
 			<RenderFlexibleContent />
 		</PageContextProvider>
 	);
