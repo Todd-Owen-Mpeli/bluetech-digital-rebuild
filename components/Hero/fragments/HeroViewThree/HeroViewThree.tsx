@@ -72,31 +72,6 @@ const HeroViewThree: FC<IHero.IHeroViewThree.IProps> = ({
 				</Link>
 			</div>
 			<div className={`${styles.heroViewFour} panel`}>
-				{/* <WaterDistortionEffect
-					image={backgroundImage}
-					className={styles.contentWrapper}
-				>
-					<ContentSliceRevealMaskAnimation>
-						<motion.h4
-							initial={initialTwo}
-							whileInView={fadeIn}
-							viewport={{once: true}}
-							className={styles.title}
-						>
-							{title}
-						</motion.h4>
-					</ContentSliceRevealMaskAnimation>
-					<motion.div
-                        viewport={{once: false}}
-                        initial={slideInLeftInitial}
-                        whileInView={slideInRightFinish}
-					>
-						<Paragraph
-							className={styles.paragraph}
-							content={"Your UI stays interactive above the OGL canvas."}
-						/>
-					</motion.div>
-				</WaterDistortionEffect> */}
 			</div>
 		</>
     );

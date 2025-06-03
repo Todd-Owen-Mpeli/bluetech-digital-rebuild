@@ -1,5 +1,5 @@
 .ctaTwo {
-    @apply py-28 px-8 2xl:px-16 bg-primary-default bg-cover bg-no-repeat bg-center;
+    @apply py-28 px-8 2xl:px-16 overflow-hidden bg-primary-default bg-cover bg-no-repeat bg-center;
 
     .container {
         @apply max-w-[1700px] m-auto w-full p-0 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-14;
