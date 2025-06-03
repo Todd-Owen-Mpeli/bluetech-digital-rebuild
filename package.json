@@ -32,7 +32,8 @@
 		"react-use-measure": "^2.1.7",
 		"sass": "^1.81.0",
 		"sass-loader": "^16.0.5",
-		"swiper": "^11.1.15"
+		"swiper": "^11.1.15",
+		"three": "^0.177.0"
 	},
 	"devDependencies": {
 		"@types/node": "^22.15.29",

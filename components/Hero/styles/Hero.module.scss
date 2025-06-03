@@ -127,23 +127,34 @@
 
                 // Hero View Four
                 .heroViewFour {
-                    @apply w-full h-full bg-accent-default;
+                    @apply bg-primary-default;
 
-                    .contentWrapper {
-                        @apply py-28 px-8 lg:px-16 flex flex-col justify-end;
+                    .inversionLens {
+                        position: relative;
+                        width: 100vw;
+                        // height: 100svh;
+                        overflow: hidden;
 
-                        .title {
-                            @apply font-primary font-extrabold uppercase text-center lg:text-left text-white text-[8.5vw] sm:text-[10.5vw] md:text-[5vw] leading-tight;
-                        }
-
-                        .paragraph {
-                            @apply font-secondary lg:max-w-5xl text-white text-5xl lg:text-7xl text-center lg:text-left leading-normal;
-
-                            p {
-                                @apply font-secondary;
-                            }
+                        img {
+                            display: none;
                         }
                     }
+
+                    // .contentWrapper {
+                    //     @apply py-28 px-8 lg:px-16 flex flex-col justify-end;
+
+                    //     .title {
+                    //         @apply font-primary font-extrabold uppercase text-center lg:text-left text-white text-[8.5vw] sm:text-[10.5vw] md:text-[5vw] leading-tight;
+                    //     }
+
+                    //     .paragraph {
+                    //         @apply font-secondary lg:max-w-5xl text-white text-5xl lg:text-7xl text-center lg:text-left leading-normal;
+
+                    //         p {
+                    //             @apply font-secondary;
+                    //         }
+                    //     }
+                    // }
                 }
             }
         }
