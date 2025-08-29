@@ -10,7 +10,7 @@ import {INavbar} from "@/components/Global/Navbar/types/index";
 import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
 
 // Animation
-const megaMenuAnimation: INavbar.IMegaMenuAnimation = {
+const megaMenuAnimation: INavbar.IMegaMenuAnimation | any = {
 	open: {
 		width: "55vw",
 		height: "55vh",

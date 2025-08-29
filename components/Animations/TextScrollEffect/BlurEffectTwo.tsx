@@ -2,8 +2,8 @@
 
 // Imports
 import {gsap} from "gsap";
-import {motion} from "framer-motion";
-import {FC, useEffect, useRef} from "react";
+import { motion } from "framer-motion";
+import { FC, useEffect, useRef} from "react";
 import DOMPurify from "isomorphic-dompurify";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 
@@ -24,7 +24,7 @@ const BlurEffectTwo: FC<IBlurEffectTwo> = ({content, className}) => {
 		};
 	};
 
-	const wordsRef = useRef<HTMLDivElement>(null);
+	const wordsRef = useRef<HTMLDivElement | any>(null);
 
 	useEffect(() => {
 		if (wordsRef.current) {
@@ -34,10 +34,10 @@ const BlurEffectTwo: FC<IBlurEffectTwo> = ({content, className}) => {
 
 			// Clear the content and dynamically wrap each word in a span
 			wordsRef.current.innerHTML = ""; // Remove original content
-			wordsArray.forEach((word) => {
+			wordsArray.forEach((word: any) => {
 				const span = document.createElement("span");
 				span.textContent = word;
-				wordsRef.current?.appendChild(span);
+				wordsRef.current.appendChild(span);
 			});
 
 			// Select all the spans

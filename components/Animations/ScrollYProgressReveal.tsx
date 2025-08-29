@@ -1,6 +1,6 @@
 // Imports
-import {FC, useRef} from "react";
-import {motion, useScroll} from "framer-motion";
+import { FC, useRef} from "react";
+import { motion, useScroll} from "framer-motion";
 import {fadeIn, offsetFinish, offsetStart} from "@/animations/animations";
 
 type IProps = {

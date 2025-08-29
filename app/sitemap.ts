@@ -1,48 +1,49 @@
 // Imports
 import {MetadataRoute} from "next";
-import {getAllPagesSlugs} from "@/graphql/GetAllPagesSlugs";
-import {getAllNewsInsightsPostsSlugs} from "@/graphql/GetAllNewsInsights";
+
+// Get All Pages
+import {
+	getAllPagesSlugs,
+} from "@/graphql/GetAllPagesSlugs";
 
 const sitemap = async () => {
-	const [pagesSlugs, newsInsightsPostsSlugs] = await Promise.all([
+	const [
+
+		// Pages & Post Slugs 
+		pagesSlugs,
+	] = await Promise.all([
+
+		// Pages Slugs 
 		getAllPagesSlugs(),
-		getAllNewsInsightsPostsSlugs(),
+
 	]);
 
 	const siteUrl: any = process.env.SITE_URL;
 
-	/* Pages, News Insights Posts Arrays */
-	const pagesLinks: any = [];
-	const newsInsightsPostsLinks: any = [];
 
+	/* EMPTY ARRAYS */
+	/* Pages, News Insights Posts Arrays */
+	const pagesLinks: any[] = [];
+
+	/* PUSHING THE DYNAMIC SLUGS
+	 INTO THE EMPTY ARRAYS */
 	// Pages Dynamic Links
-	pagesSlugs?.map((keys: any) => {
+	pagesSlugs.map((keys: any) => {
 		const object = {
-			url: `${siteUrl}/${keys?.slug}`,
+			url: `${siteUrl}/${keys.slug}`,
 			changefreq: "monthly",
-			lastmod: `${keys?.modified}`,
+			lastmod: `${keys.modified}`,
 			priority: 0.8,
 		};
 
 		pagesLinks.push(object);
 	});
 
-	// News Insights Dynamic Links
-	newsInsightsPostsSlugs?.map((keys: any) => {
-		const object = {
-			url: `${siteUrl}/operational-insights/${keys?.slug}`,
-			changefreq: "daily",
-			lastmod: `${keys?.modified}`,
-			priority: 0.8,
-		};
-
-		newsInsightsPostsLinks.push(object);
-	});
-
 	// Arrays with your all dynamic links
 	const allLinks: MetadataRoute.Sitemap = [
+		/* Pages, News Insights Posts Arrays */
 		...pagesLinks,
-		...newsInsightsPostsLinks,
+
 	];
 
 	return allLinks;

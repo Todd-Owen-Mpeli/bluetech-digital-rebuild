@@ -2,8 +2,8 @@
 
 // Imports
 import {gsap} from "gsap";
-import {motion} from "framer-motion";
-import {FC, useEffect, useRef} from "react";
+import { motion } from "framer-motion";
+import { FC, useEffect, useRef} from "react";
 import DOMPurify from "isomorphic-dompurify";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 

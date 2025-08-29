@@ -7,7 +7,18 @@ import {FC, useEffect, useState} from "react";
 // Styling
 import styles from "@/components/Global/PreloaderAnimation/styles/Preloader.module.scss";
 
-export const opacity = {
+export const opacity: {
+    initial: {
+        opacity: number;
+    };
+    enter: {
+        opacity: number;
+        transition: {
+            duration: number;
+            delay: number;
+        };
+    };
+} | any = {
 	initial: {
 		opacity: 0,
 	},
@@ -17,7 +28,19 @@ export const opacity = {
 	},
 };
 
-export const slideUp = {
+export const slideUp : {
+    initial: {
+        top: number;
+    };
+    exit: {
+        top: string;
+        transition: {
+            duration: number;
+            ease: number[];
+            delay: number;
+        };
+    };
+} | any = {
 	initial: {
 		top: 0,
 	},
@@ -65,7 +88,23 @@ const Preloader: FC = () => {
 		dimension.height
 	} Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`;
 
-	const curve = {
+	const curve: {
+		initial: {
+			d: string;
+			transition: {
+				duration: number;
+				ease: number[];
+			};
+		};
+		exit: {
+			d: string;
+			transition: {
+				duration: number;
+				ease: number[];
+				delay: number;
+			};
+		};
+	} | any = {
 		initial: {
 			d: initialPath,
 			transition: {duration: 0.7, ease: [0.76, 0, 0.24, 1]},
