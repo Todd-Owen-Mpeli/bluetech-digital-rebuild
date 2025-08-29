@@ -44,35 +44,41 @@ const App = async ({children}: AppProps | any) => {
 	/* Fetch all global content
 	remaining content simultaneously */
 	const promises: Promise<any>[] = [
+
+		// Custom Post Types
+		getThemesOptionsContent(),
+
+		// Case Studies, News & Testimonials Custom Post Types
+		getAllCaseStudiesContent(),
+		getAllNewsInsightsContent(),
+		getAllTestimonialsContent(),
+		getThreeNewsInsightsContent(),
+
 		// Website Links
 		getMobileLinks(),
 		getCopyrightLinks(),
 		getNavbarMenuLinks(),
 		getFooterMenuLinks(),
 		getOurServicesSublinks(),
-
-		// Custom Post Types
-		getThemesOptionsContent(),
-		getAllCaseStudiesContent(),
-		getAllNewsInsightsContent(),
-		getThreeNewsInsightsContent(),
-		getAllTestimonialsContent(),
 	];
 
 	const [
+
+		// Custom Post Types
+		themesOptionsContent,
+		
+		// Case Studies, News & Testimonials Custom Post Types
+		caseStudies,
+		newsInsights,
+		testimonials,
+		newsInsightsThreeCards,
+
 		// Website Links
 		mobileLinks,
 		copyrightLinks,
 		navbarMenuLinks,
 		footerMenuLinks,
 		ourServicesLinks,
-
-		// Custom Post Types
-		themesOptionsContent,
-		caseStudies,
-		newsInsights,
-		newsInsightsThreeCards,
-		testimonials,
 	] = await Promise.all(promises);
 
 	const globalProps: IGlobal.IProps = {
