@@ -18,6 +18,8 @@ export default {
 				xl: "1280px",
 			},
 			fontSize: {
+				xxxs: ".5rem",
+				xxs: ".65rem",
 				xs: ".75rem",
 				sm: ".8rem",
 				tiny: ".9rem",

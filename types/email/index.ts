@@ -1,4 +1,4 @@
-import {ICustomPostTypes} from "../context";
+import { ICustomPostTypes } from "../context";
 
 /* Customer Enquiry 
 Confirmation Email */

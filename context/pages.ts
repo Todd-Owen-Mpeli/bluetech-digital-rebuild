@@ -1,5 +1,9 @@
 // Imports
-import {IPost, IFlexibleContentType, IPage} from "@/types/context";
+import {
+	IPage,
+	IPost,
+	IFlexibleContentType,
+} from "@/context/types/context";
 
 /* PUBLIC PAGES & POSTS */
 /* PREVIEW PAGES & POSTS */
@@ -18,10 +22,10 @@ export const postType: IPost.ITypes = {
 export const pageType: IPage.ITypes = {
 	// Public pages
 	home: "Home",
-	services: "services",
+	services: "Services",
 };
 
-export const flexibleContentType: IFlexibleContentType = {
+export const flexibleContentType: IFlexibleContentType.ITypes = {
 	// Public pages
 	pages: "DefaultTemplate_Flexiblecontent_FlexibleContent",
 	// Preview pages

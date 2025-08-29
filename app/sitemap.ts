@@ -4,7 +4,7 @@ import {MetadataRoute} from "next";
 // Get All Pages
 import {
 	getAllPagesSlugs,
-} from "@/graphql/GetAllPagesSlugs";
+} from "@/graphql/CMS/GetAllPagesSlugs";
 
 const sitemap = async () => {
 	const [

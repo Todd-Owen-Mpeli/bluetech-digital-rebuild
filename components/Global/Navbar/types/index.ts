@@ -1,6 +1,6 @@
 // Imports
+import { IGlobal } from "@/context/types/context";
 import { Dispatch, SetStateAction } from "react";
-import {IGlobal} from "../../../../types/context/index";
 
 // Components
 export namespace INavbar {

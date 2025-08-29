@@ -4,12 +4,12 @@ import {Metadata} from "next";
 import {flexibleContentType, postType} from "@/context/pages";
 
 // Queries Functions
-import {getAllSeoContent} from "@/graphql/GetAllSeoContent";
-import {getAllFlexibleContentComponents} from "@/graphql/GetAllFlexibleContentComponents";
+import {getAllSeoContent} from "@/graphql/CMS/GetAllSeoContent";
+import {getAllFlexibleContentComponents} from "@/graphql/CMS/GetAllFlexibleContentComponents";
 
 // Components
 import PageContextProvider from "@/context/providers/PageContextProvider";
-import BackToTopButton from "@/components/Elements/BackToTopButton/BackToTopButton";
+import BackToTopButton from "@/components/Global/Elements/BackToTopButton/BackToTopButton";
 import RenderFlexibleContent from "@/components/FlexibleContent/RenderFlexibleContent";
 
 // Dynamic Pages Generated Metadata

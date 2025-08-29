@@ -3,13 +3,8 @@
 // Imports
 import {FC} from "react";
 import {motion} from "framer-motion";
-import {IGlobal} from "@/types/context";
 import {GlobalContext} from "@/context/global";
-
-// Components
-import {Analytics} from "@vercel/analytics/react";
-import {SpeedInsights} from "@vercel/speed-insights/next";
-import PostHogContextProvider from "@/context/providers/PostHogProviderContext";
+import {IGlobal} from "@/context/types/context";
 
 const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 	children,
@@ -30,9 +25,7 @@ const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 				newsInsightsThreeCards: globalProps?.newsInsightsThreeCards,
 			}}
 		>
-			{/* Cookie Policy Pop Up */}
-			{/* <PostHogContextProvider /> */}
-			<motion.main
+			<motion.div
 				exit={{
 					opacity: 0,
 				}}
@@ -40,11 +33,7 @@ const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 				animate="animate"
 			>
 				{children}
-			</motion.main>
-			{/* Vercel Analytics */}
-			<Analytics />
-			{/* Vercel Speed Insights */}
-			<SpeedInsights />
+			</motion.div>
 		</GlobalContext.Provider>
 	);
 };

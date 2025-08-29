@@ -18,7 +18,7 @@ import {useGlobalContext} from "@/context/global";
 import styles from "@/components/Global/Error/styles/Error.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
 const Error: FC = () => {
 	const globalContext = useGlobalContext();

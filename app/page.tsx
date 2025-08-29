@@ -3,8 +3,8 @@ import {Metadata} from "next";
 import {pageType, postType, flexibleContentType} from "@/context/pages";
 
 // Queries Functions
-import {getAllSeoContent} from "@/graphql/GetAllSeoContent";
-import {getAllFlexibleContentComponents} from "@/graphql/GetAllFlexibleContentComponents";
+import {getAllSeoContent} from "@/graphql/CMS/GetAllSeoContent";
+import {getAllFlexibleContentComponents} from "@/graphql/CMS/GetAllFlexibleContentComponents";
 
 // Components
 import PageContextProvider from "@/context/providers/PageContextProvider";

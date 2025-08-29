@@ -3,13 +3,13 @@
 // Imports
 import gsap from "gsap";
 import Image from "next/image";
-import React, {FC, useEffect, useRef, useCallback} from "react";
+import React, { FC, useEffect, useRef, useCallback} from "react";
 
 // Styling
 import styles from "@/components/Global/BlurryCursorMouse/styles/BlurryCursorMouse.module.scss";
 
 const BlurryCursorMouse: FC = () => {
-	const size = 15;
+	const size = 10;
 	const circle = useRef<HTMLDivElement>(null);
 	const rafId = useRef<number | null>(null);
 	const mouse = useRef({x: 0, y: 0});
@@ -34,8 +34,8 @@ const BlurryCursorMouse: FC = () => {
 
 	const animate = useCallback(() => {
 		delayedMouse.current = {
-			x: lerp(delayedMouse.current.x, mouse.current.x, 0.2),
-			y: lerp(delayedMouse.current.y, mouse.current.y, 0.2),
+			x: lerp(delayedMouse.current.x, mouse.current.x, 1),
+			y: lerp(delayedMouse.current.y, mouse.current.y, 1),
 		};
 
 		moveCircle(delayedMouse.current.x, delayedMouse.current.y);
