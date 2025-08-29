@@ -13,16 +13,21 @@ const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 	return (
 		<GlobalContext.Provider
 			value={{
-				mobileLinks: globalProps?.mobileLinks,
+				// Custom Post Types
+				themesOptionsContent: globalProps?.themesOptionsContent,
+				
+				// Case Studies, News & Testimonials Custom Post Types
 				caseStudies: globalProps?.caseStudies,
-				testimonials: globalProps?.testimonials,
 				newsInsights: globalProps?.newsInsights,
+				testimonials: globalProps?.testimonials,
+				newsInsightsThreeCards: globalProps?.newsInsightsThreeCards,
+				
+				// Website Links
+				mobileLinks: globalProps?.mobileLinks,
 				copyrightLinks: globalProps?.copyrightLinks,
 				navbarMenuLinks: globalProps?.navbarMenuLinks,
 				footerMenuLinks: globalProps?.footerMenuLinks,
 				ourServicesLinks: globalProps?.ourServicesLinks,
-				themesOptionsContent: globalProps?.themesOptionsContent,
-				newsInsightsThreeCards: globalProps?.newsInsightsThreeCards,
 			}}
 		>
 			<motion.div

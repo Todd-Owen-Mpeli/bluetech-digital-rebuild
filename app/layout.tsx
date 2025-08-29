@@ -76,16 +76,21 @@ const App = async ({children}: AppProps | any) => {
 	] = await Promise.all(promises);
 
 	const globalProps: IGlobal.IProps = {
-		mobileLinks: mobileLinks,
+		// Custom Post Types
+		themesOptionsContent: themesOptionsContent,
+		
+		// Case Studies, News & Testimonials Custom Post Types
 		caseStudies: caseStudies,
-		testimonials: testimonials,
 		newsInsights: newsInsights,
+		testimonials: testimonials,
+		newsInsightsThreeCards: newsInsightsThreeCards,
+		
+		// Website Links
+		mobileLinks: mobileLinks,
 		copyrightLinks: copyrightLinks,
 		navbarMenuLinks: navbarMenuLinks,
 		footerMenuLinks: footerMenuLinks,
 		ourServicesLinks: ourServicesLinks,
-		themesOptionsContent: themesOptionsContent,
-		newsInsightsThreeCards: newsInsightsThreeCards,
 	};
 
 	return (

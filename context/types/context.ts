@@ -45,9 +45,14 @@ export namespace IPage {
 export namespace IGlobal {
     export type IProps = {
         // Custom Post Types
-		testimonials: ICustomPostTypes.ITestimonials;
 		themesOptionsContent: ICustomPostTypes.IThemesOptions;
-
+		
+		// Case Studies, News & Testimonials Custom Post Types
+		caseStudies: INewsCaseStudies.ICaseStudies;
+		testimonials: ICustomPostTypes.ITestimonials;
+		newsInsights: INewsCaseStudies.INewsInsights;
+		newsInsightsThreeCards: INewsCaseStudies.INewsInsights;
+		
 		// Website Links
 		mobileLinks: ILinks.IMobileLinks;
 		copyrightLinks: ILinks.ICopyrightLinks;
@@ -55,10 +60,6 @@ export namespace IGlobal {
 		footerMenuLinks: ILinks.IFooterMenuLinks;
 		ourServicesLinks: ILinks.IOurServicesLinks;
 
-		// News & Case Studies
-		caseStudies: INewsCaseStudies.ICaseStudies;
-		newsInsights: INewsCaseStudies.INewsInsights;
-		newsInsightsThreeCards: INewsCaseStudies.INewsInsights;
 
 	};
 	export type IContext = IProps;
