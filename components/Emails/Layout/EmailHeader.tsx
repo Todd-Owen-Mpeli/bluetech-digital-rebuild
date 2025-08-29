@@ -1,7 +1,8 @@
 // Imports
 import * as React from "react";
-import {IEmailHeader} from "@/types/email";
+
 import {Img, Section} from "@react-email/components";
+import { IEmailHeader } from "@/components/Emails/types/index";
 
 const EmailHeader: React.FC<IEmailHeader.IEmailHeader> = ({imagesDirUrl}) => {
 	return (
