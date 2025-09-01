@@ -48,7 +48,7 @@ const HomePage: any = async () => {
 			content={flexibleContentComponents?.content}
 			postTypeFlexibleContent={flexibleContentType?.pages}
 		>
-			<PreloaderAnimation />
+			{/* <PreloaderAnimation /> */}
 			<RenderFlexibleContent />
 		</PageContextProvider>
 	);
