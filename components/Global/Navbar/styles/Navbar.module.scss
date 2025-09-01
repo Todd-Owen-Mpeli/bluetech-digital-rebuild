@@ -13,7 +13,7 @@
 		}
 
 		.logoWrapper {
-			@apply bg-grey rounded-full p-2 flex items-center justify-center gap-2 hover:bg-accent-default transition-all duration-500 ease-in-out;
+			@apply bg-lightGreyTwo rounded-full p-2 flex items-center justify-center gap-2 hover:bg-accent-default transition-all duration-500 ease-in-out;
 
 			.logo {
 				@apply object-contain object-center w-[24px] h-[24px];

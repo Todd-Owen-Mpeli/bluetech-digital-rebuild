@@ -53,14 +53,15 @@ export default {
 				primary: {
 					default: "#012b27",
 					two: "#023b36",
+					light: "#006b60",
 					dark: "#011412",
 					darker: "#011412",
 				},
 				accent: {
 					default: "#bff007",
-					two: "#ffb000",
-					dark: "#ffb000",
-					darker: "#ffb000",
+					two: "#9fcb00",
+					dark: "#83a800",
+					darker: "#688400",
 				},
 				secondary: {
 					default: "#dee7df",
