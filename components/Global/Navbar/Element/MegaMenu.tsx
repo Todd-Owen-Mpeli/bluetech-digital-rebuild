@@ -7,7 +7,7 @@ import {motion} from "framer-motion";
 import {INavbar} from "@/components/Global/Navbar/types/index";
 
 // Styling
-import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
+import styles from "@/components/Global/Navbar/styles/Navbar.module.scss";
 
 // Animation
 const megaMenuAnimation: INavbar.IMegaMenuAnimation | any = {

@@ -5,10 +5,10 @@
 		@apply w-fit mx-auto h-full flex items-center justify-center;
 
 		.menuBtn {
-			@apply bg-white py-3 px-6 flex items-center justify-center gap-2 hover:bg-accent-default transition-all duration-500 ease-in-out;
+			@apply bg-white py-2 px-6 flex items-center justify-center gap-2 hover:bg-accent-default transition-all duration-500 ease-in-out;
 
 			.menuText {
-				@apply text-lg font-tertiaryMedium text-black;
+				@apply text-base font-tertiaryMedium text-black;
 			}
 		}
 
@@ -16,7 +16,7 @@
 			@apply bg-grey rounded-full p-2 flex items-center justify-center gap-2 hover:bg-accent-default transition-all duration-500 ease-in-out;
 
 			.logo {
-				@apply object-contain object-center w-[32px] h-[32px];
+				@apply object-contain object-center w-[24px] h-[24px];
 			}
 		}
 
@@ -24,7 +24,7 @@
 			@apply hidden xl:flex items-center justify-end gap-6;
 
 			.buttonStyling {
-				@apply py-3 px-6 w-fit bg-accent-default rounded-full font-tertiaryMedium cursor-pointer capitalize text-pureBlack text-lg tracking-[0.05rem] hover:text-white hover:bg-pureBlack transition-all ease-in-out duration-500;
+				@apply py-2 px-6 w-fit bg-accent-default rounded-full font-tertiaryMedium cursor-pointer capitalize text-pureBlack text-base tracking-[0.05rem] hover:text-white hover:bg-pureBlack transition-all ease-in-out duration-500;
 			}
 		}
 	}

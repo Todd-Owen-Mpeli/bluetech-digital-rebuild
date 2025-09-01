@@ -11,7 +11,7 @@ import {INavbar} from "@/components/Global/Navbar/types/index";
 import fadeInUp, {initial, stagger} from "@/animations/animations";
 
 // Styling
-import styles from "@/components/Global/Navbar/Styles/Navbar.module.scss";
+import styles from "@/components/Global/Navbar/styles/Navbar.module.scss";
 
 // Components
 import MegaMenu from "@/components/Global/Navbar/Element/MegaMenu";
