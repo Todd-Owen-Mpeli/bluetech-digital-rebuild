@@ -39,12 +39,12 @@
                                     @apply w-full max-w-5xl 2xl:max-w-[95rem] mx-auto lg:mx-0 flex items-center justify-center;
 
                                     .title {
-                                        @apply font-primary font-extrabold uppercase italic text-white text-center text-7xl lg:text-[7.5vw] leading-tight xl:leading-[6.5vw];
+                                        @apply font-primary font-extrabold uppercase italic text-white text-center text-7xl lg:text-[7.5vw] xl:text-[6vw] leading-tight xl:leading-[6vw];
                                     }
                                 }
 
                                 .subtitle {
-                                    @apply mb-6 pt-3 pb-1 px-6 max-w-4xl uppercase font-primary font-extrabold text-accent-default text-center text-lg md:text-2xl lg:text-6xl leading-[2vw];
+                                    @apply mb-6 pt-3 pb-1 px-6 max-w-xl font-secondary italic text-accent-default text-center text-lg md:text-2xl lg:text-xl leading-[2vw] lg:leading-tight;
                                 }
                             }
                         }
