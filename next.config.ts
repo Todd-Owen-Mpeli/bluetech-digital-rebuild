@@ -4,8 +4,27 @@ const nextConfig: NextConfig = {
 	/* Config options here */
 	reactStrictMode: true,
 	poweredByHeader: false,
+	// All routes edge network caching
 	async headers() {
 		return [
+			// Specific rule for /search to disable caching
+            {
+                source: "/search",
+                headers: [
+                    {
+                        key: "Cache-Control",
+                        value: "no-store, no-cache, must-revalidate, proxy-revalidate",
+                    },
+                    {
+                        key: "Pragma",
+                        value: "no-cache",
+                    },
+                    {
+                        key: "Expires",
+                        value: "0",
+                    },
+                ],
+            },
 			{
 				source: "/(.*)", // Match all routes (adjust as necessary)
 				headers: [
@@ -29,7 +48,21 @@ const nextConfig: NextConfig = {
 						key: "X-XSS-Protection",
 						value: "1; mode=block",
 					},
-					// Content Security Policy (CSP) Configured in middleware.ts
+					// Updated Content Security Policy (CSP) to allow your CMS and Instagram
+					// {
+					// 	key: "Content-Security-Policy",
+					// 	value: `
+					// 		default-src 'self';
+					// 		img-src 'self' ${process.env.CMS_URL} ${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME_ONE} ${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME_TWO} ${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME_THREE} ${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME_FOUR} data:;
+					// 		script-src 'self' 'unsafe-inline' 'unsafe-eval';
+					// 		style-src 'self' 'unsafe-inline';
+					// 		connect-src 'self' ${process.env.CMS_URL};
+					// 		frame-src 'self' ${process.env.YOUTUBE_EMBED_REMOTE_PATTERNS_HOSTNAME}; /* Allow embedding YouTube videos */
+					// 		object-src 'none';
+					// 		frame-ancestors 'none';`
+					// 		.replace(/\s{2,}/g, " ")
+					// 		.trim(),
+					// },
 					// Referrer Policy
 					{
 						key: "Referrer-Policy",
@@ -48,25 +81,7 @@ const nextConfig: NextConfig = {
 				],
 			},
 			{
-				source: "/",
-				headers: [
-					{
-						key: "Cache-Control",
-						value: "s-maxage=1, stale-while-revalidate=86400",
-					},
-				],
-			},
-			{
 				source: "/[slug]",
-				headers: [
-					{
-						key: "Cache-Control",
-						value: "s-maxage=1, stale-while-revalidate=259200",
-					},
-				],
-			},
-			{
-				source: "/contact",
 				headers: [
 					{
 						key: "Cache-Control",
@@ -105,18 +120,19 @@ const nextConfig: NextConfig = {
 		];
 	},
 	images: {
+		formats: ['image/avif', 'image/webp'],
 		remotePatterns: [
 			{
 				protocol: "https",
-				hostname: `${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME}`,
+				hostname: `${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME_ONE}`,
 				port: "",
-				pathname: `${process.env.IMAGE_REMOTE_PATHNAME}`,
+				pathname: `${process.env.IMAGE_REMOTE_PATHNAME_ONE}/**`,
 			},
 			{
 				protocol: "https",
-				hostname: `${process.env.IMAGE_TWO_REMOTE_PATTERNS_HOSTNAME}`,
+				hostname: `${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME_TWO}`,
 				port: "",
-				pathname: `${process.env.IMAGE_TWO_REMOTE_PATHNAME}`,
+				pathname: `${process.env.IMAGE_REMOTE_PATHNAME_TWO}`,
 			},
 		],
 	},
