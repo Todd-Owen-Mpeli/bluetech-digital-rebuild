@@ -28,10 +28,23 @@ const Button: FC<IButton> = ({ link, styleNumber }) => {
 		case 2:
 			buttonStyle = styles.buttonStylingThree;
 			break;
+		case 3:
+			buttonStyle = styles.buttonStylingFour;
+			break;
+		case 4:
+			buttonStyle = styles.buttonStylingFive;
+			break;
+		case 5:
+			buttonStyle = styles.buttonStylingSix;
+			break;
+		case 6:
+			buttonStyle = styles.buttonStylingSeven;
+			break;
 		default:
 			buttonStyle = styles.buttonStyling;
 			break;
 	}
+
     return (
 		<Link
 			href={`${link?.url}`}

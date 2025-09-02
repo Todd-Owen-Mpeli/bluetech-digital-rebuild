@@ -53,13 +53,13 @@
 
                 // Hero View Two
                 .heroViewTwo {
-                    @apply bg-white;
+                    @apply bg-accent-default;
 
                     .container {
                         @apply w-full h-full flex flex-col items-center;
 
                         .content {
-                            @apply w-full h-full py-32 lg:py-20 px-8 lg:px-14 flex flex-col lg:flex-row items-baseline justify-between;
+                            @apply w-full h-full py-32 lg:pb-2 lg:pt-20 px-8 lg:px-14 flex flex-col lg:flex-row items-baseline justify-between;
 
                             .leftSection {
                                 @apply overflow-hidden flex flex-col lg:flex-row items-baseline justify-between;

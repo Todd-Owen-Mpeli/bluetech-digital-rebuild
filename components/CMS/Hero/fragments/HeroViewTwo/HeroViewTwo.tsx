@@ -83,13 +83,13 @@ const HeroViewTwo: FC<IHero.IHeroViewTwo.IProps> = ({
                                 offsetFinish={offsetFinish}
                                 className={paragraphTwo ? styles.paragraphTwo : "hidden"}
                             />
-                            <Button styleNumber={0} link={buttonLink} />
+                            <Button styleNumber={5} link={buttonLink} />
                         </motion.div>
                     </div>
                 </motion.div>
                 <SlideUpDivMaskReveal
                     className="h-full w-full"
-                    backgroundColor={"bg-white"}
+                    backgroundColor={"bg-accent-default"}
                 >
                     <MemoizedMotionDiv style={motionStyle} className={styles.videoWrapper}>
                         <VideoCard video={video} displayVideo={displayVideo}/>

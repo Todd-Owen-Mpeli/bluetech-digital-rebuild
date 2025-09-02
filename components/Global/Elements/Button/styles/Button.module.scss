@@ -5,11 +5,31 @@
 
     .buttonStylingTwo {
         @extend .buttonStyling;
-        @apply bg-accent-default hover:bg-pureBlack;
+        @apply bg-primary-default hover:bg-accent-default text-white hover:text-primary-default;
     }
 
     .buttonStylingThree {
         @extend .buttonStyling;
-        @apply bg-accent-default hover:bg-tertiary-default;
+        @apply bg-primary-default hover:bg-white text-white hover:text-primary-default;
+    }
+
+    .buttonStylingFour {
+        @extend .buttonStyling;
+        @apply bg-primary-default hover:bg-primary-light text-white hover:text-accent-default;
+    }
+
+    .buttonStylingFive {
+        @extend .buttonStyling;
+        @apply bg-primary-light hover:bg-accent-default text-accent-default hover:text-white;
+    }
+
+    .buttonStylingSix {
+        @extend .buttonStyling;
+        @apply bg-primary-light hover:bg-white text-accent-default hover:text-primary-default;
+    }
+
+    .buttonStylingSeven {
+        @extend .buttonStyling;
+        @apply bg-white hover:bg-primary-light text-primary-default hover:text-accent-default;
     }
 }
