@@ -1,6 +1,7 @@
 // Imports
 import {
 	fadeIn,
+	initial,
 	initialTwo,
 	slideInLeftInitial,
 	slideInRightFinish,
@@ -63,9 +64,14 @@ const HeroViewThree: FC<IHero.IHeroViewThree.IProps> = ({
 									{title}
 								</motion.h4>
 							</ContentSliceRevealMaskAnimation>
-							<div className={styles.playButton}>
-								<Button styleNumber={0} link={link}/>
-							</div>
+							<motion.div
+								initial={initial}
+								whileInView={fadeIn}
+								viewport={{once: false}}
+								className={styles.playButton}
+							>
+								<Button styleNumber={7} link={link}/>
+							</motion.div>
 						</motion.div>
 						</div>
 					</SlideUpDivMaskReveal>

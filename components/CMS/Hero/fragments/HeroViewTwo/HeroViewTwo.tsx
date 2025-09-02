@@ -1,10 +1,12 @@
 // Imports
 import {
+    fadeIn,
+    initial,
     offsetStart,
     offsetFinish,
     slideInLeftInitial,
     slideInRightFinish,
-    slideInRightInitial
+    slideInRightInitial,
 } from "@/animations/animations";
 import React, { FC, useMemo, useRef } from "react";
 import { IHero } from "@/components/CMS/Hero/types/index";
@@ -83,7 +85,14 @@ const HeroViewTwo: FC<IHero.IHeroViewTwo.IProps> = ({
                                 offsetFinish={offsetFinish}
                                 className={paragraphTwo ? styles.paragraphTwo : "hidden"}
                             />
-                            <Button styleNumber={4} link={buttonLink} />
+                            <motion.div
+                                initial={initial}
+                                whileInView={fadeIn}
+                                viewport={{once: false}}
+                                className={styles.playButton}
+                            >
+                                <Button styleNumber={4} link={buttonLink} />
+                            </motion.div>
                         </motion.div>
                     </div>
                 </motion.div>

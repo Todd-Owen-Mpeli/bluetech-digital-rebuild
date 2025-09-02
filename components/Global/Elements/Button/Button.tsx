@@ -40,6 +40,9 @@ const Button: FC<IButton> = ({ link, styleNumber }) => {
 		case 6:
 			buttonStyle = styles.buttonStylingSeven;
 			break;
+		case 7:
+			buttonStyle = styles.buttonStylingEight;
+			break;
 		default:
 			buttonStyle = styles.buttonStyling;
 			break;
