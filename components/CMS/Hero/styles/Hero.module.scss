@@ -30,7 +30,7 @@
                         }
 
                         .heroCard {
-                            @apply relative z-10 w-full h-full overflow-x-hidden bg-pureBlack/20 hover:bg-primary-darker/95 transition-all duration-1000 ease-in-out;
+                            @apply relative z-10 w-full h-full overflow-x-hidden bg-pureBlack/50 hover:bg-primary-darker/90 transition-all duration-1000 ease-in-out;
 
                             .content {
                                 @apply w-full h-full py-28 lg:pt-28 lg:pb-0 px-8 2xl:px-16 flex flex-col items-center justify-center gap-6 lg:gap-4;
@@ -44,7 +44,7 @@
                                 }
 
                                 .subtitle {
-                                    @apply mb-6 pt-3 pb-1 px-6 max-w-xl font-secondary italic text-accent-default text-center text-lg md:text-2xl lg:text-xl leading-[2vw] lg:leading-tight;
+                                    @apply mb-6 pt-3 pb-1 px-6 max-w-xl font-primary uppercase font-extrabold text-accent-default text-center text-lg md:text-2xl lg:text-xl leading-[2vw] lg:leading-tight;
                                 }
                             }
                         }
