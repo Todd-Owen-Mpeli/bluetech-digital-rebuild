@@ -20,7 +20,7 @@
 
     .buttonStylingFive {
         @extend .buttonStyling;
-        @apply bg-primary-light hover:bg-accent-default text-accent-default hover:text-white;
+        @apply bg-primary-light hover:bg-accent-default text-accent-default hover:text-primary-default;
     }
 
     .buttonStylingSix {

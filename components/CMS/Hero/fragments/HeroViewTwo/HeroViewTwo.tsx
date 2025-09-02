@@ -83,7 +83,7 @@ const HeroViewTwo: FC<IHero.IHeroViewTwo.IProps> = ({
                                 offsetFinish={offsetFinish}
                                 className={paragraphTwo ? styles.paragraphTwo : "hidden"}
                             />
-                            <Button styleNumber={5} link={buttonLink} />
+                            <Button styleNumber={4} link={buttonLink} />
                         </motion.div>
                     </div>
                 </motion.div>
