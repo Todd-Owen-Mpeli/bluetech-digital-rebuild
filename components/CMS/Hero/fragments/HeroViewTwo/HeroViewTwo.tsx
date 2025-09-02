@@ -7,7 +7,7 @@ import {
     slideInRightInitial
 } from "@/animations/animations";
 import React, { FC, useMemo, useRef } from "react";
-import {IHero} from "@/components/CMS/Hero/types/index";
+import { IHero } from "@/components/CMS/Hero/types/index";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 // Styling
@@ -81,19 +81,18 @@ const HeroViewTwo: FC<IHero.IHeroViewTwo.IProps> = ({
                                 content={paragraphTwo}
                                 offsetStart={offsetStart}
                                 offsetFinish={offsetFinish}
-                                className={
-                                    paragraphTwo
-                                        ? styles.paragraphTwo
-                                        : "hidden"
-                                }
+                                className={paragraphTwo ? styles.paragraphTwo : "hidden"}
                             />
                             <Button styleNumber={0} link={buttonLink} />
                         </motion.div>
                     </div>
                 </motion.div>
-                <SlideUpDivMaskReveal backgroundColor={"bg-white"}>
-                <MemoizedMotionDiv style={motionStyle} className={styles.videoWrapper}>
-                    <VideoCard video={video} displayVideo={displayVideo}/>
+                <SlideUpDivMaskReveal
+                    className="h-full w-full"
+                    backgroundColor={"bg-white"}
+                >
+                    <MemoizedMotionDiv style={motionStyle} className={styles.videoWrapper}>
+                        <VideoCard video={video} displayVideo={displayVideo}/>
                     </MemoizedMotionDiv>
                 </SlideUpDivMaskReveal>
             </div>

@@ -1,7 +1,7 @@
 // Imports
 import { motion } from "framer-motion";
 import React , { FC, useMemo } from "react";
-import {IHero} from "@/components/CMS/Hero/types/index";
+import { IHero } from "@/components/CMS/Hero/types/index";
 import fadeInUp, { initial } from "@/animations/animations";
 
 // Styling

@@ -9,7 +9,7 @@ import {
 import { FC } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {IHero} from "@/components/CMS/Hero/types/index";
+import { IHero } from "@/components/CMS/Hero/types/index";
 
 // Styling
 import styles from "@/components/CMS/Hero/styles/Hero.module.scss";
