@@ -7,7 +7,6 @@ import {IGlobal} from "@/context/types/context";
 // TypeScript may complain about side-effect only import of SCSS modules
 // when no declaration file exists. Silence the error for this import.
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import "@/styles/globals.scss";
 
 // Queries Functions
