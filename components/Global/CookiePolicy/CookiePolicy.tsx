@@ -8,12 +8,12 @@ import { fadeInUp, initial, stagger } from "@/animations/animations";
 import { ICookiePolicy } from "@/components/Global/CookiePolicy/types/type";
 
 // Styling
-import styles from "@/components/Global/CookiePolicy/styles/CookiePolicy.module.scss";
+import styles from "@/components/Global/CookiePolicy/styles/CookiePolicy.module.css";
 
 // Components
 import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
-const CookiePolicy: FC<ICookiePolicy.IProps> = () => {
+const CookiePolicy: FC<ICookiePolicy.IProps> = ({ dict }) => {
 
     const { hasConsent, acceptCookies, refuseCookies } = useCookiePolicy();
 
@@ -38,7 +38,7 @@ const CookiePolicy: FC<ICookiePolicy.IProps> = () => {
                         viewport={{ once: true }}
                         className={styles.title}
                     >
-                        Cookie Policy
+                        {dict.title}
                     </motion.h3>
                     <motion.div
                         initial={initial}
@@ -46,7 +46,7 @@ const CookiePolicy: FC<ICookiePolicy.IProps> = () => {
                         viewport={{ once: true }}>
                         <Paragraph
                             className={styles.paragraph}
-                            content={`<p>This website uses cookies to enhance the user experience and ensure the proper functioning of the site. By using this website, you agree to the use of cookies in accordance with this CookiePolicy.</p>`}
+                            content={dict.paragraph}
                         />
                     </motion.div>
                 </div>
@@ -65,7 +65,7 @@ const CookiePolicy: FC<ICookiePolicy.IProps> = () => {
                             aria-label="Accept cookies"
                             className={styles.acceptButton}
                         >
-                            Accept Cookies
+                            {dict.accept}
                     </motion.button>
                     <motion.button
                             initial={initial}
@@ -75,7 +75,7 @@ const CookiePolicy: FC<ICookiePolicy.IProps> = () => {
                             aria-label="Refuse cookies"
                             className={styles.refuseButton}
                         >
-                            Refuse Cookies
+                            {dict.refuse}
                     </motion.button>
                 </motion.div>
             </div>

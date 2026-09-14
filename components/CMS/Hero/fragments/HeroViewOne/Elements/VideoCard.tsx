@@ -1,9 +1,9 @@
 // Imports
 import {FC} from "react";
-import { IHero } from "@/components/CMS/Hero/types/index";
+import { IHero } from "@/components/CMS/Hero/types/hero";
 
 // Styling
-import styles from "@/components/CMS/Hero/styles/Hero.module.scss";
+import styles from "@/components/CMS/Hero/styles/Hero.module.css";
 
 const VideoCard: FC<IHero.IHeroViewTwo.IVideoCard> = ({video, displayVideo}) => {
 	return (

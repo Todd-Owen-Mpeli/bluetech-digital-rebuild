@@ -1,13 +1,12 @@
 // Imports
-import {gql} from "@apollo/client";
-import { client } from "@/config/apollo";
-import {ILinks} from "@/types/context";
+import { ILinks } from "@/types/context";
+import { fetchCmsGraphQL } from "@/graphql/CMS/fetchCmsGraphQL";
 
 // Navbar Menu Links
 export const getNavbarMenuLinks =
 	async (): Promise<ILinks.INavbarMenuLinks> => {
 		try {
-			const content: any = gql`
+			const content = `
 				{
 					navbarMenuLinks: menuItems(where: {location: PRIMARY}) {
 						edges {
@@ -21,11 +20,9 @@ export const getNavbarMenuLinks =
 				}
 			`;
 
-			const response: any = await client.query({
-				query: content,
-			});
+			const data: any = await fetchCmsGraphQL(content);
 
-			return response?.data?.navbarMenuLinks?.edges;
+			return data?.navbarMenuLinks?.edges;
 		} catch (error) {
 			console.log(error);
 			throw new Error(
@@ -37,7 +34,7 @@ export const getNavbarMenuLinks =
 // Mobile Navbar links
 export const getMobileLinks = async (): Promise<ILinks.IMobileLinks> => {
 	try {
-		const content: any = gql`
+		const content = `
 			{
 				mobileLinks: menuItems(where: {location: MOBILE_LINKS}, first: 10) {
 					edges {
@@ -51,11 +48,9 @@ export const getMobileLinks = async (): Promise<ILinks.IMobileLinks> => {
 			}
 		`;
 
-		const response: any = await client.query({
-			query: content,
-		});
+		const data: any = await fetchCmsGraphQL(content);
 
-		return response?.data?.mobileLinks?.edges;
+		return data?.mobileLinks?.edges;
 	} catch (error) {
 		console.log(error);
 		throw new Error(
@@ -68,7 +63,7 @@ export const getMobileLinks = async (): Promise<ILinks.IMobileLinks> => {
 export const getOurServicesSublinks =
 	async (): Promise<ILinks.IOurServicesLinks> => {
 		try {
-			const content: any = gql`
+			const content = `
 				{
 					ourServicesSublinks: menuItems(
 						where: {location: OUR_SERVICES}
@@ -85,11 +80,9 @@ export const getOurServicesSublinks =
 				}
 			`;
 
-			const response: any = await client.query({
-				query: content,
-			});
+			const data: any = await fetchCmsGraphQL(content);
 
-			return response?.data?.ourServicesSublinks?.edges;
+			return data?.ourServicesSublinks?.edges;
 		} catch (error) {
 			console.log(error);
 			throw new Error(
@@ -101,7 +94,7 @@ export const getOurServicesSublinks =
 // Footer Copyright Links
 export const getCopyrightLinks = async (): Promise<ILinks.ICopyrightLinks> => {
 	try {
-		const content: any = gql`
+		const content = `
 			{
 				copyrightLinks: menuItems(
 					where: {location: COPYRIGHT_LINKS}
@@ -118,11 +111,9 @@ export const getCopyrightLinks = async (): Promise<ILinks.ICopyrightLinks> => {
 			}
 		`;
 
-		const response: any = await client.query({
-			query: content,
-		});
+		const data: any = await fetchCmsGraphQL(content);
 
-		return response?.data?.copyrightLinks?.edges;
+		return data?.copyrightLinks?.edges;
 	} catch (error) {
 		console.log(error);
 		throw new Error(
@@ -135,7 +126,7 @@ export const getCopyrightLinks = async (): Promise<ILinks.ICopyrightLinks> => {
 export const getFooterMenuLinks =
 	async (): Promise<ILinks.IFooterMenuLinks> => {
 		try {
-			const content: any = gql`
+			const content = `
 				{
 					footerMenuLinks: menuItems(where: {location: FOOTER}) {
 						edges {
@@ -149,11 +140,9 @@ export const getFooterMenuLinks =
 				}
 			`;
 
-			const response: any = await client.query({
-				query: content,
-			});
+			const data: any = await fetchCmsGraphQL(content);
 
-			return response?.data?.footerMenuLinks?.edges;
+			return data?.footerMenuLinks?.edges;
 		} catch (error) {
 			console.log(error);
 			throw new Error(

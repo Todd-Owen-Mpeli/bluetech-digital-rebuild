@@ -1,6 +1,5 @@
 // Imports
-import { client } from "@/config/apollo";
-import { DocumentNode, gql } from "@apollo/client";
+import { fetchCmsGraphQL } from "@/graphql/CMS/fetchCmsGraphQL";
 
 // Components: ACF Flexible Content Post Types
 import { Hero } from "@/components/CMS/Hero/graphql/index";
@@ -11,7 +10,7 @@ import { PartnersLogos } from "@/components/CMS/PartnersLogos/graphql/index";
 import { TitleParagraph } from "@/components/CMS/TitleParagraph/graphql/index";
 
 /* PAGES & BLOGS POSTS*/
-/* Fetch all Flexible Content Components 
+/* Fetch all Flexible Content Components
 (For every flexible content page) */
 export const getAllFlexibleContentComponents = async (
 	slug: string,
@@ -19,7 +18,7 @@ export const getAllFlexibleContentComponents = async (
 	postTypeFlexibleContent: string
 ): Promise<any> => {
 	try {
-		const content: DocumentNode = gql`
+		const content = `
 			{
         		mainContent: ${postType}(where: {name: "${slug}", status: PUBLISH}) {
         		  edges {
@@ -44,13 +43,11 @@ export const getAllFlexibleContentComponents = async (
 			}
 		`;
 
-		const response: any = await client.query({
-			query: content,
-		});
+		const data: any = await fetchCmsGraphQL(content);
 
 		return {
 			content:
-				response.data?.mainContent?.edges[0]?.node?.template?.flexibleContent
+				data?.mainContent?.edges[0]?.node?.template?.flexibleContent
 					?.flexibleContent,
 		};
 	} catch (error) {

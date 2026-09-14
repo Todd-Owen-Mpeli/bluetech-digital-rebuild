@@ -11,10 +11,11 @@ import {INavbar} from "@/components/Global/Navbar/types/index";
 import fadeInUp, {initial, stagger} from "@/animations/animations";
 
 // Styling
-import styles from "@/components/Global/Navbar/styles/Navbar.module.scss";
+import styles from "@/components/Global/Navbar/styles/Navbar.module.css";
 
 // Components
 import MegaMenu from "@/components/Global/Navbar/Element/MegaMenu";
+import LocaleSwitcher from "@/components/Global/LocaleSwitcher/LocaleSwitcher";
 
 // Animation Variants
 const revealAnimation: INavbar.IRevealAnimation | any = {
@@ -67,7 +68,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 				</button>
 				<div className={styles.logoWrapper}>
 					<Link
-						href="/"
+						href={`/${globalContext?.locale}`}
 						target="_self"
 						aria-label={`Bluetech Digital Homepage Link`}
 					>
@@ -90,6 +91,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 					>
 						{globalContext?.themesOptionsContent?.navbarCtaLink?.title} ✦
 					</Link>
+					<LocaleSwitcher currentLocale={globalContext?.locale} />
 				</div>
 			</div>
 			{/* Hidden Mobile Menu */}

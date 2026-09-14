@@ -6,7 +6,7 @@ import {FC, useEffect, useRef} from "react";
 import {motion, useInView, MotionValue} from "framer-motion";
 
 // Styling
-import styles from "@/components/CMS/Hero/styles/Hero.module.scss";
+import styles from "@/components/CMS/Hero/styles/Hero.module.css";
 
 type IIntroTextAnimation = {
 	title: string;

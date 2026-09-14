@@ -7,20 +7,15 @@ import {
 } from "@/animations/animations";
 import {FC} from "react";
 import {motion} from "framer-motion";
+import { ITitleParagraph } from "@/components/CMS/TitleParagraph/types/titleParagraph";
 
 // Styling
-import styles from "@/components/CMS/TitleParagraph/styles/TitleParagraph.module.scss";
+import styles from "@/components/CMS/TitleParagraph/styles/TitleParagraph.module.css";
 
 // Components
 import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
-type ITitleParagraph = {
-	title: string;
-	paragraph: string;
-	displayParagraph: boolean;
-};
-
-const TitleParagraph: FC<ITitleParagraph> = ({
+const TitleParagraph: FC<ITitleParagraph.IProps> = ({
 	title,
 	paragraph,
 	displayParagraph,

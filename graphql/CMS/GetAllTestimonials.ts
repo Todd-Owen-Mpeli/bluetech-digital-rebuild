@@ -1,14 +1,13 @@
 // Imports
-import { client } from "@/config/apollo";
-import { DocumentNode, gql } from "@apollo/client";
 import { ICustomPostTypes } from "@/types/context";
+import { fetchCmsGraphQL } from "@/graphql/CMS/fetchCmsGraphQL";
 
 /* TESTIMONIALS */
 // Testimonials Content
 export const getAllTestimonialsContent =
 	async (): Promise<ICustomPostTypes.ITestimonials> => {
 		try {
-			const content: DocumentNode = gql`
+			const content = `
 				{
 					testimonialsContent: testimonials(
 						where: {status: PUBLISH}
@@ -36,11 +35,9 @@ export const getAllTestimonialsContent =
 				}
 			`;
 
-			const response: any = await client.query({
-				query: content,
-			});
+			const data: any = await fetchCmsGraphQL(content);
 
-			return response?.data?.testimonialsContent?.edges;
+			return data?.testimonialsContent?.edges;
 		} catch (error) {
 			console.log(error);
 			throw new Error(

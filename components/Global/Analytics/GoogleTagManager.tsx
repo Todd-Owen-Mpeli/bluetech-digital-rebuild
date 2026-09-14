@@ -17,7 +17,7 @@ declare global {
   }
 }
 
-const GoogleTagManager = () => {
+const GoogleTagManager = ({ nonce }: { nonce?: string }) => {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
@@ -41,6 +41,7 @@ const GoogleTagManager = () => {
     return (
       <Script
         id="gtm-script"
+        nonce={nonce}
         strategy="beforeInteractive" // Load this script as early as possible.
         dangerouslySetInnerHTML={{
           __html: `

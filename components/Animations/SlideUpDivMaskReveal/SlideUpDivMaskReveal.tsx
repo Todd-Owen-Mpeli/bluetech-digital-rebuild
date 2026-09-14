@@ -5,7 +5,7 @@ import { motion, useInView, useAnimation } from 'framer-motion';
 import { FC, memo, useRef, useEffect, RefObject, useMemo } from 'react';
 
 // Assume you have some CSS modules for styling, e.g., 'Reveal.module.css'
-import styles from '@/components/Animations/SlideUpDivMaskReveal/styles/SlideUpDivMaskReveal.module.scss';
+import styles from '@/components/Animations/SlideUpDivMaskReveal/styles/SlideUpDivMaskReveal.module.css';
 
 export namespace ISlideUpDivMaskReveal {
 	export type IProps = {

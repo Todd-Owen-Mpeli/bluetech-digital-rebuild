@@ -10,10 +10,10 @@ import {
 import { FC } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { IHero } from "@/components/CMS/Hero/types/index";
+import { IHero } from "@/components/CMS/Hero/types/hero";
 
 // Styling
-import styles from "@/components/CMS/Hero/styles/Hero.module.scss";
+import styles from "@/components/CMS/Hero/styles/Hero.module.css";
 
 // Components
 import Button from "@/components/Global/Elements/Button/Button";

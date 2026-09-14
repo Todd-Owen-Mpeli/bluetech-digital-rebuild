@@ -6,7 +6,7 @@ import Image from "next/image";
 import React, { FC, useEffect, useRef, useCallback} from "react";
 
 // Styling
-import styles from "@/components/Global/BlurryCursorMouse/styles/BlurryCursorMouse.module.scss";
+import styles from "@/components/Global/BlurryCursorMouse/styles/BlurryCursorMouse.module.css";
 
 const BlurryCursorMouse: FC = () => {
 	const size = 10;
@@ -32,17 +32,17 @@ const BlurryCursorMouse: FC = () => {
 		[moveCircle]
 	);
 
-	const animate = useCallback(() => {
-		delayedMouse.current = {
-			x: lerp(delayedMouse.current.x, mouse.current.x, 1),
-			y: lerp(delayedMouse.current.y, mouse.current.y, 1),
+	useEffect(() => {
+		const animate = () => {
+			delayedMouse.current = {
+				x: lerp(delayedMouse.current.x, mouse.current.x, 1),
+				y: lerp(delayedMouse.current.y, mouse.current.y, 1),
+			};
+
+			moveCircle(delayedMouse.current.x, delayedMouse.current.y);
+			rafId.current = window.requestAnimationFrame(animate);
 		};
 
-		moveCircle(delayedMouse.current.x, delayedMouse.current.y);
-		rafId.current = window.requestAnimationFrame(animate);
-	}, [moveCircle]);
-
-	useEffect(() => {
 		animate();
 		window.addEventListener("mousemove", manageMouseMove);
 
@@ -50,7 +50,7 @@ const BlurryCursorMouse: FC = () => {
 			window.removeEventListener("mousemove", manageMouseMove);
 			if (rafId.current) window.cancelAnimationFrame(rafId.current);
 		};
-	}, [animate, manageMouseMove]);
+	}, [moveCircle, manageMouseMove]);
 
 	return (
 		<div className={styles.blurryCursorMouse}>

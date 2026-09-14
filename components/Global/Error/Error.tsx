@@ -15,7 +15,7 @@ import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
 
 // Styling
-import styles from "@/components/Global/Error/styles/Error.module.scss";
+import styles from "@/components/Global/Error/styles/Error.module.css";
 
 // Components
 import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";

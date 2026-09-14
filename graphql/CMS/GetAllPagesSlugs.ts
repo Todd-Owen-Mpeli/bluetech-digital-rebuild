@@ -1,12 +1,11 @@
 // Imports
-import { client } from "@/config/apollo";
-import {ISlug} from "@/types/context";
-import { DocumentNode, gql } from "@apollo/client";
+import { ISlug } from "@/types/context";
+import { fetchCmsGraphQL } from "@/graphql/CMS/fetchCmsGraphQL";
 
 /* PAGES SLUGS (URLS) */
 export const getAllPagesSlugs = async (): Promise<ISlug> => {
 	try {
-		const content: DocumentNode = gql`
+		const content = `
 			{
 				pageURLs: pages(where: {status: PUBLISH}, last: 100) {
 					nodes {
@@ -17,11 +16,9 @@ export const getAllPagesSlugs = async (): Promise<ISlug> => {
 			}
 		`;
 
-		const response: any = await client.query({
-			query: content,
-		});
+		const data: any = await fetchCmsGraphQL(content);
 
-		return response?.data?.pageURLs?.nodes;
+		return data?.pageURLs?.nodes;
 	} catch (error) {
 		console.log(error);
 		throw new Error("Something went wrong trying to fetch all pages urls");

@@ -3,7 +3,7 @@ import { FC } from "react";
 import Link from "next/link";
 
 // Styling
-import styles from "@/components/Global/Elements/Button/styles/Button.module.scss";
+import styles from "@/components/Global/Elements/Button/styles/Button.module.css";
 
 type IButton = {
     styleNumber: number;

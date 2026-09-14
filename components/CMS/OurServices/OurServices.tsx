@@ -1,9 +1,9 @@
 // Imports
 import { FC } from "react";
-import {IOurServices} from "@/components/CMS/OurServices/types/index";
+import {IOurServices} from "@/components/CMS/OurServices/types/ourServices";
 
 // Styling
-import styles from "@/components/CMS/OurServices/styles/OurServices.module.scss";
+import styles from "@/components/CMS/OurServices/styles/OurServices.module.css";
 
 // Components
 import TitleSection from "@/components/CMS/OurServices/fragments/TitleSection";

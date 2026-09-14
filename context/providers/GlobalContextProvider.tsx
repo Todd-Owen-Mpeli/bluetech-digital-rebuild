@@ -13,6 +13,8 @@ const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 	return (
 		<GlobalContext.Provider
 			value={{
+				locale: globalProps?.locale,
+
 				// Custom Post Types
 				themesOptionsContent: globalProps?.themesOptionsContent,
 				

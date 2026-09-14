@@ -5,7 +5,7 @@ import {motion} from "framer-motion";
 import {FC, useEffect, useState} from "react";
 
 // Styling
-import styles from "@/components/Global/PreloaderAnimation/styles/Preloader.module.scss";
+import styles from "@/components/Global/PreloaderAnimation/styles/Preloader.module.css";
 
 export const opacity: {
     initial: {
@@ -66,6 +66,9 @@ const Preloader: FC = () => {
 	const [dimension, setDimension] = useState({width: 0, height: 0});
 
 	useEffect(() => {
+		// Window size can't be read during SSR render; this one-time sync on
+		// mount is the legitimate effect use case, not a derivable render value.
+		// eslint-disable-next-line react-hooks/set-state-in-effect
 		setDimension({width: window.innerWidth, height: window.innerHeight});
 	}, []);
 
@@ -125,9 +128,9 @@ const Preloader: FC = () => {
 			{dimension.width > 0 && (
 				<>
 					<motion.p variants={opacity} initial="initial" animate="enter">
-						<div>♝</div>
+						<span className={styles.icon}>♝</span>
 						{words[index]}
-						<span></span>
+						<span className={styles.dot}></span>
 					</motion.p>
 					<svg>
 						<motion.path

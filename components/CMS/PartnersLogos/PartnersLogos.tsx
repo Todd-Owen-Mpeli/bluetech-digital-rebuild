@@ -3,10 +3,10 @@
 // Imports
 import Image from "next/image";
 import { FC, Fragment} from "react";
-import {IPartnersLogos} from "@/components/CMS/PartnersLogos/types/index";
+import {IPartnersLogos} from "@/components/CMS/PartnersLogos/types/partnersLogos";
 
 // Styling
-import styles from "@/components/CMS/PartnersLogos/styles/PartnersLogos.module.scss";
+import styles from "@/components/CMS/PartnersLogos/styles/PartnersLogos.module.css";
 
 // Components
 import InfiniteSlider from "@/components/CMS/PartnersLogos/fragments/InfiniteSlider";

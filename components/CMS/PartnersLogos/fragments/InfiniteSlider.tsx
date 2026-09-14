@@ -4,7 +4,7 @@
 import { FC } from "react";
 import useMeasure from 'react-use-measure';
 import { useState, useEffect } from 'react';
-import {IPartnersLogos} from "@/components/CMS/PartnersLogos/types/index";
+import {IPartnersLogos} from "@/components/CMS/PartnersLogos/types/partnersLogos";
 import { useMotionValue, animate, motion, MotionValue } from 'framer-motion';
 
 const InfiniteSlider: FC<IPartnersLogos.IInfiniteSlider> = ({

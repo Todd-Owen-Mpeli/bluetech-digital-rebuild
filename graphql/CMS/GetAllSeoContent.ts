@@ -1,17 +1,16 @@
 // Imports
-import {ISeo} from "@/types/context";
-import { client } from "@/config/apollo";
-import { DocumentNode, gql } from "@apollo/client";
+import { ISeo } from "@/types/context";
+import { fetchCmsGraphQL } from "@/graphql/CMS/fetchCmsGraphQL";
 
 /* PAGES & BLOGS POSTS*/
-/* Fetch all Seo Content (For 
+/* Fetch all Seo Content (For
 	every flexible content page) */
 export const getAllSeoContent = async (
 	slug: string,
 	postType: string
 ): Promise<ISeo> => {
 	try {
-		const content: DocumentNode = gql`
+		const content = `
 			{
 				mainContent: ${postType}(where: {name: "${slug}", status: PUBLISH}) {
 					edges {
@@ -51,11 +50,9 @@ export const getAllSeoContent = async (
 			}
 		`;
 
-		const response: any = await client.query({
-			query: content,
-		});
+		const data: any = await fetchCmsGraphQL(content);
 
-		return response?.data?.mainContent?.edges[0]?.node?.seo;
+		return data?.mainContent?.edges[0]?.node?.seo;
 	} catch (error) {
 		console.log(error);
 		throw new Error(

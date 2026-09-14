@@ -9,11 +9,11 @@ import {
     slideInRightInitial,
 } from "@/animations/animations";
 import React, { FC, useMemo, useRef } from "react";
-import { IHero } from "@/components/CMS/Hero/types/index";
+import { IHero } from "@/components/CMS/Hero/types/hero";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 // Styling
-import styles from "@/components/CMS/Hero/styles/Hero.module.scss";
+import styles from "@/components/CMS/Hero/styles/Hero.module.css";
 
 // Components
 import Button from "@/components/Global/Elements/Button/Button";

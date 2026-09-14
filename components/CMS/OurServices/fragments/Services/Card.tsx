@@ -13,10 +13,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { FC, Fragment, useRef } from "react";
 import { useTransform, motion, useScroll } from 'framer-motion';
-import {IOurServices} from "@/components/CMS/OurServices/types/index";
+import {IOurServices} from "@/components/CMS/OurServices/types/ourServices";
 
 // Styling
-import styles from "@/components/CMS/OurServices/styles/OurServices.module.scss";
+import styles from "@/components/CMS/OurServices/styles/OurServices.module.css";
 
 // Components
 import Title from "@/components/Global/Elements/Title";
