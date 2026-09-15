@@ -1,4 +1,4 @@
-// Imports
+		// Imports
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import { Suspense, JSX, ReactNode } from "react";
@@ -171,12 +171,12 @@ const App = async ({
 					<GoogleTagManager nonce={nonce} />
 				</Suspense>
 			</head>
-			<GoogleTagManagerNoScript />
-			{/* Vercel Analytics */}
-			<Analytics />
-			{/* Vercel Speed Insights */}
-			<SpeedInsights />
 			<body>
+				<GoogleTagManagerNoScript />
+				{/* Vercel Analytics */}
+				<Analytics />
+				{/* Vercel Speed Insights */}
+				<SpeedInsights />
 				<CookiePolicyContextProvider>
 					<GlobalContextProvider globalProps={globalProps}>
 						<SmoothScrolling>
