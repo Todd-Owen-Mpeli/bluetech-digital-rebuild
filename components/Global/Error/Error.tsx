@@ -11,7 +11,7 @@ import {
 import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {motion} from "framer-motion";
+import {m} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
 
 // Styling
@@ -28,20 +28,20 @@ const Error: FC = () => {
 			<section className={styles.error}>
 				<div className={styles.container}>
 					<div className={styles.contentWrapper}>
-						<motion.div
+						<m.div
 							viewport={{once: false}}
 							initial={slideInLeftInitial}
 							whileInView={slideInRightFinish}
 							className={styles.topContent}
 						>
-							<motion.h1
+							<m.h1
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
 								className={styles.title}
 							>
 								{globalContext?.themesOptionsContent?.errorPageContent?.title}
-							</motion.h1>
+							</m.h1>
 							<Paragraph
 								className={styles.paragraph}
 								content={
@@ -49,8 +49,8 @@ const Error: FC = () => {
 										?.paragraph
 								}
 							/>
-						</motion.div>
-						<motion.div
+						</m.div>
+						<m.div
 							viewport={{once: false}}
 							initial={slideInRightInitial}
 							whileInView={slideInRightFinish}
@@ -104,7 +104,7 @@ const Error: FC = () => {
 									</svg>
 								</span>
 							</Link>
-						</motion.div>
+						</m.div>
 					</div>
 					<Image
 						className={styles.image}
@@ -122,6 +122,9 @@ const Error: FC = () => {
 						height={
 							globalContext?.themesOptionsContent?.errorPageContent
 								?.backgroundImage?.mediaDetails?.height || 1000}
+						// .image is `w-full` inside .container's `max-w-[1800px] px-4`
+						// — full viewport width until the container's own cap kicks in.
+						sizes="(min-width: 1800px) 1768px, 100vw"
 					/>
 				</div>
 			</section>

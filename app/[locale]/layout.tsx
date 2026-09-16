@@ -36,6 +36,7 @@ import CookiePolicyContextProvider from "@/context/providers/CookiePolicyContext
 // import Footer from "@/components/Global/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/Global/Navbar/Navbar";
+import LazyMotionProvider from "@/components/Global/LazyMotionProvider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SmoothScrolling from "@/components/Global/SmoothScrolling";
 import CookiePolicy from "@/components/Global/CookiePolicy/CookiePolicy";
@@ -172,25 +173,27 @@ const App = async ({
 				</Suspense>
 			</head>
 			<body>
-				<GoogleTagManagerNoScript />
-				{/* Vercel Analytics */}
-				<Analytics />
-				{/* Vercel Speed Insights */}
-				<SpeedInsights />
-				<CookiePolicyContextProvider>
-					<GlobalContextProvider globalProps={globalProps}>
-						<SmoothScrolling>
-							<main>
-								<Navbar />
-								{children}
-								{/* <Footer /> */}
-							</main>
-							<BlurryCursorMouse />
-							<BackToTopButton link={`#`} />
-							<CookiePolicy dict={dict.cookiePolicy} />
-						</SmoothScrolling>
-					</GlobalContextProvider>
-				</CookiePolicyContextProvider>
+				<LazyMotionProvider>
+					<GoogleTagManagerNoScript />
+					{/* Vercel Analytics */}
+					<Analytics />
+					{/* Vercel Speed Insights */}
+					<SpeedInsights />
+					<CookiePolicyContextProvider>
+						<GlobalContextProvider globalProps={globalProps}>
+							<SmoothScrolling>
+								<main>
+									<Navbar />
+									{children}
+									{/* <Footer /> */}
+								</main>
+								<BlurryCursorMouse />
+								<BackToTopButton link={`#`} />
+								<CookiePolicy dict={dict.cookiePolicy} />
+							</SmoothScrolling>
+						</GlobalContextProvider>
+					</CookiePolicyContextProvider>
+				</LazyMotionProvider>
 			</body>
 		</html>
 	);

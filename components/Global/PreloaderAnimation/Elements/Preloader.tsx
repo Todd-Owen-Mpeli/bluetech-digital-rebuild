@@ -1,7 +1,7 @@
 "use client";
 
 // Imports
-import {motion} from "framer-motion";
+import {m} from "framer-motion";
 import {FC, useEffect, useState} from "react";
 
 // Styling
@@ -119,7 +119,7 @@ const Preloader: FC = () => {
 	};
 
 	return (
-		<motion.div
+		<m.div
 			exit="exit"
 			initial="initial"
 			variants={slideUp}
@@ -127,21 +127,21 @@ const Preloader: FC = () => {
 		>
 			{dimension.width > 0 && (
 				<>
-					<motion.p variants={opacity} initial="initial" animate="enter">
+					<m.p variants={opacity} initial="initial" animate="enter">
 						<span className={styles.icon}>♝</span>
 						{words[index]}
 						<span className={styles.dot}></span>
-					</motion.p>
+					</m.p>
 					<svg>
-						<motion.path
+						<m.path
 							variants={curve}
 							initial="initial"
 							exit="exit"
-						></motion.path>
+						></m.path>
 					</svg>
 				</>
 			)}
-		</motion.div>
+		</m.div>
 	);
 };
 

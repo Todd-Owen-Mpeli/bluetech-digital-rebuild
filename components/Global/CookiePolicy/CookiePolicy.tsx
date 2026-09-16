@@ -2,7 +2,7 @@
 
 // Imports
 import { FC } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useCookiePolicy } from "@/context/cookies";
 import { fadeInUp, initial, stagger } from "@/animations/animations";
 import { ICookiePolicy } from "@/components/Global/CookiePolicy/types/type";
@@ -32,15 +32,15 @@ const CookiePolicy: FC<ICookiePolicy.IProps> = ({ dict }) => {
                 }}
             >
                 <div className={styles.titleSection}>
-                    <motion.h3
+                    <m.h3
                         initial={initial}
                         whileInView={fadeInUp}
                         viewport={{ once: true }}
                         className={styles.title}
                     >
                         {dict.title}
-                    </motion.h3>
-                    <motion.div
+                    </m.h3>
+                    <m.div
                         initial={initial}
                         whileInView={fadeInUp}
                         viewport={{ once: true }}>
@@ -48,16 +48,16 @@ const CookiePolicy: FC<ICookiePolicy.IProps> = ({ dict }) => {
                             className={styles.paragraph}
                             content={dict.paragraph}
                         />
-                    </motion.div>
+                    </m.div>
                 </div>
-                <motion.div
+                <m.div
                     initial={initial}
                         variants={stagger}
                         whileInView="animate"
                         viewport={{ once: true }}
                     className={styles.buttonSection}
                 >
-                    <motion.button
+                    <m.button
                             initial={initial}
                             whileInView={fadeInUp}
                             onClick={acceptCookies}
@@ -66,8 +66,8 @@ const CookiePolicy: FC<ICookiePolicy.IProps> = ({ dict }) => {
                             className={styles.acceptButton}
                         >
                             {dict.accept}
-                    </motion.button>
-                    <motion.button
+                    </m.button>
+                    <m.button
                             initial={initial}
                             whileInView={fadeInUp}
                             onClick={refuseCookies}
@@ -76,8 +76,8 @@ const CookiePolicy: FC<ICookiePolicy.IProps> = ({ dict }) => {
                             className={styles.refuseButton}
                         >
                             {dict.refuse}
-                    </motion.button>
-                </motion.div>
+                    </m.button>
+                </m.div>
             </div>
         </div>
     );

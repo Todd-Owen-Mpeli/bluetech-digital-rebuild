@@ -35,8 +35,13 @@ const UPLOADS_PREFIX = "wp-content/uploads/";
  * `/api/media/<path relative to uploads/>`, and this route is what actually
  * serves that path.
  *
- * Cached for 24h at the edge, matching the `revalidate` every other CMS fetch
- * in this codebase uses for content that rarely changes.
+ * The upstream `fetch`'s own `revalidate: 86400` (24h) governs how often
+ * *this server* re-checks the CMS for a changed file — kept short so a
+ * re-uploaded file at the same path propagates reasonably fast. The
+ * browser-facing `Cache-Control` below is a separate, much longer window:
+ * a WordPress media URL's filename never changes once uploaded (a genuine
+ * edit uploads a new file, a new URL), so there's no reason for a visitor's
+ * browser to ever re-fetch one within 30 days.
  * @param path The path segments after `/api/media/`, e.g. `["2025", "01",
  * "hero.jpg"]` for `/api/media/2025/01/hero.jpg` — fetched from the CMS at
  * `wp-content/uploads/2025/01/hero.jpg`.
@@ -80,7 +85,7 @@ export const GET = async (
 			"Content-Type": upstream.headers.get("content-type") ?? "application/octet-stream",
 			// Preview a PDF/image in-browser rather than forcing a download.
 			"Content-Disposition": "inline",
-			"Cache-Control": "public, max-age=86400, stale-while-revalidate=604800",
+			"Cache-Control": "public, max-age=2592000, stale-while-revalidate=31536000",
 		},
 	});
 };

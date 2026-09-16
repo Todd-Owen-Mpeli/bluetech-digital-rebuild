@@ -6,7 +6,7 @@ import {
 	offsetFinish,
 } from "@/animations/animations";
 import {FC} from "react";
-import {motion} from "framer-motion";
+import {m} from "framer-motion";
 import { ITitleParagraph } from "@/components/CMS/TitleParagraph/types/titleParagraph";
 
 // Styling
@@ -22,14 +22,14 @@ const TitleParagraph: FC<ITitleParagraph.IProps> = ({
 }) => {
 	return (
 		<div className={styles.titleParagraph}>
-			<motion.h2
+			<m.h2
 				initial={initial}
 				whileInView={fadeInUp}
 				viewport={{once: true}}
 				className={title ? styles.title : "hidden"}
 			>
 				{title}
-			</motion.h2>
+			</m.h2>
 			<Paragraph
 				fadeIn={false}
 				content={paragraph}

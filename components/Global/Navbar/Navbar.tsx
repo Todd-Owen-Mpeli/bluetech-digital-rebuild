@@ -3,7 +3,7 @@
 // Imports
 import Link from "next/link";
 import Image from "next/image";
-import {delay, motion} from "framer-motion";
+import {delay, m} from "framer-motion";
 import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
 import useLocaleTime from "@/hooks/useLocaleTime";
@@ -50,7 +50,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 	const [menuActive, setMenuActive] = useState(false);
 
 	return (
-		<motion.nav
+		<m.nav
 			animate="open"
 			initial="closed"
 			className={styles.navbar}
@@ -102,7 +102,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 					mobileLinks={globalContext?.mobileLinks}
 				/>
 			</div>
-		</motion.nav>
+		</m.nav>
 	);
 };
 

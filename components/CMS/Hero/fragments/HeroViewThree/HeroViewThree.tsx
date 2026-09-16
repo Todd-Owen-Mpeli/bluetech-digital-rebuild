@@ -8,8 +8,7 @@ import {
 	slideInRightInitial
 } from "@/animations/animations";
 import { FC } from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { IHero } from "@/components/CMS/Hero/types/hero";
 
 // Styling
@@ -32,12 +31,13 @@ const HeroViewThree: FC<IHero.IHeroViewThree.IProps> = ({
     return (
 		<>
 			<div className={`${styles.heroViewThree} panel`}>
-				<Link
-					href={`${link?.url || "/"}`}
-					aria-label={`${link?.title}`}
-					className={styles.linkWrapper}
-					target={link?.target || "_self"}
-				>
+				{/* Not a <Link> — the "Our Impact" Button below already navigates
+				to this exact same `link.url`; wrapping this whole card in a
+				second, outer <a> to the same destination produced an invalid
+				nested-anchor (<a> inside <a>), which browsers silently
+				"fix" by breaking the tag out — causing a hydration mismatch
+				on every load. */}
+				<div className={styles.linkWrapper}>
 					<SlideUpDivMaskReveal
 						triggerOnce={true}
 						className={styles.mainContainer}
@@ -48,34 +48,34 @@ const HeroViewThree: FC<IHero.IHeroViewThree.IProps> = ({
 					>
 						<VideoCard video={video} displayVideo={displayVideo}/>
 						<div className={styles.contentWrapper}>
-						<motion.div
+						<m.div
 							viewport={{once: false}}
 							className={styles.content}
 							initial={slideInLeftInitial}
 							whileInView={slideInRightFinish}
 						>
 							<ContentSliceRevealMaskAnimation>
-								<motion.h4
+								<m.h4
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
 									className={styles.title}
 								>
 									{title}
-								</motion.h4>
+								</m.h4>
 							</ContentSliceRevealMaskAnimation>
-							<motion.div
+							<m.div
 								initial={initial}
 								whileInView={fadeIn}
 								viewport={{once: false}}
 								className={styles.playButton}
 							>
 								<Button styleNumber={7} link={link}/>
-							</motion.div>
-						</motion.div>
+							</m.div>
+						</m.div>
 						</div>
 					</SlideUpDivMaskReveal>
-				</Link>
+				</div>
 			</div>
 			<div className={`${styles.heroViewFour} panel`}>
 			</div>

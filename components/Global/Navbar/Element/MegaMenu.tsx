@@ -3,7 +3,7 @@
 // Imports
 import Link from "next/link";
 import {FC, Fragment} from "react";
-import {motion} from "framer-motion";
+import {m} from "framer-motion";
 import {INavbar} from "@/components/Global/Navbar/types/index";
 
 // Styling
@@ -47,14 +47,14 @@ const MegaMenu: FC<INavbar.IMegaMenu> = ({ menuActive, mobileLinks, setMenuActiv
     
     return (
         <div className={menuActive ? styles.megaMenu: "hidden"}>
-            <motion.div
+            <m.div
 				initial="closed"
                 className={styles.container}
 				variants={megaMenuAnimation}
 				animate={menuActive ? "open" : "closed"}
             >
                 Enter
-            </motion.div>
+            </m.div>
         </div>
     );
 }
