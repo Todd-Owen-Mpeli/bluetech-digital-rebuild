@@ -44,6 +44,8 @@ export const getAllFlexibleContentComponents = async (
 			}
 		`;
 
+		console.log("FINAL QUERY STRING:\n", content?.loc?.source.body);
+
 		const response: any = await client.query({
 			query: content,
 		});

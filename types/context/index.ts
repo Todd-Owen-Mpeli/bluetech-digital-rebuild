@@ -27,11 +27,9 @@ export type ISeo = {
 		mediaItemUrl: string;
 	};
 };
-export type IContent = [
-	{
+export type IContent = {
 		content: any;
-	}
-];
+}[];
 
 /* CUSTOM POST TYPES TYPES  */
 export namespace ICustomPostTypes {
