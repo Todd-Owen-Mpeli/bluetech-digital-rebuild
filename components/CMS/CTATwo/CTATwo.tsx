@@ -1,9 +1,9 @@
 // Imports
 import { FC } from "react";
-import {ICTATwo} from "@/components/CMS/CTATwo/types/index";
+import {ICTATwo} from "@/components/CMS/CTATwo/types/ctaTwo";
 
 // Styling
-import styles from "@/components/CMS/CTATwo/styles/CTATwo.module.scss";
+import styles from "@/components/CMS/CTATwo/styles/CTATwo.module.css";
 
 // Components
 import Button from "@/components/Global/Elements/Button/Button";

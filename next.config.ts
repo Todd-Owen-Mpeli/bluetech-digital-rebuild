@@ -48,21 +48,9 @@ const nextConfig: NextConfig = {
 						key: "X-XSS-Protection",
 						value: "1; mode=block",
 					},
-					// Updated Content Security Policy (CSP) to allow your CMS and Instagram
-					// {
-					// 	key: "Content-Security-Policy",
-					// 	value: `
-					// 		default-src 'self';
-					// 		img-src 'self' ${process.env.CMS_URL} ${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME_ONE} ${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME_TWO} ${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME_THREE} ${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME_FOUR} data:;
-					// 		script-src 'self' 'unsafe-inline' 'unsafe-eval';
-					// 		style-src 'self' 'unsafe-inline';
-					// 		connect-src 'self' ${process.env.CMS_URL};
-					// 		frame-src 'self' ${process.env.YOUTUBE_EMBED_REMOTE_PATTERNS_HOSTNAME}; /* Allow embedding YouTube videos */
-					// 		object-src 'none';
-					// 		frame-ancestors 'none';`
-					// 		.replace(/\s{2,}/g, " ")
-					// 		.trim(),
-					// },
+					// Content-Security-Policy is set per-request in proxy.ts, not here —
+					// a nonce is only meaningful per-request, and this headers() function
+					// produces one static value shared by every response.
 					// Referrer Policy
 					{
 						key: "Referrer-Policy",

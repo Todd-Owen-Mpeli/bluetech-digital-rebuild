@@ -1,7 +1,6 @@
 // Imports
-import { client } from "@/config/apollo";
-import { DocumentNode, gql } from "@apollo/client";
 import { ICustomPostTypes } from "@/types/context";
+import { fetchCmsGraphQL } from "@/graphql/CMS/fetchCmsGraphQL";
 
 /* THEMES OPTIONS CONTENT
  The ID number refers to the
@@ -9,7 +8,7 @@ import { ICustomPostTypes } from "@/types/context";
 export const getThemesOptionsContent =
 	async (): Promise<ICustomPostTypes.IThemesOptions> => {
 		try {
-			const content: DocumentNode = gql`
+			const content = `
 				{
 					themeOptions(where: {name: "Global Content", status: PUBLISH}) {
 						edges {
@@ -69,11 +68,9 @@ export const getThemesOptionsContent =
 				}
 			`;
 
-			const response: any = await client.query({
-				query: content,
-			});
+			const data: any = await fetchCmsGraphQL(content);
 
-			return response?.data?.themeOptions?.edges[0]?.node?.themeOptions;
+			return data?.themeOptions?.edges[0]?.node?.themeOptions;
 		} catch (error) {
 			console.log(error);
 			throw new Error(

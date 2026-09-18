@@ -4,8 +4,8 @@
 import { FC } from "react";
 import useMeasure from 'react-use-measure';
 import { useState, useEffect } from 'react';
-import {IPartnersLogos} from "@/components/CMS/PartnersLogos/types/index";
-import { useMotionValue, animate, motion, MotionValue } from 'framer-motion';
+import {IPartnersLogos} from "@/components/CMS/PartnersLogos/types/partnersLogos";
+import { useMotionValue, animate, m, MotionValue } from 'framer-motion';
 
 const InfiniteSlider: FC<IPartnersLogos.IInfiniteSlider> = ({
     children,
@@ -86,7 +86,7 @@ const InfiniteSlider: FC<IPartnersLogos.IInfiniteSlider> = ({
     
     return (
         <div className={`overflow-hidden ${className}`}>
-            <motion.div
+            <m.div
                 ref={ref}
                 {...hoverProps}
                 className='flex w-max'
@@ -96,7 +96,7 @@ const InfiniteSlider: FC<IPartnersLogos.IInfiniteSlider> = ({
             >
                 {children}
                 {children}
-            </motion.div>
+            </m.div>
         </div>
     );
 }

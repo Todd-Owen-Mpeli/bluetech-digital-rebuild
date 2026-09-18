@@ -1,0 +1,88 @@
+/* -----------------------------------------------------------------------------
+This project's custom design tokens, kept separate from globals.css so every
+CSS Module can `@import` just this file (alongside `tailwindcss/theme` for
+Tailwind's own defaults) and use these tokens in `@apply` — a CSS Module only
+sees what it imports itself. globals.css imports this too, so there's exactly
+one source of truth.
+
+Carried over 1:1 from the Tailwind v3 `tailwind.config.ts` `theme.extend`
+block (screens/fontSize/colors) plus its custom `addUtilities` font-family
+plugin — every `--font-*` token below is picked up by Tailwind v4
+automatically as a `font-<name>` utility, so the plugin itself is gone.
+----------------------------------------------------------------------------- */
+
+@theme {
+
+	/* XXX CUSTOM BREAKPOINT (SCREEN) VARIABLES XXX */
+	/* md/lg/xl below already match Tailwind's own defaults (768/1024/1280px) —
+	only xs (new) and sm (overridden from the default 640px) need declaring. */
+	--breakpoint-xs: 320px;
+	--breakpoint-sm: 425px;
+
+	/* XXX CUSTOM TEXT SIZE VARIABLES XXX */
+	--text-xxxs: .5rem;
+	--text-xxs: .65rem;
+	--text-xs: .75rem;
+	--text-sm: .8rem;
+	--text-tiny: .9rem;
+	--text-base: 1rem;
+	--text-medium: 1.15rem;
+	--text-paragraph: 1.05rem;
+	--text-lg: 1.25rem;
+	--text-xl: 1.5rem;
+	--text-2xl: 1.75rem;
+	--text-3xl: 1.85rem;
+	--text-4xl: 2rem;
+	--text-5xl: 2.25rem;
+	--text-6xl: 2.5rem;
+	--text-7xl: 3rem;
+	--text-8xl: 4rem;
+	--text-9xl: 4rem;
+	--text-10xl: 4.5rem;
+	--text-11xl: 5rem;
+	--text-12xl: 5.5rem;
+
+	/* XXX CUSTOM FONTS VARIABLES XXX */
+	/* Each generates its own `font-<name>` utility — the exact class names
+	every component already uses (font-primary, font-primaryBold, …). */
+	--font-primary: "primary";
+	--font-primaryBold: "primaryBold";
+	--font-secondary: "secondary";
+	--font-tertiaryLight: "tertiaryLight";
+	--font-tertiaryRegular: "tertiaryRegular";
+	--font-tertiaryMedium: "tertiaryMedium";
+	--font-tertiaryBlack: "tertiaryBlack";
+
+	/* XXX BASE COLOURS XXX */
+	--color-black: #020202;
+	--color-grey: #cecece;
+	--color-white: #ffffff;
+	--color-pureBlack: #000;
+	--color-darkGrey: #8f8f8f;
+	--color-lightGrey: #f7f7f7;
+	--color-lightBlack: #292929;
+	--color-lightGreyTwo: #fafafa;
+
+	/* XXX PRIMARY XXX */
+	--color-primary-default: #012b27;
+	--color-primary-two: #023b36;
+	--color-primary-light: #006b60;
+	--color-primary-dark: #011412;
+	--color-primary-darker: #011412;
+
+	/* XXX ACCENT XXX */
+	--color-accent-default: #bff007;
+	--color-accent-two: #9fcb00;
+	--color-accent-dark: #83a800;
+	--color-accent-darker: #688400;
+
+	/* XXX SECONDARY XXX */
+	--color-secondary-default: #dee7df;
+	--color-secondary-two: #8531ed;
+
+	/* XXX TERTIARY XXX */
+	--color-tertiary-default: #2044d5;
+	--color-tertiary-two: #67aaf9;
+	--color-tertiary-dark: #8531ed;
+	--color-tertiary-darker: #8531ed;
+}

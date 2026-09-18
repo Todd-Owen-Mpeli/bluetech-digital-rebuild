@@ -2,7 +2,7 @@
 
 // Imports
 import {FC} from "react";
-import {motion} from "framer-motion";
+import {m} from "framer-motion";
 import {GlobalContext} from "@/context/global";
 import {IGlobal} from "@/context/types/context";
 
@@ -13,6 +13,8 @@ const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 	return (
 		<GlobalContext.Provider
 			value={{
+				locale: globalProps?.locale,
+
 				// Custom Post Types
 				themesOptionsContent: globalProps?.themesOptionsContent,
 				
@@ -30,7 +32,7 @@ const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 				ourServicesLinks: globalProps?.ourServicesLinks,
 			}}
 		>
-			<motion.div
+			<m.div
 				exit={{
 					opacity: 0,
 				}}
@@ -38,7 +40,7 @@ const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 				animate="animate"
 			>
 				{children}
-			</motion.div>
+			</m.div>
 		</GlobalContext.Provider>
 	);
 };

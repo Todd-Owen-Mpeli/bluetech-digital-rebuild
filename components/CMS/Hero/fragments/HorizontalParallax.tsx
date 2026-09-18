@@ -2,13 +2,13 @@
 
 // Imports
 import gsap from "gsap";
-import {motion} from "framer-motion";
+import {m} from "framer-motion";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import {FC, useRef, useLayoutEffect} from "react";
-import { IHero } from "@/components/CMS/Hero/types/index";
+import { IHero } from "@/components/CMS/Hero/types/hero";
 
 // Styling
-import styles from "@/components/CMS/Hero/styles/Hero.module.scss";
+import styles from "@/components/CMS/Hero/styles/Hero.module.css";
 
 // Components
 import HeroViewOne from "@/components/CMS/Hero/fragments/HeroViewOne/HeroViewOne";
@@ -97,7 +97,7 @@ const HorizontalParallax: FC<IHero.IHorizontalParallax> = ({
 
 	return (
 		<div ref={containerRef} className={styles.horizontalParallax}>
-			<motion.div ref={sliderRef} className={styles.wrapper}>
+			<m.div ref={sliderRef} className={styles.wrapper}>
 				<HeroViewOne
 					video={heroViewOne.video}
 					title={heroViewOne.title}
@@ -120,7 +120,7 @@ const HorizontalParallax: FC<IHero.IHorizontalParallax> = ({
 					displayVideo={heroViewThree.displayVideo}
 					backgroundImage={heroViewThree.backgroundImage}
 				/>
-			</motion.div>
+			</m.div>
 		</div>
 	);
 };

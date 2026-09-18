@@ -1,0 +1,11 @@
+{
+	"cookiePolicy": {
+		"title": "Cookie-Richtlinie",
+		"paragraph": "<p>Diese Website verwendet Cookies, um die Nutzererfahrung zu verbessern und die ordnungsgemäße Funktion der Website sicherzustellen. Durch die Nutzung dieser Website stimmen Sie der Verwendung von Cookies gemäß dieser Cookie-Richtlinie zu.</p>",
+		"accept": "Cookies akzeptieren",
+		"refuse": "Cookies ablehnen"
+	},
+	"localeSwitcher": {
+		"label": "Sprache"
+	}
+}

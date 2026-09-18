@@ -1,12 +1,11 @@
 // Imports
-import { client } from "@/config/apollo";
-import { DocumentNode, gql } from "@apollo/client";
 import { INewsCaseStudies, ISlug } from "@/types/context";
+import { fetchCmsGraphQL } from "@/graphql/CMS/fetchCmsGraphQL";
 
 /* CASE STUDIES SLUGS (URLS) */
 export const getAllCaseStudiesSlugs = async (): Promise<ISlug> => {
 	try {
-		const content: DocumentNode = gql`
+		const content = `
 			{
 				caseStudiesSlugs: caseStudies(where: {status: PUBLISH}, last: 100) {
 					nodes {
@@ -17,11 +16,9 @@ export const getAllCaseStudiesSlugs = async (): Promise<ISlug> => {
 			}
 		`;
 
-		const response: any = await client.query({
-			query: content,
-		});
+		const data: any = await fetchCmsGraphQL(content);
 
-		return response?.data?.caseStudiesSlugs?.nodes;
+		return data?.caseStudiesSlugs?.nodes;
 	} catch (error) {
 		console.log(error);
 		throw new Error(
@@ -34,7 +31,7 @@ export const getAllCaseStudiesSlugs = async (): Promise<ISlug> => {
 export const getAllCaseStudiesContent =
 	async (): Promise<INewsCaseStudies.ICaseStudies> => {
 		try {
-			const content: DocumentNode = gql`
+			const content = `
 				{
 					caseStudiesContent: caseStudies(
 						where: {status: PUBLISH, orderby: {field: DATE, order: ASC}}
@@ -61,11 +58,9 @@ export const getAllCaseStudiesContent =
 				}
 			`;
 
-			const response: any = await client.query({
-				query: content,
-			});
+			const data: any = await fetchCmsGraphQL(content);
 
-			return response?.data?.caseStudiesContent?.edges;
+			return data?.caseStudiesContent?.edges;
 		} catch (error) {
 			console.log(error);
 			throw new Error(

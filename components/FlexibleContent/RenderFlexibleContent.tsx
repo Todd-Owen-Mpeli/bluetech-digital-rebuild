@@ -11,6 +11,7 @@ import OurServices from "@/components/CMS/OurServices/OurServices";
 import RightPartner from "@/components/CMS/RightPartner/RightPartner";
 import PartnersLogos from "@/components/CMS/PartnersLogos/PartnersLogos";
 import TitleParagraph from "@/components/CMS/TitleParagraph/TitleParagraph";
+import InstagramFeed from "@/components/CMS/InstagramFeed/InstagramFeed";
 
 const RenderFlexibleContent: FC = () => {
 	const { memoizedValues } = usePageContext();
@@ -28,13 +29,14 @@ const RenderFlexibleContent: FC = () => {
 			[`${postTypeFlexibleContent}_RightPartner`]: RightPartner,
 			[`${postTypeFlexibleContent}_PartnersLogos`]: PartnersLogos,
 			[`${postTypeFlexibleContent}_TitleParagraph`]: TitleParagraph,
+			[`${postTypeFlexibleContent}_InstagramFeed`]: InstagramFeed,
         };
         return mapping;
     }, [postTypeFlexibleContent]); // Recreate mapping only if postTypeFlexibleContent changes
 
 	return (
 		<>
-			{content.map((item: any, index: number) => (
+			{content?.map((item: any, index: number) => (
 				<Fragment key={item.fieldGroupName || index}>
 					{item.displaySection === true ? (
 						<section>

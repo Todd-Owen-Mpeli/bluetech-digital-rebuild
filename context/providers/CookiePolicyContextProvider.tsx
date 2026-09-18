@@ -11,10 +11,13 @@ const CookiePolicyContextProvider: FC<ICookiePolicy.IContextProvider> = ({
 	const [hasConsent, setHasConsent] = useState<boolean | null>(null); // null, true, or false
 
 	useEffect(() => {
-		const cookiesAccepted = document.cookie.includes("cookies-accepted");
-		const cookiesRefused = document.cookie.includes("cookies-refused");
+		// document.cookie can't be read during SSR render; this one-time sync on
+		// mount is the legitimate effect use case, not a derivable render value.
+		const cookiesAccepted = document.cookie.includes("cookie-consent=accepted");
+		const cookiesRefused = document.cookie.includes("cookie-consent=refused");
 
 		if (cookiesAccepted) {
+			// eslint-disable-next-line react-hooks/set-state-in-effect
 			setHasConsent(true);
 		} else if (cookiesRefused) {
 			setHasConsent(false);

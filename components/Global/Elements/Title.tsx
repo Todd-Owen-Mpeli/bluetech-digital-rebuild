@@ -1,7 +1,7 @@
 // Imports
 import { FC, memo, useMemo } from "react"; // Added useMemo
 import DOMPurify from "isomorphic-dompurify";
-import { motion, MotionValue } from "framer-motion";
+import { m, MotionValue } from "framer-motion";
 import { fadeIn, initialTwo } from "@/animations/animations";
 
 type ITitle = {
@@ -32,7 +32,7 @@ const Title: FC<ITitle> = memo(({
         return className.trim();
     })();
 
-    // Memoize common motion props for the <motion.h4> elements for consistency.
+    // Memoize common motion props for the <m.h4> elements for consistency.
     const commonMotionProps = useMemo(() => ({
         initial: initialTwo,
         whileInView: fadeIn,
@@ -40,7 +40,7 @@ const Title: FC<ITitle> = memo(({
     }), []);
 
     return (
-        <motion.div
+        <m.div
             className={titleClasses}
             style={{ color: styleTextColor}}
             dangerouslySetInnerHTML={cleanMarkup}

@@ -2,18 +2,18 @@
 
 // Imports
 import { FC } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useCookiePolicy } from "@/context/cookies";
 import { fadeInUp, initial, stagger } from "@/animations/animations";
 import { ICookiePolicy } from "@/components/Global/CookiePolicy/types/type";
 
 // Styling
-import styles from "@/components/Global/CookiePolicy/styles/CookiePolicy.module.scss";
+import styles from "@/components/Global/CookiePolicy/styles/CookiePolicy.module.css";
 
 // Components
 import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
-const CookiePolicy: FC<ICookiePolicy.IProps> = () => {
+const CookiePolicy: FC<ICookiePolicy.IProps> = ({ dict }) => {
 
     const { hasConsent, acceptCookies, refuseCookies } = useCookiePolicy();
 
@@ -32,32 +32,32 @@ const CookiePolicy: FC<ICookiePolicy.IProps> = () => {
                 }}
             >
                 <div className={styles.titleSection}>
-                    <motion.h3
+                    <m.h3
                         initial={initial}
                         whileInView={fadeInUp}
                         viewport={{ once: true }}
                         className={styles.title}
                     >
-                        Cookie Policy
-                    </motion.h3>
-                    <motion.div
+                        {dict.title}
+                    </m.h3>
+                    <m.div
                         initial={initial}
                         whileInView={fadeInUp}
                         viewport={{ once: true }}>
                         <Paragraph
                             className={styles.paragraph}
-                            content={`<p>This website uses cookies to enhance the user experience and ensure the proper functioning of the site. By using this website, you agree to the use of cookies in accordance with this CookiePolicy.</p>`}
+                            content={dict.paragraph}
                         />
-                    </motion.div>
+                    </m.div>
                 </div>
-                <motion.div
+                <m.div
                     initial={initial}
                         variants={stagger}
                         whileInView="animate"
                         viewport={{ once: true }}
                     className={styles.buttonSection}
                 >
-                    <motion.button
+                    <m.button
                             initial={initial}
                             whileInView={fadeInUp}
                             onClick={acceptCookies}
@@ -65,9 +65,9 @@ const CookiePolicy: FC<ICookiePolicy.IProps> = () => {
                             aria-label="Accept cookies"
                             className={styles.acceptButton}
                         >
-                            Accept Cookies
-                    </motion.button>
-                    <motion.button
+                            {dict.accept}
+                    </m.button>
+                    <m.button
                             initial={initial}
                             whileInView={fadeInUp}
                             onClick={refuseCookies}
@@ -75,9 +75,9 @@ const CookiePolicy: FC<ICookiePolicy.IProps> = () => {
                             aria-label="Refuse cookies"
                             className={styles.refuseButton}
                         >
-                            Refuse Cookies
-                    </motion.button>
-                </motion.div>
+                            {dict.refuse}
+                    </m.button>
+                </m.div>
             </div>
         </div>
     );

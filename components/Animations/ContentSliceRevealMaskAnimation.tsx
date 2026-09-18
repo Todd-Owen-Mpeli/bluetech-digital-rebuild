@@ -2,7 +2,7 @@
 
 // Imports
 import { FC, useRef} from "react";
-import { motion, useInView} from "framer-motion";
+import { m, useInView} from "framer-motion";
 
 // Content Slice Reveal Mask Animation
 namespace ITypes {
@@ -56,14 +56,14 @@ const ContentSliceRevealMaskAnimation: FC<ITypes.IProps> = ({
 		<div className={className}>
 			<div ref={body} className="overflow-hidden w-full h-full">
 				<div className="overflow-hidden w-full h-full">
-					<motion.div
+					<m.div
 						initial="initial"
 						variants={AnimationProps}
 						animate={isInView ? "enter" : ""}
 						className={` w-full h-full flex flex-col gap-0 ${centerContent ? "items-center justify-center" : "items-center lg:items-baseline justify-center"}`}
 					>
 						{children}
-					</motion.div>
+					</m.div>
 				</div>
 			</div>
 		</div>

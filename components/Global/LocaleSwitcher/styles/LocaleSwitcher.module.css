@@ -1,0 +1,53 @@
+@import "tailwindcss/theme";
+@import "../../../../styles/theme.css";
+
+
+.localeSwitcher {
+	position: relative;
+	display: inline-flex;
+}
+
+.localeSwitcherTrigger {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.5rem;
+	padding: 0.4rem 0.6rem;
+	border: 1px solid currentColor;
+	border-radius: 0.25rem;
+	background: transparent;
+	font-size: 0.8rem;
+	letter-spacing: 0.05em;
+	cursor: pointer;
+}
+
+.localeSwitcherMenu {
+	position: absolute;
+	top: calc(100% + 0.4rem);
+	right: 0;
+	min-width: 8rem;
+	list-style: none;
+	margin: 0;
+	padding: 0.4rem 0;
+	border-radius: 0.25rem;
+	background: #fff;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+	z-index: 50;
+}
+
+.localeSwitcherItem,
+.localeSwitcherItemActive {
+	display: block;
+	padding: 0.5rem 0.9rem;
+	font-size: 0.85rem;
+	color: inherit;
+	text-decoration: none;
+}
+
+.localeSwitcherItem:hover {
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.localeSwitcherItemActive {
+	font-weight: 600;
+}

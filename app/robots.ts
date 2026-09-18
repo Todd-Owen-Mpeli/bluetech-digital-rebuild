@@ -1,7 +1,7 @@
 import {MetadataRoute} from "next";
 
 const robots = async () => {
-	const siteUrl: any = process.env.SITE_URL;
+	const siteUrl: any = process.env.SITE_URL?.replace(/\/$/, "");
 
 	const metaRobots: MetadataRoute.Robots = {
 		rules: {

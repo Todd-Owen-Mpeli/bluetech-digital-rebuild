@@ -1,52 +1,47 @@
 // Imports
 import {MetadataRoute} from "next";
+import {locales} from "@/context/constants";
+import {buildLocaleAlternates} from "@/i18n/buildAlternates";
 
 // Get All Pages
 import {
 	getAllPagesSlugs,
 } from "@/graphql/CMS/GetAllPagesSlugs";
 
-const sitemap = async () => {
+const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
 	const [
 
-		// Pages & Post Slugs 
+		// Pages Slugs
 		pagesSlugs,
 	] = await Promise.all([
 
-		// Pages Slugs 
+		// Pages Slugs
 		getAllPagesSlugs(),
 
 	]);
 
-	const siteUrl: any = process.env.SITE_URL;
+	const entries: MetadataRoute.Sitemap = [];
 
+	(pagesSlugs ?? []).forEach((page: any) => {
+		// The "home" page's real public route is "/", not "/home" — app/[locale]/page.tsx
+		// serves the locale root; app/[locale]/[slug]/page.tsx would otherwise
+		// duplicate it at a second URL if "home" were treated like any other slug.
+		const pathWithoutLocale = page.slug === "home" ? "" : `/${page.slug}`;
 
-	/* EMPTY ARRAYS */
-	/* Pages, News Insights Posts Arrays */
-	const pagesLinks: any[] = [];
+		locales.forEach((locale) => {
+			const {languages} = buildLocaleAlternates(locale, pathWithoutLocale);
 
-	/* PUSHING THE DYNAMIC SLUGS
-	 INTO THE EMPTY ARRAYS */
-	// Pages Dynamic Links
-	pagesSlugs.map((keys: any) => {
-		const object = {
-			url: `${siteUrl}/${keys.slug}`,
-			changefreq: "monthly",
-			lastmod: `${keys.modified}`,
-			priority: 0.8,
-		};
-
-		pagesLinks.push(object);
+			entries.push({
+				url: languages[locale],
+				changeFrequency: "monthly",
+				lastModified: page.modified,
+				priority: pathWithoutLocale === "" ? 1 : 0.8,
+				alternates: {languages},
+			});
+		});
 	});
 
-	// Arrays with your all dynamic links
-	const allLinks: MetadataRoute.Sitemap = [
-		/* Pages, News Insights Posts Arrays */
-		...pagesLinks,
-
-	];
-
-	return allLinks;
+	return entries;
 };
 
 export default sitemap;

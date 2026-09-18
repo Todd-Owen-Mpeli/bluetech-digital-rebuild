@@ -2,11 +2,11 @@
 
 // Imports
 import { FC } from 'react';
-import { motion } from 'framer-motion';
-import { IRightPartner } from '@/components/CMS/RightPartner/types/index';
+import { m } from 'framer-motion';
+import { IRightPartner } from '@/components/CMS/RightPartner/types/rightPartner';
 
 // Styling
-import styles from '@/components/CMS/RightPartner/styles/RightPartner.module.scss';
+import styles from '@/components/CMS/RightPartner/styles/RightPartner.module.css';
 
 const RightPartner: FC<IRightPartner.IProps> = ({
   title,
@@ -17,7 +17,7 @@ const RightPartner: FC<IRightPartner.IProps> = ({
   backgroundImage,
 }) => {
   return (
-      <motion.div
+      <m.div
             className={styles.rightPartner}
             style={{
                 backgroundImage: `linear-gradient(0deg,rgba(255, 255, 255, 0.9), 
@@ -26,7 +26,7 @@ const RightPartner: FC<IRightPartner.IProps> = ({
         >
             <div className={styles.topSection}></div>
             <div className={styles.bottomSection}></div>
-        </motion.div>
+        </m.div>
     );
 };
 

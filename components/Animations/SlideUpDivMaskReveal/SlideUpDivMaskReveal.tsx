@@ -1,11 +1,11 @@
 "use client"
 
 // Imports
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { m, useInView, useAnimation } from 'framer-motion';
 import { FC, memo, useRef, useEffect, RefObject, useMemo } from 'react';
 
 // Assume you have some CSS modules for styling, e.g., 'Reveal.module.css'
-import styles from '@/components/Animations/SlideUpDivMaskReveal/styles/SlideUpDivMaskReveal.module.scss';
+import styles from '@/components/Animations/SlideUpDivMaskReveal/styles/SlideUpDivMaskReveal.module.css';
 
 export namespace ISlideUpDivMaskReveal {
 	export type IProps = {
@@ -114,7 +114,7 @@ const SlideUpDivMaskReveal: FC<ISlideUpDivMaskReveal.IProps> = memo(({
         <div className={styles.revealContentWrapper}>
           {children}
         </div>
-        <motion.div
+        <m.div
           initial="hidden"
           animate={controls}
           variants={revealVariants}

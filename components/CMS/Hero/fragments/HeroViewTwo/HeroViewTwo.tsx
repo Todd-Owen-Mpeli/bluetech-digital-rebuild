@@ -9,11 +9,11 @@ import {
     slideInRightInitial,
 } from "@/animations/animations";
 import React, { FC, useMemo, useRef } from "react";
-import { IHero } from "@/components/CMS/Hero/types/index";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { IHero } from "@/components/CMS/Hero/types/hero";
+import { m, useScroll, useTransform } from "framer-motion";
 
 // Styling
-import styles from "@/components/CMS/Hero/styles/Hero.module.scss";
+import styles from "@/components/CMS/Hero/styles/Hero.module.css";
 
 // Components
 import Button from "@/components/Global/Elements/Button/Button";
@@ -22,7 +22,7 @@ import TextRevealBlurEffect from "@/components/Animations/TextRevealBlurEffect";
 import VideoCard from "@/components/CMS/Hero/fragments/HeroViewTwo/Elements/VideoCard";
 import SlideUpDivMaskReveal from "@/components/Animations/SlideUpDivMaskReveal/SlideUpDivMaskReveal";
 
-const MemoizedMotionDiv = React.memo(motion.div);
+const MemoizedMotionDiv = React.memo(m.div);
 
 const HeroViewTwo: FC<IHero.IHeroViewTwo.IProps> = ({
     video,
@@ -53,8 +53,8 @@ const HeroViewTwo: FC<IHero.IHeroViewTwo.IProps> = ({
     return (
         <div  ref={container} className={`${styles.heroViewTwo} panel`}>
             <div className={styles.container}>
-                <motion.div className={styles.content}>
-                    <motion.div
+                <m.div className={styles.content}>
+                    <m.div
                         viewport={{once: false}}
                         initial={slideInLeftInitial}
                         className={styles.leftSection}
@@ -69,10 +69,10 @@ const HeroViewTwo: FC<IHero.IHeroViewTwo.IProps> = ({
                             content={paragraph}
                             className={paragraph ? styles.paragraph + " hidden lg:block" : "hidden"}
                         />
-                    </motion.div>
+                    </m.div>
                     <div className={styles.rightSection}>
                         <div className="h-1/2"/>
-                        <motion.div
+                        <m.div
                             viewport={{once: false}}
                             className={styles.wrapper}
                             initial={slideInRightInitial}
@@ -85,17 +85,17 @@ const HeroViewTwo: FC<IHero.IHeroViewTwo.IProps> = ({
                                 offsetFinish={offsetFinish}
                                 className={paragraphTwo ? styles.paragraphTwo : "hidden"}
                             />
-                            <motion.div
+                            <m.div
                                 initial={initial}
                                 whileInView={fadeIn}
                                 viewport={{once: false}}
                                 className={styles.playButton}
                             >
                                 <Button styleNumber={4} link={buttonLink} />
-                            </motion.div>
-                        </motion.div>
+                            </m.div>
+                        </m.div>
                     </div>
-                </motion.div>
+                </m.div>
                 <SlideUpDivMaskReveal
                     className="h-full w-full"
                     backgroundColor={"bg-accent-default"}

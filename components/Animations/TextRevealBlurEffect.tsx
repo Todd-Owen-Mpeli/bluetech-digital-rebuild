@@ -5,7 +5,7 @@ import {gsap} from "gsap";
 import { FC, useEffect, useRef} from "react";
 import DOMPurify from "isomorphic-dompurify";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import { motion, MotionValue} from "framer-motion";
+import { m, MotionValue} from "framer-motion";
 
 // Register the ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -104,7 +104,7 @@ const TextRevealBlurEffect: FC<ITextRevealBlurEffect> = ({
 	}, [content]);
 
 	return (
-		<motion.div
+		<m.div
 			ref={containerRef}
 			// style={{opacity: scrollOpacity}}
 			className={content ? className : `hidden`}

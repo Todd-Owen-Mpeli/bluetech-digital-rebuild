@@ -1,0 +1,7 @@
+@import "tailwindcss/theme";
+@import "../../../../styles/theme.css";
+
+
+.rightPartner {
+    @apply py-24 px-16 bg-white min-h-screen bg-cover bg-center bg-no-repeat;
+}

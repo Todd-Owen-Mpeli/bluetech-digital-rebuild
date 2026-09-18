@@ -1,11 +1,11 @@
 "use client";
 
 // Imports
-import {motion} from "framer-motion";
+import {m} from "framer-motion";
 import {FC, useEffect, useState} from "react";
 
 // Styling
-import styles from "@/components/Global/PreloaderAnimation/styles/Preloader.module.scss";
+import styles from "@/components/Global/PreloaderAnimation/styles/Preloader.module.css";
 
 export const opacity: {
     initial: {
@@ -66,6 +66,9 @@ const Preloader: FC = () => {
 	const [dimension, setDimension] = useState({width: 0, height: 0});
 
 	useEffect(() => {
+		// Window size can't be read during SSR render; this one-time sync on
+		// mount is the legitimate effect use case, not a derivable render value.
+		// eslint-disable-next-line react-hooks/set-state-in-effect
 		setDimension({width: window.innerWidth, height: window.innerHeight});
 	}, []);
 
@@ -116,7 +119,7 @@ const Preloader: FC = () => {
 	};
 
 	return (
-		<motion.div
+		<m.div
 			exit="exit"
 			initial="initial"
 			variants={slideUp}
@@ -124,21 +127,21 @@ const Preloader: FC = () => {
 		>
 			{dimension.width > 0 && (
 				<>
-					<motion.p variants={opacity} initial="initial" animate="enter">
-						<div>♝</div>
+					<m.p variants={opacity} initial="initial" animate="enter">
+						<span className={styles.icon}>♝</span>
 						{words[index]}
-						<span></span>
-					</motion.p>
+						<span className={styles.dot}></span>
+					</m.p>
 					<svg>
-						<motion.path
+						<m.path
 							variants={curve}
 							initial="initial"
 							exit="exit"
-						></motion.path>
+						></m.path>
 					</svg>
 				</>
 			)}
-		</motion.div>
+		</m.div>
 	);
 };
 

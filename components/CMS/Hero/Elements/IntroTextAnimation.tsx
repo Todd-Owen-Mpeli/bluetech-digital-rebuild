@@ -3,10 +3,10 @@
 // Imports
 import {gsap} from "gsap";
 import {FC, useEffect, useRef} from "react";
-import {motion, useInView, MotionValue} from "framer-motion";
+import {m, useInView, MotionValue} from "framer-motion";
 
 // Styling
-import styles from "@/components/CMS/Hero/styles/Hero.module.scss";
+import styles from "@/components/CMS/Hero/styles/Hero.module.css";
 
 type IIntroTextAnimation = {
 	title: string;
@@ -71,7 +71,7 @@ const IntroTextAnimation: FC<IIntroTextAnimation> = ({
 	};
 
 	return (
-		<motion.h1
+		<m.h1
 			ref={titleRef}
 			className={
 				title
@@ -79,15 +79,15 @@ const IntroTextAnimation: FC<IIntroTextAnimation> = ({
 					: "hidden"
 			}
 		>
-			<motion.span
+			<m.span
 				className={className}
 				style={{
 					color: titleColor || "",
 				}}
 			>
 				{splitText(`${title}`)}
-			</motion.span>
-		</motion.h1>
+			</m.span>
+		</m.h1>
 	);
 };
 

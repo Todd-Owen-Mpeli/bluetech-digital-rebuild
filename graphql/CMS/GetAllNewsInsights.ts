@@ -1,12 +1,11 @@
 // Imports
-import { client } from "@/config/apollo";
 import { INewsCaseStudies, ISlug } from "@/types/context";
-import { DocumentNode, gql } from "@apollo/client";
+import { fetchCmsGraphQL } from "@/graphql/CMS/fetchCmsGraphQL";
 
 /* NEWS & INSIGHTS SLUGS (URLS) */
 export const getAllNewsInsightsPostsSlugs = async (): Promise<ISlug> => {
 	try {
-		const content: DocumentNode = gql`
+		const content = `
 			{
 				newsInsightsSlugs: posts(where: {status: PUBLISH}, last: 100) {
 					nodes {
@@ -17,11 +16,9 @@ export const getAllNewsInsightsPostsSlugs = async (): Promise<ISlug> => {
 			}
 		`;
 
-		const response: any = await client.query({
-			query: content,
-		});
+		const data: any = await fetchCmsGraphQL(content);
 
-		return response?.data?.newsInsightsSlugs?.nodes;
+		return data?.newsInsightsSlugs?.nodes;
 	} catch (error) {
 		console.log(error);
 		throw new Error(
@@ -34,7 +31,7 @@ export const getAllNewsInsightsPostsSlugs = async (): Promise<ISlug> => {
 export const getAllNewsInsightsContent =
 	async (): Promise<INewsCaseStudies.INewsInsights> => {
 		try {
-			const content: DocumentNode = gql`
+			const content = `
 				{
 					newsInsightsContent: posts(where: {status: PUBLISH}, last: 100) {
 						edges {
@@ -60,11 +57,9 @@ export const getAllNewsInsightsContent =
 				}
 			`;
 
-			const response: any = await client.query({
-				query: content,
-			});
+			const data: any = await fetchCmsGraphQL(content);
 
-			return response?.data?.newsInsightsContent?.edges;
+			return data?.newsInsightsContent?.edges;
 		} catch (error) {
 			console.log(error);
 			throw new Error(
@@ -77,7 +72,7 @@ export const getAllNewsInsightsContent =
 export const getThreeNewsInsightsContent =
 	async (): Promise<INewsCaseStudies.INewsInsights> => {
 		try {
-			const content: DocumentNode = gql`
+			const content = `
 				{
 					newsInsightsContent: posts(where: {status: PUBLISH}, first: 3) {
 						edges {
@@ -103,11 +98,9 @@ export const getThreeNewsInsightsContent =
 				}
 			`;
 
-			const response: any = await client.query({
-				query: content,
-			});
+			const data: any = await fetchCmsGraphQL(content);
 
-			return response?.data?.newsInsightsContent?.edges;
+			return data?.newsInsightsContent?.edges;
 		} catch (error) {
 			console.log(error);
 			throw new Error(
